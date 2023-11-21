@@ -35,7 +35,7 @@ jobs:
           static_site_generator: 'sveltekit'
 
       - run: npm run build
-        id: Build site
+        id: build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
