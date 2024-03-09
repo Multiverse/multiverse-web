@@ -1,6 +1,5 @@
 <script>
 	import Logo from '$lib/images/logo/long.png';
-	import MdiEarth from '~icons/mdi/earth';
 </script>
 
 <div class="bg-green-500 mb-5">
