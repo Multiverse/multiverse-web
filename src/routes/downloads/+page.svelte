@@ -53,28 +53,34 @@
 			currentSite = 'bukkit';
 		}}
 		class:active={currentSite === 'bukkit'}
-		class="site"><img src={Bukkit} alt="Bukkit" /></button
+		class="site"
 	>
+		<img src={Bukkit} alt="Bukkit" />
+	</button>
 	<button
 		on:click={() => {
 			currentSite = 'hangar';
 		}}
 		class:active={currentSite === 'hangar'}
-		class="site"><img src={Hangar} alt="Hangar" /></button
+		class="site"
 	>
+		<img src={Hangar} alt="Hangar" />
+	</button>
 	<button
 		on:click={() => {
 			currentSite = 'modrinth';
 		}}
 		class:active={currentSite === 'modrinth'}
-		class="site pr-full sm:rounded-r-full"><img src={Modrinth} alt="Modrinth" /></button
+		class="site pr-full sm:rounded-r-full"
 	>
+		<img src={Modrinth} alt="Modrinth" />
+	</button>
 </div>
 
 <div>
 	{#each downloadSites as plugin}
 		<h2>{plugin.name}</h2>
-		<p>{plugin[currentSite]}</p>
+		<a href={plugin[currentSite]}>{plugin[currentSite]}</a>
 	{/each}
 </div>
 
