@@ -36,6 +36,10 @@ export default [
         {
           title: "Config.yml",
           to: "/core/configuration/config-yml"
+        },
+        {
+          title: "World Properties",
+          to: "/core/configuration/world-properties"
         }
       ]
     }

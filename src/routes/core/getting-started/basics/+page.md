@@ -53,7 +53,7 @@ Don't worry about all the parameters for now, all you need to know is that any t
 For our example, let's simply do
 
 [`/mv create creative NORMAL`](/core/getting-started/command-reference#Create-Command)
-    
+
 This will take a bit longer than the import did and you can see progress in your server console.
 
 This creates a world named creative with a `NORMAL` (overworld) type environment. If you are particularly clever, you could set the seed here or change the environment to `NETHER` or `END`, or if you're really clever, you can figure out how to set the [generator](Custom-Generator-Plugins#wiki-howto) to create all sorts of cool terrain (e.g., `-g BukkitFullOfMoon`). Let's not concern ourselves with that just yet.
