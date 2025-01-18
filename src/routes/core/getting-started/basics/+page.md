@@ -1,5 +1,14 @@
 # Basic Tutorial
 
+:::caution[Unfinished]
+This page is not finished!
+
+Todo:
+ - Update to MV5
+ - Links
+ 
+:::
+
 ## Introduction
 World creation is provided by **Multiverse-Core**. It can control mob spawning, environment type, enable custom terrain generators, **and much more!** Despite being able to do all this, do note that **Multiverse-Core does not create worlds itself**, it simply makes calls to the Bukkit-API to create the worlds. If other plugins exist that create worlds, then you may have messy conflicts. Inception is a well-known example and many horror stories have been told when conflicts do happen (seemingly working fine with Multiverse-Core for some but not others). Another caveat is that Bukkit still has control over the world; Multiverse just does its best to control behavior, but ultimately, **other** plugins or quirks with Bukkit may possibly override desired behavior. The developers and testers have done a great job of including the tools with Multiverse-Core to help you quickly and easily resolve these issues!
 

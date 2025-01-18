@@ -1,5 +1,13 @@
 # Installation
 
+:::caution[Unfinished]
+This page is not finished!
+
+Todo:
+ - Update to link to release site page
+ - Add image back
+:::
+
 Welcome. We're glad you're here at our humble little wiki. This is a _very_ brief installation guide as there isn't much to do!
 
 For an English language video tutorial [check here](http://www.youtube.com/watch?v=CN0MA_TykSk) - thanks to Koz4Christ
