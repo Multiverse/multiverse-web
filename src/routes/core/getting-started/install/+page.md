@@ -24,6 +24,12 @@ We highly recommend a permissions plugin. You can use any plugin that implements
  - [LuckPerms](https://www.spigotmc.org/resources/luckperms-an-advanced-permissions-plugin.28140/) (recommended)
 
 This guide (on the right) will take you through setting up permissions, but if you want to go there now, [click here](permissions).
+
+## Download links
+- [Modrinth](https://modrinth.com/plugin/multiverse-core)
+- [Bukkit](https://dev.bukkit.org/projects/multiverse-core)
+- [Hangar](https://hangar.papermc.io/Multiverse/Multiverse-Core)
+
 ## Step 1
 Grab the jar.
 Download the Multiverse-Core JAR from the [release site](http://dev.bukkit.org/projects/multiverse-core/files/) or grab a dev build from [the Multiverse 2 Jenkins](http://ci.onarandombox.com/job/Multiverse-Core/)
