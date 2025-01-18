@@ -10,7 +10,32 @@ const config = defineConfig({
 					// Add your navbar configs here
 				],
 				sidebar: {
-					// Add your sidebar configs here
+					'/docs/': [
+						{
+							title: 'Getting Started',
+							collapsible: true,
+							items: [
+								{
+									title: "Introduction",
+									to: '/docs/getting-started/introduction'
+								},
+								{
+									title: "Install",
+									to: "/docs/getting-started/install"
+								}
+							]
+						},
+						{
+							title: "Configuration",
+							collapsible: true,
+							items: [
+								{
+									title: "Config.yml",
+									to: "/docs/configuration/config-yml"
+								}
+							]
+						}
+					]
 				},
 				github: 'https://github.com/Blackman99/sveltepress',
 				logo: '/sveltepress.svg',
