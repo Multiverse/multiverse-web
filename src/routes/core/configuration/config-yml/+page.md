@@ -1,5 +1,5 @@
 # Config.yml file
-Here is the default config that ships with MV2. Note the version number at the bottom. We will (try to) update this page with newer configs when they ship.
+Here is the default config that ships with MV. Note the version number at the bottom. We will (try to) update this page with newer configs when they ship.
 
 ### Make sure you're up to date
 If you type `/mv version` a version string will be dumped to the console, in it you will see a line:

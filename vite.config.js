@@ -22,6 +22,10 @@ const config = defineConfig({
 								{
 									title: "Install",
 									to: "/core/getting-started/install"
+								},
+								{
+									title: "Basics",
+									to: "/core/getting-started/basics"
 								}
 							]
 						},

@@ -7,11 +7,11 @@ For an English language video tutorial [check here](http://www.youtube.com/watch
 For a Spanish language video tutorial [check here](http://www.youtube.com/watch?v=VJYISGaFuCw) - thanks to LastWishSpain
 
 ## Prerequisites
-<!--There are a few things to verify before installing Multiverse.-->
-* When running other Multiverse modules (such as Portals, SignPortals, Inventories), ensure they're all on the same version. For example, Multiverse-Portals 4.0.0 should be run with Multiverse-Core.
+- Ensure that all of the sub-modules are of the same major version.
+- Make sure that you have `multiverse-core` if you are using any sub-modules, it is a dependancy.
 
 ## Optional Prerequisites
-We highly recommend a permissions plugin. You can use any plugin that implements the SuperPerms API. Here are some known working permission plugins (as of 6/16/2019):
+We highly recommend a permissions plugin. You can use any plugin that implements the SuperPerms API. Here are some known working permission plugins (as of 2025):
 
  - [LuckPerms](https://www.spigotmc.org/resources/luckperms-an-advanced-permissions-plugin.28140/) (recommended)
 
