@@ -47,7 +47,7 @@ const config = defineConfig({
 				logo: '/multiverse.png',
 			}),
 			siteConfig: {
-				title: 'MULTIVERSE',
+				title: 'Multiverse',
 				description: 'The original Bukkit Multi-World Plugin!',
 			},
 		}),

@@ -1,4 +1,9 @@
+---
+title: "Permissions List"
+---
+
 # All Multiverse-Core Permissions
+
 :::caution[Unfinished]
 This page is not finished!
 

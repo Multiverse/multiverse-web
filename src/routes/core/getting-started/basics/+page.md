@@ -1,3 +1,7 @@
+---
+title: "Basics - Core"
+---
+
 # Basic Tutorial
 
 :::caution[Unfinished]
@@ -15,33 +19,40 @@ World creation is provided by **Multiverse-Core**. It can control mob spawning, 
 ## Importing Your existing worlds
 Presuming you have op on your server, when you log in the _first time_ after installing Multiverse-Core, you will see the following notification:
 
-![New server](images/tutorial/newserver.png)
+![New server](/core/basics/new-server.png)
 
 This tells you that even though you may have a bunch of world folders already created, you'll have to tell Multiverse-Core about them. The reason for this is that we don't know if your main world is a normal world or a floating skyland! Doing this is very simple in Multiverse-Core. Type:
 
-[```/mv import WORLD ENV```](https://github.com/Multiverse/Multiverse-Core/wiki/Command-Reference#wiki-import)
+[`/mv import WORLD ENV`](/core/getting-started/command-reference#Import-Command)
 
-Now, you'll have to replace WORLD with your **folder name** and ENV with the **environment type**. There are 3 currently available: `normal`, `nether` and `end`. If you forget these you can always use [`/mv env`](https://github.com/Multiverse/Multiverse-Core/wiki/Command-Reference#wiki-env). It will always list all of these choices.
+Now, you'll have to replace `WORLD` with your **folder name** and `ENV` with the **environment type**. There are 3 currently available: `normal`, `nether` and `end`. If you forget these you can always use [`/mv env`](/core/getting-started/command-reference#Environment-Command). It will always list all of these choices.
 
 So, most servers will have a world named `world`. I do for this example. Here is what I typed:
 
-![Importing a world](images/tutorial/importworld.png)
+![Importing a world](/core/basics/import-world.png)
 
 You should then see the following result:
 
-![Import Complete!](images/tutorial/importcomplete.png)
+![Import Complete!](/core/basics/import-complete.png)
 
+
+:::caution[unfinished]
+The linked to page doesn't exist
+:::
 Sweet! Now just repeat the process for all of your worlds! Don't like the folder name you have? **Don't rename the folder** simply set a [Multiverse World Alias](World-properties#wiki-alias) instead!
 
 ## Creating your first world
 So, you've imported your `world` and `world_nether`, but you want a `creative` world now! World creation is a relatively simple process. The magic invocation is as follows:
 
-[`/mv create <NAME> <ENV> -s [SEED] -g [GENERATOR[:ID]]`](https://github.com/Multiverse/Multiverse-Core/wiki/Command-Reference#wiki-create)
+:::caution[unfinished]
+This needs updating to MV5
+:::
+[`/mv create <NAME> <ENV> -s [SEED] -g [GENERATOR[:ID]]`](/core/getting-started/command-reference#Create-Command)
 
 Don't worry about all the parameters for now, all you need to know is that any text enclosed inside **`<>`** is **REQUIRED** and anything enclosed inside **`[]`** is **OPTIONAL**.
 For our example, let's simply do
 
-[`/mv create creative NORMAL`](https://github.com/Multiverse/Multiverse-Core/wiki/Command-Reference#wiki-create)
+[`/mv create creative NORMAL`](/core/getting-started/command-reference#Create-Command)
     
 This will take a bit longer than the import did and you can see progress in your server console.
 
@@ -51,47 +62,60 @@ With that invocation, your world should now be created. Horray!
 
 ### Teleporting to your new world
 Well now you have your world, fantastic! But... you need to get to it now, don't you? Well, that's simple too, just do:
-
-    /mv tp testworld
+```
+/mv tp testworld
+```
 
 And tada, you should now be in your new world! If you want to bring along a mate and he doesn't care if you teleport him all over the bloody place, just do
 
-    /mv tp YOURMATE testworld
+```
+/mv tp YOURMATE testworld
+```
 
 ## Setting the new world's spawn
 Well let's say your new world's 0, 0 isn't exactly the most... ideal of places. You'd rather players not be dumped there when they teleport to or spawn in it! Simply walk/climb/mine to where you want your new spawn to be, and then type:
 
-    /mv set spawn
+```
+/mv set spawn
+```
 
 It's like magic!
 
 ## Getting back to spawn
 Oh no! You got lost in your world! You need to go back to spawn! Well that's pretty simple:
 
-    /mv spawn
+```
+/mv spawn
+```
 
 Tada! Welcome home!
 
 ## Modifying some parameters
 Ok, so you're sick of creepers blowing your stuff up, and you want to turn off the hostiles? No problem!
 
-    /mv modify set monsters false
+```
+/mv modify set monsters false
+```
 
 You can change a load of other settings very easily (such as turn off animal spawning and PvP).
 
 ## Purging monsters and other fun things
 So you're sick of a bunch of animals getting in the way of your building. Perhaps some jackass op spawned a bunch of cows where you were building. No matter! Just clean them up with:
 
-    /mv purge testworld animals
+```
+/mv purge testworld animals
+```
 
 You can also use `ALL` instead of testworld to do it to all worlds. Instead of animals, you can specify a comma-separated list of mobs to purge, monsters, or "all" for all mobs. Beautiful.
 
 ## Removing the world
 You're so sick of this world! You quit! It's enough! Well, then you can nuke the world! To nuke it, just do:
 
-    /mv delete testworld
-    
-![Danger Will Robinson!](images/tutorial/dangercommand.png)
+```
+/mv delete testworld
+```
+
+![Danger Will Robinson!](/core/basics/danger-command.png)
 
 You will then have 10 seconds to type: 
 

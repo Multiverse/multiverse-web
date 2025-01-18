@@ -1,4 +1,8 @@
-# Permissions
+---
+title: "Permissions Setup"
+---
+
+# Permissions Setup
 
 :::caution[Unfinished]
 This page is not finished!

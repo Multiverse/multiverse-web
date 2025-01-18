@@ -1,3 +1,7 @@
+---
+title: "Command Reference - Core"
+---
+
 # Multiverse Command Reference
 
 :::caution[Unfinished]

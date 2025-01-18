@@ -1,19 +1,26 @@
+---
+title: "Introduction"
+---
+
 # Welcome to the Multiverse wiki
 
+:::caution[Unfinished]
+This page is not finished!
 
-
+Todo:
+ - Add MV logo at top
+ - Add links
+:::
 *Add MV logo here*
 ---
 Do you have a question? See if it's answered in the [[FAQ]]! 
 
-
-
 ## Basics
 
- * [[Install Multiverse-Core|install]] from scratch or [[how to Upgrade]] from Multiverse 1.7.2 (or any 1.X version)!
- * If you've never used Multiverse before you should check out the [[Basic Multiverse Tutorial|basics]].
+ * [Install Multiverse-Core](/core/getting-started/install) from scratch or [[how to Upgrade]] from Multiverse 1.7.2 (or any 1.X version)!
+ * If you've never used Multiverse before you should check out the [Basic Multiverse Tutorial](/core/getting-started/basics).
  * Read a list of [[frequently asked questions|FAQ]]
- * Read how to use [[MV2 with Permissions|Permissions]]
+ * Read how to use [Multiverse with Permissions](/core/getting-started/permissions-setup)
  * __Want to help? [[Read about pull requests and documentation|How can I help]]!__
  * Found a bug? [[Read this first|Submitting a Bug]]!
 

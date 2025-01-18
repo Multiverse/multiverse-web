@@ -1,3 +1,7 @@
+---
+title: "Install"
+---
+
 # Installation
 
 :::caution[Unfinished]
