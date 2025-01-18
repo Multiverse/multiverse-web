@@ -10,18 +10,18 @@ const config = defineConfig({
 					// Add your navbar configs here
 				],
 				sidebar: {
-					'/docs/': [
+					'/core/': [
 						{
 							title: 'Getting Started',
 							collapsible: true,
 							items: [
 								{
 									title: "Introduction",
-									to: '/docs/getting-started/introduction'
+									to: '/core/getting-started/introduction'
 								},
 								{
 									title: "Install",
-									to: "/docs/getting-started/install"
+									to: "/core/getting-started/install"
 								}
 							]
 						},
@@ -31,7 +31,7 @@ const config = defineConfig({
 							items: [
 								{
 									title: "Config.yml",
-									to: "/docs/configuration/config-yml"
+									to: "/core/configuration/config-yml"
 								}
 							]
 						}
