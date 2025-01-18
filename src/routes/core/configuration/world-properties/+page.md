@@ -44,7 +44,7 @@ Here are the various properties of worlds that can be set in `worlds.yml`. __Nor
 You can easily control who can enter various worlds in Multiverse 2. To allow people access to a world, simply grant them access to `multiverse.access.WORLDNAME` where WORLDNAME is the name of the world. By default (with PermissionsBukkit) people _can_ enter newly created worlds. You can give users `multiverse.access.*` to let them access all worlds, or set the same to false to deny access to all worlds.
 
 ## Default Spawn World
-Multiverse 2.2+ allows you to set what world users will spawn in. This does _not_ have to be the world that is in `server.properties`. To do this, make sure you have the following 2 values set in your [`config.yml`](config.yml). You can set this value ingame by using `/mv conf firstspawnoverride true` and `/mv conf firstspawnworld myworld`. We advise against editing the file, but here is the clip:
+Multiverse 2.2+ allows you to set what world users will spawn in. This does _not_ have to be the world that is in `server.properties`. To do this, make sure you have the following 2 values set in your [`config.yml`](/core/configuration/config-yml). You can set this value ingame by using `/mv conf firstspawnoverride true` and `/mv conf firstspawnworld myworld`. We advise against editing the file, but here is the clip:
 
 ```
 ...
@@ -73,7 +73,7 @@ Exceptions allow you to say 'I want animals to spawn, but **NOT** sheep.' The co
 `List<String>`
 
 ### Spawn rate
-The spawn rate defines how many ticks there are between attempts to spawn animals, see [this](https://jd.bukkit.org/org/bukkit/World.html#setTicksPerAnimalSpawns(int)) for details. Note that a value of -1 here signifies that the world should use the default value
+The spawn rate defines how many ticks there are between attempts to spawn animals, see [this](https://jd.papermc.io/paper/1.21.4/org/bukkit/World.html#setTicksPerAnimalSpawns(int)) for details. Note that a value of `-1` here signifies that the world should use the default value
 
 **Type:**
 `Integer`
@@ -97,11 +97,11 @@ You should read this as "Animals __can not__ spawn __except__ for pigs."
 You should read this as "Animals __can__ spawn __except__ for pigs."
 
 **In Game Usage:**   
-[`/mv modify set animals true`](Command-Reference#wiki-modify-command-set)- Enables animal spawning in the current world.   
-[`/mv modify set animals false`](Command-Reference#wiki-modify-command-set)- Disables animal spawning in the current world.   
-[`/mv modify add pig animals`](Command-Reference#wiki-modify-command-set) - Adds the animal type `pig` to the exemption list.   
-[`/mv modify remove pig animals`](Command-Reference#wiki-modify-command-set) - Removes the animal type `pig` to the exemption list.   
-[`/mv modify clear animals`](Command-Reference#wiki-modify-command-set) - Clears the animal exemption list.
+[`/mv modify set animals true`](/core/getting-started/command-reference#Modify-Command-(Set))- Enables animal spawning in the current world.   
+[`/mv modify set animals false`](/core/getting-started/command-reference#Modify-Command-(Set))- Disables animal spawning in the current world.   
+[`/mv modify add pig animals`](/core/getting-started/command-reference#Modify-Command-(Set)) - Adds the animal type `pig` to the exemption list.   
+[`/mv modify remove pig animals`](/core/getting-started/command-reference#Modify-Command-(Set)) - Removes the animal type `pig` to the exemption list.   
+[`/mv modify clear animals`](/core/getting-started/command-reference#Modify-Command-(Set)) - Clears the animal exemption list.
 
 [↑ Back to Top ↑](#top)
 
@@ -115,13 +115,13 @@ The overall control of the spawning of monsters on a world. If true, monsters (a
 `boolean`
 
 ### Exceptions
-exceptions allow you to say 'I want monsters to spawn, but **NOT** creepers.' The coolest part about exceptions is the fact that they simply negate the `spawn` value. This concept may seem a bit complex at first, but you can use it to do some really cool things.
+Exceptions allow you to say 'I want monsters to spawn, but **NOT** creepers.' The coolest part about exceptions is the fact that they simply negate the `spawn` value. This concept may seem a bit complex at first, but you can use it to do some really cool things.
 
 **Type:**   
 `List<String>`
 
 ### Spawn rate
-The spawn rate defines how many ticks there are between attempts to spawn animals, see [this](https://jd.bukkit.org/org/bukkit/World.html#setTicksPerAnimalSpawns(int)) for details. Note that a value of -1 here signifies that the world should use the default value
+The spawn rate defines how many ticks there are between attempts to spawn animals, see [this](https://jd.papermc.io/paper/1.21.4/org/bukkit/World.html#setTicksPerAnimalSpawns(int)) for details. Note that a value of -1 here signifies that the world should use the default value
 
 **Type:**
 `Integer`
@@ -145,11 +145,11 @@ You should read this as "Monsters __can not__ spawn __except__ for creepers."
 You should read this as "Monsters __can__ spawn __except__ for creepers."
 
 **In Game Usage:**   
-[`/mv modify set monsters true`](Command-Reference#wiki-modify-command-set)- Enables monster spawning in the current world (and disables auto-heal).   
-[`/mv modify set monsters false`](Command-Reference#wiki-modify-command-set)- Disables monster spawning in the current world (and enables auto-heal).   
-[`/mv modify add creeper monsters`](Command-Reference#wiki-modify-command-set) - Adds the monster type `creeper` to the exemption list.   
-[`/mv modify remove creeper monsters`](Command-Reference#wiki-modify-command-set) - Removes the monster type `creeper` to the exemption list.   
-[`/mv modify clear monsters`](Command-Reference#wiki-modify-command-set) - Clears the monster exemption list.
+[`/mv modify set monsters true`](/core/getting-started/command-reference#Modify-Command-(Set))- Enables monster spawning in the current world (and disables auto-heal).   
+[`/mv modify set monsters false`](/core/getting-started/command-reference#Modify-Command-(Set))- Disables monster spawning in the current world (and enables auto-heal).   
+[`/mv modify add creeper monsters`](/core/getting-started/command-reference#Modify-Command-(Set)) - Adds the monster type `creeper` to the exemption list.   
+[`/mv modify remove creeper monsters`](/core/getting-started/command-reference#Modify-Command-(Set)) - Removes the monster type `creeper` to the exemption list.   
+[`/mv modify clear monsters`](/core/getting-started/command-reference#Modify-Command-(Set)) - Clears the monster exemption list.
 
 [↑ Back to Top ↑](#top)
 
@@ -165,8 +165,8 @@ __Example:__
 `environment: NORMAL`
 
 __In Game Usage:__   
-[`mv create myworld NORMAL`](Command-Reference#create-command)   
-[`mv import mynether NETHER`](Command-Reference#import-command)
+[`/mv create myworld NORMAL`](/core/getting-started/command-reference#Create-Command)   
+[`/mv import mynether NETHER`](/core/getting-started/command-reference#Import-Command)
 
 [↑ Back to Top ↑](#top)
 
@@ -184,11 +184,9 @@ __Example:__
 `generator: BukkitFullOfMoon`
 
 __In Game Usage:__   
-[`/mv create moon NORMAL -g BukkitFullOfMoon`](Command-Reference#create-command)   
+[`/mv create moon NORMAL -g BukkitFullOfMoon`](/core/getting-started/command-reference#Create-Command)   
 
 [↑ Back to Top ↑](#top)
-
-
 
 ## World Fees
 You can charge users to enter various worlds. The coolest part is you don't have to use an econ plugin! You can simply use Minecraft items!
@@ -212,8 +210,8 @@ __NOTE:__ You MUST have a [valid economy plugin installed](https://github.com/Fe
         currency: -1
 
 __In Game Usage:__   
-`mvm set currency 3` - Sets the item to dirt   
-`mvm set price 3` - Requires 3 of item
+`/mv modify set currency 3` - Sets the item to dirt   
+`/mv modify set price 3` - Requires 3 of item
 
 [↑ Back to Top ↑](#top)
 
@@ -229,7 +227,7 @@ __Example:__
 `pvp: true`
 
 __In Game Usage:__   
-`mvm set pvp false`
+`/mvm set pvp false`
 
 [↑ Back to Top ↑](#top)
 
@@ -238,7 +236,7 @@ __In Game Usage:__
 ## Alias
 World aliases allow you to name a world differently than what the folder name is. This lets you choose fancy names for your worlds while keeping the folders nice and neat. 
 
-The alias attribute can also include a color and a style. Worlds will show up colored and styled when your users chat and via [`/mv list`](Command-Reference#list-command) or [`/mv who`](Command-Reference#who-command).
+The alias attribute can also include a color and a style. Worlds will show up colored and styled when your users chat and via [`/mv list`](/core/getting-started/command-reference#List-Command) or [`/mv who`](/core/getting-started/command-reference#Who-Command).
 
 The color must be one of these:   
 `AQUA, BLACK, BLUE, DARKAQUA, DARKBLUE, DARKGRAY, DARKGREEN, DARKPURPLE, DARKRED, GOLD, GRAY, GREEN, LIGHTPURPLE, RED, YELLOW, WHITE`
@@ -246,7 +244,7 @@ The color must be one of these:
 The style must be one of these:
 `NORMAL, MAGIC, BOLD, STRIKETHROUGH, UNDERLINE, ITALIC`
 
-![Example of world aliases with color](https://user-images.githubusercontent.com/8557785/59570127-01e84880-9059-11e9-853f-acc1a3349ad6.png)
+![Example of world aliases with color](/core/world-properties/world-with-color.png)
 
 ### Example: Set alias to *FernWorld* (Italic and green)
 __In Game Usage:__   
@@ -256,13 +254,13 @@ __In Game Usage:__
 
 __In the config:__
 
-    alias: FernWorld
-    color: GREEN
-    style: ITALIC
+```yml
+  alias: FernWorld
+  color: GREEN
+  style: ITALIC
+```
 
 [↑ Back to Top ↑](#top)
-
-
 
 ## World Blacklist
 The world blacklist allows you to specify worlds that people __cannot go__ to from the specified world. For example, if you add `world_gold` to `world`'s `worldblacklist`, then players could teleport TO `world_gold` from `world` but not back.
@@ -295,6 +293,9 @@ __This command cannot be used in-game. You cannot change the seed of a generated
 [↑ Back to Top ↑](#top)
 
 
+:::caution[unfinished]
+This should link to the MVNP docs
+:::
 
 ## Scale
 Scaling of worlds when using Multiverse-NetherPortals. Setting this value will have no effect on anything but Multiverse-NetherPortals. See [the Multiverse-Netherportals documentation](https://github.com/Multiverse/Multiverse-NetherPortals/wiki/Simple-tutorial) for how this works.
