@@ -9,8 +9,6 @@ title: "Destinations"
  * [Cannon](#Cannon-Destinations)
  * [Bed](#Bed-Destinations)
  * [Portal](#Portal-Destinations)
- * [OpenWarp](#OpenWarp-Destinations)
-
 
 
 ## World Destinations
@@ -24,8 +22,6 @@ title: "Destinations"
 
 World destinations can be prefixed with a `w:` but it is not required unless you are including a direction. If no prefix is found for a destination, it is assumed to be a world. You can also add a direction to spawn a player in a world just like with portals.
 
-
-
 ## Anchor Destinations
 `/mvtp a:myplace`
  
@@ -34,8 +30,6 @@ World destinations can be prefixed with a `w:` but it is not required unless you
 `multiverse.teleport.other.a`
 
 Anchors should be used if you have a place you want to go frequently. Using the `/mv anchor NAME` command to first create an anchor, you can then use it in any command that takes a destination.
-
-
 
 ## Exact Destinations
 `/mvtp e:world:0,0,0`   
@@ -47,8 +41,6 @@ Anchors should be used if you have a place you want to go frequently. Using the 
 
 Exact destinations are useful if you know exactly where someone should spawn, but they're difficult to set, as that's a lot to type! Luckily, an easy way of setting an exact destination is by using: `/mvpm dest here` this will set the destination to an exact dest of your current location, __including where you are looking__. This is great if you want people to spawn looking at your awesome creations!
 
-
-
 ## Player Destinations
 `/mvtp pl:fernferret`
 
@@ -57,8 +49,6 @@ Exact destinations are useful if you know exactly where someone should spawn, bu
 `multiverse.teleport.other.pl`
 
 Player destinations are exactly what they sound like, they will always teleport you to a _specific_ player! If that player is not online, you will not teleport, or if you're using a portal, it will act as if it's inactive. If a player tries to teleport to themselves, nothing will happen.
-
-
 
 ## Cannon Destinations
 `/mvtp cannon-2`   
@@ -70,8 +60,6 @@ Player destinations are exactly what they sound like, they will always teleport 
 
 The thing you have to remember with Cannon Destinations is that __you will never see a cannon__. This basically creates an exact destination with a velocity. The reason it's a different dest type entirely is due to the fact that we have provided a convince method: `cannon-X` where X is a velocity.
 
-
-
 ## Bed Destinations
 `/mvtp b:playername`
 
@@ -82,8 +70,6 @@ The thing you have to remember with Cannon Destinations is that __you will never
 `multiverse.teleport.other.b`
 
 Takes a player to the bed that [playername] will spawn at if they die.
-
-
 
 ## Portal Destinations
 :::note[Note]
@@ -101,19 +87,3 @@ These are examples of the `PORTAL` destination type. Portal destination types ar
 
 ### Special case
 When you're *standing* inside a portal (let's say `PortalB`), if you want to set the destination of another (`PortalA`) to **the center of that portal facing the rounded direction**, you can simply use `/mvpm dest here`. This will set the destination of the selected *source* portal (`PortalA`) to the portal you're standing in *plus* the cardinal direction (`p:portal:se`). This makes it a snap to set the directions of portals without any lookups!
-
-
-
-## OpenWarp Destinations
-:::note[Note]
-Requires [OpenWarp](https://github.com/Pneumaticraft/OpenWarp/)
-:::
-`/mvtp ow:WarpName`
- 
-**Permissions**   
-`multiverse.teleport.self.ow`   
-`multiverse.teleport.other.ow`
-
-Yep, we've done it. This does _not_ mean we will provide support for __every__ warp plugin in this manner. This is code that has nothing to do with MV, but is OpenWarp using our API. Ask your Warp plugin author to talk to us about supporting their destinations or switch to OpenWarp.
-
-Disclaimer: OpenWarp is authored by Multiverse committer @**[lithium3141](https://github.com/timothyekl)**
