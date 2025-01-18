@@ -40,6 +40,10 @@ export default [
         {
           title: "World Properties",
           to: "/core/configuration/world-properties"
+        },
+        {
+          title: "Destinations",
+          to: "/core/configuration/destinations"
         }
       ]
     }
