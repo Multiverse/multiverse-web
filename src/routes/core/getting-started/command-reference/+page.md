@@ -15,11 +15,11 @@ Todo:
 
 If you're looking for the [Multiverse-Portals](https://github.com/Multiverse/Multiverse-Core/wiki/Command-Reference-(Portals)), [Multiverse-NetherPortals](https://github.com/Multiverse/Multiverse-Core/wiki/Command-Reference-(NetherPortals)) or [Multiverse-Inventories](https://github.com/Multiverse/Multiverse-Core/wiki/Command-Reference-(Inventories)) Command References, click the links!
 
-**Looking for just the permissions?**   
-[Click here to go the Big List O' Permissions!](Big-List-O'-Permissions)
+**Looking for the permissions?**   
+[Click here to go the Big List O' Permissions!](/core/getting-started/permissions-list)
 
 ## Index
-[Introduction](#introduction)
+[Introduction](#Introduction)
 - [Anchor Command](#Anchor-Command)
 - [Clone Command](#Clone-Command)
 - [Confirm Command](#Confirm-Command)

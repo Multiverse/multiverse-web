@@ -25,7 +25,7 @@ You may add your plugin using the BukkitFullOfMoon template, but be warned, if y
     /mv create coldworld normal -g VoidGenerator:FROZEN_OCEAN
     ```
 
-## [Terra](https://www.spigotmc.org/resources/terra.85151/) 
+## [Terra](https://www.spigotmc.org/resources/terra.85151/)
 __Description__: Terra is an incredibly powerful data-driven world generator. It allows you to create a world exactly to your specifications, with no knowledge of Java required.
 
 __Author__: [dfsek](https://www.spigotmc.org/resources/authors/dfsek.597832/)
