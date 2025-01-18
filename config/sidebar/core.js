@@ -44,6 +44,14 @@ export default [
         {
           title: "Destinations",
           to: "/core/configuration/destinations"
+        },
+        {
+          title: "Currency",
+          to: "/core/configuration/currency"
+        },
+        {
+          title: "Custom Generator Plugins",
+          to: "/core/configuration/custom-generator-plugins"
         }
       ]
     }
