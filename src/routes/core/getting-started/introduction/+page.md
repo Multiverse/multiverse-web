@@ -35,10 +35,3 @@ Do you have a question? See if it's answered in the [[FAQ]]!
 ## Developers
  * Developer? Just motivated? [[Build|Building]] Multiverse yourself!
  * We also have [[API guides|Developer-API-Starter]] in getting you started with integrating Multiverse into your very own plugin!
-
-## Related
- * Want to update ALL the plugins at once? If you're on a Linux/Mac server, here's a [Shell Script to update MV2](https://gist.github.com/f43a6c1eeded0bf7f795)
-
- `/command`
- 
- [`/command`](#)
