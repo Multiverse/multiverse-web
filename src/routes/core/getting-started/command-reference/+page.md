@@ -73,6 +73,12 @@ Let's look at the most complex example:
 
 At first, you will notice that there are 2 required params, **NAME**, and **ENV**. Then you will see the flags afterward. If you want to use a [[seed|World-Properties#seeds]] you must add `-s gargamel` to the command string. If you want a [[generator|World-Properties#generators]] the same principle applies: `-g BukkitFullOfMoon`. Full examples of this command are located at the [Create Command reference](#Create-Command)
 
+### Flags
+
+Many commands in Multiverse use flags, these can be one or two dashes. Two dash flags are whole words (e.g: `--filter`) and one dash flags are shorthand versions of the same thing (e.g: `-p`).
+
+There are two flags that you will come across quite a lot: `--filter` and `--page`. These are used for filtering and selecting the page respectively of a paginated command. These will be omitted from the below descriptions but will show up in tab complete for commands that support their usage.
+
 [↑ Back to Top ↑](#top)
 
 ## List Command
@@ -80,27 +86,41 @@ At first, you will notice that there are 2 required params, **NAME**, and **ENV*
 Displays a listing of all worlds that you can enter.
 ### Usage
 `/mv list`
+
 ### Example
 `/mv list`
+
 ### Aliases
-`/mv list`   
-`/mvl`   
+`/mv list`
+`/mvl`
 `/mvlist`
+
 ### Permission
 `multiverse.core.list.worlds`
+
+### Flags
+`--raw`/`-r` - Shows world names instead of aliases
+
 ### Details
 The list command will only show you the worlds that you have access to enter. For example, if you are blacklisted in `sky` but not in `world` and `world*nether`, when you type `/mvlist` you would see:
-
-    Worlds which you can view:
-    world - NORMAL
-    world*nether - NETHER
-
+```
+====[ Multiverse World List ]====
+world - NORMAL
+world*nether - NETHER
+```
 This allows you to have worlds that are completely unknown to people. Keep in mind though, if you're in a world that someone else cannot view, and you chat from it, your chat prefix would be of that world.
-![Example World List](https://user-images.githubusercontent.com/8557785/63812285-8247e700-c8ef-11e9-9469-6a6b6aa2285e.png)
-Here is an example of a world listing. **NOTE:** To get colored worlds, you will need to use the [[world alias feature|World-properties#wiki-alias]].
+![Example World List](/core/command-reference/example-world-list.png)
+Here is an example of a world listing.
+
+:::note[Note]
+To get colored worlds, you will need to use the [world alias feature](/core/configuration/world-properties#Alias).
+:::
 
 [↑ Back to Top ↑](#top)
 
+:::caution[Unfinished]
+No clue where to find this in the code, help pls to update to MV5
+:::
 ## Help Command
 ### Description
 Displays the Multiverse help pages.
@@ -132,18 +152,17 @@ Here is an example use of the Help command while given OP status. This example a
 
 [↑ Back to Top ↑](#top)
 
----
-
 ## Information Command
 ### Description
 Displays information about the world you're in or the world you pass in.
+
 ### Usage
-`/mv info [WORLD] [PAGE #]`
+`/mv info [WORLD]`
+
 ### Examples
-`/mv info`   
-`/mv info 2`   
-`/mv info world`   
-`/mv info world 2`
+`/mv info`
+`/mv info world`
+
 ### Aliases
 `/mv info ...`   
 `/mvi ...`   
@@ -151,19 +170,22 @@ Displays information about the world you're in or the world you pass in.
 ### Permission
 `multiverse.core.info`
 ### Details
-The info command is currently **UNFINISHED** it is primarily used so that you can tell the developers exactly how MV knows your world is configured. You can also use it to ensure that the world is behaving the way you want it to. Please consider this a debug command for right now.
+The info command shows many details about a world and displays it in a paginated format. You can specify a world to look at in particular if required.
 
-![Page 1 of the Information Command](https://user-images.githubusercontent.com/8557785/63813643-cfc65300-c8f3-11e9-9fa5-5a40065fb574.png)
+This command is mainly for debugging. Be that by the developers of Multiverse or you!
+![Page 1 of the Information Command](/core/command-reference/mvinfo.png)
 
 [↑ Back to Top ↑](#top)
 
----
+
 
 ## Create Command
 ### Description
 Creates a new world and loads it.
+
 ### Usage
-`/mv create <NAME> <ENV> [-s SEED] [-g GENERATOR[:ID]] [-t TYPE] [-a true|false]`
+`/mv create <NAME> <ENVIRONMENT> [flags]`
+
 ### Examples
 `/mv create my*world NORMAL`  
 `/mv create my*hell NETHER`  
@@ -174,46 +196,46 @@ Creates a new world and loads it.
 `/mv create Custom-world-with-a-generator-and-an-ID NORMAL -g BukkitFullOfMoon:Dinnerbone`  
 `/mv create Custom-generator-world-with-seed NORMAL -g BukkitFullOfMoon:Dinnerbone -s gargamel`
 `/mv create example NORMAL -g "BananaGen:hilly,tscale=35.0,terrainheight=15.0,notorches"`
+
 ### Aliases
 `/mv create ...`   
 `/mvc ...`   
 `/mvcreate ...`
 ### Permission
 `multiverse.core.create`
-### Details
-The create command allows you to add new worlds to your server thus allowing many different worlds of many different types. Each world has many properties that you can edit and tweak. Please see the [[World Properties]] page for information on each of these settings. In addition, you can modify worlds **in game** by using the [`/mv modify`](#modify-Command) command. Please see the appropriate section below for [Seeds](World-Properties#seeds) or [Custom Generators](World-Properties#generators).
 
----
+### Flags
+- `--seed <seed>`/`-s`: The world seed to give to the generator
+- `--generator <generator:id>`/`-g`: The [custom generator](/core/configuration/custom-generator-plugins) to use
+- `--world-type <worldtype>`/`-t`: The type of the new world, can be one of the below.
+  - [amplified](https://minecraft.wiki/w/Amplified)
+  - [flat](https://minecraft.wiki/w/Superflat)
+  - [large_biomes](https://minecraft.wiki/w/Large_Biomes)
+  - normal
+- `--adjust-spawn`/`-n`: Sets the [Adjust Spawn](/core/configuration/world-properties#Adjust-Spawn) world property
+- `--no-structures`/`-a`: Set this flag to disable structures from spawning
+- `--biome`/`-b`: Sets the world to be a single-biome world. Alike to the [Single Biome/Buffet](https://minecraft.wiki/w/Single_biome) option in Vanilla
+
+### Details
+The create command allows you to add new worlds to your server. Each world has many properties that you can edit and tweak. Please see the [World Properties](/core/configuration/world-properties) page for information on each of these settings. In addition, you can modify worlds **in game** by using the [`/mv modify`](#Modify-Command) command. Please see the appropriate section below for [Seeds](World-Properties#seeds) or [Custom Generators](World-Properties#generators).
+
+
 
 ### World Name and Environment
-When you are going to create a new world you MUST specify a name and environment. Valid environments can be seen by using [`/mv env`](#environment-Command). Your world names **CANNOT** have spaces, use the [Alias Feature](World-Properties#wiki-alias) for that.
-
----
+When you are going to create a new world you MUST specify a name and environment. Valid environments can be seen by using [`/mv env`](#Environment-Command). Your world names **CANNOT** have spaces in world names, use the [Alias Feature](/core/configuration/world-properties#Alias) for that.
 
 ### Seeds
-You can create a world with a custom seed by adding `-s SEEDNAME` after the 2 required params. Here is an example that creates the famed gargamel world and names it mountain\*world:
+You can create a world with a custom seed by adding `--seed SEEDNAME` after the 2 required params. Here is an example that creates the famed gargamel world and names it mountain\*world:
 
-`/mv create mountain*world NORMAL -s gargamel`
-
----
+`/mv create mountain*world normal --seed gargamel`
 
 ### World Types
-As of Minecraft 1.1, the concept of world types has been introduced. These seem to be like generators but baked into Minecraft itself. Currently, there are only `FLAT`, `LARGEBIOMES`, `AMPLIFIED`, `NORMAL`, `NETHER`, and `END` for world types. To use a world type, simply use the `-t` parameter, for type. Here is a flat normal world:
+World types are like generators, but baked into Minecraft itself! Currently, there are only [amplified](https://minecraft.wiki/w/Amplified), [flat](https://minecraft.wiki/w/Superflat), [large_biomes](https://minecraft.wiki/w/Large_Biomes) and normal world types. To use a world type, simply use the `--world-type` flag, here is an example for a [flat](https://minecraft.wiki/w/Superflat) world. These are only effective on `normal` environment worlds.
+`/mv create flat*world normal --world-type flat`
 
-`/mv create flat*world NORMAL -t FLAT`
-
----
-
-### Map Features (Generate Structures)
-As of Minecraft 1.1 if you want a flat world with no structures, all you have to do is add the `-a false` flag. We used `-a` for **Allow Structures** and because `-g` was already taken.
-
-***NOTE:** This will **only** work with `NORMAL` worlds.<!--404 now @FernFerret has some [neat code here to allow flat Nether worlds with structures](https://github.com/Bukkit/CraftBukkit-Bleeding/commit/68897b284e42f8fc0bba85e736a36b5cbbf89fe3#commitcomment-912997) but it has not been added to CraftBukkit. You'll have to build it yourself.-->
-
-`/mv create flat*world NORMAL -t FLAT`
-
-Currently, there are only `FLAT` and `NORMAL` for world types.
-
----
+:::caution[Unfinished]
+Nothing below here has been updated to MV5
+:::
 
 ### Generators
 Multiverse 2 supports Custom Generators. What does this mean? We support any plugin that makes use of the Bukkit custom generator feature. If an author has implemented their own style that does NOT use the custom generator method [described here](http://forums.bukkit.org/threads/22795/), it may not work with MV. We will try and keep an updated page of [[Custom Generator Plugins]].
@@ -231,7 +253,7 @@ OR
 
 `/mv create hell*lake NORMAL -g WaterWorlds:LavaLakes`
 
----
+
 
 ### A note about spaces in world names
 You should know that if you decide to use spaces in your world name that whenever people want to use [`/mv tp`](#teleport-Command), [`/mv modify`](#modify-Command) or any command that takes the world name as a param, they will have to surround the name in quotes, like so
@@ -242,7 +264,7 @@ You should know that if you decide to use spaces in your world name that wheneve
 
 [↑ Back to Top ↑](#top)
 
----
+
 
 ## Import Command
 ### Description
@@ -265,7 +287,7 @@ The import command is almost identical to the create command apart from the fact
 
 [↑ Back to Top ↑](#top)
 
----
+
 
 ## Reload Command
 ### Description
@@ -285,7 +307,7 @@ The reload command will reload any Multiverse-Core as well as **any Official Mul
 
 [↑ Back to Top ↑](#top)
 
----
+
 
 ## Set Spawn Command
 ### Description
@@ -305,7 +327,7 @@ The set spawn command does exactly what it sounds like. You can walk to where yo
 
 [↑ Back to Top ↑](#top)
 
----
+
 
 ## Coordinate Command
 ### Description
@@ -324,7 +346,7 @@ This command simply displays where you are and where you're looking/standing. Us
 
 [↑ Back to Top ↑](#top)
 
----
+
 
 ## Teleport Command
 ### Description
@@ -363,7 +385,7 @@ Please see the [FAQ](FAQ#wiki-tp-perms) for why this change was made (Old permis
 
 [↑ Back to Top ↑](#top)
 
----
+
 
 ## Who Command
 ### Description
@@ -389,7 +411,7 @@ Here is an example of the `mv who` command in use combined with both [world alia
 
 [↑ Back to Top ↑](#top)
 
----
+
 
 ## Spawn Command
 ### Description
@@ -411,7 +433,7 @@ Allows you to teleport yourself (or another player) to the current world's spawn
 
 [↑ Back to Top ↑](#top)
 
----
+
 
 ## Unload Command
 ### Description
@@ -451,7 +473,7 @@ See also: [`/mv unload`](#unload-Command) and [`/mv delete`](#delete-Command)
 
 [↑ Back to Top ↑](#top)
 
----
+
 
 ## Delete Command
 ### Description
@@ -476,7 +498,7 @@ See also: [`/mv confirm`](#confirm-Command), [`/mv unload`](#unload-Command) and
 
 [↑ Back to Top ↑](#top)
 
----
+
 
 ## Confirm Command
 ### Description
@@ -497,7 +519,7 @@ See also: [`/mv delete`](#delete-Command) and [`/mv tp`](#teleport-Command)
 
 [↑ Back to Top ↑](#top)
 
----
+
 
 ## Purge Command
 ### Description
@@ -523,7 +545,7 @@ If you specify the first parameter as `all` All worlds will be purged of the spe
 
 [↑ Back to Top ↑](#top)
 
----
+
 
 ## Clone Command
 ### Description
@@ -543,7 +565,7 @@ The Clone command allows you to copy your world to another directory for a backu
 
 [↑ Back to Top ↑](#top)
 
----
+
 
 ## Regen Command
 ### Description
@@ -564,7 +586,7 @@ The Regen command allows you to regenerate your world to where EVERYTHING built 
 
 [↑ Back to Top ↑](#top)
 
----
+
 
 ## Modify Command
 ### Description
@@ -577,7 +599,7 @@ The modify command has been documented as 4 separate sections for easier documen
 
 [↑ Back to Top ↑](#top)
 
----
+
 
 ## Modify Command (Set)
 ### Description
@@ -629,7 +651,7 @@ The `animals` and `monsters` values, when used with `set`, will set the overall 
 
 See also: [`/mv modify <add/remove>`](#modify-Command-addremove) and [`/mv modify clear`](#modify-Command-clear)
 
----
+
 
 [↑ Back to Top ↑](#top)
 
@@ -669,7 +691,7 @@ See also: [`/mvmodify set`](#modify-Command-set) and [`/mvmodify clear`](#modify
 
 [↑ Back to Top ↑](#top)
 
----
+
 
 ## Modify Command (Clear)
 ### Description
@@ -701,7 +723,7 @@ See also: [`/mv modify set`](#modify-Command-set) and <code>[/mv modify <add|rem
 
 [↑ Back to Top ↑](#top)
 
----
+
 
 ## Gamerule Command
 ### Description
@@ -740,7 +762,7 @@ All the game rules are case sensitive.
 
 [↑ Back to Top ↑](#top)
 
----
+
 
 ## Gamerules Command
 ### Description
@@ -759,7 +781,7 @@ Lists all the gamerules with set values for a given world.
 
 [↑ Back to Top ↑](#top)
 
----
+
 
 ## Environment Command
 ### Description
@@ -778,7 +800,7 @@ Displays all valid environments that this Bukkit server knows about.
 
 [↑ Back to Top ↑](#top)
 
----
+
 
 ## Silent Command
 ### Description
@@ -796,7 +818,7 @@ Causes several of the startup messages to be hidden when silent mode is enabled.
 
 [↑ Back to Top ↑](#top)
 
----
+
 
 ## Debug Command
 ### Description
@@ -817,7 +839,7 @@ Provides detailed information on what the plugin is doing in console. Helpful fo
 
 [↑ Back to Top ↑](#top)
 
----
+
 
 ## Anchor Command
 ### Description
