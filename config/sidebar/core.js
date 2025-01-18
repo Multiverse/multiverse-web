@@ -22,6 +22,10 @@ export default [
         {
           title: "Permissions list",
           to: "/core/getting-started/permissions-list"
+        },
+        {
+          title: "Command Reference",
+          to: "/core/getting-started/command-reference"
         }
 			]
     },
