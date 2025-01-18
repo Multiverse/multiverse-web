@@ -1,17 +1,25 @@
 ---
 title: Welcome to Sveltepress
-heroImage: /sveltepress@3x.png
-tagline: A simple, easy to use content centered site build tool with the full power of Sveltekit.
+heroImage: /multiverse5.svg
+tagline: One server. Endless possibilities.
 actions:
-  - label: View on github
+  - label: Read the Docs
     type: primary
-    to: https://github.com/Blackman99/sveltepress
+    to: /core/getting-started/introduction
+  - label: Download Now!
+    to: https://modrinth.com/plugin/multiverse-core
     external: true
 features:
-  - title: Markdown centered
-    description: To help you can start writing with minimal configuration
-  - title: Build with Sveltekit
-    description: Preserve the full power of Sveltekit. So that you can do more than SSG
-  - title: Svelte in Markdown
-    description: Feel free to use svelte in markdown. Explore infinite possibilities.
+  - title: Easy to Use
+    description: The easiest to use world management solution for your Minecraft server, big or small!
+    icon:
+      type: iconify
+      collection: vscode-icons
+      name: file-type-bazel
+  - title: Highly Configurable
+    description: Multiverse includes highly customizable config options and world properties!
+    icon:
+      type: iconify
+      collection: vscode-icons
+      name: file-type-libreoffice-writer
 ---

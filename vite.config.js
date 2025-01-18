@@ -8,18 +8,47 @@ const config = defineConfig({
 	plugins: [
 		sveltepress({
 			theme: defaultTheme({
+				themeColor: {
+					gradient: {
+						start: '#62cff4',
+						end: '#2c67f2'
+					}
+				},
+				preBuildIconifyIcons: {
+					'vscode-icons': ['file-type-libreoffice-writer', 'file-type-bazel']
+				},
 				navbar: [
-					// Add your navbar configs here
+					{
+						title: 'Core',
+						to: '/core/getting-started/introduction'
+					},
+					{
+						title: 'NetherPortals',
+						to: '/netherportals/getting-started/introduction'
+					},
+					{
+						title: 'Portals',
+						to: '/portals/getting-started/introduction'
+					},
+					{
+						title: 'Inventories',
+						to: '/inventories/getting-started/introduction'
+					},
+					{
+						title: 'SignPortals',
+						to: '/signportals/getting-started/introduction'
+					}
 				],
 				sidebar: {
 					"/core/": coreSidebar,
 				},
-				github: 'https://github.com/Blackman99/sveltepress',
-				logo: '/sveltepress.svg',
+				github: 'https://github.com/Multiverse',
+				discord: 'https://discord.gg/NZtfKky',
+				logo: '/multiverse.png',
 			}),
 			siteConfig: {
-				title: 'Sveltepress',
-				description: 'A content centered site build tool',
+				title: 'MULTIVERSE',
+				description: 'The original Bukkit Multi-World Plugin!',
 			},
 		}),
 	],

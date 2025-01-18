@@ -10,6 +10,7 @@
     "build": "vite build"
   },
   "devDependencies": {
+    "@iconify-json/vscode-icons": "^1.2.10",
     "@sveltejs/adapter-static": "^3.0.1",
     "@sveltejs/kit": "^2.8.1",
     "@sveltejs/vite-plugin-svelte": "^4.0.1",
