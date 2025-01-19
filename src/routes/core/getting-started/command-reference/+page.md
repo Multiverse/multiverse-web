@@ -68,7 +68,7 @@ This means that this command has one optional parameter, meaning you could type 
 Let's look at the most complex example:   
 *NOTE: This is the most complex command in MV2 and in order to use it correctly, please refer to the [Create Command](#Create-Command).*
 
-[`/mv create <NAME> <ENV> -s [SEED] -g [GENERATOR[:ID]]`](#Create-Command)
+[`/mv create <NAME> <ENV> -s [SEED] --generator [GENERATOR[:ID]]`](#Create-Command)
 
 
 At first, you will notice that there are 2 required params, **NAME**, and **ENV**. Then you will see the flags afterward. If you want to use a [[seed|World-Properties#seeds]] you must add `-s gargamel` to the command string. If you want a [[generator|World-Properties#generators]] the same principle applies: `-g BukkitFullOfMoon`. Full examples of this command are located at the [Create Command reference](#Create-Command)
@@ -105,7 +105,7 @@ Displays a listing of all worlds that you can enter.
 The list command will only show you the worlds that you have access to enter. For example, if you are blacklisted in `sky` but not in `world` and `world*nether`, when you type `/mvlist` you would see:
 ```
 ====[ Multiverse World List ]====
-world - NORMAL
+world - normal
 world*nether - NETHER
 ```
 This allows you to have worlds that are completely unknown to people. Keep in mind though, if you're in a world that someone else cannot view, and you chat from it, your chat prefix would be of that world.
@@ -187,15 +187,15 @@ Creates a new world and loads it.
 `/mv create <NAME> <ENVIRONMENT> [flags]`
 
 ### Examples
-`/mv create my*world NORMAL`  
-`/mv create my*hell NETHER`  
-`/mv create my*cloud*world -g SkyLandsPlus NORMAL`  
-`/mv create flat*world NORMAL -t FLAT`  
-`/mv create "My-Seed-World" NORMAL -s gargamel`
-`/mv create moon NORMAL -g BukkitFullOfMoon`    
-`/mv create Custom-world-with-a-generator-and-an-ID NORMAL -g BukkitFullOfMoon:Dinnerbone`  
-`/mv create Custom-generator-world-with-seed NORMAL -g BukkitFullOfMoon:Dinnerbone -s gargamel`
-`/mv create example NORMAL -g "BananaGen:hilly,tscale=35.0,terrainheight=15.0,notorches"`
+`/mv create my_world normal`  
+`/mv create my_hell nether`  
+`/mv create my_cloud_world --generator SkyLandsPlus normal`  
+`/mv create flat_world normal --world-type flat`  
+`/mv create "My-Seed-World" normal --seed gargamel`
+`/mv create moon normal --generator BukkitFullOfMoon`    
+`/mv create custom-world-with-a-generator-and-an-ID normal --generator BukkitFullOfMoon:Dinnerbone`  
+`/mv create custom-generator-world-with-seed normal --generator BukkitFullOfMoon:Dinnerbone -s gargamel`
+`/mv create example normal --generator "BananaGen:hilly,tscale=35.0,terrainheight=15.0,notorches"`
 
 ### Aliases
 `/mv create ...`   
@@ -212,7 +212,7 @@ Creates a new world and loads it.
   - [flat](https://minecraft.wiki/w/Superflat)
   - [large_biomes](https://minecraft.wiki/w/Large_Biomes)
   - normal
-- `--adjust-spawn`/`-n`: Sets the [Adjust Spawn](/core/configuration/world-properties#Adjust-Spawn) world property
+- `--no-adjust-spawn`/`-n`: Sets the [Adjust Spawn](/core/configuration/world-properties#Adjust-Spawn) world property
 - `--no-structures`/`-a`: Set this flag to disable structures from spawning
 - `--biome`/`-b`: Sets the world to be a single-biome world. Alike to the [Single Biome/Buffet](https://minecraft.wiki/w/Single_biome) option in Vanilla
 
@@ -227,33 +227,27 @@ When you are going to create a new world you MUST specify a name and environment
 ### Seeds
 You can create a world with a custom seed by adding `--seed SEEDNAME` after the 2 required params. Here is an example that creates the famed gargamel world and names it mountain\*world:
 
-`/mv create mountain*world normal --seed gargamel`
+`/mv create mountain_world normal --seed gargamel`
 
 ### World Types
 World types are like generators, but baked into Minecraft itself! Currently, there are only [amplified](https://minecraft.wiki/w/Amplified), [flat](https://minecraft.wiki/w/Superflat), [large_biomes](https://minecraft.wiki/w/Large_Biomes) and normal world types. To use a world type, simply use the `--world-type` flag, here is an example for a [flat](https://minecraft.wiki/w/Superflat) world. These are only effective on `normal` environment worlds.
-`/mv create flat*world normal --world-type flat`
-
-:::caution[Unfinished]
-Nothing below here has been updated to MV5
-:::
+`/mv create flat_world normal --world-type flat`
 
 ### Generators
-Multiverse 2 supports Custom Generators. What does this mean? We support any plugin that makes use of the Bukkit custom generator feature. If an author has implemented their own style that does NOT use the custom generator method [described here](http://forums.bukkit.org/threads/22795/), it may not work with MV. We will try and keep an updated page of [[Custom Generator Plugins]].
+Multiverse supports Custom Generators. What does this mean? We support any plugin that makes use of the Bukkit custom generator feature. If an author has implemented their own style that does NOT use the custom generator method [described here](http://forums.bukkit.org/threads/22795/), it may not work with MV. We will try and keep an updated page of [Custom Generator Plugins](/core/configuration/custom-generator-plugins/).
 
 Once you've found a plugin you want to use, copy the jar of that plugin to your plugins folder. Then all that's left to do is type a single command:   
 (For this example I've decided to use [BukkitFullOfMoon](https://github.com/Dinnerbone/BukkitFullOfMoon) which will generate a cratered moon world by @Dinnerbone).
 
-`/mv create moon NORMAL -g BukkitFullOfMoon`
+`/mv create moon normal --generator BukkitFullOfMoon`
 
-The `BukkitFullOfMoon` above is the plugin name. This plugin only has one generator, and it's defined correctly, so the `:GENID` is needed. Some plugins may contain multiple generators, in which case you would type this: (This next one I'm making up entirely...)
+The `BukkitFullOfMoon` above is the plugin name. This plugin only has one generator, and it's defined correctly, so the `:GENID` isn't needed. Some plugins may contain multiple generators, in which case you would type this: (This next one I'm making up entirely...)
 
-`/mv create land*lake NORMAL -g WaterWorlds:Lakes`
+`/mv create land_lake normal --generator WaterWorlds:Lakes`
 
 OR
 
-`/mv create hell*lake NORMAL -g WaterWorlds:LavaLakes`
-
-
+`/mv create hell_lake normal --generator WaterWorlds:LavaLakes`
 
 ### A note about spaces in world names
 You should know that if you decide to use spaces in your world name that whenever people want to use [`/mv tp`](#teleport-Command), [`/mv modify`](#modify-Command) or any command that takes the world name as a param, they will have to surround the name in quotes, like so
@@ -267,31 +261,41 @@ You should know that if you decide to use spaces in your world name that wheneve
 
 
 ## Import Command
+
 ### Description
 Imports an existing world folder.
+
 ### Usage
-`/mv import <NAME> <ENV> [GENERATOR[:ID]]`
+`/mv import <NAME> <ENV> [flags]`
+
 ### Examples
-`/mv import my*world NORMAL`   
-`/mv import my*hell NETHER`   
-`/mv import my*cloud*world SKYLANDS`   
-`/mv import moon NORMAL -g BukkitFullOfMoon`
+`/mv import my_world normal`   
+`/mv import my_hell nether`   
+`/mv import my_cloud_world skylands`   
+`/mv import moon normal --generator BukkitFullOfMoon`
+`/mv import one_biome normal --biome plains`
+
 ### Aliases
 `/mv import ...`   
 `/mvi ...`   
 `/mvimport ...`
+
 ### Permission
 `multiverse.core.import`
+
+### Flags
+- `--biome`: Specify the biome to generate new chunks in the world with if this is a single biome world
+- `--generator`: Specify the generator to use in new chunks if a custom generator should be used
+- `--no-adjust-spawn`/`-n`: Sets the [Adjust Spawn](/core/configuration/world-properties#Adjust-Spawn) world property
+
 ### Details
-The import command is almost identical to the create command apart from the fact that it is used to import a world folder that already exists. Since the world already exists, you cannot apply a new seed to it, however currently you **MUST** provide the correct environment **AND** Generator for the imported world. If you do not, bad things will happen to your world. We are working to remove these requirements. For this command, you do NOT need the `-g` when specifying a generator and in fact, you will receive an error message if you provide the `-g`.
+The import command is almost identical to the create command apart from the fact that it is used to import a world folder that already exists. Since the world already exists, you cannot apply a new seed to it, however currently you **MUST** provide the correct environment **AND** Generator for the imported world. If you do not, bad things will happen to your world.
 
 [↑ Back to Top ↑](#top)
 
-
-
 ## Reload Command
 ### Description
-Reloads worlds.yml and [[config.yml]].
+Reloads config files
 ### Usage
 `/mv reload`
 ### Examples
@@ -303,7 +307,7 @@ Reloads worlds.yml and [[config.yml]].
 ### Permission
 `multiverse.core.reload`
 ### Details
-The reload command will reload any Multiverse-Core as well as **any Official Multiverse Plugin** configs. Any values currently loaded into memory will be replaced with the config values. These configs also get reloaded on plugin load/server restart, so there is no need to use if after one of those. Any value in `worlds.yml` can be modified in game by using the [`/mvmodify`](#modify-Command) command
+The reload command will reload any Multiverse-Core as well as **any official Multiverse plugin** configs. Any values currently loaded into memory will be replaced with the config values. These configs also get reloaded on plugin load/server restart, so there is no need to use if after one of those. Any value in `worlds.yml` can be modified in game by using the [`/mvmodify`](#Modify-Command) command and that is the recommended way to go about doing so.
 
 [↑ Back to Top ↑](#top)
 
@@ -313,17 +317,19 @@ The reload command will reload any Multiverse-Core as well as **any Official Mul
 ### Description
 Sets the respawn point for the current world.
 ### Usage
-`/mv set spawn`
+`/mv setspawn [x],[y],[x],[pitch],[yaw]`
 ### Examples
-`/mv set spawn`
+`/mv setspawn`
+`/mv setspawn 0,0,0`
+`/mv setspawn 10,64,100,90,180`
 ### Aliases
-`/mv set spawn`   
-`/mvss`   
+`/mv setspawn`
+`/mvss`
 `/mvsetspawn`
 ### Permission
 `multiverse.core.spawn.set`
 ### Details
-The set spawn command does exactly what it sounds like. You can walk to where you want players to spawn, type `/mv set spawn` and it's set. To go to the spawn you can use [`/mv spawn`](#spawn-Command).
+The set spawn command does exactly what it sounds like. You can walk to where you want players to spawn, type `/mv setspawn` and it's set. To go to the spawn you can use [`/mv spawn`](#spawn-Command). If you would like to run this from the console or specify a location anyway just add your location in the format: `[x],[y],[x],[pitch],[yaw]`. Pitch and yaw are optional and will default to `0,0`
 
 [↑ Back to Top ↑](#top)
 
@@ -331,18 +337,27 @@ The set spawn command does exactly what it sounds like. You can walk to where yo
 
 ## Coordinate Command
 ### Description
-Displays your current coordinates.
+Displays your current location info.
 ### Usage
-`/mv coord`
+`/mv coordinates [player]`
 ### Examples
 `/mv coord`
 ### Aliases
-`/mv coord`   
+`/mv coordinates`
+`/mv coords`
+`/mv coord`
+`/mv co`
 `/mvcoord`
+`/mvco`
 ### Permission
 `multiverse.core.coord`
 ### Details
-This command simply displays where you are and where you're looking/standing. Useful for getting un-lost.
+This command displays general location info:
+ - World
+ - [World alias](/core/configuration/world-properties/#Alias)
+ - [World scale](/core/configuration/world-properties/#Scale)
+ - Coordinates
+ - Facing direction
 
 [↑ Back to Top ↑](#top)
 
@@ -638,7 +653,7 @@ The modify command lets you set the variables for your Multiverse worlds in game
   - Sets the mode for all players in a world. Must be `creative`, `survival` or `adventure`
 * diff/difficulty - String/Integer
   - Sets the difficulty of a world. You can use string or integers:
-  - Possible values are PEACEFUL - 0, EASY - 1, NORMAL - 2, HARD - 3 
+  - Possible values are PEACEFUL - 0, EASY - 1, normal - 2, HARD - 3 
 * weather - Boolean
   - Turn weather on/off.
 

@@ -5,7 +5,7 @@ title: "Custom Generator Plugins"
 
 Here you will find a list of open-source generator plugins.
 
-You may add your plugin using the BukkitFullOfMoon template, but be warned, if you don't post the source, your entry will be deleted.
+You may add your plugin using the [BukkitFullOfMoon](https://github.com/Dinnerbone/BukkitFullOfMoon) template, but be warned, if you don't post the source, your entry will be deleted.
 
 ## How to use generator plugins with Multiverse
 1. Place the generator's jar in your plugins folder.
