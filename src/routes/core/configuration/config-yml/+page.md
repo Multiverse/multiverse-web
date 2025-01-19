@@ -1,8 +1,7 @@
 ---
-title: "Config.yml"
+title: "Config.yml file"
 ---
 
-# Config.yml file
 Here is the default config that ships with MV. Note the version number at the bottom. We will (try to) update this page with newer configs when they ship.
 
 ### Make sure you're up to date

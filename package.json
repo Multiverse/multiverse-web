@@ -5,6 +5,15 @@
   "private": true,
   "packageManager": "pnpm@9.15.0",
   "license": "MIT",
+  "keywords": [
+    "Multiverse",
+    "Multiverse Web",
+    "Multiverse-Core",
+    "Multiverse-Portals",
+    "Multiverse-NetherPortals",
+    "Multiverse-Inventories",
+    "Multiverse-SignPortals"
+  ],
   "scripts": {
     "dev": "vite dev",
     "build": "vite build"

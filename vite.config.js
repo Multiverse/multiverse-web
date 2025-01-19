@@ -9,6 +9,8 @@ const config = defineConfig({
 		sveltepress({
 			theme: defaultTheme({
 				themeColor: {
+					primary: '#1aa4b8',
+					hover: '#1a8cb8',
 					gradient: {
 						start: '#62cff4',
 						end: '#2c67f2'
@@ -16,6 +18,9 @@ const config = defineConfig({
 				},
 				preBuildIconifyIcons: {
 					'vscode-icons': ['file-type-libreoffice-writer', 'file-type-bazel']
+				},
+				highlighter: {
+					languages: ['svelte', 'sh', 'js', 'html', 'ts', 'md', 'css', 'scss', 'yaml']
 				},
 				navbar: [
 					{
@@ -42,6 +47,7 @@ const config = defineConfig({
 				sidebar: {
 					"/core/": coreSidebar,
 				},
+				editLink: 'https://github.com/Multiverse/multiverse-web/edit/main/src/routes/:route',
 				github: 'https://github.com/Multiverse',
 				discord: 'https://discord.gg/NZtfKky',
 				logo: '/multiverse.png',

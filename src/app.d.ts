@@ -1,10 +1,10 @@
-// This help your get the type tips for sveltepress virtual modules
 /// <reference types="@sveltepress/theme-default/types" />
 /// <reference types="@sveltepress/vite/types" />
+/// <reference types="vite-plugin-pwa/client" />
+/// <reference types="@sveltejs/kit" />
 
 // See https://kit.svelte.dev/docs/types#app
 // for information about these interfaces
-
 // and what to do when importing types
 declare namespace App {
 	// interface Error {}
@@ -12,3 +12,4 @@ declare namespace App {
 	// interface PageData {}
 	// interface Platform {}
 }
+  

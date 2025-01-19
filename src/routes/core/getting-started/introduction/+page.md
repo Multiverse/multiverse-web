@@ -1,5 +1,5 @@
 ---
-title: "Welcome to the Multiverse wiki"
+title: "Welcome to Multiverse WIKI"
 ---
 ![New server](/multiverse5-long.svg)
 
