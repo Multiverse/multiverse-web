@@ -3,6 +3,10 @@ import { sveltepress } from '@sveltepress/vite'
 import { defineConfig } from 'vite'
 
 import coreSidebar from "./config/sidebar/core"
+import netherportalsSidebar from './config/sidebar/netherportals'
+import inventoriesSidebar from './config/sidebar/inventories'
+import portalsSidebar from './config/sidebar/portals'
+import signportalsSidebar from './config/sidebar/signportals'
 
 const config = defineConfig({
 	plugins: [
@@ -29,23 +33,27 @@ const config = defineConfig({
 					},
 					{
 						title: 'NetherPortals',
-						to: '/netherportals/'
+						to: '/netherportals/introduction/'
 					},
 					{
 						title: 'Portals',
-						to: '/portals/'
+						to: '/portals/introduction/'
 					},
 					{
 						title: 'Inventories',
-						to: '/inventories/'
+						to: '/inventories/introduction/'
 					},
 					{
 						title: 'SignPortals',
-						to: '/signportals/'
+						to: '/signportals/introduction/'
 					}
 				],
 				sidebar: {
 					"/core/": coreSidebar,
+					"/netherportals/": netherportalsSidebar,
+					"/inventories/": inventoriesSidebar,
+					"/portals/": portalsSidebar,
+					"/signportals/": signportalsSidebar
 				},
 				editLink: 'https://github.com/Multiverse/multiverse-web/edit/main/src/routes/:route',
 				github: 'https://github.com/Multiverse',
