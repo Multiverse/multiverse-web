@@ -49,6 +49,7 @@ If you're looking for the [Multiverse-Portals](https://github.com/Multiverse/Mul
 - [Teleport Command](#Teleport-Command)
 - [Unload Command](#Unload-Command)
 - [Who Command](#Who-Command)
+- [Who All Command](#Who-All-Command)
 
 [↑ Back to Top ↑](#top)
 
@@ -364,39 +365,59 @@ This command displays general location info:
 
 
 ## Teleport Command
+
 ### Description
 Allows you to teleport to a different world.
+
 ### Usage
-`/mv tp [PLAYER] <WORLD>`
+`/mv tp [PLAYER] <DESTINATION>`
+
 ### Examples
 `/mv tp world`   
-`/mv tp Rigby90 world*nether`
+`/mv tp Rigby90 world_nether`
+`/mv tp Jeb_ e:world:0,0,0`
+
 ### Aliases
-`/mv tp ...`   
+`/mv tp ...`
 `/mvtp ...`
+
 ### Permission
+:::caution[unfinished]
+Update teleport perms to MV5
+:::
 `multiverse.teleport.self.NAME`   
 `multiverse.teleport.other.NAME`
+
+### Flags
+- `--unsafe`: allows teleportation to unsafe destinations
+
 ### Details
-The teleport command allows you to teleport yourself or others to a specified world. There are many different permissions associated with this command, with the categories being `self` and `other`; allowing you to teleport yourself and others respectively.
+The teleport command allows you to teleport yourself or others to a specified world or destination. There are many different permissions associated with this command, with the categories being `self` and `other`; allowing you to teleport yourself and others respectively.
 
-Each Type of [[Destination|Destinations]] will have each of the permissions (`self` and `other`) associated with it. The most basic example is for worlds:
+Each Type of [Destination](/core/configuration/destinations/) will have each of the permissions (`self` and `other`) associated with it. The most basic example is for worlds:
 
-    multiverse.teleport.self.w
-    multiverse.teleport.other.w
+```
+multiverse.teleport.self.w
+multiverse.teleport.other.w
+```
 
 The letter(s) at the end are the identifier for the destination. This is the same thing you would put before the destination if you teleport to it: `/mv tp w:MyWorld`. So Portals would be:
 
-    multiverse.teleport.self.p
-    multiverse.teleport.other.p
+```
+multiverse.teleport.self.p
+multiverse.teleport.other.p
+```
 
 Even if you have the `multiverse.teleport.other.w` permission, you can only teleport people to worlds where **YOU** can go yourself. This will allow you to teleport a player to a world that they themselves cannot go to, as long as you have the permission to do so.
 
+:::caution[unfinished]
+The FAQ is not re-implemented yet
+:::
 Please see the [FAQ](#TODOLINK) for why this change was made (Old permissions were simply `multiverse.core.tp.[self|other]`)!
 
 ### Destinations
 
-`/mvtp` can be used with Destinations as seen in [Destinations](https://github.com/Multiverse/Multiverse-Core/wiki/Destinations)
+`/mvtp` can be used with Destinations too! As seen in [Destinations](/core/configuration/destinations/).
 
 [↑ Back to Top ↑](#top)
 
@@ -404,14 +425,12 @@ Please see the [FAQ](#TODOLINK) for why this change was made (Old permissions we
 
 ## Who Command
 ### Description
-Displays who is in which world(s).
+Displays who is in which world.
 ### Usage
-`/mv who [WORLD|-a]`
+`/mv who [WORLD]`
 ### Examples
 `/mv who`   
-`/mv who world*nether`
-`/mv who -a`
-`/mv who --all`
+`/mv who world_nether`
 ### Aliases
 `/mv who ...`   
 `/mvw ...`   
@@ -419,18 +438,37 @@ Displays who is in which world(s).
 ### Permission
 `multiverse.core.list.who`
 ### Details
-Displays who is currently in which worlds. If you want to see who is in a specific world, pass the world name in as the only parameter. By default, `/mv who` will **not** show worlds that are empty. If you want to see **all** worlds simply add either `-a` or `--all` to the end of your command: `/mvwho -a`. The `-a`/`--all` flag will **override** a world provided.
+Displays who is currently in a specific world. If you do not pass in a specific world then your current world will be used
 
-![An example showing who's in what world](https://user-images.githubusercontent.com/8557785/63814076-49127580-c8f5-11e9-9729-eda85fd8ae10.png)
-Here is an example of the `mv who` command in use combined with both [world aliases and colors](/core/configuration/world-properties#wiki-alias).
+[↑ Back to Top ↑](#top)
+
+## Who All Command
+### Description
+Displays who is in which worlds.
+### Usage
+`/mv whoall`
+### Examples
+`/mv whoall`   
+### Aliases
+`/mv whoall ...`   
+`/mvwhoall ...`   
+### Permission
+`multiverse.core.list.who.all`
+### Details
+Displays who is currently in all worlds. `/mv who` will **not** show worlds that are empty.
+
+![An example showing who's in what world](/core/command-reference/mvwhoall.png)
+Here is an example of the `/mv who` command in use combined with both [world aliases and colors](/core/configuration/world-properties/#Alias).
 
 [↑ Back to Top ↑](#top)
 
 
-
+:::caution[unfinished]
+Everything below here has not been updated to MV5
+:::
 ## Spawn Command
 ### Description
-Teleports you to the spawn.
+Teleports you to the spawn of your current world.
 ### Usage
 `/mv spawn [PLAYER]`
 ### Examples

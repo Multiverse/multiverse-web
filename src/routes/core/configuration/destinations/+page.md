@@ -2,14 +2,14 @@
 title: "Destinations"
 ---
 
-- [World Destinations](#world-destinations)
-- [Anchor Destinations](#anchor-destinations)
-- [Exact Destinations](#exact-destinations)
-- [Player Destinations](#player-destinations)
-- [Cannon Destinations](#cannon-destinations)
-- [Bed Destinations](#bed-destinations)
-- [Portal Destinations](#portal-destinations)
-  - [Special case](#special-case)
+- [World Destinations](#World-Destinations)
+- [Anchor Destinations](#Anchor-Destinations)
+- [Exact Destinations](#Exact-Destinations)
+- [Player Destinations](#Player-Destinations)
+- [Cannon Destinations](#Cannon-Destinations)
+- [Bed Destinations](#Bed-Destinations)
+- [Portal Destinations](#Portal-Destinations)
+  - [Special case](#Special-Case)
 
 
 ## World Destinations
