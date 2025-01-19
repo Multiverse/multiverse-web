@@ -15,6 +15,9 @@ const config = {
 		files: {
 			serviceWorker: SERVICE_WORKER_PATH,
 		},
+		prerender: {
+			handleMissingId: 'ignore',
+		},
 	},
 	compilerOptions: {
 		runes: true,

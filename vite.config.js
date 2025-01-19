@@ -25,23 +25,23 @@ const config = defineConfig({
 				navbar: [
 					{
 						title: 'Core',
-						to: '/core/getting-started/introduction'
+						to: '/core/getting-started/introduction/'
 					},
 					{
 						title: 'NetherPortals',
-						to: '/netherportals/getting-started/introduction'
+						to: '/netherportals/'
 					},
 					{
 						title: 'Portals',
-						to: '/portals/getting-started/introduction'
+						to: '/portals/'
 					},
 					{
 						title: 'Inventories',
-						to: '/inventories/getting-started/introduction'
+						to: '/inventories/'
 					},
 					{
 						title: 'SignPortals',
-						to: '/signportals/getting-started/introduction'
+						to: '/signportals/'
 					}
 				],
 				sidebar: {

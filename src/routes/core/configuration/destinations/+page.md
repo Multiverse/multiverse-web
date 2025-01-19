@@ -2,13 +2,14 @@
 title: "Destinations"
 ---
 
- * [World](#World-Destinations)
- * [Anchor](#Anchor-Destinations)
- * [Exact](#Exact-Destinations)
- * [Player](#Player-Destinations)
- * [Cannon](#Cannon-Destinations)
- * [Bed](#Bed-Destinations)
- * [Portal](#Portal-Destinations)
+- [World Destinations](#world-destinations)
+- [Anchor Destinations](#anchor-destinations)
+- [Exact Destinations](#exact-destinations)
+- [Player Destinations](#player-destinations)
+- [Cannon Destinations](#cannon-destinations)
+- [Bed Destinations](#bed-destinations)
+- [Portal Destinations](#portal-destinations)
+  - [Special case](#special-case)
 
 
 ## World Destinations
@@ -73,7 +74,7 @@ Takes a player to the bed that [playername] will spawn at if they die.
 
 ## Portal Destinations
 :::note[Note]
-Requires [Multiverse-NetherPortals](/todo/)
+Requires [Multiverse-NetherPortals](#todo)
 :::
 `/mvtp p:portal`   
 `/mvtp p:portal:n`   

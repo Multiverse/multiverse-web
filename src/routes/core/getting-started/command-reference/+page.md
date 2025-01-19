@@ -217,7 +217,7 @@ Creates a new world and loads it.
 - `--biome`/`-b`: Sets the world to be a single-biome world. Alike to the [Single Biome/Buffet](https://minecraft.wiki/w/Single_biome) option in Vanilla
 
 ### Details
-The create command allows you to add new worlds to your server. Each world has many properties that you can edit and tweak. Please see the [World Properties](/core/configuration/world-properties) page for information on each of these settings. In addition, you can modify worlds **in game** by using the [`/mv modify`](#Modify-Command) command. Please see the appropriate section below for [Seeds](World-Properties#seeds) or [Custom Generators](World-Properties#generators).
+The create command allows you to add new worlds to your server. Each world has many properties that you can edit and tweak. Please see the [World Properties](/core/configuration/world-properties) page for information on each of these settings. In addition, you can modify worlds **in game** by using the [`/mv modify`](#Modify-Command) command. Please see the appropriate section below for [Seeds](/core/configuration/world-properties#seeds) or [Custom Generators](/core/configuration/world-properties#generators).
 
 
 
@@ -377,7 +377,7 @@ The letter(s) at the end are the identifier for the destination. This is the sam
 
 Even if you have the `multiverse.teleport.other.w` permission, you can only teleport people to worlds where **YOU** can go yourself. This will allow you to teleport a player to a world that they themselves cannot go to, as long as you have the permission to do so.
 
-Please see the [FAQ](FAQ#wiki-tp-perms) for why this change was made (Old permissions were simply `multiverse.core.tp.[self|other]`!
+Please see the [FAQ](#TODOLINK) for why this change was made (Old permissions were simply `multiverse.core.tp.[self|other]`)!
 
 ### Destinations
 
@@ -407,7 +407,7 @@ Displays who is in which world(s).
 Displays who is currently in which worlds. If you want to see who is in a specific world, pass the world name in as the only parameter. By default, `/mv who` will **not** show worlds that are empty. If you want to see **all** worlds simply add either `-a` or `--all` to the end of your command: `/mvwho -a`. The `-a`/`--all` flag will **override** a world provided.
 
 ![An example showing who's in what world](https://user-images.githubusercontent.com/8557785/63814076-49127580-c8f5-11e9-9729-eda85fd8ae10.png)
-Here is an example of the `mv who` command in use combined with both [world aliases and colors](World-properties#wiki-alias).
+Here is an example of the `mv who` command in use combined with both [world aliases and colors](/core/configuration/world-properties#wiki-alias).
 
 [↑ Back to Top ↑](#top)
 

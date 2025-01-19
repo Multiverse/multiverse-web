@@ -39,7 +39,7 @@ You should then see the following result:
 :::caution[unfinished]
 The linked to page doesn't exist
 :::
-Sweet! Now just repeat the process for all of your worlds! Don't like the folder name you have? **Don't rename the folder** simply set a [Multiverse World Alias](World-properties#wiki-alias) instead!
+Sweet! Now just repeat the process for all of your worlds! Don't like the folder name you have? **Don't rename the folder** simply set a [Multiverse World Alias](/core/configuration/world-properties#wiki-alias) instead!
 
 ## Creating your first world
 So, you've imported your `world` and `world_nether`, but you want a `creative` world now! World creation is a relatively simple process. The magic invocation is as follows:
@@ -56,7 +56,7 @@ For our example, let's simply do
 
 This will take a bit longer than the import did and you can see progress in your server console.
 
-This creates a world named creative with a `NORMAL` (overworld) type environment. If you are particularly clever, you could set the seed here or change the environment to `NETHER` or `END`, or if you're really clever, you can figure out how to set the [generator](Custom-Generator-Plugins#wiki-howto) to create all sorts of cool terrain (e.g., `-g BukkitFullOfMoon`). Let's not concern ourselves with that just yet.
+This creates a world named creative with a `NORMAL` (overworld) type environment. If you are particularly clever, you could set the seed here or change the environment to `NETHER` or `END`, or if you're really clever, you can figure out how to set the [generator](/core/configuration/custom-generator-plugins#wiki-howto) to create all sorts of cool terrain (e.g., `-g BukkitFullOfMoon`). Let's not concern ourselves with that just yet.
 
 With that invocation, your world should now be created. Horray!
 
