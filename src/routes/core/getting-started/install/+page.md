@@ -1,8 +1,6 @@
 ---
-title: "Install"
+title: "Installation"
 ---
-
-# Installation
 
 :::caution[Unfinished]
 This page is not finished!

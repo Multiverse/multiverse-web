@@ -1,17 +1,14 @@
 ---
-title: "Introduction"
+title: "Welcome to the Multiverse wiki"
 ---
-
-# Welcome to the Multiverse wiki
+![New server](/multiverse5-long.svg)
 
 :::caution[Unfinished]
 This page is not finished!
 
 Todo:
- - Add MV logo at top
  - Add links
 :::
-*Add MV logo here*
 ---
 Do you have a question? See if it's answered in the [[FAQ]]! 
 
