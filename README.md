@@ -14,6 +14,9 @@ git clone https://github.com/Multiverse/multiverse-web.git
 
 cd multiverse-web
 
+# Download deps
+pnpm i
+
 # Run the dev server
 pnpm run dev
 
