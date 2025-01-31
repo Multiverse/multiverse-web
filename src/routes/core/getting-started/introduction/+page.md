@@ -6,6 +6,8 @@ title: "Welcome to Multiverse WIKI"
 :::caution[Unfinished]
 This page is not finished!
 
+# Use our github wiki: https://github.com/Multiverse/Multiverse-Core/wiki/Basics
+
 Todo:
  - Add links
 :::
