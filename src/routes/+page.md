@@ -5,7 +5,8 @@ tagline: One server. Endless possibilities.
 actions:
   - label: Read the Docs
     type: primary
-    to: /core/getting-started/introduction
+    to: https://github.com/Multiverse/Multiverse-Core/wiki
+    external: true
   - label: Download Now!
     to: https://modrinth.com/plugin/multiverse-core
     external: true
