@@ -10,7 +10,7 @@ Todo:
 - Update to MV5
   :::
 
-Here are the various properties of worlds that can be set in `worlds.yml`. **Normally you should not have to edit this file**, but if you are an advanced user, you may. This is a typical plugin configuration file and follows the same syntax. **All of these settings can be changed from in-game** using the [Modify Command](/core/getting-started/command-reference#Modify-Command).
+Here are the various properties of worlds that can be set in game using the [Modify Command](/core/getting-started/command-reference#Modify-Command). They can also be set in `worlds.yml` but **normally you should not have to edit this file**. Although, if you are an advanced user, you may. This is a typical plugin configuration file written in yaml and follows the same syntax as normal.
 
 ## Index
 
@@ -46,21 +46,34 @@ Here are the various properties of worlds that can be set in `worlds.yml`. **Nor
 
 You can easily control who can enter various worlds in Multiverse 2. To allow people access to a world, simply grant them access to `multiverse.access.WORLDNAME` where WORLDNAME is the name of the world. By default (with PermissionsBukkit) people _can_ enter newly created worlds. You can give users `multiverse.access.*` to let them access all worlds, or set the same to false to deny access to all worlds.
 
-## Default Spawn World
+## First Spawn Location
 
-Multiverse 2.2+ allows you to set what world users will spawn in. This does _not_ have to be the world that is in `server.properties`. To do this, make sure you have the following 2 values set in your [`config.yml`](/core/configuration/config-yml). You can set this value ingame by using `/mv conf firstspawnoverride true` and `/mv conf firstspawnworld myworld`. We advise against editing the file, but here is the clip:
+Multiverse allows you to set what world users will first spawn in. This does _not_ have to be the world that is in `server.properties`. To do this, make sure you have the following 2 values set in your [`config.yml`](/core/configuration/config-yml). You can set this value in-game by using `/mv config first-spawn-override true` and `/mv config first-spawn-location myworld`. We advise against editing the file, but here is the clip:
 
+```yaml
+spawn:
+  # Sets whether Multiverse will override the first spawn location of a world.
+  # If enabled, Multiverse will set the first spawn location of a world to the spawn location of the world.
+  # If disabled, it will default to server.properties settings.
+  first-spawn-override: true
+
+  # Sets the world that Multiverse will use as the location for players that first join the server.
+  # This only applies if first-spawn-override is set to true.
+  first-spawn-location: ""
 ```
-...
-# If true, this will ensure players, on first spawn, go to the spawn
-# that you've set with Multiverse. Set to false if you use another
-# spawn plugin.
-firstspawnoverride: true
 
-# This is the world you want players to spawn in. It does *NOT*
-# have to be the world in server.properties!
-firstspawnworld: world
-...
+## Join Destionation
+
+Multiverse allows you to set the [destination](/core/configuration/destinations/) that players will always spawn in when logging in. This is useful for a hub world or similar, to enable this you need to set the the following 2 values set in your [`config.yml`](/core/configuration/config-yml). You can set this value in-game by using `/mv config enable-join-destination true` and `/mv config join-destination mydestination`. We advise against editing the file, but here is the clip:
+
+```yaml
+spawn:
+  # Enables join-destination below.
+  enable-join-destination: false
+
+  # Sets the destination that Multiverse will use to spawn players on every login
+  # Set the above enable-join-destination to false to disable
+  join-destination: ""
 ```
 
 ## Animals
@@ -105,11 +118,11 @@ You should read this as "Animals **can not** spawn **except** for pigs."
 You should read this as "Animals **can** spawn **except** for pigs."
 
 **In Game Usage:**  
-[`/mv modify set animals true`](</core/getting-started/command-reference#Modify-Command-(Set)>)- Enables animal spawning in the current world.  
-[`/mv modify set animals false`](</core/getting-started/command-reference#Modify-Command-(Set)>)- Disables animal spawning in the current world.  
-[`/mv modify add pig animals`](</core/getting-started/command-reference#Modify-Command-(Set)>) - Adds the animal type `pig` to the exemption list.  
-[`/mv modify remove pig animals`](</core/getting-started/command-reference#Modify-Command-(Set)>) - Removes the animal type `pig` to the exemption list.  
-[`/mv modify clear animals`](</core/getting-started/command-reference#Modify-Command-(Set)>) - Clears the animal exemption list.
+[`/mv modify <world> set animals true`](</core/getting-started/command-reference#Modify-Command-(Set)>)- Enables animal spawning in the current world.  
+[`/mv modify <world> set animals false`](</core/getting-started/command-reference#Modify-Command-(Set)>)- Disables animal spawning in the current world.  
+[`/mv modify <world> add pig animals`](</core/getting-started/command-reference#Modify-Command-(Set)>) - Adds the animal type `pig` to the exemption list.  
+[`/mv modify <world> remove pig animals`](</core/getting-started/command-reference#Modify-Command-(Set)>) - Removes the animal type `pig` to the exemption list.  
+[`/mv modify <world> clear animals`](</core/getting-started/command-reference#Modify-Command-(Set)>) - Clears the animal exemption list.
 
 [↑ Back to Top ↑](#top)
 
@@ -155,11 +168,11 @@ You should read this as "Monsters **can not** spawn **except** for creepers."
 You should read this as "Monsters **can** spawn **except** for creepers."
 
 **In Game Usage:**  
-[`/mv modify set monsters true`](</core/getting-started/command-reference#Modify-Command-(Set)>)- Enables monster spawning in the current world (and disables auto-heal).  
-[`/mv modify set monsters false`](</core/getting-started/command-reference#Modify-Command-(Set)>)- Disables monster spawning in the current world (and enables auto-heal).  
-[`/mv modify add creeper monsters`](</core/getting-started/command-reference#Modify-Command-(Set)>) - Adds the monster type `creeper` to the exemption list.  
-[`/mv modify remove creeper monsters`](</core/getting-started/command-reference#Modify-Command-(Set)>) - Removes the monster type `creeper` to the exemption list.  
-[`/mv modify clear monsters`](</core/getting-started/command-reference#Modify-Command-(Set)>) - Clears the monster exemption list.
+[`/mv modify <world> set monsters true`](</core/getting-started/command-reference#Modify-Command-(Set)>)- Enables monster spawning in the current world (and disables auto-heal).  
+[`/mv modify <world> set monsters false`](</core/getting-started/command-reference#Modify-Command-(Set)>)- Disables monster spawning in the current world (and enables auto-heal).  
+[`/mv modify <world> add creeper monsters`](</core/getting-started/command-reference#Modify-Command-(Set)>) - Adds the monster type `creeper` to the exemption list.  
+[`/mv modify <world> remove creeper monsters`](</core/getting-started/command-reference#Modify-Command-(Set)>) - Removes the monster type `creeper` to the exemption list.  
+[`/mv modify <world> clear monsters`](</core/getting-started/command-reference#Modify-Command-(Set)>) - Clears the monster exemption list.
 
 [↑ Back to Top ↑](#top)
 
@@ -174,8 +187,8 @@ The type of environment this world is under. Can currently be `NETHER`, `THE_END
 `environment: NORMAL`
 
 **In Game Usage:**  
-[`/mv create myworld NORMAL`](/core/getting-started/command-reference#Create-Command)  
-[`/mv import mynether NETHER`](/core/getting-started/command-reference#Import-Command)
+[`/mv create myworld normal`](/core/getting-started/command-reference#Create-Command)  
+[`/mv import mynether nether`](/core/getting-started/command-reference#Import-Command)
 
 [↑ Back to Top ↑](#top)
 
@@ -192,7 +205,7 @@ This value may or may not be present. That's okay.
 `generator: BukkitFullOfMoon`
 
 **In Game Usage:**  
-[`/mv create moon NORMAL -g BukkitFullOfMoon`](/core/getting-started/command-reference#Create-Command)
+[`/mv create moon NORMAL --generator BukkitFullOfMoon`](/core/getting-started/command-reference#Create-Command)
 
 [↑ Back to Top ↑](#top)
 
@@ -214,21 +227,22 @@ The `currency` field is **what** you want to charge people. This is an item id, 
 
 ### EXAMPLE: Charging $13.75 to enter a world
 
-**NOTE:** You MUST have a [valid economy plugin installed](https://github.com/FernFerret/AllPay/wiki/Supported-plugins) to use 'money' (currency value -1).
+**NOTE:** You MUST have a valid economy plugin installed (For example, [EssentialsX](https://essentialsx.net/)) as well as [Vault](https://www.spigotmc.org/resources/vault.34315/) to use 'money' (currency value `-1`).
 
     entryfee:
         amount: 13.75
         currency: -1
 
 **In Game Usage:**  
-`/mv modify set currency 3` - Sets the item to dirt  
-`/mv modify set price 3` - Requires 3 of item
+`/mv modify <world> set currency 3` - Sets the item to dirt  
+`/mv modify <world> set currency -1` - Sets the currency to Vault money
+`/mv modify <world> set price 3` - Requires 3 of item
 
 [↑ Back to Top ↑](#top)
 
 ## PVP
 
-Whether or not players may harm each other in this world. If set to true, they may.
+Whether or not players may harm each other in this world. If set to `true`, they may.
 
 **Type:**  
 `boolean`
