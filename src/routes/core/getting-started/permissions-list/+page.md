@@ -6,14 +6,17 @@ title: "All Multiverse-Core Permissions"
 This page is not finished!
 
 Todo:
- - Links
- - Update permissions to MV5
-:::
+
+- Links
+- Update permissions to MV5
+  :::
 
 ## Help Permissions
-`[multiverse.help](Command-Reference#help-command)`  - Allow users to use /mv help
+
+`[multiverse.help](Command-Reference#help-command)` - Allow users to use /mv help
 
 ## Access Permissions
+
 `[multiverse.access.WORLDNAME](Permissions#wiki-perm)` - Allows users to use the specified world
 
 `[multiverse.exempt.WORLDNAME](Permissions#wiki-perm)` - Allows users to be exempted from paying for the world
@@ -21,6 +24,7 @@ Todo:
 `[mv.bypass.gamemode.WORLDNAME](FAQ#modsopsplayers-keep-having-their-game-mode-switched)` - Allows users to bypass the configured `gamemode` when accessing the world
 
 ## Teleport Permissions
+
 `[multiverse.teleport.self.TYPE](Command-Reference#teleport-command)` - Allows users to teleport themselves to another world.
 
 `[multiverse.teleport.other.TYPE](Command-Reference#teleport-command)`- Allows users to teleport themselves and others to another world.
@@ -28,6 +32,7 @@ Todo:
 **Note**: If `enforceaccess` is on (set to `true`), they can only teleport to worlds of which they have the `multiverse.access.WORLD` permission to, by default this is `false` and they have access to **ALL** worlds.
 
 ### Teleport types:
+
 - `w` = World
 - `p` = Portal
 - `a` = Anchor
@@ -36,10 +41,10 @@ Todo:
 - `ca` = Cannon
 - `b` = Bed
 
-
 ---
 
 ## Info Permissions
+
 `[multiverse.core.confirm](Command-Reference#confirm-command)`
 
 `[multiverse.core.coord](Command-Reference#coordinate-command)`
@@ -52,10 +57,10 @@ Todo:
 
 `[multiverse.core.list.worlds](Command-Reference#list-command)`
 
-
 ---
 
 ## Create Permissions
+
 `[multiverse.core.create](Command-Reference#create-command)` - Allows users to create worlds
 
 `[multiverse.core.clone](Command-Reference#clone-command)` - Allows users to copy worlds
@@ -76,20 +81,20 @@ Todo:
 
 `[multiverse.core.reload](Command-Reference#reload-command)` - Allows users to reload the config files
 
-
 ---
 
 ## Spawn Permissions
+
 `[multiverse.core.spawn.other](Command-Reference#spawn-command)`
 
 `[multiverse.core.spawn.self](Command-Reference#spawn-command)`
 
 `[multiverse.core.spawn.set](Command-Reference#set-spawn-command)`
 
-
 ---
 
 ## Delete Permissions
+
 `[multiverse.core.delete](Command-Reference#delete-command)`
 
 `[multiverse.core.purge](Command-Reference#purge-command)`
@@ -100,10 +105,10 @@ Todo:
 
 `[multiverse.core.unload](Command-Reference#unload-command)`
 
-
 ---
 
 ## Other Permissions
+
 `multiverse.core.anchor`
 
 `multiverse.core.config`

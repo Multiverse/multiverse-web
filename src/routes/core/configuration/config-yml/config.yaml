@@ -17,24 +17,22 @@
 #    to this file while your server is running, please run `/mv reload` command.                   #
 #                                                                                                  #
 ####################################################################################################
-  
-  
+
 world:
   # This setting will prevent players from entering worlds they don't have access to.
   # If this is set to false, players will be able to enter any world they want.
   # If this is set to true, players will only be able to enter worlds they have
   # the `mv.access.<worldname>` permission.
   enforce-access: false
-  
+
   # Sets whether Multiverse will should enforce gamemode on world change.
   # If enabled, players will be forced into the gamemode of the world they are entering, unless they have
   # the `mv.bypass.gamemode.<worldname>` permission.
   enforce-gamemode: true
-  
+
   # Sets whether Multiverse will purge mobs and entities automatically.
   auto-purge-entities: false
-  
-  
+
 teleport:
   # Sets whether Multiverse will use more fine-grained teleport permissions.
   # If enabled, Multiverse will use the `multiverse.teleport.<self|other>.<type>.<target>` permission to determine whether
@@ -42,43 +40,42 @@ teleport:
   # permission to determine whether a player can teleport to a world.
   # For example, if `multiverse.teleport.self.w.world2` is set, Multiverse will only allow the player to teleport to the world2
   use-finer-teleport-permissions: true
-  
+
   # Sets the maximum number of players allowed to be teleported at once with `/mv teleport` command
   concurrent-teleport-limit: 50
-  
+
   # If this is set to true, Multiverse will enforce access permissions for all teleportation,
   # including teleportation from other plugins. You should not disable this unless you are facing
   # conflict with another plugin handling teleportation.
   teleport-intercept: true
-  
+
   # Sets the horizontal (x and z-axis) search radius for finding a safe location to teleport to.
   # Increasing this value will widen the search area at the cost of performance.
   # To disable, set to 0.
   safe-location-horizontal-search-radius: 3
-  
+
   # Sets the vertical (y-axis) search radius for finding a safe location to teleport to.
   # Increasing this value will widen the search area at the cost of performance.
   # To disable, set to 0.
   safe-location-vertical-search-radius: 3
-  
-  
+
 spawn:
   # Sets whether Multiverse will override the first spawn location of a world.
   # If enabled, Multiverse will set the first spawn location of a world to the spawn location of the world.
   # If disabled, it will default to server.properties settings.
   first-spawn-override: true
-  
+
   # Sets the world that Multiverse will use as the location for players that first join the server.
   # This only applies if first-spawn-override is set to true.
-  first-spawn-location: ''
-  
+  first-spawn-location: ""
+
   # Enables join-destination below.
   enable-join-destination: false
-  
+
   # Sets the destination that Multiverse will use to spawn players on every login
   # Set the above enable-join-destination to false to disable
-  join-destination: ''
-  
+  join-destination: ""
+
   # This only applies if the `respawn-world` property is not set for the world that the player died in,
   # and the player does not have bed or anchor set.
   # ----
@@ -91,7 +88,7 @@ spawn:
   # ----
   # Set this to false if you want another plugin to handle respawning.
   default-respawn-within-same-world: true
-  
+
   # This config will only apply if `respawn-world` is set, or `default-respawn-within-same-world` is enabled.
   # ----
   # When this option is enabled, players will always respawn at the world's spawn location of `respawn-world`,
@@ -100,45 +97,42 @@ spawn:
   # ----
   # Set this to false if you want to use the /spawnpoint instead of the world's spawn location.
   enforce-respawn-at-world-spawn: true
-  
-  
+
 portal:
   # This config option defines whether or not Multiverse should interfere with's Bukkit's default portal search radius.
   # Setting it to false would mean you want to simply let Bukkit decides the search radius itself.
   use-custom-portal-search: false
-  
+
   # This config option defines the search radius Multiverse should use when searching for a portal.
   # This only applies if use-custom-portal-search is set to true.
   custom-portal-search-radius: 128
-  
-  
+
 messaging:
   # This config option defines whether or not Multiverse should prefix the chat with the world name.
   # This only applies if use-custom-portal-search is set to true.
   enable-chat-prefix: false
-  
+
   # This config option defines the format Multiverse should use when prefixing the chat with the world name.
   # This only applies if enable-chat-prefix is set to true.
-  chat-prefix-format: '[%world%]%chat%'
-  
+  chat-prefix-format: "[%world%]%chat%"
+
   # This config option defines whether or not Multiverse should register the PlaceholderAPI hook.
   # This only applies if PlaceholderAPI is installed.
   register-papi-hook: true
-  
+
   # This config option defines the default language Multiverse should use.
   default-locale: en
-  
+
   # This config option defines if Multiverse should use the player's language based on their client's language.
   # If the player's language does not have a translation, it will use the default language set above instead.
   per-player-locale: true
-  
-  
+
 command:
   # If this is set to true, Multiverse will resolve world based on their alias names for commands and destinations.
   # Normal world names will still be accepted.
   # In the event you have multiple worlds with the same alias name, the first world found will be used.
   resolve-alias-name: true
-  
+
   # This config option defines whether `/mv confirm` is needed before running a DANGEROUS action.
   #   enable: `/mv confirm` is required.
   #   player_only: `/mv confirm` only required when running command as a player.
@@ -146,12 +140,11 @@ command:
   #   disable_console: `/mv confirm` not required for the console.
   #   disable: `/mv confirm` is not required.
   confirm-mode: enable
-  
+
   # If this is set to true, `/mv confirm` will include a 3 digit random number that must be entered to confirm the command.
   # For example: `/mv confirm 726`
   use-confirm-otp: true
-  
-  
+
 misc:
   # This is our debug flag to help identify issues with Multiverse.
   # If you are having issues with Multiverse, please set this to 3 and then post your log to pastebin.com
@@ -164,14 +157,13 @@ misc:
   # Sets whether console will log every permission check done by all multiverse plugins.
   # This will only work if the above 'global-debug' is set to 1 or more.
   debug-permissions: false
-  
+
   # If true, the startup console messages will no longer show.
   silent-start: false
-  
+
   # If you don't want to donate, you can set this to false and Multiverse will stop nagging you.
   show-donation-message: true
-  
-  
+
 # This just signifies the version number so we can see what version of config you have.
 # NEVER TOUCH THIS VALUE
 version: 5.2

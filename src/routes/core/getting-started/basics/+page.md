@@ -8,15 +8,18 @@ title: "Basics - Core"
 This page is not finished!
 
 Todo:
- - Update to MV5
- - Links
- 
+
+- Update to MV5
+- Links
+
 :::
 
 ## Introduction
+
 World creation is provided by **Multiverse-Core**. It can control mob spawning, environment type, enable custom terrain generators, **and much more!** Despite being able to do all this, do note that **Multiverse-Core does not create worlds itself**, it simply makes calls to the Bukkit-API to create the worlds. If other plugins exist that create worlds, then you may have messy conflicts. Inception is a well-known example and many horror stories have been told when conflicts do happen (seemingly working fine with Multiverse-Core for some but not others). Another caveat is that Bukkit still has control over the world; Multiverse just does its best to control behavior, but ultimately, **other** plugins or quirks with Bukkit may possibly override desired behavior. The developers and testers have done a great job of including the tools with Multiverse-Core to help you quickly and easily resolve these issues!
 
 ## Importing Your existing worlds
+
 Presuming you have op on your server, when you log in the _first time_ after installing Multiverse-Core, you will see the following notification:
 
 ![New server](/core/basics/new-server.png)
@@ -35,13 +38,13 @@ You should then see the following result:
 
 ![Import Complete!](/core/basics/import-complete.png)
 
-
 :::caution[unfinished]
 The linked to page doesn't exist
 :::
 Sweet! Now just repeat the process for all of your worlds! Don't like the folder name you have? **Don't rename the folder** simply set a [Multiverse World Alias](/core/configuration/world-properties#wiki-alias) instead!
 
 ## Creating your first world
+
 So, you've imported your `world` and `world_nether`, but you want a `creative` world now! World creation is a relatively simple process. The magic invocation is as follows:
 
 :::caution[unfinished]
@@ -61,7 +64,9 @@ This creates a world named creative with a `NORMAL` (overworld) type environment
 With that invocation, your world should now be created. Horray!
 
 ### Teleporting to your new world
+
 Well now you have your world, fantastic! But... you need to get to it now, don't you? Well, that's simple too, just do:
+
 ```
 /mv tp testworld
 ```
@@ -73,6 +78,7 @@ And tada, you should now be in your new world! If you want to bring along a mate
 ```
 
 ## Setting the new world's spawn
+
 Well let's say your new world's 0, 0 isn't exactly the most... ideal of places. You'd rather players not be dumped there when they teleport to or spawn in it! Simply walk/climb/mine to where you want your new spawn to be, and then type:
 
 ```
@@ -82,6 +88,7 @@ Well let's say your new world's 0, 0 isn't exactly the most... ideal of places. 
 It's like magic!
 
 ## Getting back to spawn
+
 Oh no! You got lost in your world! You need to go back to spawn! Well that's pretty simple:
 
 ```
@@ -91,6 +98,7 @@ Oh no! You got lost in your world! You need to go back to spawn! Well that's pre
 Tada! Welcome home!
 
 ## Modifying some parameters
+
 Ok, so you're sick of creepers blowing your stuff up, and you want to turn off the hostiles? No problem!
 
 ```
@@ -100,6 +108,7 @@ Ok, so you're sick of creepers blowing your stuff up, and you want to turn off t
 You can change a load of other settings very easily (such as turn off animal spawning and PvP).
 
 ## Purging monsters and other fun things
+
 So you're sick of a bunch of animals getting in the way of your building. Perhaps some jackass op spawned a bunch of cows where you were building. No matter! Just clean them up with:
 
 ```
@@ -109,6 +118,7 @@ So you're sick of a bunch of animals getting in the way of your building. Perhap
 You can also use `ALL` instead of testworld to do it to all worlds. Instead of animals, you can specify a comma-separated list of mobs to purge, monsters, or "all" for all mobs. Beautiful.
 
 ## Removing the world
+
 You're so sick of this world! You quit! It's enough! Well, then you can nuke the world! To nuke it, just do:
 
 ```
@@ -117,7 +127,7 @@ You're so sick of this world! You quit! It's enough! Well, then you can nuke the
 
 ![Danger Will Robinson!](/core/basics/danger-command.png)
 
-You will then have 10 seconds to type: 
+You will then have 10 seconds to type:
 
 _Remember:_ Once you **confirm** your world will be completely destroyed. Gone. Not coming back. Ever. Use this command with **extreme care**!
 
