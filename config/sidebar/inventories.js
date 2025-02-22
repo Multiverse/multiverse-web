@@ -1,12 +1,12 @@
 export default [
   {
-    title: 'Getting Started',
+    title: "Getting Started",
     collapsible: true,
     items: [
       {
         title: "Introduction",
-        to: '/inventories/introduction/'
+        to: "/inventories/introduction/",
       },
-    ]
+    ],
   },
-]
+];
