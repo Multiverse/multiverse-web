@@ -30,5 +30,6 @@ These could also have a world added on to the end if desired as described previo
 - `%multiverse-core_price%`
 - `%multiverse-core_pvp%`
 - `%multiverse-core_seed%`
+- `%multiverse-core_time%`
 - `%multiverse-core_type%`
 - `%multiverse-core_weather%`
