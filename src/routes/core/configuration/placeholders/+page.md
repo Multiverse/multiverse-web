@@ -6,7 +6,7 @@ Multiverse 5 adds official support for [PlaceholderAPI](https://www.spigotmc.org
 
 ## Format
 
-All placeholders follow the format of `%multiverse-core_<placeholder>_<optional world>%` where the placeholder is a world property and the world can be optionally omitted and it will use the player's current world
+All placeholders follow the format of `%multiverse-core_<placeholder>_<optional world>%` where the placeholder is a world property and the world can optionally be omitted then it will use the player's current world instead.
 
 ## Big list o' placeholders
 
