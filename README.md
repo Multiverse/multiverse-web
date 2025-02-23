@@ -4,7 +4,7 @@
 
 # Multiverse Website
 
-This repository contains the source for Multiverse's website and wiki. The website is currently in development so nothing is released but you can see progress [here](https://example.com)
+This repository contains the source for Multiverse's website and wiki. The website is currently in development so nothing is released but you can see progress [here](https://mvplugins.org)
 
 ## Dev Instructions
 
@@ -19,5 +19,4 @@ pnpm i
 
 # Run the dev server
 pnpm run dev
-
 ```
