@@ -16,17 +16,17 @@ The big list of all permissions is at [[CHANGE ME PLEASE]]
 
 ## Multiverse Permissions Plugin Support
 
-Multiverse supports any plugin that adheres to the SuperPerms Bukkit Permissions API. As of now (6/16/2019) the working permission plugins are [LuckPerms](https://www.spigotmc.org/resources/luckperms-an-advanced-permissions-plugin.28140/) and [PermissionsEx](https://dev.bukkit.org/projects/permissionsEx).
+Multiverse supports any plugin that adheres to the SuperPerms Bukkit Permissions API. Currently the main permissions plugin is [LuckPerms](https://luckperms.net/) but others are available.
 
 ## Multiverse World Permissions
 
 Multiverse allows you to control who can enter worlds via permissions! When you create a world or import a world into Multiverse-Core, it automatically creates a permission: `multiverse.access.WORLDNAME`. If a player _has_ `multiverse.access.WORLDNAME`, then they can enter that world.
 
-:::note[e]
-Ensure you have `enforceaccess` **enabled** in your Multiverse [`config.yml`](https://github.com/Multiverse/Multiverse-Core/wiki/config.yml) to use this permission. If `enforceaccess` is set to `false` then _anyone_ can go to _any_ world and **all world-access permissions are ignored**.
+:::note[Note]
+Ensure you have `enforceaccess` **enabled** in your Multiverse [`config.yml`](/core/configuration/config-yml/) to use this permission. If `enforceaccess` is set to `false` then _anyone_ can go to _any_ world and **all world-access permissions are ignored**.
 :::
 
-If you give a user `multiverse.access.*` they can go to all worlds.
+If you give a user `multiverse.access.*` then they can go to all worlds.
 
 ### Multiverse Permissions
 
@@ -34,10 +34,10 @@ You can use: `multiverse.*` to give someone all permissions for Multiverse. If y
 
 ## Setting Permissions in-game
 
-Multiverse has the courtesy to show which permission node is needed for a command if you enter a /command and it fails due to permissions. Having this info readily available to you in the game can save you some time looking up the permission, and allow you to enter that permission into a group on the spot if need be. An admin can simply enter permissions in as you need them. For example, you try to run [`/mvlist`](https://github.com/Multiverse/Multiverse-Core/wiki/Command-Reference#list-command) and oh my you don't have permission, but you will be notified that you need `multiverse.world.list` permission node. Entering the command:
+Multiverse has the courtesy to show which permission node is needed for a command if you enter a /command and it fails due to permissions. Having this info readily available to you in the game can save you some time looking up the permission, and allow you to enter that permission into a group on the spot if need be. An admin can simply enter permissions in as you need them. For example, you try to run [`/mvlist`](/core/getting-started/command-reference/#List-Command) and oh my you don't have permission, but you will be notified that you need `multiverse.world.list` permission node. Entering the command:
 
-:::note[LuckPerms]
-This command uses [LuckPerms](https://luckperms.net/), you will need to change it for your permissions plugin
+:::note[Note]
+This command uses [LuckPerms](https://luckperms.net/), you will need to adapt it for your permissions plugin if you use something else.
 :::
 
 ```
@@ -57,7 +57,7 @@ will add the permission to your admin group and voila! you have permission to us
 OP's by default have all the Multiverse permissions set to true. So the easiest way to give your admins all the Multiverse permissions is to just make them OP. Of course, this may not be the best option for everyone.
 
 :::warning[Stuff breaks with OP!]
-As _all_ permissions are enabled, this includes `mv.bypass.gamemode.*` - hence dissalowing multiverse gamemode management. Be aware of this when going down the route of OP
+As _all_ permissions are enabled, this includes `mv.bypass.gamemode.*` - hence disallowing Multiverse gamemode management. Be aware of this when going down the route of OP
 :::
 
 ## Sample Access Permissions Transcript
