@@ -1,5 +1,5 @@
 ---
-title: Welcome to Sveltepress
+title: Home
 heroImage: /multiverse5.svg
 tagline: One server. Endless possibilities.
 actions:
