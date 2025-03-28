@@ -22,11 +22,11 @@
     "@iconify-json/vscode-icons": "^1.2.17",
     "@sveltejs/adapter-static": "^3.0.8",
     "@sveltejs/kit": "^2.20.2",
-    "@sveltejs/vite-plugin-svelte": "^5.0.3",
+    "@sveltejs/vite-plugin-svelte": "^4.0.1",
     "@sveltepress/theme-default": "^6.0.2",
     "@sveltepress/vite": "^1.2.1",
     "@types/node": "^22.13.14",
     "svelte": "^5.25.3",
-    "vite": "^6.2.3"
+    "vite": "^5.0.0"
   }
 }
