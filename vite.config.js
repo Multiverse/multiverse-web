@@ -9,6 +9,9 @@ import portalsSidebar from './config/sidebar/portals'
 import signportalsSidebar from './config/sidebar/signportals'
 
 const config = defineConfig({
+	server: {
+		hmr: { overlay: false },
+	},
 	plugins: [
 		sveltepress({
 			theme: defaultTheme({
@@ -36,7 +39,7 @@ const config = defineConfig({
 				navbar: [
 					{
 						title: 'Core',
-						to: '/core/getting-started/introduction/'
+						to: '/core/1-fundamentals/1-introduction/'
 					},
 					{
 						title: 'NetherPortals',
