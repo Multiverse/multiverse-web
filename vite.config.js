@@ -21,7 +21,14 @@ const config = defineConfig({
 					}
 				},
 				preBuildIconifyIcons: {
-					'vscode-icons': ['file-type-libreoffice-writer', 'file-type-bazel']
+					'vscode-icons': [
+						'file-type-minecraft',
+						'file-type-light-json',
+						'file-type-swift',
+						'file-type-registry',
+						'folder-type-github-opened',
+						'file-type-wxss'
+					]
 				},
 				highlighter: {
 					languages: ['svelte', 'sh', 'js', 'html', 'ts', 'md', 'css', 'scss', 'yaml']
