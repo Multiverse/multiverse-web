@@ -34,7 +34,7 @@ const config = defineConfig({
 					]
 				},
 				highlighter: {
-					languages: ['svelte', 'sh', 'js', 'html', 'ts', 'md', 'css', 'scss', 'yaml']
+					languages: ['svelte', 'sh', 'js', 'html', 'ts', 'md', 'css', 'scss', 'yaml', 'java']
 				},
 				navbar: [
 					{
@@ -43,19 +43,19 @@ const config = defineConfig({
 					},
 					{
 						title: 'NetherPortals',
-						to: '/netherportals/introduction/'
+						to: '/netherportals/1-fundamentals/1-installation/'
 					},
 					{
 						title: 'Portals',
-						to: '/portals/introduction/'
+						to: '/portals/1-fundamentals/1-installation/'
 					},
 					{
 						title: 'Inventories',
-						to: '/inventories/introduction/'
+						to: '/inventories/1-fundamentals/1-installation/'
 					},
 					{
 						title: 'SignPortals',
-						to: '/signportals/introduction/'
+						to: '/signportals/1-fundamentals/1-installation/'
 					},
 					{
 						title: 'Download',

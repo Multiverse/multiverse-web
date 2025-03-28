@@ -8,7 +8,7 @@ export default [
         to: "/core/1-fundamentals/1-introduction/",
       },
       {
-        title: "Install",
+        title: "Installation",
         to: "/core/1-fundamentals/2-installation/",
       },
       {
