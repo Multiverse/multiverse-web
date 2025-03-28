@@ -41,10 +41,10 @@
 
 <main>
   <h1 class="text-3xl font-bold mb-6">Multiverse Plugin Downloads</h1>
-  <div class="grid grid-cols-1 gap-6 w-full max-w-4xl">
+  <div class="grid grid-cols-1 gap-6">
     {#each plugins as plugin}
       <div
-        class="bg-white dark:bg-gray-9 rounded-lg shadow-lg p-4 w-full flex flex-col sm:flex-row justify-between content-center items-start sm:items-center"
+        class="bg-white dark:bg-gray-9 rounded-lg shadow-lg p-4 flex flex-col sm:flex-row justify-between content-center items-start sm:items-center"
       >
         <div class="flex flex-col gap-2">
           <div class="flex items-center gap-2">
