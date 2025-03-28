@@ -46,14 +46,19 @@ const config = defineConfig({
 					{
 						title: 'SignPortals',
 						to: '/signportals/introduction/'
-					}
+					},
+					{
+						title: 'Download',
+						to: '/download/plugins/'
+					},
 				],
 				sidebar: {
 					"/core/": coreSidebar,
 					"/netherportals/": netherportalsSidebar,
 					"/inventories/": inventoriesSidebar,
 					"/portals/": portalsSidebar,
-					"/signportals/": signportalsSidebar
+					"/signportals/": signportalsSidebar,
+					"/download/": [{}],
 				},
 				editLink: 'https://github.com/Multiverse/multiverse-web/edit/main/src/routes/:route',
 				github: 'https://github.com/Multiverse',
