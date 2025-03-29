@@ -82,7 +82,7 @@
     <h2>Exciting NEW Multiverse 5 Version</h2>
     <p class="text-gray-500">
       We are releasing very early builds of Multiverse version 5. To get these very early builds, head to our
-      <a href="https://discord.gg/NZtfKky" class="underline text-gray-400">Discord Server</a>.
+      <a href="https://discord.gg/NZtfKky" class="svp-gradient-text underline" target="_blank">Discord Server</a>.
     </p>
     <h3>Whats New?</h3>
     <ul class="list-disc pl-5 space-y-2">
@@ -101,7 +101,10 @@
     <h3>Call for help with MV5 wiki</h3>
     <p class="text-gray-500">
       The MV5 updates are great, but we need to inform people on how to use them! However writing documentation is a long and laborious process which will take away more dev time. 
-      Thus, we are looking for volunteers to help in writing usage guides. Our wiki is now hosted on a web page, and the source code is here: https://github.com/Multiverse/multiverse-web. 
+      Thus, we are looking for volunteers to help in writing usage guides. Our wiki is now hosted on a web page, and the source code is here: 
+      <br />
+      <a href="https://github.com/Multiverse/multiverse-web" class="svp-gradient-text underline" target="_blank">https://github.com/Multiverse/multiverse-web</a>
+      <br />
       The wiki itself is using markdown formatting. If you are not sure on how to use GitHub, you can send your work via discord too!
     </p>
     <h3 class="text-red-500">WARNINGGGG!!</h3>
