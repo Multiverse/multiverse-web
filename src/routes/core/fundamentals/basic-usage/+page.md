@@ -26,9 +26,9 @@ Presuming you have op on your server, when you log in the _first time_ after ins
 
 This tells you that even though you may have a bunch of world folders already created, you'll have to tell Multiverse-Core about them. The reason for this is that we don't know if your main world is a normal world or a floating skyland! Doing this is very simple in Multiverse-Core. Type:
 
-[`/mv import WORLD ENV`](/core/getting-started/command-reference#Import-Command)
+[`/mv import WORLD ENV`](/core/fundamentals/commands-usage#Import-Command)
 
-Now, you'll have to replace `WORLD` with your **folder name** and `ENV` with the **environment type**. There are 3 currently available: `normal`, `nether` and `end`. If you forget these you can always use [`/mv env`](/core/getting-started/command-reference#Environment-Command). It will always list all of these choices.
+Now, you'll have to replace `WORLD` with your **folder name** and `ENV` with the **environment type**. There are 3 currently available: `normal`, `nether` and `end`. If you forget these you can always use [`/mv env`](/core/fundamentals/commands-usage#Environment-Command). It will always list all of these choices.
 
 So, most servers will have a world named `world`. I do for this example. Here is what I typed:
 
@@ -41,7 +41,7 @@ You should then see the following result:
 :::caution[unfinished]
 The linked to page doesn't exist
 :::
-Sweet! Now just repeat the process for all of your worlds! Don't like the folder name you have? **Don't rename the folder** simply set a [Multiverse World Alias](/core/configuration/world-properties#wiki-alias) instead!
+Sweet! Now just repeat the process for all of your worlds! Don't like the folder name you have? **Don't rename the folder** simply set a [Multiverse World Alias](/core/fundamentals/world-properties#wiki-alias) instead!
 
 ## Creating your first world
 
@@ -50,16 +50,16 @@ So, you've imported your `world` and `world_nether`, but you want a `creative` w
 :::caution[unfinished]
 This needs updating to MV5
 :::
-[`/mv create <NAME> <ENV> -s [SEED] -g [GENERATOR[:ID]]`](/core/getting-started/command-reference#Create-Command)
+[`/mv create <NAME> <ENV> -s [SEED] -g [GENERATOR[:ID]]`](/core/fundamentals/commands-usage#Create-Command)
 
 Don't worry about all the parameters for now, all you need to know is that any text enclosed inside **`<>`** is **REQUIRED** and anything enclosed inside **`[]`** is **OPTIONAL**.
 For our example, let's simply do
 
-[`/mv create creative NORMAL`](/core/getting-started/command-reference#Create-Command)
+[`/mv create creative NORMAL`](/core/fundamentals/commands-usage#Create-Command)
 
 This will take a bit longer than the import did and you can see progress in your server console.
 
-This creates a world named creative with a `NORMAL` (overworld) type environment. If you are particularly clever, you could set the seed here or change the environment to `NETHER` or `END`, or if you're really clever, you can figure out how to set the [generator](/core/configuration/custom-generator-plugins#wiki-howto) to create all sorts of cool terrain (e.g., `-g BukkitFullOfMoon`). Let's not concern ourselves with that just yet.
+This creates a world named creative with a `NORMAL` (overworld) type environment. If you are particularly clever, you could set the seed here or change the environment to `NETHER` or `END`, or if you're really clever, you can figure out how to set the [generator](/core/reference/custom-generator-plugins#wiki-howto) to create all sorts of cool terrain (e.g., `-g BukkitFullOfMoon`). Let's not concern ourselves with that just yet.
 
 With that invocation, your world should now be created. Horray!
 

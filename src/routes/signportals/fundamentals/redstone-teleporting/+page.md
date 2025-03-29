@@ -2,10 +2,10 @@
 title: "Redstone Teleporting"
 ---
 
-[Sign style](Sign-style-(SignPortals)) SignPortals can be set up to teleport specified entities within a cuboid area around the sign when the sign receives a redstone signal.  This means you could set up a redstone contraption that ultimately teleports all animals or players in a room to the destination on the sign.
+[Sign style](/signportals/fundamentals/create-sign-style) SignPortals can be set up to teleport specified entities within a cuboid area around the sign when the sign receives a redstone signal.  This means you could set up a redstone contraption that ultimately teleports all animals or players in a room to the destination on the sign.
 
 # Get a destination
-Find the [destination](Destinations) that you would like to be teleported to 
+Find the [destination](/core/reference/destinations) that you would like to be teleported to 
 
 # Redstone sign syntax
 On the first line of the sign, specify what to teleport, how large of a radius, and optionally an offset direction (relative to the sign).  The format for this line looks like `[A:5:UP]` which means that A (animals) within a 10x10x10 cube above the sign (starting on the same y level as the sign) will be teleported to the destination on the sign when the sign receives a redstone pulse.

@@ -13,7 +13,7 @@ title: "Destinations"
 
 ## Destination Permissions
 
-Destinations require permissions to be teleported to using [`/mvtp`](/core/getting-started/command-reference/#Teleport-Command). By default you require `multiverse.teleport.self.<destination>` and `multiverse.teleport.self.<destination>.<world>`. This can be changed with the `use-finer-teleport-permission` config option in [config.yml](/core/configuration/config-yml/) to only require the `multiverse.teleport.self.<destination>` permission. When migrating from MV4 to MV5 this option is set to `false` but for new installs of the plugin this is set to `true`.
+Destinations require permissions to be teleported to using [`/mvtp`](/core/fundamentals/commands-usage/#Teleport-Command). By default you require `multiverse.teleport.self.<destination>` and `multiverse.teleport.self.<destination>.<world>`. This can be changed with the `use-finer-teleport-permission` config option in [config.yml](/core/reference/configuration-file/) to only require the `multiverse.teleport.self.<destination>` permission. When migrating from MV4 to MV5 this option is set to `false` but for new installs of the plugin this is set to `true`.
 
 ## World Destinations
 
@@ -27,7 +27,7 @@ World destinations can be prefixed with a `w:` but it is not required unless you
 
 ## Anchor Destinations
 
-[Anchors](/core/configuration/anchors/) should be used if you have a place you want to go frequently. Using the `/mv anchor create NAME` command to first create an [anchor](/core/configuration/anchors/), then you can then use it in any command that takes a destination.
+[Anchors](/core/how-to/manage-anchors/) should be used if you have a place you want to go frequently. Using the `/mv anchor create NAME` command to first create an [anchor](/core/how-to/manage-anchors/), then you can then use it in any command that takes a destination.
 
 ### Examples
 
@@ -77,9 +77,9 @@ Takes a player to the bed that the specified player will spawn at if they die.
 ## Portal Destinations
 
 :::note[Note]
-Requires [Multiverse-NetherPortals](/netherportals/introduction/)
+Requires [Multiverse-NetherPortals](/netherportals/fundamentals/installation/)
 :::
-Portal destination types teleport the player to the specified portal. They are ONLY available if you have [Multiverse-Portals](/netherportals/introduction/) installed. If you want players to face a different direction when being placed at the destination, you can add any of the following with a colon (as shown twice below) `n,e,s,w,ne,nw,se,sw` (or with full names: `north,east,south,west,northeast,northwest,southeast,southwest`)
+Portal destination types teleport the player to the specified portal. They are ONLY available if you have [Multiverse-Portals](/netherportals/fundamentals/installation/) installed. If you want players to face a different direction when being placed at the destination, you can add any of the following with a colon (as shown twice below) `n,e,s,w,ne,nw,se,sw` (or with full names: `north,east,south,west,northeast,northwest,southeast,southwest`)
 
 ### Examples
 

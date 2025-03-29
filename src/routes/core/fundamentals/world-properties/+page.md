@@ -10,7 +10,7 @@ Todo:
 - Update to MV5
   :::
 
-Here are the various properties of worlds that can be set in game using the [Modify Command](/core/getting-started/command-reference#Modify-Command). They can also be set in `worlds.yml` but **normally you should not have to edit this file**. Although, if you are an advanced user, you may. This is a typical plugin configuration file written in yaml and follows the same syntax as normal.
+Here are the various properties of worlds that can be set in game using the [Modify Command](/core/fundamentals/commands-usage#Modify-Command). They can also be set in `worlds.yml` but **normally you should not have to edit this file**. Although, if you are an advanced user, you may. This is a typical plugin configuration file written in yaml and follows the same syntax as normal.
 
 ## Index
 
@@ -48,7 +48,7 @@ You can easily control who can enter various worlds in Multiverse 2. To allow pe
 
 ## First Spawn Location
 
-Multiverse allows you to set what world users will first spawn in. This does _not_ have to be the world that is in `server.properties`. To do this, make sure you have the following 2 values set in your [`config.yml`](/core/configuration/config-yml). You can set this value in-game by using `/mv config first-spawn-override true` and `/mv config first-spawn-location myworld`. We advise against editing the file, but here is the clip:
+Multiverse allows you to set what world users will first spawn in. This does _not_ have to be the world that is in `server.properties`. To do this, make sure you have the following 2 values set in your [`config.yml`](/core/reference/configuration-file). You can set this value in-game by using `/mv config first-spawn-override true` and `/mv config first-spawn-location myworld`. We advise against editing the file, but here is the clip:
 
 ```yaml
 spawn:
@@ -64,7 +64,7 @@ spawn:
 
 ## Join Destionation
 
-Multiverse allows you to set the [destination](/core/configuration/destinations/) that players will always spawn in when logging in. This is useful for a hub world or similar, to enable this you need to set the the following 2 values set in your [`config.yml`](/core/configuration/config-yml). You can set this value in-game by using `/mv config enable-join-destination true` and `/mv config join-destination mydestination`. We advise against editing the file, but here is the clip:
+Multiverse allows you to set the [destination](/core/reference/destinations/) that players will always spawn in when logging in. This is useful for a hub world or similar, to enable this you need to set the the following 2 values set in your [`config.yml`](/core/reference/configuration-file). You can set this value in-game by using `/mv config enable-join-destination true` and `/mv config join-destination mydestination`. We advise against editing the file, but here is the clip:
 
 ```yaml
 spawn:
@@ -118,11 +118,11 @@ You should read this as "Animals **can not** spawn **except** for pigs."
 You should read this as "Animals **can** spawn **except** for pigs."
 
 **In Game Usage:**  
-[`/mv modify <world> set animals true`](</core/getting-started/command-reference#Modify-Command-(Set)>)- Enables animal spawning in the current world.  
-[`/mv modify <world> set animals false`](</core/getting-started/command-reference#Modify-Command-(Set)>)- Disables animal spawning in the current world.  
-[`/mv modify <world> add pig animals`](</core/getting-started/command-reference#Modify-Command-(Set)>) - Adds the animal type `pig` to the exemption list.  
-[`/mv modify <world> remove pig animals`](</core/getting-started/command-reference#Modify-Command-(Set)>) - Removes the animal type `pig` to the exemption list.  
-[`/mv modify <world> clear animals`](</core/getting-started/command-reference#Modify-Command-(Set)>) - Clears the animal exemption list.
+[`/mv modify <world> set animals true`](</core/fundamentals/commands-usage#Modify-Command-(Set)>)- Enables animal spawning in the current world.  
+[`/mv modify <world> set animals false`](</core/fundamentals/commands-usage#Modify-Command-(Set)>)- Disables animal spawning in the current world.  
+[`/mv modify <world> add pig animals`](</core/fundamentals/commands-usage#Modify-Command-(Set)>) - Adds the animal type `pig` to the exemption list.  
+[`/mv modify <world> remove pig animals`](</core/fundamentals/commands-usage#Modify-Command-(Set)>) - Removes the animal type `pig` to the exemption list.  
+[`/mv modify <world> clear animals`](</core/fundamentals/commands-usage#Modify-Command-(Set)>) - Clears the animal exemption list.
 
 [↑ Back to Top ↑](#top)
 
@@ -168,11 +168,11 @@ You should read this as "Monsters **can not** spawn **except** for creepers."
 You should read this as "Monsters **can** spawn **except** for creepers."
 
 **In Game Usage:**  
-[`/mv modify <world> set monsters true`](</core/getting-started/command-reference#Modify-Command-(Set)>)- Enables monster spawning in the current world (and disables auto-heal).  
-[`/mv modify <world> set monsters false`](</core/getting-started/command-reference#Modify-Command-(Set)>)- Disables monster spawning in the current world (and enables auto-heal).  
-[`/mv modify <world> add creeper monsters`](</core/getting-started/command-reference#Modify-Command-(Set)>) - Adds the monster type `creeper` to the exemption list.  
-[`/mv modify <world> remove creeper monsters`](</core/getting-started/command-reference#Modify-Command-(Set)>) - Removes the monster type `creeper` to the exemption list.  
-[`/mv modify <world> clear monsters`](</core/getting-started/command-reference#Modify-Command-(Set)>) - Clears the monster exemption list.
+[`/mv modify <world> set monsters true`](</core/fundamentals/commands-usage#Modify-Command-(Set)>)- Enables monster spawning in the current world (and disables auto-heal).  
+[`/mv modify <world> set monsters false`](</core/fundamentals/commands-usage#Modify-Command-(Set)>)- Disables monster spawning in the current world (and enables auto-heal).  
+[`/mv modify <world> add creeper monsters`](</core/fundamentals/commands-usage#Modify-Command-(Set)>) - Adds the monster type `creeper` to the exemption list.  
+[`/mv modify <world> remove creeper monsters`](</core/fundamentals/commands-usage#Modify-Command-(Set)>) - Removes the monster type `creeper` to the exemption list.  
+[`/mv modify <world> clear monsters`](</core/fundamentals/commands-usage#Modify-Command-(Set)>) - Clears the monster exemption list.
 
 [↑ Back to Top ↑](#top)
 
@@ -187,8 +187,8 @@ The type of environment this world is under. Can currently be `NETHER`, `THE_END
 `environment: NORMAL`
 
 **In Game Usage:**  
-[`/mv create myworld normal`](/core/getting-started/command-reference#Create-Command)  
-[`/mv import mynether nether`](/core/getting-started/command-reference#Import-Command)
+[`/mv create myworld normal`](/core/fundamentals/commands-usage#Create-Command)  
+[`/mv import mynether nether`](/core/fundamentals/commands-usage#Import-Command)
 
 [↑ Back to Top ↑](#top)
 
@@ -205,7 +205,7 @@ This value may or may not be present. That's okay.
 `generator: BukkitFullOfMoon`
 
 **In Game Usage:**  
-[`/mv create moon NORMAL --generator BukkitFullOfMoon`](/core/getting-started/command-reference#Create-Command)
+[`/mv create moon NORMAL --generator BukkitFullOfMoon`](/core/fundamentals/commands-usage#Create-Command)
 
 [↑ Back to Top ↑](#top)
 
@@ -259,7 +259,7 @@ Whether or not players may harm each other in this world. If set to `true`, they
 
 World aliases allow you to name a world differently than what the folder name is. This lets you choose fancy names for your worlds while keeping the folders nice and neat.
 
-The alias attribute can also include a color and a style. Worlds will show up colored and styled when your users chat and via [`/mv list`](/core/getting-started/command-reference#List-Command) or [`/mv who`](/core/getting-started/command-reference#Who-Command).
+The alias attribute can also include a color and a style. Worlds will show up colored and styled when your users chat and via [`/mv list`](/core/fundamentals/commands-usage#List-Command) or [`/mv who`](/core/fundamentals/commands-usage#Who-Command).
 
 The color must be one of these:  
 `AQUA, BLACK, BLUE, DARKAQUA, DARKBLUE, DARKGRAY, DARKGREEN, DARKPURPLE, DARKRED, GOLD, GRAY, GREEN, LIGHTPURPLE, RED, YELLOW, WHITE`

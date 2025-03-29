@@ -39,7 +39,7 @@ Type "`@`" when you're finished and that is all! The next message shows you crea
 Find the Multiverse-Inventories directory in your server's plugin directory.
 
 ### Step #2
-Open up the [Configuration file (config.yml)](config.yml-(Inventories)) file. (The config has informative comments inside to help you understand what each option does.)
+Open up the [Configuration file (config.yml)](/inventories/reference/configuration-file) file. (The config has informative comments inside to help you understand what each option does.)
 
 ### Step #3
 Once you have your configuration set up as desired, simply type `/mvinv reload` in-game or `mvinv reload` in the server console.

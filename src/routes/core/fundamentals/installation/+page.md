@@ -28,7 +28,7 @@ We highly recommend a permissions plugin. You can use any plugin that implements
 
 - [LuckPerms](https://www.spigotmc.org/resources/luckperms-an-advanced-permissions-plugin.28140/) (recommended)
 
-This guide (on the right) will take you through setting up permissions, but if you want to go there now, [click here](/core/getting-started/permissions-list).
+This guide (on the right) will take you through setting up permissions, but if you want to go there now, [click here](/core/reference/permissions-list).
 
 ## Download links
 

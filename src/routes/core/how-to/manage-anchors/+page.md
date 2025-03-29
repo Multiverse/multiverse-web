@@ -4,7 +4,7 @@ title: "Anchors"
 
 ## Introduction
 
-In Multiverse you can create anchors that can be used with `/mvtp` (Or anything else that takes a [destination](/core/configuration/destinations/)) to create warps.
+In Multiverse you can create anchors that can be used with `/mvtp` (Or anything else that takes a [destination](/core/reference/destinations/)) to create warps.
 
 ## Creating Anchors
 

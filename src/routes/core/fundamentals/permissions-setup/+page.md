@@ -23,7 +23,7 @@ Multiverse supports any plugin that adheres to the SuperPerms Bukkit Permissions
 Multiverse allows you to control who can enter worlds via permissions! When you create a world or import a world into Multiverse-Core, it automatically creates a permission: `multiverse.access.WORLDNAME`. If a player _has_ `multiverse.access.WORLDNAME`, then they can enter that world.
 
 :::note[Note]
-Ensure you have `enforceaccess` **enabled** in your Multiverse [`config.yml`](/core/configuration/config-yml/) to use this permission. If `enforceaccess` is set to `false` then _anyone_ can go to _any_ world and **all world-access permissions are ignored**.
+Ensure you have `enforceaccess` **enabled** in your Multiverse [`config.yml`](/core/reference/configuration-file/) to use this permission. If `enforceaccess` is set to `false` then _anyone_ can go to _any_ world and **all world-access permissions are ignored**.
 :::
 
 If you give a user `multiverse.access.*` then they can go to all worlds.
@@ -34,7 +34,7 @@ You can use: `multiverse.*` to give someone all permissions for Multiverse. If y
 
 ## Setting Permissions in-game
 
-Multiverse has the courtesy to show which permission node is needed for a command if you enter a /command and it fails due to permissions. Having this info readily available to you in the game can save you some time looking up the permission, and allow you to enter that permission into a group on the spot if need be. An admin can simply enter permissions in as you need them. For example, you try to run [`/mvlist`](/core/getting-started/command-reference/#List-Command) and oh my you don't have permission, but you will be notified that you need `multiverse.world.list` permission node. Entering the command:
+Multiverse has the courtesy to show which permission node is needed for a command if you enter a /command and it fails due to permissions. Having this info readily available to you in the game can save you some time looking up the permission, and allow you to enter that permission into a group on the spot if need be. An admin can simply enter permissions in as you need them. For example, you try to run [`/mvlist`](/core/fundamentals/commands-usage/#List-Command) and oh my you don't have permission, but you will be notified that you need `multiverse.world.list` permission node. Entering the command:
 
 :::note[Note]
 This command uses [LuckPerms](https://luckperms.net/), you will need to adapt it for your permissions plugin if you use something else.

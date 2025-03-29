@@ -17,7 +17,7 @@ Todo:
 If you're looking for the [Multiverse-Portals](<https://github.com/Multiverse/Multiverse-Core/wiki/Command-Reference-(Portals)>), [Multiverse-NetherPortals](<https://github.com/Multiverse/Multiverse-Core/wiki/Command-Reference-(NetherPortals)>) or [Multiverse-Inventories](<https://github.com/Multiverse/Multiverse-Core/wiki/Command-Reference-(Inventories)>) Command References, click the links!
 
 **Looking for the permissions?**  
-[Click here to go the Big List O' Permissions!](/core/getting-started/permissions-list)
+[Click here to go the Big List O' Permissions!](/core/reference/permissions-list)
 
 ## Index
 
@@ -136,7 +136,7 @@ This allows you to have worlds that are completely unknown to people. Keep in mi
 Here is an example of a world listing.
 
 :::note[Note]
-To get colored worlds, you will need to use the [world alias feature](/core/configuration/world-properties#Alias).
+To get colored worlds, you will need to use the [world alias feature](/core/fundamentals/world-properties#Alias).
 :::
 
 [↑ Back to Top ↑](#top)
@@ -257,23 +257,23 @@ Creates a new world and loads it.
 ### Flags
 
 - `--seed <seed>`/`-s`: The world seed to give to the generator
-- `--generator <generator:id>`/`-g`: The [custom generator](/core/configuration/custom-generator-plugins) to use
+- `--generator <generator:id>`/`-g`: The [custom generator](/core/reference/custom-generator-plugins) to use
 - `--world-type <worldtype>`/`-t`: The type of the new world, can be one of the below.
   - [amplified](https://minecraft.wiki/w/Amplified)
   - [flat](https://minecraft.wiki/w/Superflat)
   - [large_biomes](https://minecraft.wiki/w/Large_Biomes)
   - normal
-- `--no-adjust-spawn`/`-n`: Sets the [Adjust Spawn](/core/configuration/world-properties#Adjust-Spawn) world property
+- `--no-adjust-spawn`/`-n`: Sets the [Adjust Spawn](/core/fundamentals/world-properties#Adjust-Spawn) world property
 - `--no-structures`/`-a`: Set this flag to disable structures from spawning
 - `--biome`/`-b`: Sets the world to be a single-biome world. Alike to the [Single Biome/Buffet](https://minecraft.wiki/w/Single_biome) option in Vanilla
 
 ### Details
 
-The create command allows you to add new worlds to your server. Each world has many properties that you can edit and tweak. Please see the [World Properties](/core/configuration/world-properties) page for information on each of these settings. In addition, you can modify worlds **in game** by using the [`/mv modify`](#Modify-Command) command. Please see the appropriate section below for [Seeds](/core/configuration/world-properties#seeds) or [Custom Generators](/core/configuration/world-properties#generators).
+The create command allows you to add new worlds to your server. Each world has many properties that you can edit and tweak. Please see the [World Properties](/core/fundamentals/world-properties) page for information on each of these settings. In addition, you can modify worlds **in game** by using the [`/mv modify`](#Modify-Command) command. Please see the appropriate section below for [Seeds](/core/fundamentals/world-properties#seeds) or [Custom Generators](/core/fundamentals/world-properties#generators).
 
 ### World Name and Environment
 
-When you are going to create a new world you MUST specify a name and environment. Valid environments can be seen by using [`/mv env`](#Environment-Command). Your world names **CANNOT** have spaces in world names, use the [Alias Feature](/core/configuration/world-properties#Alias) for that.
+When you are going to create a new world you MUST specify a name and environment. Valid environments can be seen by using [`/mv env`](#Environment-Command). Your world names **CANNOT** have spaces in world names, use the [Alias Feature](/core/fundamentals/world-properties#Alias) for that.
 
 ### Seeds
 
@@ -288,7 +288,7 @@ World types are like generators, but baked into Minecraft itself! Currently, the
 
 ### Generators
 
-Multiverse supports Custom Generators. What does this mean? We support any plugin that makes use of the Bukkit custom generator feature. If an author has implemented their own style that does NOT use the custom generator method [described here](http://forums.bukkit.org/threads/22795/), it may not work with MV. We will try and keep an updated page of [Custom Generator Plugins](/core/configuration/custom-generator-plugins/).
+Multiverse supports Custom Generators. What does this mean? We support any plugin that makes use of the Bukkit custom generator feature. If an author has implemented their own style that does NOT use the custom generator method [described here](http://forums.bukkit.org/threads/22795/), it may not work with MV. We will try and keep an updated page of [Custom Generator Plugins](/core/reference/custom-generator-plugins/).
 
 Once you've found a plugin you want to use, copy the jar of that plugin to your plugins folder. Then all that's left to do is type a single command:  
 (For this example I've decided to use [BukkitFullOfMoon](https://github.com/Dinnerbone/BukkitFullOfMoon) which will generate a cratered moon world by @Dinnerbone).
@@ -345,7 +345,7 @@ Imports an existing world folder.
 
 - `--biome`: Specify the biome to generate new chunks in the world with if this is a single biome world
 - `--generator`: Specify the generator to use in new chunks if a custom generator should be used
-- `--no-adjust-spawn`/`-n`: Sets the [Adjust Spawn](/core/configuration/world-properties#Adjust-Spawn) world property
+- `--no-adjust-spawn`/`-n`: Sets the [Adjust Spawn](/core/fundamentals/world-properties#Adjust-Spawn) world property
 
 ### Details
 
@@ -447,8 +447,8 @@ Displays your current location info.
 This command displays general location info:
 
 - World
-- [World alias](/core/configuration/world-properties/#Alias)
-- [World scale](/core/configuration/world-properties/#Scale)
+- [World alias](/core/fundamentals/world-properties/#Alias)
+- [World scale](/core/fundamentals/world-properties/#Scale)
 - Coordinates
 - Facing direction
 
@@ -491,14 +491,14 @@ Allows you to teleport one or more players to a different world.
 
 The teleport command allows you to teleport yourself or others to a specified world or destination. There are many different permissions associated with this command, with the categories being `self` and `other`; allowing you to teleport yourself and others respectively.
 
-Each Type of [Destination](/core/configuration/destinations/) will have each of the permissions (`self` and `other`) associated with it. The most basic example is for worlds:
+Each Type of [Destination](/core/reference/destinations/) will have each of the permissions (`self` and `other`) associated with it. The most basic example is for worlds:
 
 ```
 multiverse.teleport.self.w
 multiverse.teleport.other.w
 ```
 
-The letter(s) at the end are the identifier for the [destination](/core/configuration/destinations/). This is the same thing you would put before the destination if you teleport to it: `/mv tp w:MyWorld`. So Portals would be:
+The letter(s) at the end are the identifier for the [destination](/core/reference/destinations/). This is the same thing you would put before the destination if you teleport to it: `/mv tp w:MyWorld`. So Portals would be:
 
 ```
 multiverse.teleport.self.p
@@ -514,7 +514,7 @@ Please see the [FAQ](#TODOLINK) for why this change was made (Old permissions we
 
 ### Destinations
 
-`/mvtp` can be used with Destinations too! As seen in [Destinations](/core/configuration/destinations/).
+`/mvtp` can be used with Destinations too! As seen in [Destinations](/core/reference/destinations/).
 
 [↑ Back to Top ↑](#top)
 
@@ -577,7 +577,7 @@ Displays who is in which worlds.
 Displays who is currently in all worlds. `/mv who` will **not** show worlds that are empty.
 
 ![An example showing who's in what world](/core/command-reference/mvwhoall.png)
-Here is an example of the `/mv who` command in use combined with both [world aliases and colors](/core/configuration/world-properties/#Alias).
+Here is an example of the `/mv who` command in use combined with both [world aliases and colors](/core/fundamentals/world-properties/#Alias).
 
 [↑ Back to Top ↑](#top)
 
@@ -920,7 +920,7 @@ Sets a world's variable
 
 ### Details
 
-The modify command lets you set the [properties](/core/configuration/world-properties/) for your Multiverse worlds in game without needing to ever edit a config file. The `set` command sets a non-array value. An example would be turning animal spawning on, or setting the world scale to 2. The PROPERTY value that is required for this command must be one of the values listed on the [properties page](/core/configuration/world-properties/). If you do not specify a world, the current world will be used. A world is **required** from the console.
+The modify command lets you set the [properties](/core/fundamentals/world-properties/) for your Multiverse worlds in game without needing to ever edit a config file. The `set` command sets a non-array value. An example would be turning animal spawning on, or setting the world scale to 2. The PROPERTY value that is required for this command must be one of the values listed on the [properties page](/core/fundamentals/world-properties/). If you do not specify a world, the current world will be used. A world is **required** from the console.
 
 ### A note about animals and monsters
 

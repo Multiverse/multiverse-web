@@ -2,7 +2,7 @@
 title: "API Usage"
 ---
 
-This pages provides examples and explanation for the common API usages of Multiverse-Core introduced [here](Developer-API-Starter). It's impossible to cover all API methods in this guide, but rest assured we have [javadocs](http://ci.onarandombox.com/job/Multiverse-Core/javadoc/overview-summary.html) provided.
+This pages provides examples and explanation for the common API usages of Multiverse-NetherPortals introduced [here](/core/developers/developer-api-starter). It's impossible to cover all API methods in this guide, but rest assured we have [javadocs](http://ci.onarandombox.com/job/Multiverse-Core/javadoc/overview-summary.html) provided.
 
 ### Link a set of SMP worlds
 ```java

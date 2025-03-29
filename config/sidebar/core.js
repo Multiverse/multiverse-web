@@ -23,6 +23,10 @@ export default [
         title: "Permissions Setup",
         to: "/core/fundamentals/permissions-setup/",
       },
+      {
+        title: "World Properties",
+        to: "/core/fundamentals/world-properties/",
+      },
     ],
   },
   {

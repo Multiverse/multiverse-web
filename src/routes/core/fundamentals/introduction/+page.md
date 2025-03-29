@@ -20,10 +20,10 @@ Do you have a question? See if it's answered in the [[FAQ]]!
 
 ## Basics
 
-- [Install Multiverse-Core](/core/getting-started/install) from scratch or [[how to Upgrade]] from Multiverse 1.7.2 (or any 1.X version)!
-- If you've never used Multiverse before you should check out the [Basic Multiverse Tutorial](/core/getting-started/basics).
+- [Install Multiverse-Core](/core/fundamentals/installation) from scratch or [[how to Upgrade]] from Multiverse 1.7.2 (or any 1.X version)!
+- If you've never used Multiverse before you should check out the [Basic Multiverse Tutorial](/core/fundamentals/basic-usage).
 - Read a list of [[frequently asked questions|FAQ]]
-- Read how to use [Multiverse with Permissions](/core/getting-started/permissions-setup)
+- Read how to use [Multiverse with Permissions](/core/fundamentals/permissions-setup)
 - **Want to help? [[Read about pull requests and documentation|How can I help]]!**
 - Found a bug? [[Read this first|Submitting a Bug]]!
 
