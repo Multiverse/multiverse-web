@@ -5,19 +5,19 @@ export default [
     items: [
       {
         title: "Installation",
-        to: "/portals/1-fundamentals/1-installation/",
+        to: "/portals/fundamentals/installation/",
       },
       {
         title: "Basic Usage",
-        to: "/portals/1-fundamentals/2-basic-usage/",
+        to: "/portals/fundamentals/basic-usage/",
       },
       {
         title: "Commands Usage",
-        to: "/portals/1-fundamentals/3-commands-usage/",
+        to: "/portals/fundamentals/commands-usage/",
       },
       {
         title: "Permissions Setup",
-        to: "/portals/1-fundamentals/4-permissions-setup/",
+        to: "/portals/fundamentals/permissions-setup/",
       },
     ],
   },
@@ -27,11 +27,11 @@ export default [
     items: [
       {
         title: "Configuration File",
-        to: "/portals/2-reference/1-configuration-file/",
+        to: "/portals/reference/configuration-file/",
       },
       {
         title: "Permissions List",
-        to: "/portals/2-reference/2-permissions-list/",
+        to: "/portals/reference/permissions-list/",
       },
     ],
   },
@@ -41,7 +41,7 @@ export default [
     items: [
       {
         title: "API Usage",
-        to: "/portals/3-developers/1-api-usage/",
+        to: "/portals/developers/api-usage/",
       },
     ],
   }

@@ -5,23 +5,23 @@ export default [
     items: [
       {
         title: "Introduction",
-        to: "/core/1-fundamentals/1-introduction/",
+        to: "/core/fundamentals/introduction/",
       },
       {
         title: "Installation",
-        to: "/core/1-fundamentals/2-installation/",
+        to: "/core/fundamentals/installation/",
       },
       {
         title: "Basic Usage",
-        to: "/core/1-fundamentals/3-basic-usage/",
+        to: "/core/fundamentals/basic-usage/",
       },
       {
         title: "Commands Usage",
-        to: "/core/1-fundamentals/4-commands-usage/",
+        to: "/core/fundamentals/commands-usage/",
       },
       {
         title: "Permissions Setup",
-        to: "/core/1-fundamentals/5-permissions-setup/",
+        to: "/core/fundamentals/permissions-setup/",
       },
     ],
   },
@@ -31,15 +31,15 @@ export default [
     items: [
       {
         title: "Customize World Generation",
-        to: "/core/2-how-to/1-customize-world-generation/",
+        to: "/core/how-to/customize-world-generation/",
       },
       {
         title: "Setup Entry Fee",
-        to: "/core/2-how-to/2-setup-entry-fee/",
+        to: "/core/how-to/setup-entry-fee/",
       },
       {
         title: "Manage Anchors",
-        to: "/core/2-how-to/3-manage-anchors/",
+        to: "/core/how-to/manage-anchors/",
       }
     ]
   },
@@ -49,23 +49,23 @@ export default [
     items: [
       {
         title: "Configuration File",
-        to: "/core/3-reference/1-configuration-file/",
+        to: "/core/reference/configuration-file/",
       },
       {
         title: "Permissions List",
-        to: "/core/3-reference/2-permissions-list/",
+        to: "/core/reference/permissions-list/",
       },
       {
         title: "Destinations",
-        to: "/core/3-reference/3-destinations/",
+        to: "/core/reference/destinations/",
       },
       {
         title: "Placeholders",
-        to: "/core/3-reference/4-placeholders/",
+        to: "/core/reference/placeholders/",
       },
       {
         title: "Custom Generator Plugins",
-        to: "/core/3-reference/5-custom-generator-plugins/",
+        to: "/core/reference/custom-generator-plugins/",
       },
     ],
   },
@@ -75,11 +75,11 @@ export default [
     items: [
       {
         title: "Developer API Starter",
-        to: "/core/4-developers/1-developer-api-starter/",
+        to: "/core/developers/developer-api-starter/",
       },
       {
         title: "API Usage",
-        to: "/core/4-developers/2-api-usage/",
+        to: "/core/developers/api-usage/",
       },
     ]
   }

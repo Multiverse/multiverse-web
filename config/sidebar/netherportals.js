@@ -5,15 +5,15 @@ export default [
     items: [
       {
         title: "Installation",
-        to: "/netherportals/1-fundamentals/1-installation/",
+        to: "/netherportals/fundamentals/installation/",
       },
       {
         title: "Basic Usage",
-        to: "/netherportals/1-fundamentals/2-basic-usage/",
+        to: "/netherportals/fundamentals/basic-usage/",
       },
       {
         title: "Commands Usage",
-        to: "/netherportals/1-fundamentals/3-commands-usage/",
+        to: "/netherportals/fundamentals/commands-usage/",
       },
     ],
   },
@@ -23,11 +23,11 @@ export default [
     items: [
       {
         title: "Configuration File",
-        to: "/netherportals/2-reference/1-configuration-file/",
+        to: "/netherportals/reference/configuration-file/",
       },
       {
         title: "FAQ",
-        to: "/netherportals/2-reference/2-faq/",
+        to: "/netherportals/reference/faq/",
       },
     ],
   },
@@ -37,7 +37,7 @@ export default [
     items: [
       {
         title: "API Usage",
-        to: "/netherportals/3-developers/1-api-usage/",
+        to: "/netherportals/developers/api-usage/",
       },
     ],
   }

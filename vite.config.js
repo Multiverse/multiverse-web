@@ -39,23 +39,23 @@ const config = defineConfig({
 				navbar: [
 					{
 						title: 'Core',
-						to: '/core/1-fundamentals/1-introduction/'
+						to: '/core/fundamentals/introduction/'
 					},
 					{
 						title: 'NetherPortals',
-						to: '/netherportals/1-fundamentals/1-installation/'
+						to: '/netherportals/fundamentals/installation/'
 					},
 					{
 						title: 'Portals',
-						to: '/portals/1-fundamentals/1-installation/'
+						to: '/portals/fundamentals/installation/'
 					},
 					{
 						title: 'Inventories',
-						to: '/inventories/1-fundamentals/1-installation/'
+						to: '/inventories/fundamentals/installation/'
 					},
 					{
 						title: 'SignPortals',
-						to: '/signportals/1-fundamentals/1-installation/'
+						to: '/signportals/fundamentals/installation/'
 					},
 					{
 						title: 'Download',

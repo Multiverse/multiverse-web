@@ -5,15 +5,15 @@ export default [
     items: [
       {
         title: "Installation",
-        to: "/inventories/1-fundamentals/1-installation/",
+        to: "/inventories/fundamentals/installation/",
       },
       {
         title: "Basic Usage",
-        to: "/inventories/1-fundamentals/2-basic-usage/",
+        to: "/inventories/fundamentals/basic-usage/",
       },
       {
         title: "Commands Usage",
-        to: "/inventories/1-fundamentals/3-commands-usage/",
+        to: "/inventories/fundamentals/commands-usage/",
       },
     ],
   },
@@ -23,23 +23,23 @@ export default [
     items: [
       {
         title: "Configuration File",
-        to: "/inventories/2-reference/1-configuration-file/",
+        to: "/inventories/reference/configuration-file/",
       },
       {
         title: "Permissions List",
-        to: "/inventories/2-reference/2-permissions-list/",
+        to: "/inventories/reference/permissions-list/",
       },
       {
         title: "Shares List",
-        to: "/inventories/2-reference/3-shares-list/",
+        to: "/inventories/reference/shares-list/",
       },
       {
         title: "Sharing Details",
-        to: "/inventories/2-reference/4-sharing-details/",
+        to: "/inventories/reference/sharing-details/",
       },
       {
         title: "FAQ",
-        to: "/inventories/2-reference/5-faq/",
+        to: "/inventories/reference/faq/",
       },
     ],
   },
@@ -49,7 +49,7 @@ export default [
     items: [
       {
         title: "API Usage",
-        to: "/inventories/3-developers/1-api-usage/",
+        to: "/inventories/developers/api-usage/",
       },
     ],
   }

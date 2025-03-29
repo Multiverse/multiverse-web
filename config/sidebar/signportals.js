@@ -5,19 +5,19 @@ export default [
     items: [
       {
         title: "Installation",
-        to: "/signportals/1-fundamentals/1-installation/",
+        to: "/signportals/fundamentals/installation/",
       },
       {
         title: "Create Portal Style",
-        to: "/signportals/1-fundamentals/2-create-portal-style/",
+        to: "/signportals/fundamentals/create-portal-style/",
       },
       {
         title: "Create Sign Style",
-        to: "/signportals/1-fundamentals/3-create-sign-style/",
+        to: "/signportals/fundamentals/create-sign-style/",
       },
       {
         title: "Redstone Teleporting",
-        to: "/signportals/1-fundamentals/4-redstone-teleporting/",
+        to: "/signportals/fundamentals/redstone-teleporting/",
       },
     ],
   },
@@ -27,7 +27,7 @@ export default [
     items: [
       {
         title: "Permissions List",
-        to: "/signportals/2-reference/1-permissions-list/",
+        to: "/signportals/reference/permissions-list/",
       },
     ],
   },
