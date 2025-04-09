@@ -2,20 +2,7 @@
 title: "Installation"
 ---
 
-:::caution[Unfinished]
-This page is not finished!
-
-Todo:
-
-- Update to link to release site page
-- Add image back
-  :::
-
 Welcome. We're glad you're here at our humble little wiki. This is a _very_ brief installation guide as there isn't much to do!
-
-For an English language video tutorial [check here](http://www.youtube.com/watch?v=CN0MA_TykSk) - thanks to Koz4Christ
-
-For a Spanish language video tutorial [check here](http://www.youtube.com/watch?v=VJYISGaFuCw) - thanks to LastWishSpain
 
 ## Prerequisites
 
@@ -39,16 +26,14 @@ This guide (on the right) will take you through setting up permissions, but if y
 ## Step 1
 
 Grab the jar.
-Download the Multiverse-Core JAR from the [release site](http://dev.bukkit.org/projects/multiverse-core/files/) or grab a dev build from [the Multiverse 2 Jenkins](http://ci.onarandombox.com/job/Multiverse-Core/)
+Download the Multiverse-Core JAR from the [release site](https://modrinth.com/plugin/multiverse-core#download).
 
 There is NO Zip package available. Multiverse-Core (and MV Plugins) will create default configs for you **on the first run**.
 
-**\*Optional:** Install the [Multiverse-Portals](<https://github.com/Multiverse/Multiverse-Core/wiki/Install-(Portals)>) or [Multiverse-NetherPortals](<https://github.com/Multiverse/Multiverse-Core/wiki/Install-(NetherPortals)>) plugins!
+**\*Optional:** Install the [Multiverse-Portals](/portals/fundamentals/installation) or [Multiverse-NetherPortals](/netherportals/fundamentals/installation) plugins!
 
 Place it in your plugins folder like so:
-[[/images/install/step1.png]]
-
----
+![folder](/core/installation/folder.png)
 
 ## Step 2
 

@@ -34,6 +34,10 @@ export default [
     collapsible: true,
     items: [
       {
+        title: "Upgrading to MV5",
+        to: "/core/how-to/upgrading-to-mv5/",
+      },
+      {
         title: "Customize World Generation",
         to: "/core/how-to/customize-world-generation/",
       },

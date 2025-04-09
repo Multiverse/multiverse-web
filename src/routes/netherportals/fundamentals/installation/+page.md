@@ -1,6 +1,14 @@
 ---
 title: "Installation"
 ---
+
+:::caution[Warning]
+This page is for the new MV5 version.
+
+For older mv4 versions, check our github wiki: https://github.com/Multiverse/Multiverse-Core/wiki
+
+:::
+
 Multiverse-NetherPortals is very easy to install.
 
 ## Step 1: Ensure you're using the same version as [Multiverse-Core](https://dev.bukkit.org/projects/multiverse-core/files/).

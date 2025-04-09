@@ -2,6 +2,13 @@
 title: "Installation"
 ---
 
+:::caution[Warning]
+This page is for the new MV5 version.
+
+For older mv4 versions, check our github wiki: https://github.com/Multiverse/Multiverse-Core/wiki
+
+:::
+
 ## Prerequisites
 There are a few things to verify before installing [Multiverse-SignPortals](https://dev.bukkit.org/projects/multiverse-signportals).
 * When running other Multiverse modules (such as SignPortals, ensure it's the same version as [Multiverse-Core](https://dev.bukkit.org/projects/multiverse-core). For example, if Multiverse-SignPortals is 4.0.0, Multiverse-Core should be 4.0.0.

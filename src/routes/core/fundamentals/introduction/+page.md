@@ -4,45 +4,33 @@ title: "Welcome to Multiverse WIKI"
 
 ![New server](/multiverse5-long.svg)
 
-:::caution[Unfinished]
-This page is not finished!
+:::caution[Warning]
+This page is for the new MV5 version.
 
-# Use our github wiki: https://github.com/Multiverse/Multiverse-Core/wiki/Basics
+For older mv4 versions, check our github wiki: https://github.com/Multiverse/Multiverse-Core/wiki
 
-Todo:
-
-- Add links
-  :::
-
----
-
-Do you have a question? See if it's answered in the [[FAQ]]!
+:::
 
 ## Basics
 
-- [Install Multiverse-Core](/core/fundamentals/installation) from scratch or [[how to Upgrade]] from Multiverse 1.7.2 (or any 1.X version)!
+- [Install Multiverse-Core](/core/fundamentals/installation) from scratch or [how to Upgrade](/core/how-to/upgrading-to-mv5) from Multiverse 4!
 - If you've never used Multiverse before you should check out the [Basic Multiverse Tutorial](/core/fundamentals/basic-usage).
-- Read a list of [[frequently asked questions|FAQ]]
 - Read how to use [Multiverse with Permissions](/core/fundamentals/permissions-setup)
-- **Want to help? [[Read about pull requests and documentation|How can I help]]!**
-- Found a bug? [[Read this first|Submitting a Bug]]!
+- Found a bug? Contact us on our [Discord](https://discord.gg/NZtfKky) or open an [issue on GitHub](https://github.com/Multiverse/Multiverse-Core/issues/new).
 
 ## Intermediate
 
-- Add some more functionality with the sub plugins: Portals, NetherPortals, SignPortals, Inventories
-- Generate some awesome new terrain with a [[Custom Generator Plugins]]
-- Having trouble? Check out the [[known conflicts]]
-- See the default `config.yml` file.
+- Add some more functionality with the sub plugins: [Inventories](/inventories/fundamentals/installation), [Portals](/portals/fundamentals/installation), [NetherPortals](/netherportals/fundamentals/installation), [SignPortals](/signportals/fundamentals/installation)
+- Customize your world with [World Properties](/core/fundamentals/world-properties)
+- Generate some awesome new terrain with a [Custom Generator Plugins](/core/reference/custom-generator-plugins)
 
 ## Advanced
 
-- A complete [[Command Reference]]
-- A simple [[Big List O' Permissions]]
-- A list of all the [[World Properties that you can edit|World-Properties]]
-- Various [[Destinations]] you can teleport to
-- [[Charge users|Currency]] money or items to enter a world
+- A complete [Command Reference](/core/fundamentals/commands-usage)
+- A simple [Big List O' Permissions](/core/reference/permissions-list)
+- Various [Destinations](/core/reference/destinations) you can teleport to
+- [Charge users|Currency](/core/how-to/setup-entry-fee) money or items to enter a world
 
 ## Developers
 
-- Developer? Just motivated? [[Build|Building]] Multiverse yourself!
-- We also have [[API guides|Developer-API-Starter]] in getting you started with integrating Multiverse into your very own plugin!
+- Developer? Just motivated? We have [Developer-API-Starter](/core/developers/developer-api-starter) in getting you started with integrating Multiverse into your very own plugin!

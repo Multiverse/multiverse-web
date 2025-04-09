@@ -2,6 +2,13 @@
 title: "Installation"
 ---
 
+:::caution[Warning]
+This page is for the new MV5 version.
+
+For older mv4 versions, check our github wiki: https://github.com/Multiverse/Multiverse-Core/wiki
+
+:::
+
 For an English language video tutorial [check here](https://www.youtube.com/watch?v=PaUCL_bagXE) - thanks to Koz4Christ
 
 ## Prerequisites
