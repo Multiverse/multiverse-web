@@ -2,14 +2,29 @@
 title: "Destinations"
 ---
 
-- [World Destinations](#World-Destinations)
-- [Anchor Destinations](#Anchor-Destinations)
-- [Exact Destinations](#Exact-Destinations)
-- [Player Destinations](#Player-Destinations)
-- [Cannon Destinations](#Cannon-Destinations)
-- [Bed Destinations](#Bed-Destinations)
-- [Portal Destinations](#Portal-Destinations)
-- [Special case](#Special-Case)
+- [Destination Permissions](#destination-permissions)
+- [World Destinations](#world-destinations)
+  - [Examples](#examples)
+  - [Permissions](#permissions)
+- [Anchor Destinations](#anchor-destinations)
+  - [Examples](#examples-1)
+  - [Permissions](#permissions-1)
+- [Exact Destinations](#exact-destinations)
+  - [Examples](#examples-2)
+  - [Permissions](#permissions-2)
+- [Player Destinations](#player-destinations)
+  - [Examples](#examples-3)
+  - [Permissions](#permissions-3)
+- [Cannon Destinations](#cannon-destinations)
+  - [Examples](#examples-4)
+  - [Permissions](#permissions-4)
+- [Bed Destinations](#bed-destinations)
+  - [Examples](#examples-5)
+  - [Permissions](#permissions-5)
+- [Portal Destinations](#portal-destinations)
+  - [Examples](#examples-6)
+  - [Special case](#special-case)
+  - [Permissions](#permissions-6)
 
 ## Destination Permissions
 
@@ -25,13 +40,27 @@ World destinations can be prefixed with a `w:` but it is not required unless you
 - `/mvtp w:world`
 - `/mvtp w:world:se`
 
+### Permissions
+
+`multiverse.teleport.self.w`
+`multiverse.teleport.other.w`
+
+If finer permissions is enabled: `multiverse.teleport.self.w.<worldname>`
+
 ## Anchor Destinations
 
-[Anchors](/core/how-to/manage-anchors/) should be used if you have a place you want to go frequently. Using the `/mv anchor create NAME` command to first create an [anchor](/core/how-to/manage-anchors/), then you can then use it in any command that takes a destination.
+[Anchors](/core/how-to/manage-anchors/) should be used if you have a place you want to go frequently. Using the `/mv anchor set <name>` command to first create an [anchor](/core/how-to/manage-anchors/), then you can then use it in any command that takes a destination.
 
 ### Examples
 
 `/mvtp a:myplace`
+
+### Permissions
+
+`multiverse.teleport.self.a`
+`multiverse.teleport.other.a`
+
+If finer permissions is enabled: `multiverse.teleport.self.a.<anchorname>`
 
 ## Exact Destinations
 
@@ -45,6 +74,13 @@ Exact destinations are useful if you know exactly where someone should spawn, bu
 `/mvtp e:world:0,0,0`  
 `/mvtp e:world:0,0,0:0:0`
 
+### Permissions
+
+`multiverse.teleport.self.e`
+`multiverse.teleport.other.e`
+
+If finer permissions is enabled: `multiverse.teleport.self.e.<worldname>`
+
 ## Player Destinations
 
 Player destinations are exactly what they sound like, they will always teleport you to a _specific_ player! If that player is not online, you will not teleport, or if you're using a portal, it will act as if it's inactive. If a player tries to teleport to themselves, nothing will happen.
@@ -52,6 +88,13 @@ Player destinations are exactly what they sound like, they will always teleport 
 ### Examples
 
 `/mvtp pl:fernferret`
+
+### Permissions
+
+`multiverse.teleport.self.pl`
+`multiverse.teleport.other.pl`
+
+If finer permissions is enabled: `multiverse.teleport.self.pl.<playername>`
 
 ## Cannon Destinations
 
@@ -65,21 +108,36 @@ The thing you have to remember with Cannon Destinations is that **you will never
 `/mvtp cannon-2`  
 `/mvtp ca:world:x,y,z:pitch:yaw:speed`
 
+### Permissions
+
+`multiverse.teleport.self.ca`
+`multiverse.teleport.other.ca`
+
+If finer permissions is enabled: `multiverse.teleport.self.ca.<worldname>`
+
 ## Bed Destinations
 
-Takes a player to the bed that the specified player will spawn at if they die.
+Takes a player to the bed that the specified player will spawn at if they die. For own's player bed location, use `playerbed`.
 
 ### Examples
 
 `/mvtp b:playername`
 `/mvtp b:playerbed` - teleports the player to their own bed.
 
+### Permissions
+
+`multiverse.teleport.self.b`
+`multiverse.teleport.other.b`
+
+If finer permissions is enabled: `multiverse.teleport.self.pl.<playername>`
+
 ## Portal Destinations
 
 :::note[Note]
-Requires [Multiverse-NetherPortals](/netherportals/fundamentals/installation/)
+Requires [Multiverse-Portals](/portals/fundamentals/installation)
 :::
-Portal destination types teleport the player to the specified portal. They are ONLY available if you have [Multiverse-Portals](/netherportals/fundamentals/installation/) installed. If you want players to face a different direction when being placed at the destination, you can add any of the following with a colon (as shown twice below) `n,e,s,w,ne,nw,se,sw` (or with full names: `north,east,south,west,northeast,northwest,southeast,southwest`)
+
+Portal destination types teleport the player to the specified portal. They are ONLY available if you have [Multiverse-Portals](/portals/fundamentals/installation) installed. If you want players to face a different direction when being placed at the destination, you can add any of the following with a colon (as shown twice below) `n,e,s,w,ne,nw,se,sw` (or with full names: `north,east,south,west,northeast,northwest,southeast,southwest`)
 
 ### Examples
 
@@ -90,3 +148,10 @@ Portal destination types teleport the player to the specified portal. They are O
 ### Special case
 
 When you're _standing_ inside a portal (let's say `PortalB`), if you want to set the destination of another (`PortalA`) to **the center of that portal facing the rounded direction**, you can simply use `/mvpm dest here`. This will set the destination of the selected _source_ portal (`PortalA`) to the portal you're standing in _plus_ the cardinal direction (`p:portal:se`). This makes it a snap to set the directions of portals without any lookups!
+
+### Permissions
+
+`multiverse.teleport.self.p`
+`multiverse.teleport.other.p`
+
+If finer permissions is enabled: `multiverse.teleport.self.p.<portalname>`
