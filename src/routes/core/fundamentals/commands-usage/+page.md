@@ -824,7 +824,7 @@ Resets a property's value back to the default. If you do not specify a world, th
 
 ### Description
 
-Purges the entities that are disallowed based on the `entity-spawn-config` settings. See the [Entity Spawn Config](/core/fundamentals/entity-spawn-config) page for more information.
+Purges the entities that are disallowed based on the `entity-spawn-config` settings. See the [Entity Spawn Config](/core/fundamentals/commands-usage/#Entity-Spawn-Config-Info-Command) page for more information.
 
 ### Usage
 
