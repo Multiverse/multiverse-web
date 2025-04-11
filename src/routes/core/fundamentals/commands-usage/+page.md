@@ -4,15 +4,12 @@ title: "Command Reference - Core"
 
 # Multiverse Command Reference
 
-:::caution[Unfinished]
-This page is not finished!
+:::caution[Warning]
+This page is for the new MV5 version.
 
-Todo:
+For older mv4 versions, check our github wiki: https://github.com/Multiverse/Multiverse-Core/wiki
 
-- Links
-- Update commands to MV5 syntax
-- Move images to be local
-  :::
+:::
 
 If you're looking for the [Multiverse-Portals](/portals/fundamentals/commands-usage), [Multiverse-NetherPortals](/netherportals/fundamentals/commands-usage) or [Multiverse-Inventories](/inventories/fundamentals/commands-usage) Command References, click the links!
 
@@ -26,26 +23,31 @@ If you're looking for the [Multiverse-Portals](/portals/fundamentals/commands-us
 - [Anchor Set Command](#Anchor-Set-Command)
 - [Anchor List Command](#Anchor-List-Command)
 - [Anchor Delete Command](#Anchor-Delete-Command)
+- [Check Command](#Check-Command)
 - [Clone Command](#Clone-Command)
+- [Config Command](#Config-Command)
 - [Confirm Command](#Confirm-Command)
 - [Coordinate Command](#Coordinate-Command)
 - [Create Command](#Create-Command)
 - [Debug Command](#Debug-Command)
 - [Delete Command](#Delete-Command)
+- [Dumps Command](#Dumps-Command)
+- [Entity Spawn Config Info Command](#Entity-Spawn-Config-Info-Command)
+- [Entity Spawn Config Modify Command](#Entity-Spawn-Config-Modify-Command)
 - [Gamerule List Command](#Gamerule-List-Command)
 - [Gamerule Set Command](#Gamerule-Set-Command)
 - [Gamerule Reset Command](#Gamerule-Reset-Command)
-- [Gamerules Command](#Gamerules-Command)
 - [Help Command](#Help-Command)
 - [Import Command](#Import-Command)
-- [Information Command](#Information-Command)
+- [Info Command](#Info-Command)
 - [List Command](#List-Command)
 - [Modify Command](#Modify-Command)
   - [Set](#Modify-Command-(Set))
   - [Add](#Modify-Command-(Add-Remove))
   - [Remove](#Modify-Command-(Add-Remove))
   - [Clear](#Modify-Command-(Clear))
-- [Purge Command](#Purge-Command)
+- [Purge Entities Command](#Purge-Entities-Command)
+- [Purge All Entities Command](#Purge-All-Entities-Command)
 - [Regen Command](#Regen-Command)
 - [Reload Command](#Reload-Command)
 - [Remove Command](#Remove-Command)
@@ -168,6 +170,30 @@ Deletes an existing anchor. Note there is no way to undo this action.
 
 [↑ Back to Top ↑](#top)
 
+## Check Command
+
+### Description
+
+Checks if a player is allowed to teleport to a certain destination.
+
+### Usage
+
+```java
+/mv check <destination>
+```
+
+- `<destination>`: The destination to check.
+
+### Examples
+
+- `/mv check cool:1,2,3:10:12` - Checks if the player is allowed to teleport to location world `cool`, x: 1, y: 2, z: 3, pitch: 10, yaw: 12.
+
+### Permission
+
+`multiverse.core.check`
+
+[↑ Back to Top ↑](#top)
+
 ## Clone Command
 
 ### Description
@@ -177,7 +203,7 @@ Copies a world directory to another directory and all its configuration. Allows 
 ### Usage
 
 ```java
-/mv clone <world> <new-world-name> [--reset-world-config --reset-gamerules --reset-world-border]
+/mv clone <world> <new-world-name> [--reset-world-config] [--reset-gamerules] [--reset-world-border]
 ```
 
 - `<world>`: The world to clone. It must be an existing multiverse world.
@@ -195,6 +221,31 @@ Copies a world directory to another directory and all its configuration. Allows 
 ### Permission
 
 `multiverse.core.clone`
+
+[↑ Back to Top ↑](#top)
+
+## Config Command
+
+### Description
+
+Changes the `config.yml` properties. See the [configuration documentation](/core/reference/configuration-file) for more information.
+
+### Usage
+
+```java
+/mv config <property> <value>
+```
+
+- `<property>`: The property to change.
+- `<value>`: The value to set the property to.
+
+### Examples
+
+- `/mv config confirm-mode disable_command_blocks` - Changes the `confirm-mode` to `disable_command_blocks` in `config.yml`
+
+### Permission
+
+`multiverse.core.config`
 
 [↑ Back to Top ↑](#top)
 
@@ -265,7 +316,7 @@ The create command allows you to add new worlds to your server. Each world has m
 ### Usage
 
 ```java
-/mv create <name> <environment> [--seed <seed> --generator <generator[:id]> --world-type <worldtype> --adjust-spawn --no-structures --biome <biome>]
+/mv create <name> <environment> [--seed <seed>] [--generator <generator[:id]>] [--world-type <worldtype>] [--adjust-spawn] [--no-structures] [--biome <biome>]
 ```
 
 - `<name>`: The name of the new world
@@ -402,6 +453,79 @@ You now have 30 seconds to type [`/mv confirm [otp]`](#Confirm-Command) with the
 [↑ Back to Top ↑](#top)
 
 
+## Dumps Command
+
+### Description
+
+Outputs your server logs and configuration files to a paste service to allow for easy sharing. This is mainly used for support. Please send the links generated within your support ticket.
+
+### Usage
+
+```java
+/mv dumps [--logs <mclogs | append>] [--upload <pastesdev | pastegg>] [--paranoid]
+```
+
+- `--logs` - Paste service to use for full server logs to dump. Default is `mclogs`.
+- `--upload` - Paste service to use for configs. Default is `pastesdev`.
+- `--paranoid` - Do not upload full server logs
+
+### Permission
+
+`multiverse.core.dumps`
+
+[↑ Back to Top ↑](#top)
+
+## Entity Spawn Config Info Command
+
+### Description
+
+Lists the entity spawn config for a specific world. This uses SpawnCategory.
+
+Types of category:
+- MONSTER: eg: Witch, Zombie, Creeper, etc.
+- ANIMAL: eg: Strider, Cow, Turtle, etc.
+- WATER_ANIMAL: eg: Squid or Dolphin.
+- WATER_AMBIENT: eg: Cod, PufferFish, Tropical Fish, Salmon, etc.
+- WATER_UNDERGROUND_CREATURE: eg: Glow Squid.
+- AMBIENT: eg: Bat.
+- AXOLOTL
+- MISC: eg: ArmorStand, Boat, etc.
+
+### Usage
+
+```java
+/mv entity-spawn-config info [world] [--page <page>] [--filter <filter>]
+```
+
+### Permission
+
+`multiverse.core.entityspawnconfig.info`
+
+[↑ Back to Top ↑](#top)
+
+## Entity Spawn Config Modify Command
+
+### Description
+
+Modifies the entity spawn config for a specific world. The current properties are:
+
+- `spawn` - boolean: should spawn entities of this category or not.
+- `tick-rate` - number: how many ticks there are between attempts to spawn entities of this category.
+- `spawn-limit` - number: how many entities of this category can spawn at once.
+- `exceptions` - array: list of entity types that should not spawn of this category. Or if the `spawn` property is set to `false`, list of entity types that should spawn of this category.
+
+### Usage
+
+```java
+/mv entity-spawn-config modify [world] <spawn-category> <set|add|reset|remove> <property> [value]
+```
+
+### Permission
+
+`multiverse.core.entityspawnconfig.modify`
+
+[↑ Back to Top ↑](#top)
+
 ## Gamerule List Command
 
 ### Description
@@ -411,7 +535,7 @@ Lists the vanilla game rules values that is configured for a specific world. For
 ### Usage
 
 ```
-/mv gamerule list [world] [--page] [--filter]
+/mv gamerule list [world] [--page <number>] [--filter <string>]
 ```
 
 - `[world]` - World name
@@ -473,6 +597,88 @@ Resets a world's vanilla game rules value to it's default value. For more info o
 
 [↑ Back to Top ↑](#top)
 
+## Help Command
+
+### Description
+
+Displays an in game help menu for Multiverse. This will only show users commands they have access to. Use the optional integer parameter to indicate which page you would like to view.
+
+The help command now supports searching! This means if you type `/mv help del` you will see a list of all commands whose `name`, `description`, `alias(s)` or `usage` contain 'del'. These results may be paged, depending on how long your search string, so to see another page of a search simply do: `/mv help del 2`.
+
+**NOTE:** When searching, if you try: `/mv delete` you will see the syntax for the **Delete Command**. This is because you have hit the nail on the head with your search: you typed the exact name of a command!
+
+![Example use of the Help command when an OP](https://user-images.githubusercontent.com/8557785/63812440-069a6a00-c8f0-11e9-9264-29e4082ba8cd.png)
+Here is an example use of the Help command while given OP status. This example also has [Multiverse-Portals](/portals/fundamentals/commands-usage) and [Mutliverse-NetherPortals](/netherportals/fundamentals/commands-usage) installed, which is why there are 5 pages.
+
+### Usage
+
+`/mv help [command] [page]`
+
+### Permission
+
+`multiverse.help`
+
+[↑ Back to Top ↑](#top)
+
+## Import Command
+
+### Description
+
+The import command is almost identical to the create command apart from the fact that it is used to import a world folder that already exists. Since the world already exists, you cannot apply a new seed to it, however currently you **MUST** provide the correct environment **AND** Generator for the imported world. If you do not, bad things will happen to your world.
+
+### Usage
+
+```java
+/mv import <name> <environment> [--generator <generator[:id]>] [--adjust-spawn] [--biome <biome>]
+```
+
+- `<name>`: The name of the world to import. Ensure it matches the folder name on your server files.
+- `<environment>`: The environment of the world.
+- `--generator`: Specify the generator previously used for the world. 
+- `--no-adjust-spawn`: Sets the [Adjust Spawn](/core/fundamentals/world-properties#Adjust-Spawn) world property
+- `--biome`: Specify the biome provider used previously for the world.
+
+### Examples
+
+`/mv import my_world normal`  
+`/mv import my_hell nether`  
+`/mv import my_cloud_world skylands`  
+`/mv import moon normal --generator BukkitFullOfMoon`
+`/mv import one_biome normal --biome @single:plains`
+
+### Permission
+
+`multiverse.core.import`
+
+[↑ Back to Top ↑](#top)
+
+## Info Command
+
+### Description
+
+Displays information about the world you're in or the world you pass in. You can specify a world to look at in particular if required.
+
+This command is mainly for debugging. Be that by the developers of Multiverse or you!
+
+![Page 1 of the Information Command](/core/command-reference/mvinfo.png)
+
+### Usage
+
+```java
+/mv info [world] [--page <number>] [--filter <string>]
+```
+
+### Examples
+
+- `/mv info`
+- `/mv info world`
+
+### Permission
+
+`multiverse.core.info`
+
+[↑ Back to Top ↑](#top)
+
 ## List Command
 
 ### Description
@@ -496,7 +702,7 @@ To get colored worlds, you will need to use the [world alias feature](/core/fund
 ### Usage
 
 ```java
-/mv list [--raw --page --filter]
+/mv list [--raw --page <number> --filter <string>]
 ```
 
 - `--raw`/`-r` - Shows world names instead of aliases
@@ -509,104 +715,6 @@ To get colored worlds, you will need to use the [world alias feature](/core/fund
 
 [↑ Back to Top ↑](#top)
 
-## Help Command
-
-### Description
-
-Displays an in game help menu for Multiverse. This will only show users commands they have access to. Use the optional integer parameter to indicate which page you would like to view.
-
-The help command now supports searching! This means if you type `/mv help del` you will see a list of all commands whose `name`, `description`, `alias(s)` or `usage` contain 'del'. These results may be paged, depending on how long your search string, so to see another page of a search simply do: `/mv help del 2`.
-
-**NOTE:** When searching, if you try: `/mv delete` you will see the help for the **Delete Command**. This is because you have hit the nail on the head with your search: you typed the exact name of a command!
-
-![Example use of the Help command when an OP](https://user-images.githubusercontent.com/8557785/63812440-069a6a00-c8f0-11e9-9264-29e4082ba8cd.png)
-Here is an example use of the Help command while given OP status. This example also has [Multiverse-Portals](/portals/fundamentals/commands-usage) and [Mutliverse-NetherPortals](/netherportals/fundamentals/commands-usage) installed, which is why there are 5 pages.
-
-### Usage
-
-`/mv help [command] [page]`
-
-### Permission
-
-`multiverse.help`
-
-[↑ Back to Top ↑](#top)
-
-## Information Command
-
-### Description
-
-Displays information about the world you're in or the world you pass in.
-
-### Usage
-
-`/mv info [WORLD]`
-
-### Examples
-
-`/mv info`
-`/mv info world`
-
-### Aliases
-
-`/mv info ...`  
-`/mvi ...`  
-`/mvinfo ...`
-
-### Permission
-
-`multiverse.core.info`
-
-### Details
-
-The info command shows many details about a world and displays it in a paginated format. You can specify a world to look at in particular if required.
-
-This command is mainly for debugging. Be that by the developers of Multiverse or you!
-![Page 1 of the Information Command](/core/command-reference/mvinfo.png)
-
-[↑ Back to Top ↑](#top)
-
-## Import Command
-
-### Description
-
-Imports an existing world folder.
-
-### Usage
-
-`/mv import <NAME> <ENV> [flags]`
-
-### Examples
-
-`/mv import my_world normal`  
-`/mv import my_hell nether`  
-`/mv import my_cloud_world skylands`  
-`/mv import moon normal --generator BukkitFullOfMoon`
-`/mv import one_biome normal --biome plains`
-
-### Aliases
-
-`/mv import ...`  
-`/mvi ...`  
-`/mvimport ...`
-
-### Permission
-
-`multiverse.core.import`
-
-### Flags
-
-- `--biome`: Specify the biome to generate new chunks in the world with if this is a single biome world
-- `--generator`: Specify the generator to use in new chunks if a custom generator should be used
-- `--no-adjust-spawn`/`-n`: Sets the [Adjust Spawn](/core/fundamentals/world-properties#Adjust-Spawn) world property
-
-### Details
-
-The import command is almost identical to the create command apart from the fact that it is used to import a world folder that already exists. Since the world already exists, you cannot apply a new seed to it, however currently you **MUST** provide the correct environment **AND** Generator for the imported world. If you do not, bad things will happen to your world.
-
-[↑ Back to Top ↑](#top)
-
-
 ## Modify Command
 
 ### Description
@@ -615,10 +723,10 @@ The modify command has been documented as 4 separate sections for easier documen
 
 ### Usage
 
-[`/mv modify set ...`](<#Modify-Command-(Set)>)  
-[`/mv modify add ...`](<#Modify-Command-(Add-Remove)>)  
-[`/mv modify remove ...`](</#Modify-Command-(Add-Remove)>)  
-[`/mv modify reset ...`](<#Modify-Command-(Reset)>)
+[`/mv modify set ...`](#Modify-Command-(Set))  
+[`/mv modify add ...`](<Modify-Command-(Add-Remove))  
+[`/mv modify remove ...`](#Modify-Command-(Add-Remove))  
+[`/mv modify reset ...`](#Modify-Command-(Reset))
 
 [↑ Back to Top ↑](#top)
 
@@ -626,92 +734,64 @@ The modify command has been documented as 4 separate sections for easier documen
 
 ### Description
 
-Sets a world's variable
-
-### Usage
-
-`/mv modify [world] set <PROPERTY> <VALUE>`
-
-### Examples
-
-`/mv modify set animals false`  
-`/mv modify world set pvp true`  
-`/mv modify set diff 0`  
-`/mv modify world_extreme set diff hard `  
-`/mv modify death_world set respawnWorld respawn_world `
-
-### Aliases
-
-`/mv modify set ...`  
-`/mvmodify set ...`  
-`/mvm set ...`
-
-### Permission
-
-`multiverse.core.modify`
-
-### Details
-
-The modify command lets you set the [properties](/core/fundamentals/world-properties/) for your Multiverse worlds in game without needing to ever edit a config file. The `set` command sets a non-array value. An example would be turning animal spawning on, or setting the world scale to 2. The PROPERTY value that is required for this command must be one of the values listed on the [properties page](/core/fundamentals/world-properties/). If you do not specify a world, the current world will be used. A world is **required** from the console.
+The modify command lets you set the [properties](/core/fundamentals/world-properties) for your Multiverse worlds in game without needing to ever edit a config file. The `set` command sets a non-array value. An example would be turning animal spawning on, or setting the world scale to 2. The PROPERTY value that is required for this command must be one of the values listed on the [properties page](/core/fundamentals/world-properties). If you do not specify a world, the current world will be used. A world is **required** from the console.
 
 ### A note about animals and monsters
 
 The `animals` and `monsters` values, when used with `set`, will set the overall spawn behavior of animals/monsters. If you have any monsters in the `monsters` list and you `/mv modify set monsters true` you're saying: "I want monsters to spawn, **except** the ones in the monsters list"
 
-**See also:** [`/mv modify <add/remove>`](<#Modify-Command-(Add-Remove)>) and [`/mv modify reset`](<#Modify-Command-(Reset)>)
-
-[↑ Back to Top ↑](#top)
-
-## Modify Command (Add/Remove)
-
-:::caution[Unfinished]
-The add and remove commands are still quite buggy in MV5
-:::
-
-### Description
-
-Adds or Removes a value to a world's property
+**See also:** [`/mv modify [world] <add/remove>`](#Modify-Command-(Add-Remove)) and [`/mv modify [world] reset`](#Modify-Command-(Reset))
 
 ### Usage
 
-`/mvmodify [WORLD] <add|remove> <VALUE> <PROPERTY> `
+```java
+/mv modify [world] set <property> <value>
+```
 
 ### Examples
 
-`/mvmodify add creeper monsters`  
-`/mvmodify remove sheep animals world*nether`
-
-### Aliases
-
-`/mvmodify <add|remove> ...`  
-`/mv modify <add|remove> ...`  
-`/mvm add|remove> ...`  
-`/mvmadd ...`  
-`/mvmremove ...`
+- `/mv modify world set pvp false`
+- `/mv modify world_extreme set difficulty hard`
+- `/mv modify death_world set respawn-world respawn_world`
 
 ### Permission
 
 `multiverse.core.modify`
 
-### Details
+[↑ Back to Top ↑](#top)
 
-The modify command lets you add or remove values in each world without needing to ever edit a config file. The `add` and `remove` sub-Commands allow you to add and remove values from variables that contain lists, such as player white lists or which animals are allowed to spawn. If you do not specify a world, the current world will be used. A world is **required** from the console.
+## Modify Command (Add/Remove)
+
+### Description
+
+The modify command lets you add or remove values in each world without needing to ever edit a config file. The `add` and `remove` sub-Commands allow you to add and remove values from variables that contain lists, such as world blacklists. If you do not specify a world, the current world will be used. A world is **required** from the console.
+
+**See also:** [`/mv modify [world] set`](#Modify-Command-(Set))
+
+### Usage
+
+```java
+/mv modify [world] <add|remove> <property> <value>
+```
 
 ### Variables you can add to or remove from
 
 - worldblacklist - String: What worlds can you not go to from here.
-- animals - String
-- monsters - String
 
-See the [[World Properties]] page for more detail on these variables.
+See the [World Properties](/core/fundamentals/world-properties/#World-Blacklist) page for more detail on these variables.
 
-The second item is the type required. This means you cannot do `/mvmodify add fernferret blockblacklist
-
-### A note about animals and monsters
-
-The `animals` and `monsters` values when used with `add` or `remove` will add or remove **specific** animals/monsters. If you have the monsters (the boolean one that you can use `set` with) set to true and then add monsters to the list using `/mvmodify add` You are saying "I want monsters to spawn, **except** the ones in the monsters list"
+The second item is the type required. This means you cannot do `/mv modify add world-blacklist world2`
 
 **See also:** [`/mvmodify set`](<#Modify-Command-(Set)>) and [`/mvmodify reset`](<#Modify-Command-(Reset)>)
+
+### Examples
+
+- `/mvmodify add creeper monsters`  
+- `/mvmodify remove sheep animals world*nether`
+
+### Permission
+
+`multiverse.core.modify`
 
 [↑ Back to Top ↑](#top)
 
@@ -719,148 +799,110 @@ The `animals` and `monsters` values when used with `add` or `remove` will add or
 
 ### Description
 
-Resets a list property's value back to the default
+Resets a property's value back to the default. If you do not specify a world, the current world will be used. A world is **required** from the console.
+
+**See also:** [`/mv modify set`](#Modify-Command-(Set)) and [`/mv modify <add|remove>`](#Modify-Command-(Add-Remove))
 
 ### Usage
 
-`/mv modify [WORLD] reset <PROPERTY> `
+```java
+/mv modify [world] reset <property>
+```
 
 ### Examples
 
-`/mv modify reset worldblacklist`  
-`/mv modify world_nether reset monsters`
-
-### Aliases
-
-`/mvmodify reset ...`
-`/mv modify reset ...`
-`/mvm reset ...`
+- `/mv modify reset world-blacklist`  
+- `/mv modify world_nether reset respawn-world`
 
 ### Permission
 
 `multiverse.core.modify`
 
-### Details
-
-The modify reset command lets you reset an entire list to it's default value without having to use a bunch of `/mv modify remove ...` commands. If you do not specify a world, the current world will be used. A world is **required** from the console.
-
-**See also:** [`/mv modify set`](<#Modify-Command-(Set)>) and [`/mv modify <add|remove>`](<#Modify-Command-(Add-Remove)>)
-
 [↑ Back to Top ↑](#top)
 
-:::caution[unfinished]
-Everything below here has not been updated to MV5
-:::
-
-## Purge Command
-
-:::caution[unfinished]
-The purge command hasn't been implemented in MV5 yet!
-:::
+## Purge Entities Command
 
 ### Description
 
-Removes the specified entities from the specified worlds
+Purges the entities that are disallowed based on the `entity-spawn-config` settings. See the [Entity Spawn Config](/core/fundamentals/entity-spawn-config) page for more information.
 
 ### Usage
 
-`/mv purge [WORLD|all] <all|animals|monsters|MOBNAME>`
-
-### Examples
-
-`/mv purge all`  
-`/mv purge world all`  
-`/mv purge all all`  
-`/mv purge world CREEPER`
-`/mv purge world CREEPER,PIG,ZOMBIE`  
-`/mv purge all monsters`
-
-### Aliases
-
-`/mv purge`
-`/mvpurge`
+```java
+/mv purge-entities [world]
+```
 
 ### Permission
 
 `multiverse.core.purge`
 
-### Details
-
-The Purge command allows you to remove all of a specified type of entity from a world. Understand that if the spawn rules allow the purged type of mob to spawn, they'll populate almost instantly after the purge. This is used to clear out any remaining mobs from a setting change or if a user abuses a mob spawn command.
-
-If you specify the first parameter as `all` All worlds will be purged of the specified mob type. You are allowed to specify multiple mob types. Feel free to mix monsters and animals.
-
 [↑ Back to Top ↑](#top)
 
+## Purge All Entities Command
+
+### Description
+
+Removes all entities from the world, or only spawn categories specified.
+
+### Usage
+
+```java
+/mv purge-all-entities [world] [spawn-categories]
+```
+
+- `[spawn-categories]` - Comma separated list of spawn categories to purge. **If not specified, all spawn categories will be purged.**
+
+### Permission
+
+`multiverse.core.purgeall`
+
+[↑ Back to Top ↑](#top)
 
 ## Regen Command
 
 ### Description
 
-Regenerates a world
+Regenerate your world to where **EVERYTHING** built gets destroyed and regenerated. If the `--seed` argument is provided, a new seed will be used. Otherwise the world will be regenerated using the same seed.
 
 ### Usage
 
-`/mv regen <WORLD> [flags]`
+```java
+/mv regen <world> [--seed [value]] [--reset-world-config] [--reset-gamerules] [--reset-world-border] [--remove-players]
+```
 
-### Examples
-
-`/mv regen world`
-`/mv regen world --seed`
-`/mv regen world --seed 11546315`
-
-### Aliases
-
-`/mv regen`
-`/mvregen`
-
-### Permission
-
-`multiverse.core.regen`
-
-### flags
-
-- `--seed [seed]` Set the new seed to use. If a seed is not specified then a random seed will be used
+- `--seed [value]` Set the new seed to use. If a seed value is not specified then a random seed will be used
 - `--reset-world-config` Everything in `worlds.yml` associated with the world will be wiped
 - `--reset-gamerules` Gamerules will go back to their vanilla defaults
 - `--reset-world-border` The world border will go back to the vanilla default
 - `--remove-players` Remove players from the world first. If this flag is not specified and players are still in the world then the command will error
 
-### Details
+### Examples
 
-The Regen command allows you to regenerate your world to where **EVERYTHING** built gets destroyed and regenerated. If the `-s` or `--seed` argument is provided, a new seed will be used, and if no seed is specified, a random one will be generated. Otherwise the world will be regenerated using the same seed.
+- `/mv regen world`
+- `/mv regen world --seed`
+- `/mv regen world --seed 11546315`
+
+### Permission
+
+`multiverse.core.regen`
 
 [↑ Back to Top ↑](#top)
-
-
 
 ## Reload Command
 
 ### Description
 
-Reloads config files
+Reloads any Multiverse-Core as well as **any official Multiverse plugin** configs. Any values currently loaded into memory will be replaced with the config values. These configs also get reloaded on plugin load/server restart, so there is no need to use if after one of those. Any value in `worlds.yml` can be modified in game by using the [`/mv modify`](#Modify-Command) command and that is the recommended way to go about doing so.
 
 ### Usage
 
-`/mv reload`
-
-### Examples
-
-`/mv reload`
-
-### Aliases
-
-`/mv reload`  
-`/mvr`  
-`/mvreload`
+```java
+/mv reload
+```
 
 ### Permission
 
 `multiverse.core.reload`
-
-### Details
-
-The reload command will reload any Multiverse-Core as well as **any official Multiverse plugin** configs. Any values currently loaded into memory will be replaced with the config values. These configs also get reloaded on plugin load/server restart, so there is no need to use if after one of those. Any value in `worlds.yml` can be modified in game by using the [`/mvmodify`](#Modify-Command) command and that is the recommended way to go about doing so.
 
 [↑ Back to Top ↑](#top)
 
@@ -868,59 +910,48 @@ The reload command will reload any Multiverse-Core as well as **any official Mul
 
 ### Description
 
-Unloads a world from the Bukkit server and removes it from the MV configs.
+Unloads a world from the Bukkit server and removes it from the Multiverse `worlds.yml`. It will **NOT** delete the world folder.
+
+**See also:** [`/mv unload`](#unload-Command) and [`/mv delete`](#delete-Command)
 
 ### Usage
 
-`/mv remove <WORLD>`
+```java
+/mv remove <world> [--remove-players]
+```
+
+- `<world>` - World name
+- `--remove-players` - Remove players from the world first. If this flag is not specified and players are still in the world then the command will error
 
 ### Examples
 
-`/mv remove world`
-
-### Aliases
-
-`/mv remove ...`  
-`/mvremove ...`
+- `/mv remove world2 --remove-players`
 
 ### Permission
 
 `multiverse.core.remove`
 
-### Flags
-
-- `--remove-players` Remove players from the world first. If this flag is not specified and players are still in the world then the command will error
-
-### Details
-
-This command will unload the world from the server **AND** remove it from the Multiverse Configs. It will **NOT** delete the world folder.
-
-**See also:** [`/mv unload`](#unload-Command) and [`/mv delete`](#delete-Command)
-
 [↑ Back to Top ↑](#top)
-
 
 ## Set Spawn Command
 
 ### Description
 
-Sets the respawn point for the current world.
+The set spawn command does exactly what it sounds like. You can walk to where you want players to spawn, type `/mv setspawn` and it's set. To go to the spawn you can use [`/mv spawn`](#Spawn-Command). If you would like to run this from the console or specify a location anyway just add your location in the format: `[x],[y],[x],[pitch],[yaw]`. Pitch and yaw are optional and will default to `0,0`
 
 ### Usage
 
-`/mv setspawn [x],[y],[x],[pitch],[yaw]`
+```java
+/mv setspawn [location]
+```
+
+- `[location]` - In the format: `[x],[y],[z],[pitch],[yaw]`. Example: `10,64,100,90,180`
 
 ### Examples
 
-`/mv setspawn`
-`/mv setspawn 0,0,0`
-`/mv setspawn 10,64,100,90,180`
-
-### Aliases
-
-`/mv setspawn`
-`/mvss`
-`/mvsetspawn`
+- `/mv setspawn`
+- `/mv setspawn 0,0,0`
+- `/mv setspawn 10,64,100,90,180`
 
 ### Permission
 
@@ -928,43 +959,37 @@ Sets the respawn point for the current world.
 
 ### Details
 
-The set spawn command does exactly what it sounds like. You can walk to where you want players to spawn, type `/mv setspawn` and it's set. To go to the spawn you can use [`/mv spawn`](#spawn-Command). If you would like to run this from the console or specify a location anyway just add your location in the format: `[x],[y],[x],[pitch],[yaw]`. Pitch and yaw are optional and will default to `0,0`
-
 [↑ Back to Top ↑](#top)
 
 ## Spawn Command
 
 ### Description
 
-Teleports you to the spawn of your current world.
+Allows you to teleport yourself (or another player) to their own current world's spawn. If you want to teleport a player to a different world or different location within a world please see [`/mv tp`](#Teleport-Command). This command does tell the teleportee who teleported them, even if it was the console. This is done to prevent admin abuse.
 
 ### Usage
 
-`/mv spawn [PLAYER]`
+```java
+/mv spawn [player(s)] [--unsafe]
+```
+
+- `[player]`: The player to teleport, or defaults to yourself. Must be specified if running from the console.
+- `--unsafe`: allows teleportation even if the location is deemed unsafe.
 
 ### Examples
 
-`/mv spawn`  
-`/mv spawn lithium3141`
+- `/mv spawn`  
+- `/mv spawn lithium3141`
 
 ### Aliases
 
 `/mv spawn ...`  
-`/mvs ...`  
 `/mvspawn ...`
 
 ### Permission
 
-`multiverse.core.spawn.self`  
-`multiverse.core.spawn.other`
-
-### Flags
-
-- `--unsafe`: allows teleportation to unsafe destinations
-
-### Details
-
-Allows you to teleport yourself (or another player) to the current world's spawn. If you want to teleport a player to a different world or different location within a world please see [`/mv tp`](#teleport-Command). This command does tell the teleportee who teleported them, even if it was the console. This is done to prevent admin abuse.
+`multiverse.core.spawn.self.[worldname]`  
+`multiverse.core.spawn.other.[worldname]`
 
 [↑ Back to Top ↑](#top)
 
@@ -972,40 +997,9 @@ Allows you to teleport yourself (or another player) to the current world's spawn
 
 ### Description
 
-Allows you to teleport one or more players to a different world.
+Allows you to teleport yourself or others to a specified world or destination. There are many different permissions associated with this command, with the categories being `self` and `other`; allowing you to teleport yourself and others respectively.
 
-### Usage
-
-`/mv tp [PLAYER(s)] <DESTINATION>`
-
-### Examples
-
-`/mv tp world`  
-`/mv tp Rigby90 world_nether`
-`/mv tp Rigby90,Jeb_,Notch world`
-`/mv tp @e world_the_end`
-`/mv tp Jeb_ e:world:0,0,0`
-
-### Aliases
-
-`/mv tp ...`
-`/mv teleport ...`
-`/mvtp ...`
-
-### Permission
-
-`multiverse.teleport.self.[DESTINATION].<WORLDNAME>`  
-`multiverse.teleport.other.[DESTINATION].<WORLDNAME>`
-
-### Flags
-
-- `--unsafe`: allows teleportation to unsafe destinations
-
-### Details
-
-The teleport command allows you to teleport yourself or others to a specified world or destination. There are many different permissions associated with this command, with the categories being `self` and `other`; allowing you to teleport yourself and others respectively.
-
-Each Type of [Destination](/core/reference/destinations/) will have each of the permissions (`self` and `other`) associated with it. The most basic example is for worlds:
+Each Type of [Destination](/core/reference/destinations) will have each of the permissions (`self` and `other`) associated with it. The most basic example is for worlds:
 
 ```
 multiverse.teleport.self.w
@@ -1021,51 +1015,66 @@ multiverse.teleport.other.p
 
 Even if you have the `multiverse.teleport.other.w` permission, you can only teleport people to worlds where **YOU** can go yourself. This will allow you to teleport a player to a world that they themselves cannot go to, as long as you have the permission to do so.
 
-:::caution[unfinished]
-The FAQ is not re-implemented yet
-:::
-Please see the [FAQ](#TODOLINK) for why this change was made (Old permissions were simply `multiverse.core.tp.[self|other]`)!
-
 ### Destinations
 
-`/mvtp` can be used with Destinations too! As seen in [Destinations](/core/reference/destinations/).
+`/mvtp` works hand in hand with Destinations! **See also:** [Destinations](/core/reference/destinations)
+
+### Usage
+
+```java
+/mv tp [player(s)] <destination> [--unsafe]
+```
+
+- `[player(s)]`: the player(s) to teleport. Leave empty to teleport yourself only.
+- `<destination>`: the destination to teleport to. See [Destinations](/core/reference/destinations)
+- `--unsafe`: allows teleportation to unsafe destinations
+
+### Examples
+
+- `/mv tp world`
+- `/mv tp Rigby90 world_nether`
+- `/mv tp Rigby90,Jeb_,Notch world`
+- `/mv tp @a b:playerbed`
+- `/mv tp Jeb_ e:world:70,64,0:90:90`
+
+### Aliases
+
+- `/mv teleport ...`
+- `/mv tp ...`
+- `/mvtp ...`
+
+### Permission
+
+`multiverse.teleport.self.<dest-id>.[finer-permissions]`  
+`multiverse.teleport.other.<dest-id>.[finer-permissions]`
 
 [↑ Back to Top ↑](#top)
-
 
 ## Unload Command
 
 ### Description
 
-Unloads a world from the Bukkit server.
+This command will **ONLY** unload the world from the server. It does **NOT** remove it from the Multiverse Configs OR delete the world folder. This can be used in servers that have lots of rarely used worlds to help with performance.
+
+**See also:** [/`mv remove`](#Remove-Command) and [`/mv delete`](#Delete-Command)
 
 ### Usage
 
-`/mv unload <WORLD> [flags]`
+```java
+/mv unload <world> [--remove-players] [--no-save]
+```
+- `<world>` - Target world to unload.
+- `--remove-players` - Remove players from the world first. If this flag is not specified and players are still in the world then the command will error
+- `--no-save` - Do not force the world to be saved before unloading - will rollback the world some time. **use with caution**
 
 ### Examples
 
-`/mv unload world`
-
-### Aliases
-
-`/mv unload ...`  
-`/mvunload ...`
+- `/mv unload world`
+- - `/mv unload lobby --no-save`
 
 ### Permission
 
 `multiverse.core.unload`
-
-### Flags
-
-- `--remove-players` Remove players from the world first. If this flag is not specified and players are still in the world then the command will error
-- `--no-save` Do not force the world to be saved before unloading - will rollback the world some time. **use with caution**
-
-### Details
-
-This command will **ONLY** unload the world from the server. It does **NOT** remove it from the Multiverse Configs OR delete the world folder. This can be used in servers that have lots of rarely used worlds to help with performance.
-
-**See also:** [/`mv remove`](#remove-Command) and [`/mv delete`](#delete-Command)
 
 [↑ Back to Top ↑](#top)
 
@@ -1073,30 +1082,22 @@ This command will **ONLY** unload the world from the server. It does **NOT** rem
 
 ### Description
 
-Displays who is in which world.
+Displays who is currently in a specific world. If you do not pass in a specific world then your current world will be used.
 
 ### Usage
 
-`/mv who [WORLD]`
+```java
+/mv who [world]
+```
 
 ### Examples
 
-`/mv who`  
-`/mv who world_nether`
-
-### Aliases
-
-`/mv who ...`  
-`/mvw ...`  
-`/mvwho ...`
+- `/mv who`  
+- `/mv who world_nether`
 
 ### Permission
 
 `multiverse.core.list.who`
-
-### Details
-
-Displays who is currently in a specific world. If you do not pass in a specific world then your current world will be used
 
 [↑ Back to Top ↑](#top)
 
@@ -1104,31 +1105,19 @@ Displays who is currently in a specific world. If you do not pass in a specific 
 
 ### Description
 
-Displays who is in which worlds.
-
-### Usage
-
-`/mv whoall`
-
-### Examples
-
-`/mv whoall`
-
-### Aliases
-
-`/mv whoall ...`  
-`/mvwhoall ...`
-
-### Permission
-
-`multiverse.core.list.who.all`
-
-### Details
-
 Displays who is currently in all worlds. `/mv who` will **not** show worlds that are empty.
 
 ![An example showing who's in what world](/core/command-reference/mvwhoall.png)
 Here is an example of the `/mv who` command in use combined with both [world aliases and colors](/core/fundamentals/world-properties/#Alias).
 
-[↑ Back to Top ↑](#top)
+### Usage
 
+```java
+/mv whoall [--page <number>] [--filter <string>]
+```
+
+### Permission
+
+`multiverse.core.list.who.all`
+
+[↑ Back to Top ↑](#top)
