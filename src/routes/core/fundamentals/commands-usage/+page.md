@@ -73,6 +73,10 @@ Many commands in Multiverse use flags, these can be one or two dashes. Two dash 
 
 There are two flags that are frequently used: `--filter` and `--page`. These are used for filtering and selecting the page respectively of a paginated command (a command that returns multiple pages). Note that pagination does not apply when running from the console. 
 
+### Optional vs. Required Params
+
+Items inside square braces (`[]`) are **OPTIONAL** where items inside (`<>`) are **REQUIRED**.
+
 ### Simple command example
 
 This is a simple command, which can be quickly broken down into parts:
