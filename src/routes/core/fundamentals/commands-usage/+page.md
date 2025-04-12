@@ -63,11 +63,7 @@ This page is a reference for Core Multiverse commands. For other command referen
 
 ## Introduction
 
-There is an in-game help system! To access this, type `/mv`. This section will break down how to read commands.
-
-### Command Case
-
-Whenever reading this wiki or the in-game [`/mv`](#help) help, items in **ALL CAPS** should be replaced with a variable. Items in lowercase should be typed exactly how they appear.
+There is an in-game help system! To access this, type `/mv help`. This section will break down how to read commands.
 
 ### Parameters and Flags
 
@@ -81,24 +77,24 @@ There are two flags that are frequently used: `--filter` and `--page`. These are
 
 This is a simple command, which can be quickly broken down into parts:
 
-[`/mv info [WORLD]`](#Information-Command)
+[`/mv info [world]`](#Information-Command)
 
 * The first part of this command `/mv` specifies the Multiverse plugin.
 * The second part of this command `info` is the [information command](#Information-Command), used to get information about a world.
-* The third part of this command `[WORLD]` is an OPTIONAL parameter, meaning you could type [`/mv info`](#Information-Command) **or** [`/mv info world`](#Information-Command). The command may have different effects with or without its params. For example, `/mv info world_the_end` will provide information about The End world. If you are currently standing in The End, `/mv info` will provide that info without needing to specify the param.
+* The third part of this command `[world]` is an OPTIONAL parameter, meaning you could type [`/mv info`](#Information-Command) **or** [`/mv info world`](#Information-Command). The command may have different effects with or without its params. For example, `/mv info world_the_end` will provide information about The End world. If you are currently standing in The End, `/mv info` will provide that info without needing to specify the param.
 
 ### Complex command example
 
 Let's look at the most complex example:  
 _NOTE: This is the most complex command in MV2 and in order to use it correctly, please refer to the [Create Command](#Create-Command)._
 
-[`/mv create <NAME> <ENVIRONMENT> [--seed <SEED> --generator <generator[ID]> --world-type <WORLDTYPE> --adjust-spawn --no-structures --biome <BIOME>]`](#Create-Command)
+[`/mv create <name> <environment> [--seed <seed> --generator <generator[:id]> --world-type <worldtype> --adjust-spawn --no-structures --biome <biome>]`](#Create-Command)
 
 * `/mv` specifies the Multiverse plugin.
 * `create` is the [create command](#Create-Command), used to create a new world.
-* `<NAME>` is a REQUIRED parameter. You must provide a name for the world.
-* `<ENVIRONMENT>` is a REQUIRED parameter. You must specify whether it is a normal, nether, or the_end world.
-* `[--seed <SEED> ... --biome <BIOME>]` is an OPTIONAL set of flags that can be used to modify the base commmand.
+* `<name>` is a **REQUIRED** parameter. You must provide a name for the world.
+* `<environment>` is a REQUIRED parameter. You must specify whether it is a `normal`, `nether`, or `the_end` world.
+* `[--seed <seed> ... --biome <biome>]` is an OPTIONAL set of flags that can be used to modify the base commmand.
 
 For example, if you want to use the "gargamel" [seed](/core/fundamentals/world-properties#Seed) you must add `--seed gargamel` to the command string. If you want a [generator](/core/fundamentals/world-properties#Generators) like "BukkitFullOfMoon", you must add `--generator BukkitFullOfMoon`. The order of flags does _not_ matter, and all of them are optional. Full examples of this command are located at the [Create Command reference](#Create-Command). 
 
@@ -108,16 +104,16 @@ For example, if you want to use the "gargamel" [seed](/core/fundamentals/world-p
 
 ### Description
 
-Any location you frequently plan to teleport to or point to as a destination can be turned into an anchor. First use the `/mv anchor set <NAME>` command to create an anchor, then use the new anchor name in any command that takes a destination. 
+Any location you frequently plan to teleport to or point to as a destination can be turned into an anchor. First use the `/mv anchor set <name>` command to create an anchor, then use the new anchor name in any command that takes a destination. 
 
 ### Usage
 
 ```java
-/mv anchor set <NAME> [LOCATION]
+/mv anchor set <name> [location]
 ```
 
-- `<NAME>`: The name of the anchor. If the anchor already exists, it location will be overwritten.
-- `[LOCATION]`: The location of the anchor. Must be specified if running from the console.
+- `<name>`: The name of the anchor. If the anchor already exists, it location will be overwritten.
+- `[location]`: The location of the anchor. Must be specified if running from the console.
 
 ### Examples
 
@@ -144,11 +140,11 @@ List all anchors and their corresponding locations.
 ### Usage
 
 ```java
-/mv anchor list [--page <PAGE> --filter <FILTER>]
+/mv anchor list [--page <page> --filter <filter>]
 ```
 
-- `--page <PAGE>`: The page of the list to show. Defaults to 1.
-- `--filter <FILTER>`: The filter to apply to the list.
+- `--page <page>`: The page of the list to show. Defaults to 1.
+- `--filter <filter>`: The filter to apply to the list.
 
 ### Permission
 
@@ -165,10 +161,10 @@ Deletes an existing anchor. Note there is no way to undo this action.
 ### Usage
 
 ```java
-/mv anchor delete <ANCHORNAME>
+/mv anchor delete <anchorname>
 ```
 
-- `<ANCHORNAME>`: The name of the anchor to delete. Command will fail if anchor does not exist.
+- `<anchorname>`: The name of the anchor to delete. Command will fail if anchor does not exist.
 
 ### Examples
 
