@@ -21,7 +21,7 @@
   "devDependencies": {
     "@iconify-json/vscode-icons": "^1.2.17",
     "@sveltejs/adapter-static": "^3.0.8",
-    "@sveltejs/kit": "^2.20.2",
+    "@sveltejs/kit": "^2.20.6",
     "@sveltejs/vite-plugin-svelte": "^4.0.1",
     "@sveltepress/theme-default": "^6.0.2",
     "@sveltepress/vite": "^1.2.1",
