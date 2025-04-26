@@ -1,8 +1,6 @@
 ---
-title: "Command Reference - Core"
+title: "Commands Usage"
 ---
-
-# Multiverse Command Reference
 
 :::caution[Warning]
 This page is for the new MV5 version.
@@ -11,11 +9,10 @@ For older mv4 versions, check our github wiki: https://github.com/Multiverse/Mul
 
 :::
 
-This page is a reference for Core Multiverse commands. For other command reference pages, see below:
-* [Multiverse-Portals](/portals/fundamentals/commands-usage) 
-* [Multiverse-NetherPortals](/netherportals/fundamentals/commands-usage) 
-* [Multiverse-Inventories](/inventories/fundamentals/commands-usage)
-* [Permissions List](/core/reference/permissions-list)
+If you're looking for the [Multiverse-Portals](/portals/fundamentals/commands-usage), [Multiverse-NetherPortals](/netherportals/fundamentals/commands-usage) or [Multiverse-Inventories](/inventories/fundamentals/commands-usage) Command References, click the links!
+
+**Looking for the permissions?**  
+[Click here to go the Big List O' Permissions!](/core/reference/permissions-list)
 
 ## Index
 
@@ -38,6 +35,7 @@ This page is a reference for Core Multiverse commands. For other command referen
 - [Gamerule List Command](#Gamerule-List-Command)
 - [Gamerule Set Command](#Gamerule-Set-Command)
 - [Gamerule Reset Command](#Gamerule-Reset-Command)
+- [Generators Command](#Generators-Command)
 - [Help Command](#Help-Command)
 - [Import Command](#Import-Command)
 - [Info Command](#Info-Command)
@@ -63,29 +61,23 @@ This page is a reference for Core Multiverse commands. For other command referen
 
 ## Introduction
 
-There is an in-game help system! To access this, type `/mv help`. This section will break down how to read commands.
+In Multiverse, we have included a handy new in-game help system. To access this help, simply type `/mv`. In order to properly read this command reference, we'll walk through reading the "usage" of a command.
 
-### Parameters and Flags
+### Command Case
 
-Using a basic command is frequently not enough for what you may be trying to do. Parameters and flags are added to the ends of commands to provide additional specific instructions. Parameters can be required or optional - when a command example is written out, items inside square braces (`[]`) are **OPTIONAL** where items inside (`<>`) are **REQUIRED**.
-
-Many commands in Multiverse use flags, these can be one or two dashes. Two dash flags are whole words (e.g: `--filter`) and one dash flags are shorthand versions of the same thing (e.g: `-f`). Flags are usually optional, allowing for specifying a command further (e.g. adding a generation seed to a command to generate a new world). Flags frequently have optional or required parameters of their own.
-
-There are two flags that are frequently used: `--filter` and `--page`. These are used for filtering and selecting the page respectively of a paginated command (a command that returns multiple pages). Note that pagination does not apply when running from the console. 
+Whenever reading this wiki or the in-game [`/mv`](#help) help, you should remember that items in **ALL CAPS** should be replaced with a variable. Items in lowercase should be typed exactly how they appear.
 
 ### Optional vs. Required Params
 
-Items inside square braces (`[]`) are **OPTIONAL** where items inside (`<>`) are **REQUIRED**.
+Items inside square braces (`[]`) are **OPTIONAL** where items inside (`<>`) are **REQUIRED**
 
 ### Simple command example
 
-This is a simple command, which can be quickly broken down into parts:
+Let's look at a simple one first:
 
-[`/mv info [world]`](#Information-Command)
+[`/mv info [world]`](#Info-Command)
 
-* The first part of this command `/mv` specifies the Multiverse plugin.
-* The second part of this command `info` is the [information command](#Information-Command), used to get information about a world.
-* The third part of this command `[world]` is an OPTIONAL parameter, meaning you could type [`/mv info`](#Information-Command) **or** [`/mv info world`](#Information-Command). The command may have different effects with or without its params. For example, `/mv info world_the_end` will provide information about The End world. If you are currently standing in The End, `/mv info` will provide that info without needing to specify the param.
+This means that this command has one optional parameter, meaning you could type [`/mv info`](#Info-Command) **or** [`/mv info world`](#Info-Command). Obviously, the command will do different things with or without its params. You can tell what those effects are by reading this wiki.
 
 ### Complex command example
 
@@ -94,13 +86,13 @@ _NOTE: This is the most complex command in MV2 and in order to use it correctly,
 
 [`/mv create <name> <environment> [--seed <seed> --generator <generator[:id]> --world-type <worldtype> --adjust-spawn --no-structures --biome <biome>]`](#Create-Command)
 
-* `/mv` specifies the Multiverse plugin.
-* `create` is the [create command](#Create-Command), used to create a new world.
-* `<name>` is a **REQUIRED** parameter. You must provide a name for the world.
-* `<environment>` is a REQUIRED parameter. You must specify whether it is a `normal`, `nether`, or `the_end` world.
-* `[--seed <seed> ... --biome <biome>]` is an OPTIONAL set of flags that can be used to modify the base commmand.
+At first, you will notice that there are 2 required params, **name**, and **environment**. Then you will see the flags afterward. If you want to use a [seed](/core/fundamentals/world-properties#Seed) you must add `--seed gargamel` to the command string. If you want a [generator](/core/fundamentals/world-properties#Generators) the same principle applies: `--generator BukkitFullOfMoon`. The order of flags does _not_ matter. Full examples of this command are located at the [Create Command reference](#Create-Command).
 
-For example, if you want to use the "gargamel" [seed](/core/fundamentals/world-properties#Seed) you must add `--seed gargamel` to the command string. If you want a [generator](/core/fundamentals/world-properties#Generators) like "BukkitFullOfMoon", you must add `--generator BukkitFullOfMoon`. The order of flags does _not_ matter, and all of them are optional. Full examples of this command are located at the [Create Command reference](#Create-Command). 
+### Flags
+
+Many commands in Multiverse use flags, these can be one or two dashes. Two dash flags are whole words (e.g: `--filter`) and one dash flags are shorthand versions of the same thing (e.g: `-f`).
+
+There are two flags that you will come across quite a lot: `--filter` and `--page`. These are used for filtering and selecting the page respectively of a paginated command. FYI, pagination does not apply when running from the console. 
 
 [↑ Back to Top ↑](#top)
 
@@ -108,7 +100,7 @@ For example, if you want to use the "gargamel" [seed](/core/fundamentals/world-p
 
 ### Description
 
-Any location you frequently plan to teleport to or point to as a destination can be turned into an anchor. First use the `/mv anchor set <name>` command to create an anchor, then use the new anchor name in any command that takes a destination. 
+Anchors should be used if you have a place you want to go frequently. Using the `/mv anchor set <name>` command to first create an anchor, you can then use it in any command that takes a destination. 
 
 ### Usage
 
@@ -124,9 +116,6 @@ Any location you frequently plan to teleport to or point to as a destination can
 - `/mv anchor set myanchor` - Creates the anchor with the name `myanchor` at your current location. 
 - `/mv anchor set coolanchor cool:1,2,3:10:12` - Creates the anchor with the name `coolanchor` at location world `cool`, x: 1, y: 2, z: 3, pitch: 10, yaw: 12.
 
-Example of teleporting to an anchor:
-- `/mvtp a:myanchor` - Teleports the user to the anchor named `myanchor`. For more teleport commands, see [Teleport Command](#Teleport-Command).
-
 ### Permission
 
 `multiverse.core.anchor.create`  
@@ -139,7 +128,7 @@ For teleport permission of anchors `/mvtp a:<anchorname>`, see [Anchor Destinati
 
 ### Description
 
-List all anchors and their corresponding locations.
+List all anchors and its corresponding locations.
 
 ### Usage
 
@@ -604,6 +593,24 @@ Resets a world's vanilla game rules value to it's default value. For more info o
 ### Permission
 
 `multiverse.core.gamerule.set`
+
+[↑ Back to Top ↑](#top)
+
+## Generators Command
+
+### Description
+
+Displays a list of loaded generators.
+
+### Usage
+
+```java
+/mv generators [--page <page>] [--filter <filter>]
+```
+
+### Permission
+
+`multiverse.core.generator`
 
 [↑ Back to Top ↑](#top)
 

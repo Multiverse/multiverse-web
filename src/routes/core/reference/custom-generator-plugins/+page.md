@@ -10,19 +10,20 @@ You may add your plugin using the [BukkitFullOfMoon](https://github.com/Dinnerbo
 
 1. Place the generator's jar in your plugins folder.
 2. Start your server
-3. Use the generator command. This will verify that the generator loaded properly. You should see its name appear:
+3. Use the [generators command](/core/fundamentals/commands-usage/#Generators-Command). This will verify that the generator loaded properly. You should see its name appear:
    ```
-   /mv gens
-   --- Loaded Generator Plugins ---
-   VoidGenerator SkylandsPlus
+   /mv generators
+   ====[ Multiverse Generator List ]====
+   VoidGenerator
+   SkylandsPlus
    ```
 4. Then simply use the create command to create the world with a generator.
    ```
-   /mv create voidworld normal -g VoidGenerator
+   /mv create voidworld normal --generator VoidGenerator
    ```
 5. Some generators allow you to specify ID to customise how the world is generator. For example, VoidGenerator allows you to specify the biomes as follows.
    ```
-   /mv create coldworld normal -g VoidGenerator:FROZEN_OCEAN
+   /mv create coldworld normal --generator VoidGenerator:FROZEN_OCEAN
    ```
 
 ## [Terra](https://www.spigotmc.org/resources/terra.85151/)

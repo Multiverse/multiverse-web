@@ -2,20 +2,10 @@
 title: "World Properties"
 ---
 
-:::caution[Unfinished]
-This page is not finished!
-
-Todo:
-
-- Update to MV5
-  :::
-
 Here are the various properties of worlds that can be set in game using the [Modify Command](/core/fundamentals/commands-usage#Modify-Command). They can also be set in `worlds.yml` but **normally you should not have to edit this file**. Although, if you are an advanced user, you may. This is a typical plugin configuration file written in yaml and follows the same syntax as normal.
 
 ## Index
 
-- [World Permissions](#World-Permissions)
-- [Setting the Spawn World](#Default-Spawn-World)
 - [Animals](#Animals)
 - [Monsters](#Monsters)
 - [Environment](#Environment)
@@ -36,45 +26,12 @@ Here are the various properties of worlds that can be set in game using the [Mod
 - [Auto-Heal](#Auto-Heal)
 - [Adjust Spawn](#Adjust-Spawn)
 - [Portal Forming](#Portal-Form)
-- [Time](#Time)
 - [Player Limit](#Player-Limit)
 - [Allow Flight](#Allow-Flight)
 - [Auto Load](#Auto-Load)
 - [Bed Respawn](#Bed-Respawn)
+- [Anchor Respawn](#Anchor-Respawn)
 
-## World Permissions
-
-You can easily control who can enter various worlds in Multiverse 2. To allow people access to a world, simply grant them access to `multiverse.access.WORLDNAME` where WORLDNAME is the name of the world. By default (with PermissionsBukkit) people _can_ enter newly created worlds. You can give users `multiverse.access.*` to let them access all worlds, or set the same to false to deny access to all worlds.
-
-## First Spawn Location
-
-Multiverse allows you to set what world users will first spawn in. This does _not_ have to be the world that is in `server.properties`. To do this, make sure you have the following 2 values set in your [`config.yml`](/core/reference/configuration-file). You can set this value in-game by using `/mv config first-spawn-override true` and `/mv config first-spawn-location myworld`. We advise against editing the file, but here is the clip:
-
-```yaml
-spawn:
-  # Sets whether Multiverse will override the first spawn location of a world.
-  # If enabled, Multiverse will set the first spawn location of a world to the spawn location of the world.
-  # If disabled, it will default to server.properties settings.
-  first-spawn-override: true
-
-  # Sets the world that Multiverse will use as the location for players that first join the server.
-  # This only applies if first-spawn-override is set to true.
-  first-spawn-location: ""
-```
-
-## Join Destionation
-
-Multiverse allows you to set the [destination](/core/reference/destinations/) that players will always spawn in when logging in. This is useful for a hub world or similar, to enable this you need to set the the following 2 values set in your [`config.yml`](/core/reference/configuration-file). You can set this value in-game by using `/mv config enable-join-destination true` and `/mv config join-destination mydestination`. We advise against editing the file, but here is the clip:
-
-```yaml
-spawn:
-  # Enables join-destination below.
-  enable-join-destination: false
-
-  # Sets the destination that Multiverse will use to spawn players on every login
-  # Set the above enable-join-destination to false to disable
-  join-destination: ""
-```
 
 ## Animals
 
@@ -118,11 +75,11 @@ You should read this as "Animals **can not** spawn **except** for pigs."
 You should read this as "Animals **can** spawn **except** for pigs."
 
 **In Game Usage:**  
-[`/mv modify <world> set animals true`](</core/fundamentals/commands-usage#Modify-Command-(Set)>)- Enables animal spawning in the current world.  
-[`/mv modify <world> set animals false`](</core/fundamentals/commands-usage#Modify-Command-(Set)>)- Disables animal spawning in the current world.  
-[`/mv modify <world> add pig animals`](</core/fundamentals/commands-usage#Modify-Command-(Set)>) - Adds the animal type `pig` to the exemption list.  
-[`/mv modify <world> remove pig animals`](</core/fundamentals/commands-usage#Modify-Command-(Set)>) - Removes the animal type `pig` to the exemption list.  
-[`/mv modify <world> clear animals`](</core/fundamentals/commands-usage#Modify-Command-(Set)>) - Clears the animal exemption list.
+[`/mv entity-spawn-config <world> modify animal set spawn true`](</core/fundamentals/commands-usage#Modify-Command-(Set)>)- Enables animal spawning in the current world.  
+[`/mv entity-spawn-config <world> modify animal set spawn false`](</core/fundamentals/commands-usage#Modify-Command-(Set)>)- Disables animal spawning in the current world.  
+[`/mv entity-spawn-config <world> modify animal add exceptions pig`](</core/fundamentals/commands-usage#Modify-Command-(Set)>) - Adds the animal type `pig` to the exemption list.  
+[`/mv entity-spawn-config <world> modify animal remove exceptions pig`](</core/fundamentals/commands-usage#Modify-Command-(Set)>) - Removes the animal type `pig` to the exemption list.  
+[`/mv entity-spawn-config <world> modify animal reset exceptions`](</core/fundamentals/commands-usage#Modify-Command-(Set)>) - Clears the animal exemption list.
 
 [↑ Back to Top ↑](#top)
 
@@ -168,11 +125,11 @@ You should read this as "Monsters **can not** spawn **except** for creepers."
 You should read this as "Monsters **can** spawn **except** for creepers."
 
 **In Game Usage:**  
-[`/mv modify <world> set monsters true`](</core/fundamentals/commands-usage#Modify-Command-(Set)>)- Enables monster spawning in the current world (and disables auto-heal).  
-[`/mv modify <world> set monsters false`](</core/fundamentals/commands-usage#Modify-Command-(Set)>)- Disables monster spawning in the current world (and enables auto-heal).  
-[`/mv modify <world> add creeper monsters`](</core/fundamentals/commands-usage#Modify-Command-(Set)>) - Adds the monster type `creeper` to the exemption list.  
-[`/mv modify <world> remove creeper monsters`](</core/fundamentals/commands-usage#Modify-Command-(Set)>) - Removes the monster type `creeper` to the exemption list.  
-[`/mv modify <world> clear monsters`](</core/fundamentals/commands-usage#Modify-Command-(Set)>) - Clears the monster exemption list.
+[`/mv entity-spawn-config <world> modify monster set spawn true`](/core/fundamentals/commands-usage#Entity-Spawn-Config-Modify-Command)- Enables monster spawning in the current world (and disables auto-heal).  
+[`/mv entity-spawn-config <world> modify monster set spawn false`](/core/fundamentals/commands-usage#Entity-Spawn-Config-Modify-Command)- Disables monster spawning in the current world (and enables auto-heal).  
+[`/mv entity-spawn-config <world> modify monster add creeper`](/core/fundamentals/commands-usage#Entity-Spawn-Config-Modify-Command) - Adds the monster type `creeper` to the exemption list.  
+[`/mv entity-spawn-config <world> modify monster remove creeper`](/core/fundamentals/commands-usage#Entity-Spawn-Config-Modify-Command) - Removes the monster type `creeper` to the exemption list.  
+[`/mv entity-spawn-config <world> modify monster reset`](/core/fundamentals/commands-usage#Entity-Spawn-Config-Modify-Command) - Clears the monster exemption list.
 
 [↑ Back to Top ↑](#top)
 
@@ -342,12 +299,12 @@ The world you will respawn to if you die in this world. This value can be the sa
 `String`
 
 **Example:**  
-`respawnworld: 'hellplanet'`
+`respawn-world: 'hellplanet'`
 
 **NOTE:** If you see a `temprespawn` value, you can delete it. It got carried over in early versions of the migrator.
 
 **In Game Usage:**  
-`mvm set respawnWorld MyWorld`
+`mvm set respawn-world MyWorld`
 
 [↑ Back to Top ↑](#top)
 
@@ -416,10 +373,10 @@ Allows you to set the difficulty of a given world. All possible values are: `0, 
 `difficulty: 1`
 
 **In Game Usage:**  
-`mvm set diff 1`  
+`mvm set difficulty 1`  
 `mvm set difficulty easy`  
-`mvm set diff hard`  
-`mvm set diff peaceful`
+`mvm set difficulty hard`  
+`mvm set difficulty peaceful`
 
 [↑ Back to Top ↑](#top)
 
@@ -462,11 +419,11 @@ If your [difficulty](#Difficulty) is set to `peaceful`, by default, players will
 `Boolean`
 
 **Example:**
-`autoheal: true`
+`auto-heal: true`
 
 **In Game Usage:**
-`mvm set autoheal true`
-`mvm set autoheal false`
+`mvm set auto-heal true`
+`mvm set auto-heal false`
 
 [↑ Back to Top ↑](#top)
 
@@ -486,7 +443,7 @@ If you want to set this variable when importing a world, simply add a `-n` to yo
 `Boolean`
 
 **Example:**
-`adjustspawn: true`
+`adjust-spawn: true`
 
 **In Game Usage:**
 `mvm set adjustspawn true`  
@@ -514,22 +471,6 @@ Results are fairly self explanatory.
 
 [↑ Back to Top ↑](#top)
 
-## Time
-
-Multiverse inclues _very basic_ support for setting world times. It does not scale time, or lock it or rewind it. It is provided mainly as an api for higher level things like server managers to set the time to something.
-
-**Type**:
-`String`
-
-**Example:**
-**This value is not present in the `config.yml`**
-
-**In Game Usage:**
-`mvm set time true`  
-`mvm set time false`
-
-[↑ Back to Top ↑](#top)
-
 ## Player Limit
 
 Multiverse has the ability to set a maximum number of players allowed in a world. By default, the limit is set to `-1` indicating no limit. The setting is to specify how many players are allowed.
@@ -542,7 +483,7 @@ A player may bypass this limit with the following permissions:
 `Integer`
 
 **Example:**
-`playerLimit: -1`
+`playerlimit: -1`
 
 **In Game Usage:**
 `mvm set playerlimit 10`  
@@ -561,7 +502,7 @@ A player may bypass this setting with the following permissions:
 `Boolean`
 
 **Example:**
-`allowflight: true`
+`allow-flight: true`
 
 **In Game Usage:**
 `mvm set flight false`  
@@ -586,7 +527,7 @@ Tells Multiverse to automatically load this world on startup.
 
 ## Bed Respawn
 
-If `bedrespawn` is set to true, players will be able to respawn at their bed in this world.
+If `bed-respawn` is set to true, players will be able to respawn at their bed in this world.
 
 **Type**:
 `Boolean`
@@ -598,3 +539,7 @@ If `bedrespawn` is set to true, players will be able to respawn at their bed in 
 `mvm set bedrespawn false`
 
 [↑ Back to Top ↑](#top)
+
+## Anchor Respawn
+
+If `anchor-respawn` is set to true, players will be able to respawn at their anchor in this world.

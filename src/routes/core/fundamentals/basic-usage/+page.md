@@ -1,8 +1,6 @@
 ---
-title: "Basics - Core"
+title: "Basics Usage"
 ---
-
-# Basic Tutorial
 
 ## Introduction
 
@@ -113,6 +111,36 @@ Sweet! Now just repeat the process for all of your worlds! Don't like the folder
 :::caution[Server version]
 You must ensure that the world you are importing is generated on the same minecraft version as your server.
 :::
+
+## First Spawn Location
+
+Multiverse allows you to set what world users will first spawn in. This does _not_ have to be the world that is in `server.properties`. To do this, make sure you have the following 2 values set in your [`config.yml`](/core/reference/configuration-file). You can set this value in-game by using `/mv config first-spawn-override true` and `/mv config first-spawn-location myworld`. We advise against editing the file, but here is the clip:
+
+```yaml
+spawn:
+  # Sets whether Multiverse will override the first spawn location of a world.
+  # If enabled, Multiverse will set the first spawn location of a world to the spawn location of the world.
+  # If disabled, it will default to server.properties settings.
+  first-spawn-override: true
+
+  # Sets the world that Multiverse will use as the location for players that first join the server.
+  # This only applies if first-spawn-override is set to true.
+  first-spawn-location: ""
+```
+
+## Join Destination
+
+Multiverse allows you to set the [destination](/core/reference/destinations/) that players will always spawn in when logging in. This is useful for a hub world or similar, to enable this you need to set the the following 2 values set in your [`config.yml`](/core/reference/configuration-file). You can set this value in-game by using `/mv config enable-join-destination true` and `/mv config join-destination mydestination`. We advise against editing the file, but here is the clip:
+
+```yaml
+spawn:
+  # Enables join-destination below.
+  enable-join-destination: false
+
+  # Sets the destination that Multiverse will use to spawn players on every login
+  # Set the above enable-join-destination to false to disable
+  join-destination: ""
+```
 
 ## Conclusion
 

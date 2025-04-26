@@ -2,16 +2,8 @@
 title: "Permissions Setup"
 ---
 
-:::caution[Unfinished]
-This page is not finished!
-
-Todo:
-
-- Links
-  :::
-
 :::tip[Can I just have all the permissions]
-The big list of all permissions is at [[CHANGE ME PLEASE]]
+The big list of all permissions is at [Permissions List Page](/core/reference/permissions-list)
 :::
 
 ## Multiverse Permissions Plugin Support
@@ -20,7 +12,7 @@ Multiverse supports any plugin that adheres to the SuperPerms Bukkit Permissions
 
 ## Multiverse World Permissions
 
-Multiverse allows you to control who can enter worlds via permissions! When you create a world or import a world into Multiverse-Core, it automatically creates a permission: `multiverse.access.WORLDNAME`. If a player _has_ `multiverse.access.WORLDNAME`, then they can enter that world.
+Multiverse allows you to control who can enter worlds via permissions! When you create a world or import a world into Multiverse-Core, it automatically creates a permission: `multiverse.access.[worldname]`. If a player _has_ `multiverse.access.[worldname]`, then they can enter that world.
 
 :::note[Note]
 Ensure you have `enforceaccess` **enabled** in your Multiverse [`config.yml`](/core/reference/configuration-file/) to use this permission. If `enforceaccess` is set to `false` then _anyone_ can go to _any_ world and **all world-access permissions are ignored**.
