@@ -13,7 +13,7 @@ For older mv4 versions, check our github wiki: https://github.com/Multiverse/Mul
 
 ## Basics
 
-- [Install Multiverse-Core](/core/fundamentals/installation) from scratch or [how to Upgrade](/core/how-to/upgrading-to-mv5) from Multiverse 4!
+- [Install Multiverse-Core](/core/fundamentals/installation) from scratch or [how to Upgrade](/mv5/welcome/upgrading) from Multiverse 4!
 - If you've never used Multiverse before you should check out the [Basic Multiverse Tutorial](/core/fundamentals/basic-usage).
 - Read how to use [Multiverse with Permissions](/core/fundamentals/permissions-setup)
 - Found a bug? Contact us on our [Discord](https://discord.gg/NZtfKky) or open an [issue on GitHub](https://github.com/Multiverse/Multiverse-Core/issues/new).

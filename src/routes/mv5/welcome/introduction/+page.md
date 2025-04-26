@@ -26,7 +26,7 @@ Since 2021, we have been working tirelessly to make this the best version of Mul
 
 ## Installation
 
-Installation instructions can be found here: [Installation](/mv5/welcome/installation)
+Installation instructions can be found here: [Upgrading Guide](/mv5/welcome/upgrading/)
 
 ## Donations
 
