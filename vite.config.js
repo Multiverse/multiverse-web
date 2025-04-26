@@ -2,11 +2,13 @@ import { defaultTheme } from '@sveltepress/theme-default'
 import { sveltepress } from '@sveltepress/vite'
 import { defineConfig } from 'vite'
 
+import mv5Sidebar from "./config/sidebar/mv5"
 import coreSidebar from "./config/sidebar/core"
 import netherportalsSidebar from './config/sidebar/netherportals'
 import inventoriesSidebar from './config/sidebar/inventories'
 import portalsSidebar from './config/sidebar/portals'
 import signportalsSidebar from './config/sidebar/signportals'
+import mv5 from './config/sidebar/mv5'
 
 const config = defineConfig({
 	server: {
@@ -38,6 +40,10 @@ const config = defineConfig({
 				},
 				navbar: [
 					{
+						title: 'MV5',
+						to: '/mv5/welcome/introduction/'
+					},
+					{
 						title: 'Core',
 						to: '/core/fundamentals/introduction/'
 					},
@@ -63,6 +69,7 @@ const config = defineConfig({
 					},
 				],
 				sidebar: {
+					"/mv5/": mv5Sidebar,
 					"/core/": coreSidebar,
 					"/netherportals/": netherportalsSidebar,
 					"/inventories/": inventoriesSidebar,
