@@ -1,5 +1,5 @@
 ---
-title: "Upgrading"
+title: "Upgrade Guide"
 ---
 
 ## READ THIS FIRST!
