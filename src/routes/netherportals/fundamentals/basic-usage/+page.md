@@ -7,7 +7,7 @@ title: "Basic Usage"
 * Create Nether portals like you would in single-player.
 * Nether portals in world `X` look for a world called `X_nether`, and take you there if it exists.
 * Nether portals in world `X_nether` look for a world called `X`, and take you there if it exists.
-* Redirect Nether portals by "linking" two worlds: [`/mvnp link {end|nether} X Y`](https://github.com/Multiverse/Multiverse-Core/wiki/Command-Reference-%28NetherPortals%29#link).
+* Redirect Nether portals by "linking" two worlds: [`/mvnp link {end|nether} X Y`](/netherportals/fundamentals/commands-usage#Link-Command).
 
 ## What you need
 

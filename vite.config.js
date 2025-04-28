@@ -48,16 +48,16 @@ const config = defineConfig({
 						to: '/core/fundamentals/introduction/'
 					},
 					{
-						title: 'NetherPortals',
-						to: '/netherportals/fundamentals/installation/'
+						title: 'Inventories',
+						to: '/inventories/fundamentals/installation/'
 					},
 					{
 						title: 'Portals',
 						to: '/portals/fundamentals/installation/'
 					},
 					{
-						title: 'Inventories',
-						to: '/inventories/fundamentals/installation/'
+						title: 'NetherPortals',
+						to: '/netherportals/fundamentals/installation/'
 					},
 					{
 						title: 'SignPortals',

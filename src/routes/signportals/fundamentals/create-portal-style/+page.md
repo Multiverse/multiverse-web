@@ -2,7 +2,7 @@
 title: "Create Portal Style"
 ---
 
-Portal Style SignPortals can to go ANY [Multiverse destination](https://github.com/Multiverse/Multiverse-Core/wiki/Destinations).
+Portal Style SignPortals can to go ANY [Multiverse destination](/core/reference/destinations).
 
 ## Step 1
 Give yourself `multiverse.signportal.create`
