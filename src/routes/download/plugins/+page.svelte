@@ -8,10 +8,9 @@
       tagColor: "bg-red-500",
     },
     {
-      name: "Multiverse-NetherPortals",
-      description:
-        "Manages vanilla Nether and End portals linking between worlds.",
-      link: "https://modrinth.com/plugin/multiverse-netherportals#download",
+      name: "Multiverse-Inventories",
+      description: "Handles inventory separation between worlds.",
+      link: "https://modrinth.com/plugin/multiverse-inventories#download",
       tag: "add-on",
       tagColor: "bg-green-500",
     },
@@ -23,9 +22,10 @@
       tagColor: "bg-green-500",
     },
     {
-      name: "Multiverse-Inventories",
-      description: "Handles inventory separation between worlds.",
-      link: "https://modrinth.com/plugin/multiverse-inventories#download",
+      name: "Multiverse-NetherPortals",
+      description:
+        "Manages vanilla Nether and End portals linking between worlds.",
+      link: "https://modrinth.com/plugin/multiverse-netherportals#download",
       tag: "add-on",
       tagColor: "bg-green-500",
     },
