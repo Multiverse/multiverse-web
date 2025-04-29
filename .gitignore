@@ -138,3 +138,10 @@ dist
 # Svelte
 .svelte-kit
 .sveltepress
+
+# Mac
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon[]
+._*

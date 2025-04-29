@@ -8,7 +8,6 @@ import netherportalsSidebar from './config/sidebar/netherportals'
 import inventoriesSidebar from './config/sidebar/inventories'
 import portalsSidebar from './config/sidebar/portals'
 import signportalsSidebar from './config/sidebar/signportals'
-import mv5 from './config/sidebar/mv5'
 
 const config = defineConfig({
 	server: {
@@ -17,6 +16,11 @@ const config = defineConfig({
 	plugins: [
 		sveltepress({
 			theme: defaultTheme({
+				docsearch : {
+					appId : '56HWOVX855',
+					apiKey : '888a5504d578f6f1d444abdb7be802ad',
+					indexName : 'mvplugins',
+				},
 				themeColor: {
 					primary: '#1aa4b8',
 					hover: '#1a8cb8',
