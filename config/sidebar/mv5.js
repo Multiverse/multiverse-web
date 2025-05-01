@@ -15,6 +15,10 @@ export default [
                 title: "Incompatible Plugins",
                 to: "/mv5/welcome/incompatible-plugins/",
             },
+            {
+                title: "Command Changes",
+                to: "/mv5/welcome/command-changes/",
+            }
         ]
     },
     {
