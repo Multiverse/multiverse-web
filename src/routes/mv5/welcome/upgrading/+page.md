@@ -6,7 +6,7 @@ title: "Upgrade Guide"
 
 - Your server must be running **minecraft 1.18 and above**
 - Please **make backups** before updating your server
-- You **cannot downgrade** after installing mv5 alpha builds
+- You **cannot downgrade** after installing MV5 builds
 - 3rd-party plugins that relies on old MV4's API may not work. See [Incompatible Plugins](/mv5/welcome/incompatible-plugins)
 
 ## Downloading
