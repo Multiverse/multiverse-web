@@ -2,6 +2,7 @@ import { defaultTheme } from '@sveltepress/theme-default'
 import { sveltepress } from '@sveltepress/vite'
 import { defineConfig } from 'vite'
 
+import mv5Sidebar from "./config/sidebar/mv5"
 import coreSidebar from "./config/sidebar/core"
 import netherportalsSidebar from './config/sidebar/netherportals'
 import inventoriesSidebar from './config/sidebar/inventories'
@@ -15,6 +16,11 @@ const config = defineConfig({
 	plugins: [
 		sveltepress({
 			theme: defaultTheme({
+				docsearch : {
+					appId : '56HWOVX855',
+					apiKey : '888a5504d578f6f1d444abdb7be802ad',
+					indexName : 'mvplugins',
+				},
 				themeColor: {
 					primary: '#1aa4b8',
 					hover: '#1a8cb8',
@@ -34,24 +40,28 @@ const config = defineConfig({
 					]
 				},
 				highlighter: {
-					languages: ['svelte', 'sh', 'js', 'html', 'ts', 'md', 'css', 'scss', 'yaml', 'java']
+					languages: ['svelte', 'sh', 'js', 'html', 'ts', 'md', 'css', 'scss', 'yaml', 'java', 'xml']
 				},
 				navbar: [
+					{
+						title: 'MV5',
+						to: '/mv5/welcome/introduction/'
+					},
 					{
 						title: 'Core',
 						to: '/core/fundamentals/introduction/'
 					},
 					{
-						title: 'NetherPortals',
-						to: '/netherportals/fundamentals/installation/'
+						title: 'Inventories',
+						to: '/inventories/fundamentals/installation/'
 					},
 					{
 						title: 'Portals',
 						to: '/portals/fundamentals/installation/'
 					},
 					{
-						title: 'Inventories',
-						to: '/inventories/fundamentals/installation/'
+						title: 'NetherPortals',
+						to: '/netherportals/fundamentals/installation/'
 					},
 					{
 						title: 'SignPortals',
@@ -63,6 +73,7 @@ const config = defineConfig({
 					},
 				],
 				sidebar: {
+					"/mv5/": mv5Sidebar,
 					"/core/": coreSidebar,
 					"/netherportals/": netherportalsSidebar,
 					"/inventories/": inventoriesSidebar,

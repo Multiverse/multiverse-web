@@ -3,12 +3,14 @@ title: Home
 heroImage: /multiverse5.svg
 tagline: One server. Endless possibilities.
 actions:
-  - label: Download Now!
+  - label: Download Now!!!
     type: primary
     to: download/plugins/
+  - label: All NEW MV5!!!
+    type: primary
+    to: mv5/welcome/introduction/
   - label: Read the Docs
-    to: https://github.com/Multiverse/Multiverse-Core/wiki
-    external: true
+    to: core/fundamentals/introduction/
 features:
   - title: Easy to Use
     description: The easiest world management solution for your Minecraft server, big or small!

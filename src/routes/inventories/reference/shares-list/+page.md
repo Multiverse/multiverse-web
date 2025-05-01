@@ -13,6 +13,7 @@ The shares will be listed first with all the possible keywords you may use to in
 * **armor_contents** - the player's armor. (**armor**)
 * **ender_chest** - The contents of a player's Ender Chest.
 * **hit_points** - the player's health. (**health**, **hp**, **hitpoints**)
+* **max_hit_points** - The player's max health (**maxhealth**, **maxhp**, **maxhitpoints**)
 * **remaining_air** - the player's remaining breath, for when they're underwater.
 * **maximum_air** - the player's maximum breath, which may be altered by plugins.
 * **fall_distance** - the player's fall distance, to keep them falling and taking damage when they switch worlds. (**falling**)
@@ -28,9 +29,15 @@ The shares will be listed first with all the possible keywords you may use to in
 
 ### Optional Shares - Must be enabled via `/mvinv toggle <sharename>` or they have NO effect.
 
-<a name="economy" href="#economy">•</a> **economy** - the player's economy balance.  This one still has some flaws... It WILL transfer balances but it cannot prevent people from paying players in other world groups. (**money**, **econ**, **cash**, **balance**)
+- **economy** - the player's economy balance. This one still has some flaws... It WILL transfer balances but it cannot prevent people from paying players in other world groups. We recommending leaving it to the economy to handle everything instead. (**money**, **econ**, **cash**, **balance**)
 
-<a name="last_location" href="#last_location">•</a> **last_location** - the player's last location in the world group.  This feature completely overrides any sort of teleport into a world that doesn't share this with the previous world.  This means it may end up teleporting them to a DIFFERENT world than intended on the first try. (**loc**, **location**, **pos**, **position**)
+- **last_location** - the player's last location in the world group. This feature completely overrides any sort of teleport into a world that doesn't share this with the previous world.  This means it may end up teleporting them to a DIFFERENT world than intended on the first try. (**loc**, **location**, **pos**, **position**)
+
+- **recipe** - the player's recipes unlocked based on the items they have discover in the world/group. Note: We are unable to disable the client's notification on recipe unlocked
+
+- **advancement** - the player's advancement progress. Note: We are unable to disable the client's notification on advancement achieved
+
+- **gamestats** - Data such as play time, number of deaths etc...
 
 ### Grouped Shares - These are "package deals" that include multiple of the above shares with one keyword.
 

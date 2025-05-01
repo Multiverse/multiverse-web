@@ -21,7 +21,7 @@ In this example, I'm linking the worlds `creative` and `creative2` as shown in t
 (As you can see at the end of the statement, the current worlds listed show "`creative`" and "`creative2`", so it added them to the group successfully)
 
 ### Step #4
-Once you add all the worlds, you type "`@`" to continue to the next step, which will be the shares you want to share between these worlds. All available shares can be found [on this wiki](https://github.com/Multiverse/Multiverse-Core/wiki/Shares-List-(Inventories)). In this example, I'm going to share everything, so I will type "`all`".
+Once you add all the worlds, you type "`@`" to continue to the next step, which will be the shares you want to share between these worlds. All available shares can be found [on this wiki](/inventories/reference/shares-list). In this example, I'm going to share everything, so I will type "`all`".
 
 ![4](https://user-images.githubusercontent.com/8557785/63902954-6157c280-c9d1-11e9-96a5-7659357d4d6e.png)
 (As you can see at the end of the statement, everything is shared between the worlds I listed above)

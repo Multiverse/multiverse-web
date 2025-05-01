@@ -6,39 +6,36 @@ Multiverse-Portals is a complement to Multiverse that is relatively easy to use 
 
 ## Introduction
 
-**Multiverse-Portals** provides portals between worlds, similar to vanilla portals, except the destination can go ANYWHERE, as opposed to just the nether. Note that the Nether portal blocks (the purple things that make the portals make the weird sound) __will not fill these portals__, but the portals can have water or lava placed into them for a more authentic experience. If you're seeking a multi-world authentic experience, you should check out [Multiverse-NetherPortals](https://github.com/Multiverse/Multiverse-NetherPortals/wiki).
+**Multiverse-Portals** provides portals between worlds, similar to vanilla portals, except the destination can go ANYWHERE, as opposed to just the nether. Note that the Nether portal blocks (the purple things that make the portals make the weird sound) __will not fill these portals__, but the portals can have water or lava placed into them for a more authentic experience. If you're seeking a multi-world authentic experience, you should check out [Multiverse-NetherPortals](/netherportals/fundamentals/installation).
 
 ## Making your portal
 A portal can be constructed out of ANYTHING. Yes. Anything. Even nothing. Step 1 of creating a Multiverse Portal is to create the 'Portal Frame'. Here are a few examples:
 
-[[https://github.com/Multiverse/Multiverse-Portals/wiki/images/sampleportals.png]]
+![sample portal](https://github.com/Multiverse/Multiverse-Portals/wiki/images/sampleportals.png)
 
 For this tutorial, I will be working with this portal I have made out of wool:
 
-[[https://github.com/Multiverse/Multiverse-Portals/wiki/images/sampleportal.png]]
+![sample portal](https://github.com/Multiverse/Multiverse-Portals/wiki/images/sampleportal.png)
 
 ## Getting a wand
 
 Portals are constructed with a wand. To get one simply type `/mvp wand`. You should see something like this (but you may not, keep reading):
-[[https://github.com/Multiverse/Multiverse-Portals/wiki/images/portalwand.png]]
-
+![portal wand](https://github.com/Multiverse/Multiverse-Portals/wiki/images/portalwand.png)
 
 If you see:
-[[https://github.com/Multiverse/Multiverse-Portals/wiki/images/usingworldedit.png]]
+![using world edit](https://github.com/Multiverse/Multiverse-Portals/wiki/images/usingworldedit.png)
 
 Then WorldEdit has been detected on your server. If you're using WorldEdit, simply use that plugin to perform your selections by using `//wand`!
-
-
 
 ## Making your selection
 First, click on one corner of your portal. In our example, I will be __left clicking__ the __green wool__ block.
 
-[[https://github.com/Multiverse/Multiverse-Portals/wiki/images/first.png]]
+![first](https://github.com/Multiverse/Multiverse-Portals/wiki/images/first.png)
 You should then see 'First position set to...'
 
 Then __right click__ the other corner. In my example, the __red wool__.
 
-[[https://github.com/Multiverse/Multiverse-Portals/wiki/images/second.png]]
+![second](https://github.com/Multiverse/Multiverse-Portals/wiki/images/second.png)
 
 After this, you now have your portal __selection__ but the portal is __not__ created yet. Read on.   
 _**NOTE:** Take note of the value in orange if you're NOT using WorldEdit (although it does this too). This value is the volume of your portal: x*y*z. If it's several thousand, you most likely started a selection somewhere and forgot about it. Make sure to left and right click until this number is reasonable._
@@ -50,11 +47,11 @@ To go to a world: `/mvp create newportal w:world:se`
 To go to a world with coordinates: `/mvp create newportal e:world:23,43,1`  
 To go to another portal: `/mvp create newportal p:otherportal`
 
-These are just a __few__ examples. Please see the [[Create Command|Command-Reference-(Portals)#create]] for more details.
+These are just a __few__ examples. Please see the [Create Command](/portals/fundamentals/commands-usage#Create-Command) for more details.
 
 After you type one of these you should receive a message:
 
-[[https://github.com/Multiverse/Multiverse-Portals/wiki/images/created.png]]
+![created](https://github.com/Multiverse/Multiverse-Portals/wiki/images/created.png)
 
 **TADA!** You have made your first portal!
 
@@ -70,9 +67,9 @@ First, make sure `portal_a` is selected. (If you just type `/mvp select` Multive
 `/mvp select portal_a`
 
 Then set the destination.
-`/mvp modify dest p:portal_b`
+`/mvp modify destination p:portal_b`
 
-Alternatively, you can use `w:worldname` to make it go to another world's spawn, or `here` to make the portal go to the position you were at when you ran the command, or other locations: see [The Multiverse Destination Guide](https://github.com/Multiverse/Multiverse-Core/wiki/Destinations) for more details on all available destinations.
+Alternatively, you can use `w:worldname` to make it go to another world's spawn, or `here` to make the portal go to the position you were at when you ran the command, or other locations: see [The Multiverse Destination Guide](/core/reference/destinations) for more details on all available destinations.
 
 ## Removing the portal
 So you're sick of your portal and want it gone? Well, destroying the edge blocks won't work (this is intentional so you could make a frame, and then delete it to create an invisible portal), but you can do this:

@@ -2,136 +2,156 @@
 title: "Commands Usage"
 ---
 
-If you're looking for the [Multiverse-Core](https://github.com/Multiverse/Multiverse-Core/wiki/Command-Reference), [Multiverse-NetherPortals](https://github.com/Multiverse/Multiverse-Core/wiki/Command-Reference-(NetherPortals)) or [Multiverse-Inventories](https://github.com/Multiverse/Multiverse-Core/wiki/Command-Reference-(Inventories)) Command References, click the links!
+If you're looking for the [Multiverse-Core](/core/fundamentals/commands-usage), [Multiverse-NetherPortals](/netherportals/fundamentals/commands-usage) or [Multiverse-Inventories](/inventories/fundamentals/commands-usage) Command References, click the links!
 
-## <a name="top" href="#wiki-top">•</a>Index
-1. [Introduction](#wiki-intro)
-1. [List Command](#wiki-list)
-1. [Select Command](#wiki-select)
-1. [MVP Wand](#wiki-wand)
-1. [Portal Information](#wiki-info)
-1. [Create Portal](#wiki-create)
-1. [Remove Portal](#wiki-remove)
-1. [Modify Portal](#wiki-modify)
-1. [Debug Mode](#wiki-debug)
+## Index
+1. [List Command](#List-Command)
+2. [Select Command](#Select-Command)
+3. [Wand Command](#Wand-Command)
+4. [Info Command](#Info-Command)
+5. [Create Portal Command](#Create-Portal-Command)
+6. [Remove Portal Command](#Remove-Portal-Command)
+7. [Modify Portal Command](#Modify-Portal-Command)
+8. [Debug Command](#Debug-Command)
 
----
+## Introduction
+In Multiverse 5, we have included a handy new help system. To access this help, simply type:
 
-## <a name="intro" href="#wiki-intro">•</a>Introduction
-In Multiverse 2, we have included a handy new help system. To access this help, simply type:
-
-[`/mv`](https://www.github.com/Multiverse/Multiverse-Core/wiki/Command-Reference#wiki-help)
+[`/mv`](/core/fundamentals/commands-usage)
 
 In order to properly read this command reference, we'll walk through reading the "usage" of a command. 
+
 #### Command Case
 Whenever reading this wiki or the in-game `/mv` help, you should remember that items in __ALL CAPS__ should be replaced with a variable. Items in lowercase should be typed exactly how they appear. 
+
 #### Optional vs. Required Parameters
-Items inside square braces (`[]`) are __OPTIONAL__ where items inside curly braces (`{}`) are __REQUIRED__ 
+Items inside square braces (`[]`) are __OPTIONAL__ where items inside angular braces (`<>`) are __REQUIRED__ 
 
----
+## List Command
 
-## <a name="list" href="#wiki-list">•</a>List Command
-#### Description:
+#### Description
 Displays a listing of all portals.
 
-[[https://github.com/Multiverse/Multiverse-Portals/wiki/images/portallist.png]]
+![portals list](https://github.com/Multiverse/Multiverse-Portals/wiki/images/portallist.png)
 
-#### Usage:
-`/mvp list [WORLD]`
-#### Example:
-`/mvp list`
+#### Usage
+```java
+/mvp list [world]
+```
 
-`/mvp list space`
-#### Aliases:
-`mvp list, mvpl, mvplist`
-#### Permission:
+#### Example
+- `/mvp list`
+- `/mvp list space`
+
+#### Permission
 `multiverse.portal.list`
 
----
+[↑ Back to Top ↑](#top)
 
-## <a name="select" href="#wiki-select">•</a>Select Command
-#### Description:
+## Select Command
+
+#### Description
 Selects a portal so you can perform multiple modifications on it.
-#### Usage:
-`/mvp select {PORTAL}`
-#### Example:
+
+#### Usage
+`/mvp select <portal>`
+
+#### Example
 `/mvp select spaceportal`
-#### Aliases:
-`mvp select, mvps, mvpselect`
-#### Permission:
+
+#### Permission
 `multiverse.portal.select`
 
----
+[↑ Back to Top ↑](#top)
 
-## <a name="wand" href="#wiki-wand">•</a>MVP Wand
-#### Description:
+## Wand Command
+
+#### Description
 Gives a Portal Creation Wand (wooden axe by default), used to select areas for portal creation. This will only work if you are NOT using WorldEdit, unless the WorldEdit or MultiVerse wands are changed to a different item.
-#### Usage:
-`/mvp wand`
-#### Example:
-`/mvp wand`
-#### Aliases:
-`mvp wand, mvpw, mvpwand`
-#### Permission:
+
+#### Usage
+```java
+/mvp wand
+```
+
+#### Permission
 `multiverse.portal.givewand`
 
----
+[↑ Back to Top ↑](#top)
 
-## <a name="info" href="#wiki-info">•</a>Portal information
-#### Description:
+## Info Command
+
+#### Description
 Displays information about a portal.
-#### Usage:
-`/mvp info {PORTAL}`
-#### Example:
-`/mvp info spaceportal`
-#### Aliases:
-`mvp info, mvpi, mvpinfo`
-#### Permission:
+
+#### Usage
+```java
+/mvp info <portal>
+```
+
+#### Example
+- `/mvp info spaceportal`
+
+#### Permission
 `multiverse.portal.info`
 
----
+[↑ Back to Top ↑](#top)
 
-## <a name="create" href="#wiki-create">•</a>Create Portal
+## Create Portal Command
+
 #### Description:
-Creates a new portal, assuming you have a region selected (use the [wand](#wiki-wand) to select a region). The destination can be set to where you want the portal to go, otherwise, it will be set to teleport all players to the position you were at when you created it (`here` can also be used as the destination for the same purpose).
+Creates a new portal, assuming you have a region selected (use the [wand](#Wand-Command) to select a region). The destination can be set to where you want the portal to go, otherwise, it will be set to teleport all players to the position you were at when you created it (`here` can also be used as the destination for the same purpose).
 
-Destination can either another portal (`p:portalname`), world (`w:worldname`), position (e:WORLD:X,Y,Z[:PITCH:YAW]), or current position (`here`).
+[Destination](/core/reference/destinations) can either another portal (`p:portalname`), world (`w:worldname`), position (e:WORLD:X,Y,Z[:PITCH:YAW]), or current position (`here`).
+
 #### Usage:
-`/mvp create {NAME} [DESTINATION]`
+```java
+/mvp create <name> [destination]
+```
+
 #### Example:
-`/mvp create spaceportal space`
-#### Aliases:
-`mvp create, mvpc, mvpcreate`
+- `/mvp create spaceportal space`
+- `/mvp create newportal` - Creates a portal without destination. You need to set a destination with [modify command](#Modify-Portal-Command) before using the portal.
+
 #### Permission:
 `multiverse.portal.create`
 
----
+[↑ Back to Top ↑](#top)
 
-## <a name="remove" href="#wiki-remove">•</a>Remove Portal
-#### Description:
+## Remove Portal Command
+
+#### Description
 Remove the portal whose name is given.
+
 #### Usage:
-`/mvp remove {NAME}`
+```java
+/mvp remove <name>
+```
+
 #### Example:
-`/mvp remove spaceportal`
-#### Aliases:
-`mvp remove, mvpr, mvpremove`
+- `/mvp remove spaceportal`
+
 #### Permission:
 `multiverse.portal.remove`
 
----
+[↑ Back to Top ↑](#top)
 
-## <a name="modify" href="#wiki-modify">•</a>Modify Portal
-#### Description:
-Allows you to modify all values that can be set on the selected portal. The target portal must be [selected](#wiki-select) first if `[-p PORTAL]` is omitted. Values that can be set include owner, dest, and loc (owner, destination, and location, respectively)
-#### Usage:
-`/mvp modify {PROPERTY} [VALUE] [-p PORTAL]`
-#### Example:
-`/mvp modify owner Elizacat -p spaceportal`
-#### Aliases:
-`mvp modify, mvpm, mvpmodify`
+## Modify Portal Command
+
+#### Description
+Allows you to modify all values that can be set on the selected portal. The target portal must be [selected](#Select-Portal-Command) first if `[portal]` is omitted. Values that can be set include owner, dest, and loc (owner, destination, and location, respectively)
+
+#### Usage
+```java
+/mvp modify [portal] <property> <value>
+```
+
+#### Example
+- `/mvp modify spaceportal owner Elizacat`
+
 #### Permission:
 `multiverse.portal.modify`
+
 #### PROPERTIES that can be changed:
 *   `owner`
 *   `dest` or `destination`
@@ -140,16 +160,17 @@ Allows you to modify all values that can be set on the selected portal. The targ
 *   `curr` or `currency`
 *   `safe`
 
----
+[↑ Back to Top ↑](#top)
 
-## <a name="debug" href="#wiki-debug">•</a>Debug Mode
-#### Description:
+## Debug Command
+
+#### Description
 Instead of teleporting you to a place when you walk into a portal you will see the details about it. With no params, the command toggles the current on/off state.
-#### Usage:
+
+#### Usage
 `/mvp debug [on|off]`
-#### Example:
-`/mvp debug`
-#### Aliases:
-`mvp debug, mvpd, mvpdebug`
+
 #### Permission:
 `multiverse.portal.debug`
+
+[↑ Back to Top ↑](#top)
