@@ -21,7 +21,7 @@ Our latest MV5 builds are available on Modrinth! Go to the versions page and ens
 
 ## Will I lose my data?
 
-Nope! The configuration should automatically migrate to new format and all your existing worlds will still work. If you have any issues, please contact us on [Discord](https://discord.gg/NZtfKky).
+Nope! All configurations should automatically migrate to new format and all your existing worlds, portals, inventory data will still work. There is NO NEED to delete any config.yml, reimport worlds, or relink any portals. If you face any issues, please contact us on [Discord](https://discord.gg/NZtfKky).
 
 ## Whats New?
 
