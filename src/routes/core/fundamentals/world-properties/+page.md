@@ -16,7 +16,7 @@ Here are the various properties of worlds that can be set in game using the [Mod
 - [Bed Respawn](#Bed-Respawn)
 - [Difficulty](#Difficulty)
 - [Environment](#Environment)
-- [Game Mode](#Game-Mode)
+- [Gamemode](#Gamemode)
 - [Generators](#Generators)
 - [Hunger](#Hunger)
 - [Keep Spawn in Memory](#Keep-Spawn-in-Memory)
@@ -341,9 +341,9 @@ If this value is true, a world will have weather events, if false, it will not. 
 
 [↑ Back to Top ↑](#top)
 
-## Game Mode
+## Gamemode
 
-Allows you to set the type of mode a specific world is set to. Creative mode gives players unlimited resources while Survival makes boys become men. For more information about inventories on servers that use this feature, see our [[FAQ on Inventories|FAQ#wiki-inv]]
+Allows you to set the type of mode a specific world is set to. For more information about inventories on servers that use this feature, see our [[FAQ on Inventories|FAQ#wiki-inv]]
 
 If you want to allow certain players to ignore the game mode set in a world, there's a special permission:
 
@@ -360,8 +360,8 @@ This permission is under a different root namespace because it will be off by de
 `gamemode: SURVIVAL`
 
 **In Game Usage:**  
-`mvm set mode survival`  
-`mvm set mode creative`
+`mvm set gamemode survival`  
+`mvm set gamemode creative`
 
 [↑ Back to Top ↑](#top)
 
