@@ -297,13 +297,17 @@ The world you will respawn to if you die in this world. This value can be the sa
 **Type:**  
 `String`
 
-**Example:**  
-`respawn-world: 'hellplanet'`
+**Example:**
+
+```yaml
+respawn-world: "hellplanet"
+```
 
 **NOTE:** If you see a `temprespawn` value, you can delete it. It got carried over in early versions of the migrator.
 
 **In Game Usage:**  
-`mvm set respawn-world MyWorld`
+`/mv modify <death world> set respawn-world <respawn-world>`
+`/mv modify survival set respawn-world hub` to respawn in hub when dying in survival
 
 [↑ Back to Top ↑](#top)
 
