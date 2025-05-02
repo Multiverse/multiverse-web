@@ -360,8 +360,8 @@ This permission is under a different root namespace because it will be off by de
 `gamemode: SURVIVAL`
 
 **In Game Usage:**  
-`mvm set gamemode survival`  
-`mvm set gamemode creative`
+`mvm <world> set gamemode survival`  
+`mvm <world> set gamemode creative`
 
 [↑ Back to Top ↑](#top)
 
