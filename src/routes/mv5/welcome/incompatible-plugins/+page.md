@@ -16,9 +16,8 @@ https://modrinth.com/plugin/multiverse-legacy-api
 - DiscordSRV
 - eco
 - Dynmap-Multiverse
-
-### Still Incompatible:
-- BentoBox
+- SavageDeathChest
+- BentoBox (v3.3.5 or later)
 
 ### Implemented v4 API classes
 
