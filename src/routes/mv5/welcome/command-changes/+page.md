@@ -14,3 +14,4 @@ title: "Command Changes"
 | `/mv purge [world/all] <all/animals/monsters/mobname>` | `/mv purge-all-entities <spawn-categories>` |
 | `/mv env` | _removed_ |
 | `/mv silent` | _removed_ |
+| `/mv version -p` | `/mv dumps` |
