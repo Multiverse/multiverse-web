@@ -5,7 +5,7 @@ export default [
     items: [
       {
         title: "Introduction",
-        to: "/core/fundamentals/introduction/",
+        to: "/core/",
       },
       {
         title: "Installation",

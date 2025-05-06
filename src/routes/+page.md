@@ -5,12 +5,12 @@ tagline: One server. Endless possibilities.
 actions:
   - label: Download Now!!!
     type: primary
-    to: download/plugins/
+    to: download/
   - label: All NEW MV5!!!
     type: primary
-    to: mv5/welcome/introduction/
+    to: mv5/
   - label: Read the Docs
-    to: core/fundamentals/introduction/
+    to: core/
 features:
   - title: Easy to Use
     description: The easiest world management solution for your Minecraft server, big or small!
@@ -35,7 +35,7 @@ features:
 
   - title: Great Addons
     description: We have addons for portals, inventories and more to enhance your gameplay experience!
-    link: /download/plugins/
+    link: /download/
     icon:
       type: iconify
       collection: vscode-icons

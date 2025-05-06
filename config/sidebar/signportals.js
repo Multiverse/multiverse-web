@@ -5,7 +5,7 @@ export default [
     items: [
       {
         title: "Installation",
-        to: "/signportals/fundamentals/installation/",
+        to: "/signportals/",
       },
       {
         title: "Create Portal Style",

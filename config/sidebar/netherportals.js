@@ -5,7 +5,7 @@ export default [
     items: [
       {
         title: "Installation",
-        to: "/netherportals/fundamentals/installation/",
+        to: "/netherportals/",
       },
       {
         title: "Basic Usage",

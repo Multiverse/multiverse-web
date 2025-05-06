@@ -13,7 +13,7 @@ XX:XX:XX [INFO] [Multiverse-Core] [Multiverse-Inventories] Dumping Config Values
 ...
 ```
 
-This is the current version of your config. If it does not **match the version in the example below**, please [grab an updated version of Multiverse-Inventories](https://modrinth.com/plugin/multiverse-inventories#download) and [all of the Multiverse Plugins you use](http://localhost:5173/download/plugins/).
+This is the current version of your config. If it does not **match the version in the example below**, please [grab an updated version of Multiverse-Inventories](https://modrinth.com/plugin/multiverse-inventories#download) and [all of the Multiverse Plugins you use](/download).
 
 Multiverse will **always** migrate your configs for you if we change the format (like when we did `2.7`->`2.8`). With that said, it never hurts to keep backups in case of server failure or a ferret munching a few bytes off the end of a file.
 

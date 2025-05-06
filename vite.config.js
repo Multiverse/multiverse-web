@@ -45,41 +45,41 @@ const config = defineConfig({
 				navbar: [
 					{
 						title: 'MV5',
-						to: '/mv5/welcome/introduction/'
+						to: '/mv5/'
 					},
 					{
 						title: 'Core',
-						to: '/core/fundamentals/introduction/'
+						to: '/core/'
 					},
 					{
 						title: 'Inventories',
-						to: '/inventories/fundamentals/installation/'
+						to: '/inventories/'
 					},
 					{
 						title: 'Portals',
-						to: '/portals/fundamentals/installation/'
+						to: '/portals/'
 					},
 					{
 						title: 'NetherPortals',
-						to: '/netherportals/fundamentals/installation/'
+						to: '/netherportals/'
 					},
 					{
 						title: 'SignPortals',
-						to: '/signportals/fundamentals/installation/'
+						to: '/signportals/'
 					},
 					{
 						title: 'Download',
-						to: '/download/plugins/'
+						to: '/download/'
 					},
 				],
 				sidebar: {
-					"/mv5/": mv5Sidebar,
-					"/core/": coreSidebar,
-					"/netherportals/": netherportalsSidebar,
-					"/inventories/": inventoriesSidebar,
-					"/portals/": portalsSidebar,
-					"/signportals/": signportalsSidebar,
-					"/download/": [{}],
+					"/mv5": mv5Sidebar,
+					"/core": coreSidebar,
+					"/netherportals": netherportalsSidebar,
+					"/inventories": inventoriesSidebar,
+					"/portals": portalsSidebar,
+					"/signportals": signportalsSidebar,
+					"/download": [{}],
 				},
 				editLink: 'https://github.com/Multiverse/multiverse-web/edit/main/src/routes/:route',
 				github: 'https://github.com/Multiverse',

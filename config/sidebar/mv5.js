@@ -5,7 +5,7 @@ export default [
         items: [
             {
                 title: "Introduction",
-                to: "/mv5/welcome/introduction/",
+                to: "/mv5/",
             },
             {
                 title: "Upgrading",

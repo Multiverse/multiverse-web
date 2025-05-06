@@ -5,7 +5,7 @@ export default [
     items: [
       {
         title: "Installation",
-        to: "/portals/fundamentals/installation/",
+        to: "/portals/",
       },
       {
         title: "Basic Usage",
