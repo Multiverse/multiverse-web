@@ -20,7 +20,7 @@ For older mv4 versions, check our github wiki: https://github.com/Multiverse/Mul
 
 ## Intermediate
 
-- Add some more functionality with the sub plugins: [Inventories](/inventories/fundamentals/installation), [Portals](/portals/fundamentals/installation), [NetherPortals](/netherportals/fundamentals/installation), [SignPortals](/signportals/fundamentals/installation)
+- Add some more functionality with the sub plugins: [Inventories](/inventories/), [Portals](/portals/), [NetherPortals](/netherportals/), [SignPortals](/signportals/)
 - Customize your world with [World Properties](/core/fundamentals/world-properties)
 - Generate some awesome new terrain with a [Custom Generator Plugins](/core/reference/custom-generator-plugins)
 

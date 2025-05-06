@@ -30,7 +30,7 @@ Download the Multiverse-Core JAR from the [release site](https://modrinth.com/pl
 
 There is NO Zip package available. Multiverse-Core (and MV Plugins) will create default configs for you **on the first run**.
 
-**\*Optional:** Install the [Multiverse-Portals](/portals/fundamentals/installation) or [Multiverse-NetherPortals](/netherportals/fundamentals/installation) plugins!
+**\*Optional:** Install the [Multiverse-Portals](/portals/) or [Multiverse-NetherPortals](/netherportals/) plugins!
 
 Place it in your plugins folder like so:
 ![folder](/core/installation/folder.png)

@@ -119,10 +119,10 @@ If finer permissions is enabled: `multiverse.teleport.self.pl.<playername>`
 ## Portal Destinations
 
 :::note[Note]
-Requires [Multiverse-Portals](/portals/fundamentals/installation)
+Requires [Multiverse-Portals](/portals/)
 :::
 
-Portal destination types teleport the player to the specified portal. They are ONLY available if you have [Multiverse-Portals](/portals/fundamentals/installation) installed. If you want players to face a different direction when being placed at the destination, you can add any of the following with a colon (as shown twice below) `n,e,s,w,ne,nw,se,sw` (or with full names: `north,east,south,west,northeast,northwest,southeast,southwest`)
+Portal destination types teleport the player to the specified portal. They are ONLY available if you have [Multiverse-Portals](/portals/) installed. If you want players to face a different direction when being placed at the destination, you can add any of the following with a colon (as shown twice below) `n,e,s,w,ne,nw,se,sw` (or with full names: `north,east,south,west,northeast,northwest,southeast,southwest`)
 
 ### Examples
 

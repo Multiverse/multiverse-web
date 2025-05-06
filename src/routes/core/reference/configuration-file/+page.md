@@ -14,7 +14,7 @@ XX:XX:XX [INFO] [Multiverse-Core] [Multiverse-Core] Dumping Config Values: (vers
 ...
 ```
 
-This is the current version of your config. If it does not **match the version in the example below**, please [grab an updated version of Multiverse-Core](/download/plugins) and [all of the Multiverse Plugins you use](/download).
+This is the current version of your config. If it does not **match the version in the example below**, please [grab an updated version of Multiverse-Core](/download/) and [all of the Multiverse Plugins you use](/download).
 
 Multiverse will **always** migrate your configs for you if we change the format (like when we did `5.0`->`5.1`). With that said, it never hurts to keep backups in case of server failure or a ferret munching a few bytes off the end of a file.
 

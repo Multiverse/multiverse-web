@@ -6,7 +6,7 @@ Multiverse-Portals is a complement to Multiverse that is relatively easy to use 
 
 ## Introduction
 
-**Multiverse-Portals** provides portals between worlds, similar to vanilla portals, except the destination can go ANYWHERE, as opposed to just the nether. Note that the Nether portal blocks (the purple things that make the portals make the weird sound) __will not fill these portals__, but the portals can have water or lava placed into them for a more authentic experience. If you're seeking a multi-world authentic experience, you should check out [Multiverse-NetherPortals](/netherportals/fundamentals/installation).
+**Multiverse-Portals** provides portals between worlds, similar to vanilla portals, except the destination can go ANYWHERE, as opposed to just the nether. Note that the Nether portal blocks (the purple things that make the portals make the weird sound) __will not fill these portals__, but the portals can have water or lava placed into them for a more authentic experience. If you're seeking a multi-world authentic experience, you should check out [Multiverse-NetherPortals](/netherportals/).
 
 ## Making your portal
 A portal can be constructed out of ANYTHING. Yes. Anything. Even nothing. Step 1 of creating a Multiverse Portal is to create the 'Portal Frame'. Here are a few examples:
