@@ -2,29 +2,14 @@
 title: "Destinations"
 ---
 
-- [Destination Permissions](#destination-permissions)
-- [World Destinations](#world-destinations)
-  - [Examples](#examples)
-  - [Permissions](#permissions)
-- [Anchor Destinations](#anchor-destinations)
-  - [Examples](#examples-1)
-  - [Permissions](#permissions-1)
-- [Exact Destinations](#exact-destinations)
-  - [Examples](#examples-2)
-  - [Permissions](#permissions-2)
-- [Player Destinations](#player-destinations)
-  - [Examples](#examples-3)
-  - [Permissions](#permissions-3)
-- [Cannon Destinations](#cannon-destinations)
-  - [Examples](#examples-4)
-  - [Permissions](#permissions-4)
-- [Bed Destinations](#bed-destinations)
-  - [Examples](#examples-5)
-  - [Permissions](#permissions-5)
-- [Portal Destinations](#portal-destinations)
-  - [Examples](#examples-6)
-  - [Special case](#special-case)
-  - [Permissions](#permissions-6)
+## Index
+- [World Destinations](#World-Destinations)
+- [Anchor Destinations](#Anchor-Destinations)
+- [Exact Destinations](#Exact-Destinations)
+- [Player Destinations](#Player-Destinations)
+- [Cannon Destinations](#Cannon-Destinations)
+- [Bed Destinations](#Bed-Destinations)
+- [Portal Destinations](#Portal-Destinations)
 
 ## Destination Permissions
 
