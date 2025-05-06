@@ -84,7 +84,7 @@ This means that this command has one optional parameter, meaning you could type 
 Let's look at the most complex example:  
 _NOTE: This is the most complex command in MV2 and in order to use it correctly, please refer to the [Create Command](#Create-Command)._
 
-[`/mv create <name> <environment> [--seed <seed> --generator <generator[:id]> --world-type <worldtype> --adjust-spawn --no-structures --biome <biome>]`](#Create-Command)
+[`/mv create <name> <environment> [--seed <seed> --generator <generator[:id]> --world-type <worldtype> --adjust-spawn --no-structures --biome <biome> --generator-settings <json>]`](#Create-Command)
 
 At first, you will notice that there are 2 required params, **name**, and **environment**. Then you will see the flags afterward. If you want to use a [seed](/core/fundamentals/world-properties#Seed) you must add `--seed gargamel` to the command string. If you want a [generator](/core/fundamentals/world-properties#Generators) the same principle applies: `--generator BukkitFullOfMoon`. The order of flags does _not_ matter. Full examples of this command are located at the [Create Command reference](#Create-Command).
 
@@ -315,7 +315,7 @@ The create command allows you to add new worlds to your server. Each world has m
 ### Usage
 
 ```java
-/mv create <name> <environment> [--seed <seed>] [--generator <generator[:id]>] [--world-type <worldtype>] [--adjust-spawn] [--no-structures] [--biome <biome>]
+/mv create <name> <environment> [--seed <seed>] [--generator <generator[:id]>] [--world-type <worldtype>] [--adjust-spawn] [--no-structures] [--biome <biome>] [--generator-settings <json>]
 ```
 
 - `<name>`: The name of the new world
@@ -330,6 +330,7 @@ The create command allows you to add new worlds to your server. Each world has m
 - `--no-adjust-spawn`: Sets the [Adjust Spawn](/core/fundamentals/world-properties#Adjust-Spawn) world property
 - `--no-structures`: Set this flag to disable structures from spawning
 - `--biome <biomeprovider[:id]>`: Sets the biome provider for the world.
+- `--generator-settings <json>`: Sets the generator settings for the world. Only applies to superflat worlds. See [PaperMC docs](https://jd.papermc.io/paper/1.21.5/org/bukkit/WorldCreator.html#generatorSettings(java.lang.String)) for more information on the format.
 
 ### World Name and Environment
 
