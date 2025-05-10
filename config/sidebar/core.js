@@ -71,6 +71,10 @@ export default [
         title: "Custom Generator Plugins",
         to: "/core/reference/custom-generator-plugins/",
       },
+      {
+        title: "FAQ",
+        to: "/core/reference/faq/",
+      },
     ],
   },
   {
