@@ -2,9 +2,7 @@
 title: "Custom Generator Plugins"
 ---
 
-Here you will find a list of open-source generator plugins.
-
-You may add your plugin using the [BukkitFullOfMoon](https://github.com/Dinnerbone/BukkitFullOfMoon) template, but be warned, if you don't post the source, your entry will be deleted.
+Here you will find a list of open-source generator plugins. This list is not exhaustive, and any generator plugin will work with Multiverse. We are also not affiliated with any of these plugins.
 
 ## How to use generator plugins with Multiverse
 
@@ -26,11 +24,11 @@ You may add your plugin using the [BukkitFullOfMoon](https://github.com/Dinnerbo
    /mv create coldworld normal --generator VoidGenerator:FROZEN_OCEAN
    ```
 
-## [Terra](https://www.spigotmc.org/resources/terra.85151/)
+## [Terra](https://modrinth.com/plugin/terra)
 
 **Description**: Terra is an incredibly powerful data-driven world generator. It allows you to create a world exactly to your specifications, with no knowledge of Java required.
 
-**Author**: [dfsek](https://www.spigotmc.org/resources/authors/dfsek.597832/)
+**Author**: [dfsek](https://modrinth.com/user/dfsek)
 
 **Github**: https://github.com/PolyhedralDev/Terra
 
@@ -42,19 +40,19 @@ You may add your plugin using the [BukkitFullOfMoon](https://github.com/Dinnerbo
 
 **Author**: [Hex_27](https://www.spigotmc.org/resources/authors/hex_27.23764/)
 
-**Github**: https://github.com/Hex27/TerraformGenerator
+**GitHub**: https://github.com/Hex27/TerraformGenerator
 
 **Discord**: https://discord.gg/yW7JcqM
 
-## [VoidGen](https://www.spigotmc.org/resources/voidgen.25391/)
+## [VoidGen](https://www.spigotmc.org/resources/fork-of-voidgen-1-21-3-supported.121721/)
 
 **Description**: All in one super lightweight Void World Generator
 
-**Author**: [xtkq](https://www.spigotmc.org/resources/authors/xtkq.35246/)
+**Author**: [niconekouwu](https://www.spigotmc.org/resources/authors/niconekouwu.1963482/)
 
-**GitHub**: https://github.com/xtkq-is-not-available/VoidGen
+**Github Wiki**: https://github.com/NicoNekoDev/VoidGen/blob/master/docs/tutorial.md
 
-**Discord**: https://discord.com/invite/Q7yj32FMFh
+**GitHub**: https://github.com/NicoNekoDev/VoidGen
 
 ## [CleanroomGenerator](https://dev.bukkit.org/projects/cleanroomgenerator)
 
@@ -62,6 +60,6 @@ You may add your plugin using the [BukkitFullOfMoon](https://github.com/Dinnerbo
 
 **Author**: [NVX](https://github.com/NVX)
 
-**Github Wiki**: [Wiki](https://github.com/nvx/CleanroomGenerator/wiki)
+**Github Wiki**: https://github.com/nvx/CleanroomGenerator/wiki
 
-**Source**: https://github.com/nvx/CleanroomGenerator
+**GitHub**: https://github.com/nvx/CleanroomGenerator

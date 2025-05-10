@@ -11,13 +11,16 @@ But do not fear! We have created a legacy compatibility plugin to ease this tran
 
 https://modrinth.com/plugin/multiverse-legacy-api 
 
-### Tested working plugins:
+### Tested working plugins
 - StayPut
 - DiscordSRV
 - eco
 - Dynmap-Multiverse
 - SavageDeathChest
 - BentoBox (v3.3.5 or later)
+
+### Not working plugins
+Currently there is been no reports on any plugins that are known to be incompatible after installing the legacy api. If you face any issues, please contact us on [Discord](https://discord.gg/NZtfKky)!
 
 ### Implemented v4 API classes
 

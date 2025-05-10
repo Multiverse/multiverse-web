@@ -12,6 +12,8 @@ title: "Command Changes"
 | `/mv gamerules [world]` | `/mv gamerule list [world] [--page <page>] [--filter <filter>]` |
 | `/mv gamerule <gamerule> <value> [world]` | `/mv gamerule set <gamerule> <value> [world]` |
 | `/mv purge [world/all] <all/animals/monsters/mobname>` | `/mv purge-all-entities <spawn-categories>` |
+| `/mv modify set animals <true/false> [world]` | `/mv entity-spawn-config modify [world] animal set spawn <true/false>` |
+| `/mv generators` | `/mv generators list` and `/mv generators info <generator>` |
+| `/mv version -p` | `/mv dumps` |
 | `/mv env` | _removed_ |
 | `/mv silent` | _removed_ |
-| `/mv version -p` | `/mv dumps` |
