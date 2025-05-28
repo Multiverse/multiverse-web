@@ -8,6 +8,7 @@ title: "Upgrade Guide"
 - Please **make backups** before updating your server
 - You **cannot downgrade** after installing MV5 builds
 - 3rd-party plugins that relies on old MV4's API may not work. See [Incompatible Plugins](/mv5/welcome/incompatible-plugins)
+- PlaceholderAPI is now built-in and the syntax has changed! Please see [PlaceholderAPI](/core/reference/placeholders)
 
 ## Downloading
 

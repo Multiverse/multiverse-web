@@ -6,14 +6,14 @@ As with anything currency related, Multiverse uses [Vault](https://dev.bukkit.or
 
 ## Setting the Price to Enter a world
 
-To set the price to enter a world, simply go to that world and type `/mvm set price X` where x is the amount to enter.
+To set the price to enter a world, simply go to that world and type `/mv modify [world] set price X` where x is the amount to enter.
 
 ## Want to use items?
 
 :::caution[unfinished]
 Uhhh, this seems outdated
 :::
-Simply type: `/mvm set currency ITEMID` where ITEMID is a Minecraft item ID. You can find a list of them [here](https://www.minecraftinfo.com/idlist.htm).
+Simply type: `/mv modify [world] set currency <item>` where <item> is a Minecraft item name or id. You can find a list of them [here](https://minecraftitemids.com).
 
 Don't forget to set the price!
 
@@ -21,6 +21,6 @@ Don't forget to set the price!
 
 Let's set the entry to a world named FernWorld to 5 dirt
 
-- `/mvm set price 5 FernWorld`
-- `/mvm set currency 3 FernWorld`  
+- `/mv modify FernWorld set price 5`
+- `/mv modify FernWorld set currency 3`  
   It's really that easy.

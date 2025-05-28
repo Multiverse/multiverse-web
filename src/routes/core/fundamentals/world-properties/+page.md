@@ -190,9 +190,9 @@ The `currency` field is **what** you want to charge people. This is an item id, 
         currency: -1
 
 **In Game Usage:**  
-`/mv modify <world> set currency 3` - Sets the item to dirt  
-`/mv modify <world> set currency -1` - Sets the currency to Vault money
-`/mv modify <world> set price 3` - Requires 3 of item
+`/mv modify [world] set currency 3` - Sets the item to dirt  
+`/mv modify [world] set currency -1` - Sets the currency to Vault money
+`/mv modify [world] set price 3` - Requires 3 of item
 
 [↑ Back to Top ↑](#top)
 
@@ -207,7 +207,7 @@ Whether or not players may harm each other in this world. If set to `true`, they
 `pvp: true`
 
 **In Game Usage:**  
-`/mvm set pvp false`
+`/mv modify peaceworld set pvp false`
 
 [↑ Back to Top ↑](#top)
 
@@ -328,7 +328,7 @@ If you disable this, bukkit will not keep this world's spawn chunks in memory, r
 
 ## Weather
 
-If this value is true, a world will have weather events, if false, it will not. If you want to turn off the current storm, just type `/mvm set weather false`, wait for the weather to subside, and then `/mvm set weather true`.
+If this value is true, a world will have weather events, if false, it will not. If you want to turn off the current storm, just type `/mv modify [world] set weather false`, wait for the weather to subside, and then `/mv modify [world] set weather true`.
 
 **Type:**  
 `boolean`

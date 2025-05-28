@@ -737,7 +737,7 @@ To get colored worlds, you will need to use the [world alias feature](/core/fund
 
 ### Description
 
-The modify command has been documented as 4 separate sections for easier documentation. Please see the links below.
+The modify command has been documented as 4 separate sections for easier documentation. Please see the links below. NOTE: Entity spawning related properties has been moved to [`/mv entity-spawn-config` command](/core/fundamentals/commands-usage#Entity-Spawn-Config-Info-Command).
 
 ### Usage
 
@@ -800,12 +800,12 @@ See the [World Properties](/core/fundamentals/world-properties/#World-Blacklist)
 
 The second item is the type required. This means you cannot do `/mv modify add world-blacklist world2`
 
-**See also:** [`/mvmodify set`](<#Modify-Command-(Set)>) and [`/mvmodify reset`](<#Modify-Command-(Reset)>)
+**See also:** [`/mv modify [world] set`](<#Modify-Command-(Set)>) and [`/mv modify [world] reset`](<#Modify-Command-(Reset)>)
 
 ### Examples
 
-- `/mvmodify add creeper monsters`  
-- `/mvmodify remove sheep animals world*nether`
+- `/mv modify myworld add world-blacklist badworld`  
+- `/mv modify myworld remove world-blacklist badworld`
 
 ### Permission
 
