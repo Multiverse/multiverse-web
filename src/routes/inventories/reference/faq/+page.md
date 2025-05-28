@@ -41,3 +41,16 @@ Yes!  There are permissions available of this.  Please refer to the [list of per
 ## How do I import inventories from an existing vanilla world?
 You can **not** import/merge your vanilla inventories with Multiverse-Inventories. Once you install Multiverse-Inventories, your players will log in with the inventories they previously had.
 **Why?** Bukkit based servers store the player's current inventory in player.dat in the default world. Multiverse-Inventories changes nothing about this behavior. Instead, the plugin swaps out the player's current inventory when they change worlds
+
+## How do I allow players to teleport back to where they left off in a world?
+
+Firstly, enable the last_location feature with `/mvinv toggle last_location`. Now, groups that are sharing ALL (or last_location specifically) will have a common last_location, and all ungrouped worlds will have their own last_location. 
+
+For example, you have a group with world1 and world2 sharing last_location. If a player teleports from world2 to any world outside the group, they will return to the group's last_location in world2, even if you teleported them to world1. If the player teleports within world1 and world2, mvinv will not do anything, since they are sharing last_location.
+
+## How do I disable last_location for a world or group?
+
+By default last_location will always apply to all worlds and all teleports between worlds not sharing a common last_location. Removing the last_location share from a group WILL NOT disable it. If you want to disable last_location or have final control over when last_location applies, you can explore the following config options:
+1. If you want to disable last_location for all ungrouped worlds, you can change the following config option: `/mvinv config use-optionals-for-ungrouped-worlds false`.
+2. If you want to disable last_location for a specific group, you can use the following command: `/mvinv add-disabled-shares [group] last_location`.
+3. If you want only apply last_location for specific teleports, you can change the following config option: `/mvinv config apply-last-location-for-all-teleports false`. Then, you have to use `/mv tp ll:worldname` to teleport to the player's last location.
