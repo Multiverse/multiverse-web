@@ -26,6 +26,7 @@ Currently there is been no reports on any plugins that are known to be incompati
 
 ```
 [Multiverse-Core]
+- MVPlugin
 - Core
 - MultiverseWorld
 - MVWorldManager
