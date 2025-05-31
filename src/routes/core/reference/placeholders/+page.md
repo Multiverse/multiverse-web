@@ -2,7 +2,7 @@
 title: "Placeholders"
 ---
 
-Multiverse 5 adds official support for [PlaceholderAPI](https://www.spigotmc.org/resources/placeholderapi.6245/). This means that you can access the world properties in many other plugins that also support PAPI.
+Multiverse 5 adds official support for [PlaceholderAPI](https://www.spigotmc.org/resources/placeholderapi.6245/). This means that you can access the world properties in many other plugins that also support PAPI. DO NOT use the ecloud version anymore! To enable it, ensure `register-papi-hook: true` is set in the config file.
 
 ## Format
 
