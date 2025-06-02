@@ -963,12 +963,12 @@ The set spawn command does exactly what it sounds like. You can walk to where yo
 /mv setspawn [location]
 ```
 
-- `[location]` - In the format: `[x],[y],[z],[pitch],[yaw]`. Example: `10,64,100,90,180`
+- `[location]` - In the format: `worldname:x,y,z[,pitch,yaw]`. World name can be omitted if running in-game. Example: `10,64,100,90,180`
 
 ### Examples
 
 - `/mv setspawn`
-- `/mv setspawn 0,0,0`
+- `/mv setspawn testworld:0,0,0`
 - `/mv setspawn 10,64,100,90,180`
 
 ### Permission
