@@ -967,9 +967,9 @@ The set spawn command does exactly what it sounds like. You can walk to where yo
 
 ### Examples
 
-- `/mv setspawn`
+- `/mv setspawn` (in-game only)
 - `/mv setspawn testworld:0,0,0`
-- `/mv setspawn 10,64,100,90,180`
+- `/mv setspawn 10,64,100,90,180` (in-game only)
 
 ### Permission
 
