@@ -18,6 +18,7 @@ https://modrinth.com/plugin/multiverse-legacy-api
 - Dynmap-Multiverse
 - SavageDeathChest
 - BentoBox (v3.3.5 or later)
+- TrainCarts
 
 ### Not working plugins
 Currently there is been no reports on any plugins that are known to be incompatible after installing the legacy api. If you face any issues, please contact us on [Discord](https://discord.gg/NZtfKky)!
@@ -48,4 +49,7 @@ Currently there is been no reports on any plugins that are known to be incompati
 [Multiverse-Portals]
 - MVPortalEvent
 - MVPortal
+- PortalManager
+- PortalLocation
+- MultiverseRegion
 ```
