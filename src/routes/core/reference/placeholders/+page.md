@@ -30,6 +30,9 @@ These could also have a world added on to the end if desired as described previo
 - `%multiverse-core_price%`
 - `%multiverse-core_pvp%`
 - `%multiverse-core_seed%`
-- `%multiverse-core_time%`
+- `%multiverse-core_time%` (in ticks)
+- `%multiverse-core_time_12h%`
+- `%multiverse-core_time_24h%`
+- `%multiverse-core_time_<format>` (e.g. [formats](https://www.digitalocean.com/community/tutorials/java-simpledateformat-java-date-format#patterns) are `HH:mm:ss`, `hh:mm:ss a`)
 - `%multiverse-core_type%`
 - `%multiverse-core_weather%`
