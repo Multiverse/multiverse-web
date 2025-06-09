@@ -497,6 +497,10 @@ Types of category:
 /mv entity-spawn-config info [world] [--page <page>] [--filter <filter>]
 ```
 
+### Examples
+
+- `/mv entity-spawn-config info myworld --page 2`
+
 ### Permission
 
 `multiverse.core.entityspawnconfig.info`
@@ -514,11 +518,28 @@ Modifies the entity spawn config for a specific world. The current properties ar
 - `spawn-limit` - number: how many entities of this category can spawn at once.
 - `exceptions` - array: list of entity types that should not spawn of this category. Or if the `spawn` property is set to `false`, list of entity types that should spawn of this category.
 
+Types of category:
+
+- MONSTER: eg: Witch, Zombie, Creeper, etc.
+- ANIMAL: eg: Strider, Cow, Turtle, etc.
+- WATER_ANIMAL: eg: Squid or Dolphin.
+- WATER_AMBIENT: eg: Cod, PufferFish, Tropical Fish, Salmon, etc.
+- WATER_UNDERGROUND_CREATURE: eg: Glow Squid.
+- AMBIENT: eg: Bat.
+- AXOLOTL: eg: Axolotl.
+- MISC: eg: ArmorStand, Boat, etc.
+
 ### Usage
 
 ```java
 /mv entity-spawn-config modify [world] <spawn-category> <set|add|reset|remove> <property> [value]
 ```
+
+### Examples
+
+- `/mv entity-spawn-config modify myworld monster set spawn false` - Disables monster spawning
+- `/mv entity-spawn-config modify myworld animal set spawn-limit 10` - Sets the animal spawn limit to 10
+- `/mv entity-spawn-config modify myworld misc add exceptions armor_stand` - Adds the entity type `armor_stand` to the exception list
 
 ### Permission
 
