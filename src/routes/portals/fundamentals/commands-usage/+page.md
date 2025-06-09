@@ -100,9 +100,9 @@ Displays information about a portal.
 ## Create Portal Command
 
 #### Description:
-Creates a new portal, assuming you have a region selected (use the [wand](#Wand-Command) to select a region). The destination can be set to where you want the portal to go, otherwise, it will be set to teleport all players to the position you were at when you created it (`here` can also be used as the destination for the same purpose).
+Creates a new portal, assuming you have a region selected (use the [wand](#Wand-Command) to select a region). The destination can be set to where you want the portal to go, otherwise, it will be set to teleport all players to the position you were at when you created it.
 
-[Destination](/core/reference/destinations) can either another portal (`p:portalname`), world (`w:worldname`), position (e:WORLD:X,Y,Z[:PITCH:YAW]), or current position (`here`).
+[Destination](/core/reference/destinations) can either another portal (`p:portalname`), world (`w:worldname`), position (`e:worldname:x,y,z:pitch:yaw`).
 
 #### Usage:
 ```java
