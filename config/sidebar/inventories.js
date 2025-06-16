@@ -38,6 +38,10 @@ export default [
         to: "/inventories/reference/sharing-details/",
       },
       {
+        title: "Placeholders",
+        to: "/inventories/reference/placeholders/",
+      },
+      {
         title: "FAQ",
         to: "/inventories/reference/faq/",
       },
