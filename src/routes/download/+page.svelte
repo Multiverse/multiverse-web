@@ -37,19 +37,12 @@
       tagColor: "bg-green-500",
     },
   ];
-
-  let features = [
-    "Revamped command structure with full tab-completion",
-    "Revamped config file with detailed comments and more options",
-    "Revamped teleport handling with finer per-world permissions",
-    "Significant improvements to last_location! ",
-    "Added world creation options such as Single Biome and customizable flat world with Generator Settings",
-    "Fixed Multiverse-Inventories player name change bug!",
-    "Much much much more, full changelog in discord!",
-  ];
 </script>
 
 <main>
+  <div class="bg-blue-600 rounded-lg px-4 py-1 text-white">
+    <p>Multiverse is developed by volunteers in our free time. If you liked our our work, please consider supporting us on <a href="https://github.com/sponsors/Multiverse" target="_blank" class="text-white font-bold underline">Github Sponsors</a> or <a href="https://opencollective.com/multiverse-plugins" target="_blank" class="text-white font-bold underline">Open Collective</a>.</p>
+  </div>
   <h1 class="text-3xl font-bold mb-6">Multiverse Plugin Downloads</h1>
   <div class="grid grid-cols-1 gap-6">
     {#each plugins as plugin}

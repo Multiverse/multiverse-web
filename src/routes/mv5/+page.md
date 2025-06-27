@@ -30,7 +30,7 @@ Installation instructions can be found here: [Upgrading Guide](/mv5/welcome/upgr
 
 ## Donations
 
-Working on the MV5 project requires a lot of time and effort. If you find MV5 useful, please consider donating to our [patreon](https://patreon.com/dumptruckman) to support our work!
+Working on the MV5 project requires a lot of time and effort. If you find MV5 useful, please consider donating to our [Github Sponsor](https://github.com/sponsors/Multiverse) to support the project!
 
 ## Call for help with MV5 wiki
 
