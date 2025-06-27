@@ -34,6 +34,8 @@ Here are the various properties of worlds that can be set in game using the [Mod
 
 ## Animals
 
+In MV5, we support controlling of spawn for more types of entities, including axolotls and other misc entities. See the [entity-spawn-config](</core/fundamentals/commands-usage#Entity-Spawn-Config-Command>) command for details.
+
 ### Spawning
 
 The overall control of the spawning of animals on a world. If true, animals (pigs, chickens, cows and squids) will spawn in this world.
@@ -83,6 +85,8 @@ You should read this as "Animals **can** spawn **except** for pigs."
 [↑ Back to Top ↑](#top)
 
 ## Monsters
+
+In MV5, we support controlling of spawn for more types of entities, including axolotls and other misc entities. See the [entity-spawn-config](</core/fundamentals/commands-usage#Entity-Spawn-Config-Command>) command for details.
 
 ### Spawning
 
@@ -228,9 +232,9 @@ The style must be one of these:
 ### Example: Set alias to _FernWorld_ (Italic and green)
 
 **In Game Usage:**  
-`mvm set style italic`  
-`mvm set color green`  
-`mvm set alias FernWorld`
+`mv modify set style italic`  
+`mv modify set color green`  
+`mv modify set alias FernWorld`
 
 **In the config:**
 
@@ -286,7 +290,7 @@ Scaling of worlds when using Multiverse-NetherPortals. Setting this value will h
 **NOTE:** If you see a `scaling` value, you can delete it. It got carried over in early versions of the migrator and the value is now `scale`.
 
 **In Game Usage:**  
-`mvm set scale 1.2`
+`mv modify set scale 1.2`
 
 [↑ Back to Top ↑](#top)
 
@@ -322,7 +326,7 @@ If you disable this, bukkit will not keep this world's spawn chunks in memory, r
 `keepspawninmemory: true`
 
 **In Game Usage:**  
-`mvm set memory false`
+`mv modify set memory false`
 
 [↑ Back to Top ↑](#top)
 
@@ -337,7 +341,7 @@ If this value is true, a world will have weather events, if false, it will not. 
 `weather: true`
 
 **In Game Usage:**  
-`mvm set weather false`
+`mv modify set weather false`
 
 [↑ Back to Top ↑](#top)
 
@@ -376,10 +380,10 @@ Allows you to set the difficulty of a given world. All possible values are: `0, 
 `difficulty: 1`
 
 **In Game Usage:**  
-`mvm set difficulty 1`  
-`mvm set difficulty easy`  
-`mvm set difficulty hard`  
-`mvm set difficulty peaceful`
+`mv modify set difficulty 1`  
+`mv modify set difficulty easy`  
+`mv modify set difficulty hard`  
+`mv modify set difficulty peaceful`
 
 [↑ Back to Top ↑](#top)
 
@@ -394,8 +398,8 @@ Allows you to enable or disable hunger depletion in each world.
 `hunger: true`
 
 **In Game Usage:**
-`mvm set hunger true`
-`mvm set hunger false`
+`mv modify set hunger true`
+`mv modify set hunger false`
 
 [↑ Back to Top ↑](#top)
 
@@ -410,7 +414,7 @@ This property allows you to have a world that exists, but does not show up in li
 `hidden: false`
 
 **In Game Usage:**  
-`mvm set hidden true`
+`mv modify set hidden true`
 
 [↑ Back to Top ↑](#top)
 
@@ -425,8 +429,8 @@ If your [difficulty](#Difficulty) is set to `peaceful`, by default, players will
 `auto-heal: true`
 
 **In Game Usage:**
-`mvm set auto-heal true`
-`mvm set auto-heal false`
+`mv modify set auto-heal true`
+`mv modify set auto-heal false`
 
 [↑ Back to Top ↑](#top)
 
@@ -449,8 +453,8 @@ If you want to set this variable when importing a world, simply add a `-n` to yo
 `adjust-spawn: true`
 
 **In Game Usage:**
-`mvm set adjustspawn true`  
-`mvm set adjustspawn false`
+`mv modify set adjustspawn true`  
+`mv modify set adjustspawn false`
 
 [↑ Back to Top ↑](#top)
 
@@ -467,7 +471,7 @@ Allow portal forming must be `NONE`, `ALL`, `NETHER` or `END`.
 `portalform: ALL`
 
 **In Game Usage**:
-`mvm set portalform none`
+`mv modify set portalform none`
 `mv modify portalform nether`
 
 Results are fairly self explanatory.
@@ -489,8 +493,8 @@ A player may bypass this limit with the following permissions:
 `playerlimit: -1`
 
 **In Game Usage:**
-`mvm set playerlimit 10`  
-`mvm set limit -1`
+`mv modify set playerlimit 10`  
+`mv modify set limit -1`
 
 [↑ Back to Top ↑](#top)
 
@@ -508,8 +512,8 @@ A player may bypass this setting with the following permissions:
 `allow-flight: true`
 
 **In Game Usage:**
-`mvm set flight false`  
-`mvm set allowflight true`
+`mv modify set flight false`  
+`mv modify set allowflight true`
 
 [↑ Back to Top ↑](#top)
 
@@ -524,7 +528,7 @@ Tells Multiverse to automatically load this world on startup.
 `autoload: true`
 
 **In Game Usage:**
-`mvm set autoload false`
+`mv modify set autoload false`
 
 [↑ Back to Top ↑](#top)
 
@@ -539,7 +543,7 @@ If `bed-respawn` is set to true, players will be able to respawn at their bed in
 `bedrespawn: true`
 
 **In Game Usage:**
-`mvm set bedrespawn false`
+`mv modify set bedrespawn false`
 
 [↑ Back to Top ↑](#top)
 
