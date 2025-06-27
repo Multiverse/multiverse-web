@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://raw.githubusercontent.com/Multiverse/Multiverse-Core/main/config/multiverse2-long.png" alt="Multiverse Logo">
+<img src="https://raw.githubusercontent.com/Multiverse/multiverse-web/refs/heads/main/static/multiverse5-long.svg" alt="Multiverse Logo">
 </p>
 
 # Multiverse Website
