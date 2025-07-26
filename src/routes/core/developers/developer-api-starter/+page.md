@@ -15,7 +15,7 @@ The multiverse's artifacts are published on our own maven repository: https://re
 ```xml
 <repositories>
     <repository>
-        <id>onarandombodx</id>
+        <id>onarandombox</id>
         <url>https://repo.onarandombox.com/content/groups/public/</url>
     </repository>
 </repositories>
