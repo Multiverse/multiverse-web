@@ -8,6 +8,7 @@ Here are the various properties of worlds that can be set in game using the [Mod
 
 - [Adjust Spawn](#Adjust-Spawn)
 - [Alias](#Alias)
+- [Allow Advancement Grant](#Allow-Advancement-Grant)
 - [Allow Flight](#Allow-Flight)
 - [Anchor Respawn](#Anchor-Respawn)
 - [Animals](#Animals)
@@ -550,3 +551,16 @@ If `bed-respawn` is set to true, players will be able to respawn at their bed in
 ## Anchor Respawn
 
 If `anchor-respawn` is set to true, players will be able to respawn at their anchor in this world.
+
+## Allow Advancement Grant
+
+Sets whether player's actions will grant the relevant advancements in this world. This is useful for lobby world that you don't want to grant advancements to players. However, this does not equate to per world advancements. For that, see Multiverse-Inventories optional advancement sharable.
+
+**Type**:
+`Boolean`
+
+**Example:**
+`allow-advancement-grant: true`
+
+**In Game Usage:**
+`mv modify set allow-advancement-grant false`

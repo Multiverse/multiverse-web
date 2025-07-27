@@ -10,9 +10,6 @@ To set the price to enter a world, simply go to that world and type `/mv modify 
 
 ## Want to use items?
 
-:::caution[unfinished]
-Uhhh, this seems outdated
-:::
 Simply type: `/mv modify [world] set currency <item>` where <item> is a Minecraft item name or id. You can find a list of them [here](https://minecraftitemids.com).
 
 Don't forget to set the price!

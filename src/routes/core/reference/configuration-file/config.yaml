@@ -28,7 +28,7 @@ world:
   # When enabled, Multiverse will import all other worlds created by other plugins when Multiverse starts
   # or when Multiverse is reloaded.
   auto-import-3rd-party-worlds: true
-
+  
   # This setting will prevent players from entering worlds they don't have access to.
   # If this is set to false, players will be able to enter any world they want.
   # If this is set to true, players will only be able to enter worlds they have
@@ -68,6 +68,16 @@ teleport:
   #   - For spawn: `multiverse.core.spawn.<self|other>`
   use-finer-teleport-permissions: true
   
+  # Configures how passengers and vehicles are handled when an entity is teleported.
+  #   default: Server will handle passengers and vehicles, this usually means entities will not be teleported to a different world if they have passengers.
+  #   dismount_passengers: Passengers will be removed from the parent entity before the teleport.
+  #   dismount_vehicle: Vehicle will be removed and from the parent entity before the teleport.
+  #   dismount_all: All passengers and vehicles will be removed from the parent entity before the teleport.
+  #   retain_passengers: Passengers will teleport together with the parent entity.
+  #   retain_vehicle: Vehicles will teleport together with the parent entity.
+  #   retain_all: All passengers and vehicles will teleport together with the parent entity.
+  passenger-mode: default
+  
   # Sets the maximum number of players allowed to be teleported at once with `/mv teleport` command
   concurrent-teleport-limit: 50
   
@@ -88,19 +98,20 @@ teleport:
   
   
 spawn:
-  # Sets whether Multiverse will override the first spawn location of a world.
-  # If enabled, Multiverse will set the first spawn location of a world to the spawn location of the world.
+  # Sets whether Multiverse will override the location where the player spawns when they join the server
+  # for the first time. For fixed spawn location on every login, see the `join-destination` option below.
   # If disabled, it will default to server.properties settings.
   first-spawn-override: false
   
-  # Sets the world that Multiverse will use as the location for players that first join the server.
+  # Sets the world that Multiverse will use as the location for players that join the server for the first time.
   # This only applies if first-spawn-override is set to true.
   first-spawn-location: ''
   
-  # Enables join-destination below.
+  # Enables setting of a fixed location for players to spawn in when they join the server every time.
+  # See `join-destination` option below as well.
   enable-join-destination: false
   
-  # Sets the destination that Multiverse will use to spawn players on every login
+  # Sets the destination that Multiverse will use to spawn players on every login.
   # Set the above enable-join-destination to false to disable
   join-destination: ''
   
@@ -146,12 +157,12 @@ portal:
   
 messaging:
   # This config option defines whether or not Multiverse should prefix the chat with the world name.
-  # This only applies if use-custom-portal-search is set to true.
-  enable-chat-prefix: true
+  # Ensure this is false if you want another plugin to handle chat formatting.
+  enable-chat-prefix: false
   
   # This config option defines the format Multiverse should use when prefixing the chat with the world name.
   # This only applies if enable-chat-prefix is set to true.
-  chat-prefix-format: '&cW &r[%world%] %chat%'
+  chat-prefix-format: '[%world%]%chat%'
   
   # This config option defines whether or not Multiverse should register the PlaceholderAPI hook.
   # This only applies if PlaceholderAPI is installed.
@@ -215,7 +226,7 @@ event-priority:
 misc:
   # Change this if you use a custom path for the bukkit.yml file with `--bukkit-settings` startup flag.
   # Note: this config option needs a server restart to take effect.
-  bukkit-yml-path: config/bukkit.yml
+  bukkit-yml-path: bukkit.yml
   
   # This is our debug flag to help identify issues with Multiverse.
   # If you are having issues with Multiverse, please set this to 3 and then post your log to pastebin.com
@@ -224,7 +235,8 @@ misc:
   #   1 = fine
   #   2 = finer
   #   3 = finest
-  global-debug: 2
+  global-debug: 3
+
   # Sets whether console will log every permission check done by all multiverse plugins.
   # This will only work if the above 'global-debug' is set to 1 or more.
   debug-permissions: false

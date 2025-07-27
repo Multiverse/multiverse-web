@@ -65,3 +65,47 @@ if (provider != null) {
 }
 ```
 
+## Useful Information
+
+### Thread Safety
+
+All world operations can only be done on the main server thread.
+
+### Handling with [vavr](https://github.com/vavr-io/vavr)
+
+Multiverse uses vavr for handling optionals and exceptions. This means instead of `if (xx == null)` checks, you will have to use callbacks such as `xxx.peek(obj -> { ... })` or methods such as `xxx.isDefined()`
+
+
+```java
+// !!!! THIS WILL NOTTTTTTT WORK
+MultiverseWorld mvWorld = worldManager.getWorld("world");
+if (mvWorld != null) {
+    // do world action
+}
+```
+
+```java
+// Recommended way of doing it
+worldManager.getWorld("world").peek(world -> {
+    // do world action
+});
+```
+
+```java
+// If you still want to use if checking (Not recommended)
+Option<MultiverseWorld> optMVWorld = worldManager.getWorld("world");
+if (optMVWorld.isDefined()) {
+    MultiverseWorld mvWorld = optMVWorld.get();
+    // do world action
+}
+```
+
+```java
+// Convert back to old nullable object (Not recommended)
+MultiverseWorld mvWorld = worldManager.getWorld("world").getOrNull();
+if (mvWorld != null) {
+    // do world action
+}
+```
+
+We encourage developers to read more about vavr [here](https://docs.vavr.io) to better utilise the power of vavr when using Multiverse API.

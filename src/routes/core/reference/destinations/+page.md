@@ -49,10 +49,7 @@ If finer permissions is enabled: `multiverse.teleport.self.a.<anchorname>`
 
 ## Exact Destinations
 
-:::caution[unfinished]
-No clue where `/mvp modify dest here` went
-:::
-Exact destinations are useful if you know exactly where someone should spawn, but they're difficult to set, as that's a lot to type! Luckily, an easy way of setting an exact destination is by using: `/mvp modify dest here` this will set the destination to an exact dest of your current location, **including where you are looking**. This is great if you want people to spawn looking at your awesome creations!
+Exact destinations are useful if you know exactly where someone should spawn, but they're difficult to set, as that's a lot to type! Luckily, an easy way of setting an exact destination is by using: `/mvp modify destination e:@here` this will set the destination to an exact dest of your current location, **including where you are looking**. This is great if you want people to spawn looking at your awesome creations!
 
 ### Examples
 
@@ -132,7 +129,7 @@ Portal destination types teleport the player to the specified portal. They are O
 
 ### Special case
 
-When you're _standing_ inside a portal (let's say `PortalB`), if you want to set the destination of another (`PortalA`) to **the center of that portal facing the rounded direction**, you can simply use `/mvp modify dest here`. This will set the destination of the selected _source_ portal (`PortalA`) to the portal you're standing in _plus_ the cardinal direction (`p:portal:se`). This makes it a snap to set the directions of portals without any lookups!
+When you're _standing_ inside a portal (let's say `PortalB`), if you want to set the destination of another (`PortalA`) to **the center of that portal facing the rounded direction**, you can simply use `/mvp modify destination e:@here`. This will set the destination of the selected _source_ portal (`PortalA`) to the portal you're standing in _plus_ the cardinal direction (`p:portal:se`). This makes it a snap to set the directions of portals without any lookups!
 
 ### Permissions
 

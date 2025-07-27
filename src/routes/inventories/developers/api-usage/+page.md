@@ -2,7 +2,7 @@
 title: API Usage
 ---
 
-This pages provides examples and explanation for the common API usages of Multiverse-Inventories introduced [here](/core/developers/developer-api-starter). It's impossible to cover all API methods in this guide, but rest assured we have [javadocs]() provided.
+This pages provides examples and explanation for the common API usages of Multiverse-Inventories introduced [here](/core/developers/developer-api-starter). It's impossible to cover all API methods in this guide, but rest assured we have [javadocs](https://multiverse.github.io/Multiverse-Inventories/javadoc/latest/) provided.
 
 ## [WorldGroupManager](https://github.com/Multiverse/Multiverse-Inventories/blob/main/src/main/java/com/onarandombox/multiverseinventories/profile/WorldGroupManager.java)
 World groups (stored in `groups.yml`) have powerful features to customise how player data is share/separated between worlds on your server. The 2 main parts of a `WorldGroup` is the worlds and sharables. To learn more on detailed mechanics see [this](/inventories/reference/sharing-details).
