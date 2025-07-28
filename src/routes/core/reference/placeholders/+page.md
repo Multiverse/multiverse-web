@@ -8,6 +8,10 @@ Multiverse 5 adds official support for [PlaceholderAPI](https://www.spigotmc.org
 
 All placeholders follow the format of `%multiverse-core_<placeholder>_<optional world>%` where the placeholder is a world property and the world can optionally be omitted then it will use the player's current world instead.
 
+## Migrating from v4 to v5
+
+If you are migrating from v4 (the ecloud version), there is changes to the placeholder format. Generally, all the prefixes has changed from `%multiverse_xxx%` to `%multiverse-core_xxx%`. There may also be some minor text format difference, especially for the `time` placeholder.
+
 ## Big list o' placeholders
 
 These could also have a world added on to the end if desired as described previously

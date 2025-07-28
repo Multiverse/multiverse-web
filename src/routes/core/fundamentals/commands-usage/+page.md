@@ -2,13 +2,6 @@
 title: "Commands Usage"
 ---
 
-:::caution[Warning]
-This page is for the new MV5 version.
-
-For older mv4 versions, check our github wiki: https://github.com/Multiverse/Multiverse-Core/wiki
-
-:::
-
 If you're looking for the [Multiverse-Portals](/portals/fundamentals/commands-usage), [Multiverse-NetherPortals](/netherportals/fundamentals/commands-usage) or [Multiverse-Inventories](/inventories/fundamentals/commands-usage) Command References, click the links!
 
 **Looking for the permissions?**  
@@ -676,6 +669,7 @@ The import command is almost identical to the create command apart from the fact
 - `--generator`: Specify the generator previously used for the world. 
 - `--no-adjust-spawn`: Sets the [Adjust Spawn](/core/fundamentals/world-properties#Adjust-Spawn) world property
 - `--biome`: Specify the biome provider used previously for the world.
+- `--skip-folder-check`: Skips the check to ensure world folder is in the correct format.
 
 ### Examples
 
@@ -956,11 +950,13 @@ Unloads a world from the Bukkit server and removes it from the Multiverse `world
 ### Usage
 
 ```java
-/mv remove <world> [--remove-players]
+/mv remove <world> [--remove-players] [--no-unload-bukkit-world] [--no-save]
 ```
 
 - `<world>` - World name
 - `--remove-players` - Remove players from the world first. If this flag is not specified and players are still in the world then the command will error
+- `--no-unload-bukkit-world` - Do not unload the world from the Bukkit server. Usually only used of your world is handled by another plugin as well.
+- `--no-save` - Disable saving of world before unloading. World may rollback to previous state if auto-save is disabled
 
 ### Examples
 

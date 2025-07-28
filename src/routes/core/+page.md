@@ -4,13 +4,6 @@ title: "Welcome to Multiverse WIKI"
 
 ![New server](/multiverse5-long.svg)
 
-:::caution[Warning]
-This page is for the new MV5 version.
-
-For older mv4 versions, check our github wiki: https://github.com/Multiverse/Multiverse-Core/wiki
-
-:::
-
 ## Basics
 
 - [Install Multiverse-Core](/core/fundamentals/installation) from scratch or [how to Upgrade](/mv5/welcome/upgrading) from Multiverse 4!

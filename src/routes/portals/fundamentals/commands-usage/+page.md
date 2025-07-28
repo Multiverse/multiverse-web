@@ -154,11 +154,11 @@ Allows you to modify all values that can be set on the selected portal. The targ
 
 #### PROPERTIES that can be changed:
 *   `owner`
-*   `dest` or `destination`
-*   `loc` or `location`
+*   `destination` - Use multiverse [destination format](/core/reference/destinations)
+*   `location` - Use `@selected-region` for player with wand, or the format `WORLD:X,Y,Z:X,Y,Z`
 *   `price`
-*   `curr` or `currency`
-*   `safe`
+*   `currency`
+*   `safe-teleport`
 
 [↑ Back to Top ↑](#top)
 

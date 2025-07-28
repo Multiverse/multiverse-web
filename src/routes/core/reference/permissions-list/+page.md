@@ -16,6 +16,8 @@ multiverse.access.[worldname] - Allows users to use the specified world
 
 [mv.bypass.playerlimit.[worldname]](/core/fundamentals/world-properties/#Player-Limit) - Allows users to bypass the configured `playerlimit` when accessing the world
 
+mv.bypass.joinlocation - Allows users to bypass the configured `join-location` in config.yml when logging into the server.
+
 ## Teleport Permissions
 
 [multiverse.teleport.self.[type].[finer-permission]](/core/fundamentals/commands-usage/#Teleport-Command) - Allows users to teleport themselves to another world.

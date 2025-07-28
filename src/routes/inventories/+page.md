@@ -2,13 +2,6 @@
 title: "Installation"
 ---
 
-:::caution[Warning]
-This page is for the new MV5 version.
-
-For older mv4 versions, check our github wiki: https://github.com/Multiverse/Multiverse-Core/wiki
-
-:::
-
 For an English language video tutorial [check here](https://www.youtube.com/watch?v=PaUCL_bagXE) - thanks to Koz4Christ
 
 ## Prerequisites
@@ -18,7 +11,7 @@ There are a few things to verify before installing [Multiverse-Inventories](http
 
 ## Step 1
 Grab the jar.
-Download the Multiverse-Inventories JAR from the [release site](http://dev.bukkit.org/projects/multiverse-inventories/files/) or grab a dev build from [the Multiverse 2 Jenkins](http://ci.onarandombox.com/job/Multiverse-Inventories/)
+Download the Multiverse-Inventories JAR from the [release site](http://dev.bukkit.org/projects/multiverse-inventories/files/).
 
 There is NO Zip package available. Multiverse-Core (and MV Plugins) will create default configs for you __on the first run__.
 
