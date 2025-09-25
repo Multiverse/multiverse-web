@@ -4,7 +4,7 @@ title: "Installation"
 
 ## Prerequisites
 There are a few things to verify before installing [Multiverse-SignPortals](https://dev.bukkit.org/projects/multiverse-signportals).
-* When running other Multiverse modules (such as SignPortals, ensure it's the same version as [Multiverse-Core](https://dev.bukkit.org/projects/multiverse-core). For example, if Multiverse-SignPortals is 4.0.0, Multiverse-Core should be 4.0.0.
+* When running other Multiverse modules (such as SignPortals), get the latest version of all modules - the slight difference in version number does not matter as long as its all v5.
 * You must have [Multiverse-Core](https://dev.bukkit.org/projects/multiverse-core) before having Multiverse-SignPortals.
 
 ## Step 1
