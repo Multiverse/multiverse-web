@@ -6,10 +6,11 @@ If you're looking for the [Multiverse-Core](/core/fundamentals/commands-usage), 
 
 ## Index
 1. [Group Command](#Group-Command)
-1. [Info Command](#Info-Command)
-1. [Import Command - for importing from MultiInv/WorldInventories](#Import-Command)
-1. [List Command](#List-Command)
-1. [Reload Command](#Reload-Command)
+2. [Check Group Conflict Command](#Check-Group-Conflict-Command)
+3. [Info Command](#Info-Command)
+4. [Import Command - for importing from MultiInv/WorldInventories](#Import-Command)
+5. [List Command](#List-Command)
+6. [Reload Command](#Reload-Command)
 
 ## Group Command 
 
@@ -23,6 +24,21 @@ If you're looking for the [Multiverse-Core](/core/fundamentals/commands-usage), 
 
 #### Permission:
 `multiverse.inventories.group`
+
+[↑ Back to Top ↑](#top)
+
+## Check Group Conflict Command
+
+#### Description:
+Checks for conflicts in group definitions. A conflict occurs when two or more groups contain the same world and has overlapping shares.
+
+#### Usage:
+```java
+/mvinv check-group-conflict
+```
+
+#### Permission:
+`multiverse.inventories.checkgroupconflict`
 
 [↑ Back to Top ↑](#top)
 
