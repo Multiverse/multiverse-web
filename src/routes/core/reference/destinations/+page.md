@@ -49,12 +49,14 @@ If finer permissions is enabled: `multiverse.teleport.self.a.<anchorname>`
 
 ## Exact Destinations
 
-Exact destinations are useful if you know exactly where someone should spawn, but they're difficult to set, as that's a lot to type! Luckily, an easy way of setting an exact destination is by using: `/mvp modify destination e:@here` this will set the destination to an exact dest of your current location, **including where you are looking**. This is great if you want people to spawn looking at your awesome creations!
+Exact destinations are useful if you know exactly where someone should spawn, but they're difficult to set, as that's a lot to type! Luckily, an easy way of setting an exact destination is by using: `/mvp modify destination e:@here` this will set the destination to an exact dest of your current location, **including where you are looking**. This is great if you want people to spawn looking at your awesome creations! Relative positions are also supported, so you can use `~,~1,~` to spawn a player one block above the current player's coordinates.
 
 ### Examples
 
 `/mvtp e:world:0,0,0`  
 `/mvtp e:world:0,0,0:0:0`
+`/mvtp e:world:~,~,~`  
+`/mvtp e:world:~,~1,~:0:0`
 
 ### Permissions
 
