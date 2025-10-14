@@ -34,6 +34,10 @@ export default [
     collapsible: true,
     items: [
       {
+        title: "Customise World Creation",
+        to: "/core/how-to/customise-world-creation/",
+      },
+      {
         title: "Setup Entry Fee",
         to: "/core/how-to/setup-entry-fee/",
       },
