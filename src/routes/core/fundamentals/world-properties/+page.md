@@ -218,31 +218,21 @@ Whether or not players may harm each other in this world. If set to `true`, they
 
 ## Alias
 
-World aliases allow you to name a world differently than what the folder name is. This lets you choose fancy names for your worlds while keeping the folders nice and neat.
+World aliases allow you to name a world differently than what the folder name is. This lets you choose fancy names for your worlds while keeping the folders nice and neat. If your alias has spaces, you must wrap it in quotes, for example: `"My World"`.
 
-The alias attribute can also include a color and a style. Worlds will show up colored and styled when your users chat and via [`/mv list`](/core/fundamentals/commands-usage#List-Command) or [`/mv who`](/core/fundamentals/commands-usage#Who-Command).
-
-The color must be one of these:  
-`AQUA, BLACK, BLUE, DARKAQUA, DARKBLUE, DARKGRAY, DARKGREEN, DARKPURPLE, DARKRED, GOLD, GRAY, GREEN, LIGHTPURPLE, RED, YELLOW, WHITE`
-
-The style must be one of these:
-`NORMAL, MAGIC, BOLD, STRIKETHROUGH, UNDERLINE, ITALIC`
+The alias attribute can also include a color and a style. Worlds will show up colored and styled when your users chat and via [`/mv list`](/core/fundamentals/commands-usage#List-Command) or [`/mv who`](/core/fundamentals/commands-usage#Who-Command). It can also be used for placeholders in chat plugins (See [our placeholders](/core/reference/placeholders))
 
 ![Example of world aliases with color](/core/world-properties/world-with-color.png)
 
-### Example: Set alias to _FernWorld_ (Italic and green)
+### Example: Set alias to _Fern World_ (green)
 
 **In Game Usage:**  
-`mv modify set style italic`  
-`mv modify set color green`  
-`mv modify set alias FernWorld`
+`mv modify set alias "&aFern World"`
 
 **In the config:**
 
 ```yml
-alias: FernWorld
-color: GREEN
-style: ITALIC
+alias: "&aFern World"
 ```
 
 [↑ Back to Top ↑](#top)
@@ -255,10 +245,11 @@ The world blacklist allows you to specify worlds that people **cannot go** to fr
 `List<String>`
 
 **Example:**
-
-    worldblacklist:
-    - world_fish
-    - world_dog
+```yml
+worldblacklist:
+- world_fish
+- world_dog
+```
 
 [↑ Back to Top ↑](#top)
 
