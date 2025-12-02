@@ -2,46 +2,55 @@
 title: "Basic Usage"
 ---
 
-## Method 1: (Recommended)
+This section will guide you through the basic usage of Multiverse-Inventories, including how to create groups and shares to create separated or shared inventories between worlds.
 
-### Step #1 
-Type `/mv list` to get a list of your worlds (you can skip this if you know your world names), then type `/mvinv group`.
+## About Default Group
+When you first install Multiverse-Inventories, there will be one default group created for you called `default`, which has the server's default worlds (usually `world`, `world_nether`, and `world_the_end`) in it that shares everything. This is done to mimic the default Minecraft behavior of having the default overworld, nether, and end having common inventories. All other worlds you have created or imported will have their own separate inventories.
 
-![1](https://user-images.githubusercontent.com/8557785/63902555-c27e9680-c9cf-11e9-9e0b-80077e42cbc2.png)
+If that is your desired setup, then you are all set! If you need to customize which worlds are in which groups and what shares they have, read on!
 
-### Step #2
-It will ask if you would like to create, edit or delete. Since it's your first time, you want to type "`create`", you'll then be prompted to name your group, this is just a name of your choice that you'll remember is the group link between the worlds, in my example, it's "`creativeworlds`".
+To check the current configuration of the default group, you can use the `/mvinv info default` command.
 
-![2](https://user-images.githubusercontent.com/8557785/63902641-18ebd500-c9d0-11e9-8276-47a574af3584.png)
+![mvinv info default example](/inventories/basics/mvinv-info-default.png)
 
-### Step #3
-In this example, I'm linking the worlds `creative` and `creative2` as shown in the first screenshot, so I will type those world names.
+If you do not want this default behavior, you delete the default group with `/mvinv delete-group default` command and create your own groups as needed.
 
-![3](https://user-images.githubusercontent.com/8557785/63902742-74b65e00-c9d0-11e9-8952-301bf6f77b95.png)
-(As you can see at the end of the statement, the current worlds listed show "`creative`" and "`creative2`", so it added them to the group successfully)
+## Creating a new Group
 
-### Step #4
-Once you add all the worlds, you type "`@`" to continue to the next step, which will be the shares you want to share between these worlds. All available shares can be found [on this wiki](/inventories/reference/shares-list). In this example, I'm going to share everything, so I will type "`all`".
+For this guide, we will create a group for a set of smp worlds so we can share everything between them, while keeping them separate from the default worlds. Adapt the world names and shares as needed for your use case.
 
-![4](https://user-images.githubusercontent.com/8557785/63902954-6157c280-c9d1-11e9-96a5-7659357d4d6e.png)
-(As you can see at the end of the statement, everything is shared between the worlds I listed above)
+### Step #1 Know your world names
+If you are unsure of your world names, you can type `/mv list --raw` to get a list of your worlds.
 
-### Step #5
-Type "`@`" when you're finished and that is all! The next message shows you created a new group and a summary of what you just linked. Now my worlds "`creative`" and "`creative2`" will have everything shared.
+![mv list raw example](/inventories/basics/mv-list-raw.png)
 
-![5](https://user-images.githubusercontent.com/8557785/63903035-a0861380-c9d1-11e9-9a55-9998053d25e5.png)
+### Step #2 Understand the command
 
----
+Next, use the `/mvinv create-group` command to create a new group. Before running the command, make sure you have the following information ready:
+- The name of the group you want to create (e.g., `smpgroup`).
+- The worlds you want to include in this group (e.g., `smp`, `smp_nether`, `smp_the_end`).
+- The shares you want to enable for this group (e.g., `all`, `inventory`, `enderchest`, `experience`, `health`, `hunger`, `potion-effects`).
 
+The syntax for the command is as follows, with world names and shares separated by commas:
+```java
+/mvinv create-group <group-name> <world1,world2,...> <share1,share2,...>
+```
 
-## Method 2 (A little more advanced):
-### Step #1
-Find the Multiverse-Inventories directory in your server's plugin directory.
+### Step #3 Applying the command
 
-### Step #2
-Open up the [Configuration file (config.yml)](/inventories/reference/configuration-file) file. (The config has informative comments inside to help you understand what each option does.)
+Run the command with your desired parameters. For the desired setup as detailed above, we will create a group called `smpgroup` that includes the worlds `smp`, `smp_nether`, and `smp_the_end`. For the shares, we will set `all` to share everything between these worlds.
+```java
+/mvinv create-group smpgroup smp,smp_nether,smp_the_end all
+```
 
-### Step #3
-Once you have your configuration set up as desired, simply type `/mvinv reload` in-game or `mvinv reload` in the server console.
+![mvinv create-group example](/inventories/basics/mvinv-create-group.png)
 
-Please refer to the [[frequently asked questions|FAQ-(Inventories)]] for an understanding of how groups and shares work!
+## A word on Shares
+Generally for shares, you will want to just use `all` to share everything between the worlds in the group, which will separate all inventories from other worlds not in the group. However, if you require more advanced setups, such as only sharing health and experience between worlds in the group, you can specify those shares as `health,experience`. In this case, the group will only have common health and experience, while other inventory aspects will remain separate even if the worlds are in the same group. For the full list of share options, see the [Shares List page](/inventories/reference/shares-list).
+
+## Next Steps
+Now that you have created a group, you can create more groups as needed for your worlds!
+
+Other common feature you may want to explore are:
+- Enable and configure [Last Location](/inventories/how-to/enable-last-location) to have players remember their last location per world or group.
+- View other commands in the [Command Usage page](/inventories/fundamentals/commands-usage), such as modifying existing groups, listing groups.

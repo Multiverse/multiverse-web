@@ -18,6 +18,16 @@ export default [
     ],
   },
   {
+    title: "How To",
+    collapsible: true,
+    items: [
+      {
+        title: "Configure Last Location",
+        to: "/inventories/how-to/configure-last-location/",
+      },
+    ],
+  },
+  {
     title: "Reference",
     collapsible: true,
     items: [
