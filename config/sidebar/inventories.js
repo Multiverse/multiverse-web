@@ -1,3 +1,5 @@
+import { title } from "process";
+
 export default [
   {
     title: "Fundamentals",
@@ -24,6 +26,10 @@ export default [
       {
         title: "Configure Last Location",
         to: "/inventories/how-to/configure-last-location/",
+      },
+      {
+        title: "Advanced Group Config",
+        to: "/inventories/how-to/advanced-group-config/",
       },
       {
         title: "Import Playerdata",

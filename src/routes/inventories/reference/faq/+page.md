@@ -36,7 +36,3 @@ Anything sharable that is **not** listed in a group will not be shared between t
 
 ## Is there a way admins can ignore the effects of this plugin?
 Yes!  There are permissions available of this.  Please refer to the [list of permissions](/inventories/reference/permissions-list).
-
-## How do I import inventories from an existing vanilla world?
-You can **not** import/merge your vanilla inventories with Multiverse-Inventories. Once you install Multiverse-Inventories, your players will log in with the inventories they previously had.
-**Why?** Bukkit based servers store the player's current inventory in player.dat in the default world. Multiverse-Inventories changes nothing about this behavior. Instead, the plugin swaps out the player's current inventory when they change worlds

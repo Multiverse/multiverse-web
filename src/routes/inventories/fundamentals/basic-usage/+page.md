@@ -54,5 +54,5 @@ However, if you require more advanced setups, such as only sharing health and ex
 Now that you have created a group, you can create more groups as needed for your worlds!
 
 Other common feature you may want to explore are:
-- Enable and configure [Last Location](/inventories/how-to/enable-last-location) to have players remember their last location per world or group.
+- Enable and configure [Last Location](/inventories/how-to/configure-last-location) to have players remember their last location per world or group.
 - View other commands in the [Command Usage page](/inventories/fundamentals/commands-usage), such as modifying existing groups, listing groups.

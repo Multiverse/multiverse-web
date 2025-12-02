@@ -75,11 +75,7 @@ Adds one or more shares to a group.
 ## Add Worlds Command
 
 #### Description:
-Adds one or more worlds to a group.
-
-Worlds supports wildcards and regex:
-1. Simple use * for wildcard format, e.g. `world_*_player` will match anything that matches exactly the string apart from the * such as `world_1_player`, `world_x_player` and so on.
-2. For more control on the exact matching logic, you can use regex expressions by prefixing the world string with `r=`, e.g. `r=world_[0-9]_player` will match anything that matches the regex such as `world_1_player` and `world_2_player` but not `world_x_player` as the regex specifies only numbers are allowed.
+Adds one or more worlds to a group. Worlds supports wildcards and regex. For more info on that, see [Advanced Group Config](/inventories/how-to/advanced-group-config).
 
 #### Usage:
 ```java
@@ -535,6 +531,8 @@ Removes disabled shares from a group.
 #### Permission:
 `multiverse.inventories.removedisabledshares`
 
+[↑ Back to Top ↑](#top)
+
 ## Remove Shares Command
 
 #### Description:
@@ -551,6 +549,8 @@ Removes shares from a group.
 #### Permission:
 `multiverse.inventories.removeshares`
 
+[↑ Back to Top ↑](#top)
+
 ## Remove Worlds Command
 
 #### Description:
@@ -566,6 +566,8 @@ Removes a world from a group.
 
 #### Permission:
 `multiverse.inventories.removeworlds`
+
+[↑ Back to Top ↑](#top)
 
 ## Toggle Command
 
