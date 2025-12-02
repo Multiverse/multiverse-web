@@ -1,4 +1,4 @@
-![banner](/inventories/installation/banner.png)
+![banner](/inventories/banner.png)
 
 ## Prerequisites
 There are a few things to verify before installing [Multiverse-Inventories](https://dev.bukkit.org/projects/multiverse-inventories).

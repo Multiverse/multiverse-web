@@ -1,6 +1,4 @@
----
-title: "Installation"
----
+![banner](/portals/banner.png)
 
 For an English language video tutorial [check here](https://www.youtube.com/watch?v=gZuO6CG_5pc) - thanks to Koz4Christ
 
