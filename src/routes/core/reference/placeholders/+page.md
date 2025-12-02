@@ -30,6 +30,7 @@ These could also have a world added on to the end if desired as described previo
 - `%multiverse-core_hunger%`
 - `%multiverse-core_monstersspawn%`
 - `%multiverse-core_name%`
+- `%multiverse-core_playercount%`
 - `%multiverse-core_playerlimit%`
 - `%multiverse-core_price%`
 - `%multiverse-core_pvp%`
