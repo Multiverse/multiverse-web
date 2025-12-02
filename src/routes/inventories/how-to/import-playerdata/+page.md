@@ -1,5 +1,5 @@
 ---
-title: "Import Playerdata"
+title: "Import/Migrate Player Data"
 ---
 
 coming soon :)

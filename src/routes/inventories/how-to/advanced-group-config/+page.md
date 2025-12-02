@@ -2,7 +2,7 @@
 title: Advanced Group Config
 ---
 
-This page details various ways to configure groups in Multiverse-Inventories, including more complex and rarely used configs and options that are not covered in the other pages. If you are new to Multiverse-Inventories, you may want to start with the [Basic Usage page](/inventories/fundamentals/basic-usage).
+This page is a deep dive into configure of groups in Multiverse-Inventories, including a deeper explaination of how multiple groups with different set of sharables works, as well as more complex group configurations and features. If you are new to Multiverse-Inventories, you may want to start with the [Basic Usage page](/inventories/fundamentals/basic-usage).
 
 ## Wildcard and Regex Worlds
 

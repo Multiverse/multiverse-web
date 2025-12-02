@@ -32,7 +32,11 @@ export default [
         to: "/inventories/how-to/advanced-group-config/",
       },
       {
-        title: "Import Playerdata",
+        title: "Bulk Edit Inventory Data",
+        to: "/inventories/how-to/bulkedit-inventory-data/",
+      },
+      {
+        title: "Import/Migrate Player Data",
         to: "/inventories/how-to/import-playerdata/",
       },
     ],
