@@ -1,6 +1,4 @@
----
-title: "Installation"
----
+![banner](/signportals/banner.png)
 
 ## Prerequisites
 There are a few things to verify before installing [Multiverse-SignPortals](https://dev.bukkit.org/projects/multiverse-signportals).

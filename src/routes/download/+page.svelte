@@ -37,6 +37,22 @@
       tagColor: "bg-green-500",
     },
   ];
+  let otherPlugins = [
+    {
+      name: "Multiverse-CommandDestination",
+      description: "Small addon for people who are using Multiverse and want to run their own commands on teleporting or entering a Multiverse Portal.",
+      link: "https://modrinth.com/plugin/multiverse-commanddestination#download",
+      tag: "extension",
+      tagColor: "bg-gray-600",
+    },
+    {
+      name: "Multiverse-Legacy-Api",
+      description: "Temporary adds backwards compatibilty support for users that upgraded to new Multiverse v5, but have 3rd-party plugins that still hooks into old v4 API.",
+      link: "https://modrinth.com/plugin/multiverse-legacy-api#download",
+      tag: "legacy",
+      tagColor: "bg-gray-600",
+    }
+  ]
 </script>
 
 <main>
@@ -56,7 +72,35 @@
               {plugin.tag}
             </span>
           </div>
-          <div class="text-gray-500">{plugin.description}</div>
+          <div class="text-gray-500 pr-0 sm:pr-4">{plugin.description}</div>
+        </div>
+        <a
+          class="svp-gradient-bg text-white dark:text-warm-gray-8 px-4 py-2 rounded-full hover:bg-blue-600 flex items-center gap-2 mt-4 sm:mt-0 flex-none"
+          href={plugin.link}
+          target="_blank"
+        >
+          <div class="flex items-center gap-2">
+            <img src="/modrinth-logo.webp" alt="Modrinth Logo" class="w-6 h-6 bg-white dark:bg-warm-gray-8 rounded-full p-2px" />
+            <p class="m-0 pr-1">Download</p>
+          </div>
+        </a>
+      </div>
+    {/each}
+  </div>
+  <h3 class="text-xl font-bold mt-10 mb-6">Other Add-Ons</h3>
+  <div class="grid grid-cols-1 gap-6">
+    {#each otherPlugins as plugin}
+      <div
+        class="bg-white dark:bg-gray-9 rounded-lg shadow-lg p-4 flex flex-col sm:flex-row justify-between content-center items-start sm:items-center"
+      >
+        <div class="flex flex-col gap-2">
+          <div class="flex items-center gap-2">
+            <p class="text-xl font-semibold m-0">{plugin.name}</p>
+            <span class="{plugin.tagColor} text-xs px-2 py-1 rounded-full text-white flex-none">
+              {plugin.tag}
+            </span>
+          </div>
+          <div class="text-gray-500 pr-0 sm:pr-4">{plugin.description}</div>
         </div>
         <a
           class="svp-gradient-bg text-white dark:text-warm-gray-8 px-4 py-2 rounded-full hover:bg-blue-600 flex items-center gap-2 mt-4 sm:mt-0 flex-none"

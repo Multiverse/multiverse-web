@@ -1,8 +1,4 @@
----
-title: "Welcome to Multiverse WIKI"
----
-
-![New server](/multiverse5-long.svg)
+![New server](/core/banner.png)
 
 ## Basics
 

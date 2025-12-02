@@ -1,6 +1,4 @@
----
-title: "Installation"
----
+![banner](/netherportals/banner.png)
 
 Multiverse-NetherPortals is very easy to install.
 

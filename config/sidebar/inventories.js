@@ -1,3 +1,5 @@
+import { title } from "process";
+
 export default [
   {
     title: "Fundamentals",
@@ -14,6 +16,28 @@ export default [
       {
         title: "Commands Usage",
         to: "/inventories/fundamentals/commands-usage/",
+      },
+    ],
+  },
+  {
+    title: "How To",
+    collapsible: true,
+    items: [
+      {
+        title: "Configure Last Location",
+        to: "/inventories/how-to/configure-last-location/",
+      },
+      {
+        title: "Advanced Group Config",
+        to: "/inventories/how-to/advanced-group-config/",
+      },
+      {
+        title: "Bulk Edit Inventory Data",
+        to: "/inventories/how-to/bulkedit-inventory-data/",
+      },
+      {
+        title: "Import/Migrate Player Data",
+        to: "/inventories/how-to/import-playerdata/",
       },
     ],
   },
