@@ -19,12 +19,12 @@ If you do not want this default behavior, you delete the default group with `/mv
 
 For this guide, we will create a group for a set of smp worlds so we can share everything between them, while keeping them separate from the default worlds. Adapt the world names and shares as needed for your use case.
 
-### Step #1 Know your world names
+### Step 1: Know your world names
 If you are unsure of your world names, you can type `/mv list --raw` to get a list of your worlds.
 
 ![mv list raw example](/inventories/basics/mv-list-raw.png)
 
-### Step #2 Understand the command
+### Step 2: Understand the command
 
 Next, use the `/mvinv create-group` command to create a new group. Before running the command, make sure you have the following information ready:
 - The name of the group you want to create (e.g., `smpgroup`).
@@ -36,7 +36,7 @@ The syntax for the command is as follows, with world names and shares separated 
 /mvinv create-group <group-name> <world1,world2,...> <share1,share2,...>
 ```
 
-### Step #3 Applying the command
+### Step 3: Applying the command
 
 Run the command with your desired parameters. For the desired setup as detailed above, we will create a group called `smpgroup` that includes the worlds `smp`, `smp_nether`, and `smp_the_end`. For the shares, we will set `all` to share everything between these worlds.
 ```java
@@ -45,8 +45,10 @@ Run the command with your desired parameters. For the desired setup as detailed 
 
 ![mvinv create-group example](/inventories/basics/mvinv-create-group.png)
 
-## A word on Shares
-Generally for shares, you will want to just use `all` to share everything between the worlds in the group, which will separate all inventories from other worlds not in the group. However, if you require more advanced setups, such as only sharing health and experience between worlds in the group, you can specify those shares as `health,experience`. In this case, the group will only have common health and experience, while other inventory aspects will remain separate even if the worlds are in the same group. For the full list of share options, see the [Shares List page](/inventories/reference/shares-list).
+## About Shares
+Generally for shares, you will want to just use `all` to share everything between the worlds in the group, which will separate all inventories from other worlds not in the group.
+
+However, if you require more advanced setups, such as only sharing health and experience between worlds in the group, you can specify those shares as `health,experience`. In this case, the group will only have common health and experience, while other inventory aspects will remain separate even if the worlds are in the same group. For the full list of share options, see the [Shares List page](/inventories/reference/shares-list).
 
 ## Next Steps
 Now that you have created a group, you can create more groups as needed for your worlds!

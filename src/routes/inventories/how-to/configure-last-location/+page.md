@@ -14,6 +14,8 @@ By default, Last Location is **DISABLED**. To enable it, please run the followin
 You should see a confirmation message indicating that Last Location has been enabled:
 ![Last Location Enabled](/inventories/last-location/last-location-toggle.png)
 
+If you just want last location to apply to all worlds and groups, you are all set! If you want to have a deeper understanding of how Last Location works as well as more customization options, read on!
+
 ## Last Location Default Behavior
 The following describes how Last Location works by default once it is enabled, without any additional configuration changes.
 
@@ -32,7 +34,7 @@ It works by doing a second teleport when a player teleports between worlds that 
 Hence, if you have another plugin that tracks teleports such as for using `/back`, you may find that records two teleports instead of one. The only way to avoid this is to use the `ll` destination by using `/mvtp` command or mv portals for the teleport. For example, to teleport to your last location in world2, you would use `/mvtp ll:world2`.
 
 ## Customizing Last Location Behavior
-By default `last_location` will always apply to all worlds and all teleports between worlds not sharing a common `last_location`. Removing the `last_location` share from a group **WILL NOT disable** it. If you want to disable `last_location` or have final control over when `last_location` applies, you can explore the following config options:
+By default `last_location` will always apply to all worlds and all teleports between worlds not sharing a common `last_location`. Removing the `last_location` share from a group **WILL NOT disable** it. If you want to disable `last_location` or have final control over when `last_location` applies, you can explore the following config options.
 
 ### Disable for all ungrouped worlds
 If you want to disable `last_location` for all ungrouped worlds, you can change the following config option:
@@ -46,7 +48,7 @@ If you want to disable `last_location` for a specific group, you can use the fol
 /mvinv add-disabled-shares <group-name> last_location
 ```
 
-If you want to disable `last_location` for a specific ungrouped world, you will have to first create a group for that world, then use the above command to disable `last_location` for that group.
+If you want to disable `last_location` for a specific ungrouped world, you will have to first create a group for that world, then use the above command to disable `last_location` for that group. This is typically useful for your hub or lobby world where you do not need players to return to their last location there.
 
 For example: (replace `<worldname>` with your actual world name and use any group name you like)
 ```java

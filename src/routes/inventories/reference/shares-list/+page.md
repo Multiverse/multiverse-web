@@ -39,11 +39,13 @@ The shares will be listed first with all the possible keywords you may use to in
 
 - **gamestats** - Data such as play time, number of deaths etc...
 
-### Grouped Shares - These are "package deals" that include multiple of the above shares with one keyword.
+### Grouped Shares - These are "shorthands" that include multiple of the above shares with one keyword.
+
+This is useful for quickly sharing common sets of data without having to type them all out, but you can always specify the individual shares if you want more control or just feel like typing more :)
 
 * **all** - This includes ALL shares listed above, even the optional ones (though optional shares still must be toggled to have any effect.) (__*__, **everything**)
-* **stats** - includes: hit_points, food_level, saturation, exhaustion, xp, total_xp, lvl, remaining_air, maximum_air, fall_distance, fire_ticks, potion_effects
-* **health** - includes: hit_points, remaining_air, maximum_air, fall_distance, fire_ticks
+* **stats** - includes: hit_points, max_hit_points, food_level, saturation, exhaustion, xp, total_xp, lvl, remaining_air, maximum_air, fall_distance, fire_ticks, potion_effects
+* **health** - includes: hit_points, max_hit_points, remaining_air, maximum_air, fall_distance, fire_ticks
 * **hunger** - includes: food_level, saturation, exhaustion
 * **air** - includes: remaining_air, maximum_air (**breath**)
 * **experience** - includes: xp, total_xp, lvl (**exp**, **level**)

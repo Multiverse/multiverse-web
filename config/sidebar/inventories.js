@@ -25,6 +25,10 @@ export default [
         title: "Configure Last Location",
         to: "/inventories/how-to/configure-last-location/",
       },
+      {
+        title: "Import Playerdata",
+        to: "/inventories/how-to/import-playerdata/",
+      },
     ],
   },
   {
