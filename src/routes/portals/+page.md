@@ -16,9 +16,5 @@ There is NO Zip package available. Multiverse-Core (and MV Plugins) will create 
 
 __*Optional:__ Install the  [Multiverse-NetherPortals](http://dev.bukkit.org/projects/multiverse-netherportals/files/) plugin!
 
-Place it in your plugins folder like so:
-
-[[/images/install/step1.png]]
-
 ## Step 2
 Start your server and make some portals!
