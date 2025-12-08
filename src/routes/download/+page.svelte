@@ -2,48 +2,54 @@
   let plugins = [
     {
       name: "Multiverse-Core",
-      description: "The core plugin for managing multiple worlds.",
+      description: "The go-to plugin for managing multiple worlds.",
       link: "https://modrinth.com/plugin/multiverse-core#download",
       tag: "required",
       tagColor: "bg-red-500",
     },
     {
       name: "Multiverse-Inventories",
-      description: "Handles inventory separation between worlds.",
+      description: "Handles inventory separation between worlds with ease.",
       link: "https://modrinth.com/plugin/multiverse-inventories#download",
-      tag: "add-on",
+      tag: "recommended",
       tagColor: "bg-green-500",
     },
     {
       name: "Multiverse-Portals",
       description: "Create custom portals to teleport players.",
       link: "https://modrinth.com/plugin/multiverse-portals#download",
-      tag: "add-on",
+      tag: "recommended",
       tagColor: "bg-green-500",
     },
     {
       name: "Multiverse-NetherPortals",
-      description:
-        "Manages vanilla Nether and End portals linking between worlds.",
+      description: "Manages vanilla Nether and End portals linking between worlds.",
       link: "https://modrinth.com/plugin/multiverse-netherportals#download",
-      tag: "add-on",
+      tag: "recommended",
       tagColor: "bg-green-500",
     },
     {
       name: "Multiverse-SignPortals",
       description: "Make clickable signs to teleport.",
       link: "https://modrinth.com/plugin/multiverse-signportals#download",
-      tag: "add-on",
+      tag: "recommended",
       tagColor: "bg-green-500",
     },
   ];
   let otherPlugins = [
     {
+      name: "Multiverse-InventoriesImporter",
+      description: "Import vanilla player data or migrate data from another plugin into Multiverse-Inventories. This plugin only works on PaperMC and its supported forks.",
+      link: "https://modrinth.com/plugin/multiverse-inventoriesimporter#download",
+      tag: "utility",
+      tagColor: "bg-yellow-600",
+    },
+    {
       name: "Multiverse-CommandDestination",
       description: "Small addon for people who are using Multiverse and want to run their own commands on teleporting or entering a Multiverse Portal.",
       link: "https://modrinth.com/plugin/multiverse-commanddestination#download",
       tag: "extension",
-      tagColor: "bg-gray-600",
+      tagColor: "bg-yellow-600",
     },
     {
       name: "Multiverse-Legacy-Api",

@@ -465,8 +465,12 @@ Displays a list of groups.
 
 ## Migrate Command
 
+:::important
+This command requires the [Multiverse-InventoriesImporter](https://modrinth.com/plugin/multiverse-inventoriesimporter) plugin to be installed.
+:::
+
 #### Description:
-Migrate data from MultiInv, WorldInventories, or PerWorldInventory.
+Migrate data from MultiInv, WorldInventories, or PerWorldInventory. For more information, see the [Import/Migrate Player Data Guide](/inventories/how-to/import-playerdata).
 
 #### Usage:
 ```java
@@ -484,8 +488,12 @@ Migrate data from MultiInv, WorldInventories, or PerWorldInventory.
 
 ## Player Data Import Command
 
+:::important
+This command requires the [Multiverse-InventoriesImporter](https://modrinth.com/plugin/multiverse-inventoriesimporter) plugin to be installed.
+:::
+
 #### Description:
-Imports player data from vanilla playerdata folder of a world.
+Imports player data from vanilla playerdata folder of a world. For more information, see the [Import/Migrate Player Data Guide](/inventories/how-to/import-playerdata).
 
 #### Usage:
 ```java
