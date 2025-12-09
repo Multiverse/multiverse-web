@@ -3,13 +3,14 @@ title: Home
 heroImage: /multiverse5.svg
 tagline: One server. Endless possibilities.
 actions:
-  - label: Download Now!!!
+  - label: ☕️ Buy Coffee!
     type: primary
-    to: download/
-  - label: All NEW MV5!!!
+    to: https://github.com/sponsors/Multiverse
+    external: true
+  - label: 🎉 New in MV5
     type: primary
     to: mv5/
-  - label: Read the Docs
+  - label: 📖 Read the Docs
     to: core/
 features:
   - title: Easy to Use
