@@ -17,9 +17,9 @@ The parsing will be done automatically and updates every time a world load or un
 
 Some other example commands:
 ```java
-/mvinv add-worlds smpgroup r=world_[0-9]_player
-/mvinv add-worlds smpgroup dungeon_*
-/mvinv create-group adventuregroup adventure* inventory,experience,health
+/mvinv add-worlds smpgroup,r=world_[0-9]_player
+/mvinv add-worlds smpgroup,dungeon_*
+/mvinv create-group adventuregroup,adventure* inventory,experience,health
 ```
 
 ## Complex Grouping
