@@ -1,3 +1,4 @@
+/// <reference types="@sveltepress/vite/types" />
 /// <reference types="@sveltepress/theme-default/types" />
 /// <reference types="@sveltepress/vite/types" />
 /// <reference types="vite-plugin-pwa/client" />
@@ -12,4 +13,3 @@ declare namespace App {
 	// interface PageData {}
 	// interface Platform {}
 }
-  
