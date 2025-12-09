@@ -84,8 +84,8 @@ Adds one or more worlds to a group. Worlds supports wildcards and regex. For mor
 ```
 
 #### Examples:
-- `/mvinv add-worlds smpgroup,Survival`
-- `/mvinv add-worlds smpgroup,r=world_[0-9]_player`
+- `/mvinv add-worlds smpgroup Survival,Survival_nether,Survival_the_end`
+- `/mvinv add-worlds smpgroup r=world_[0-9]_player`
 
 #### Permission:
 `multiverse.inventories.addworlds`
