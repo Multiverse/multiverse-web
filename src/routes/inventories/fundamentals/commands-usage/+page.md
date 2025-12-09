@@ -65,7 +65,8 @@ Adds one or more shares to a group.
 ```
 
 #### Examples:
-- `/mvinv add-shares smpgroup last_location`
+- `/mvinv add-shares smpgroup health,last_location`
+- `/mvinv add-shares smpgroup all`
 
 #### Permission:
 `multiverse.inventories.addshares`
@@ -83,8 +84,8 @@ Adds one or more worlds to a group. Worlds supports wildcards and regex. For mor
 ```
 
 #### Examples:
-- `/mvinv add-worlds smpgroup Survival`
-- `/mvinv add-worlds smpgroup r=world_[0-9]_player`
+- `/mvinv add-worlds smpgroup,Survival`
+- `/mvinv add-worlds smpgroup,r=world_[0-9]_player`
 
 #### Permission:
 `multiverse.inventories.addworlds`
