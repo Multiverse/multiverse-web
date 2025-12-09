@@ -48,7 +48,6 @@ Adds disabled shares to a group.
 
 #### Examples:
 - `/mvinv add-disabled-shares smpgroup last_location`
-- 
 
 #### Permission:
 `multiverse.inventories.adddisabledshares`
