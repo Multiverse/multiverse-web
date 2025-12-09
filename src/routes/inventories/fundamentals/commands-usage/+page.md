@@ -48,6 +48,7 @@ Adds disabled shares to a group.
 
 #### Examples:
 - `/mvinv add-disabled-shares smpgroup last_location`
+- 
 
 #### Permission:
 `multiverse.inventories.adddisabledshares`
@@ -80,7 +81,7 @@ Adds one or more worlds to a group. Worlds supports wildcards and regex. For mor
 
 #### Usage:
 ```java
-/mvinv add-worlds <groupname> <world1,world2,...>
+/mvinv add-worlds <groupname> <world1,world2,...> [--skip-exist-check]
 ```
 
 #### Examples:
