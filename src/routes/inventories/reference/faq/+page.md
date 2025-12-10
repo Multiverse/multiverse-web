@@ -36,3 +36,7 @@ Anything sharable that is **not** listed in a group will not be shared between t
 
 ## Is there a way admins can ignore the effects of this plugin?
 Yes!  There are permissions available of this.  Please refer to the [list of permissions](/inventories/reference/permissions-list).
+
+## Can I export playerdata back to a vanilla world?
+
+Short answer: It is currently not possible. Multiverse-Inventories stores all its data in its own plugin folder and does not touch the vanilla playerdata directly at all. The only way is to install Multiverse-Inventories in the other server you are transferring your world to and copy over the Multiverse-Inventories plugin folder contents as well.
