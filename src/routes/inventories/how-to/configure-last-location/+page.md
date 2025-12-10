@@ -22,9 +22,9 @@ The following describes how Last Location works by default once it is enabled, w
 ### How does it apply to groups and worlds?
 For groups that are sharing `all` (or `last_location` specifically) will have a common `last_location`, and all ungrouped worlds will have their own `last_location`.  You can check your group shares by using the `/mvinv info <groupname>` command.
 
-For example, you have a group with world1 and world2 sharing `last_location`. If a player teleports from world2 to any world outside the group, they will return to the group's `last_location` in world2, even if you teleported them to world1. If the player teleports between world1 and world2, mvinv will not do anything, since they are sharing `last_location`.
+For example, you have a group with world1 and world2 sharing `last_location`. After a player teleports from world2 to any world outside the group, they will return to the group's `last_location` in world2, even if you teleported them to world1. If the player teleports between world1 and world2, mvinv will not do anything, since they are sharing `last_location`.
 
-For ungrouped worlds, each world will have its own `last_location`. If a player teleports from world3 (ungrouped) to any other world, they will return to their last known position in world3 when they teleport back.
+For ungrouped worlds, each world will have its own `last_location` by default. If a player teleports from world3 (ungrouped) to any other world, they will return to their last known position in world3 when they teleport back.
 
 ### How does the Last Location teleport work?
 It works by doing a second teleport when a player teleports between worlds that do not share `last_location`. This means that there will be TWO teleports happening in quick succession:
