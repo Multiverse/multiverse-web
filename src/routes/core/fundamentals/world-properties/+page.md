@@ -545,6 +545,10 @@ If `anchor-respawn` is set to true, players will be able to respawn at their anc
 
 ## Allow Advancement Grant
 
+:::note
+This world property is only applicable to PaperMC servers.
+:::
+
 Sets whether player's actions will grant the relevant advancements in this world. This is useful for lobby world that you don't want to grant advancements to players. However, this does not equate to per world advancements. For that, see Multiverse-Inventories optional advancement sharable.
 
 **Type**:
