@@ -2,7 +2,7 @@
 title: "Shares List"
 ---
 
-This is a complete list of everything that is sharable in Multiverse-Inventories.
+This is a complete list of everything that is [sharable](https://mvplugins.org/inventories/reference/sharing-details/) in Multiverse-Inventories.
 
 The shares will be listed first with all the possible keywords you may use to indicate you want to share followed by a description.  Alternate keywords will be included in parenthesis after the description.
 
