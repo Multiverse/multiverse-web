@@ -308,7 +308,7 @@ The create command allows you to add new worlds to your server. Each world has m
 ### Usage
 
 ```java
-/mv create <name> <environment> [--seed <seed>] [--generator <generator[:id]>] [--world-type <worldtype>] [--adjust-spawn] [--no-structures] [--biome <biome>] [--generator-settings <json>]
+/mv create <name> <environment> [--seed <seed>] [--generator <generator[:id]>] [--world-type <worldtype>] [--adjust-spawn] [--no-structures] [--biome <biome>] [--generator-settings <json>] [--properties <prop1=value1,prop2=value2...>]
 ```
 
 - `<name>`: The name of the new world
@@ -324,6 +324,7 @@ The create command allows you to add new worlds to your server. Each world has m
 - `--no-structures`: Set this flag to disable structures from spawning
 - `--biome <biomeprovider[:id]>`: Sets the biome provider for the world.
 - `--generator-settings <json>`: Sets the generator settings for the world. Only applies to superflat worlds. See [PaperMC docs](https://jd.papermc.io/paper/1.21.5/org/bukkit/WorldCreator.html#generatorSettings(java.lang.String)) for more information on the format.
+- `--properties <prop1=value1,prop2=value2...>`: Customize multiple [world properties](/core/fundamentals/world-properties) on world creation. Example: `--properties pvp=false,portal-form=none`
 
 ### World Name and Environment
 
@@ -380,13 +381,13 @@ You should know that if you decide to use spaces in your world name that wheneve
 - `/mv create custom-world-with-a-generator-and-an-ID normal --generator BukkitFullOfMoon:Dinnerbone`  
 - `/mv create custom-generator-world-with-seed normal --generator BukkitFullOfMoon:Dinnerbone -s gargamel`
 - `/mv create example normal --generator "BananaGen:hilly,tscale=35.0,terrainheight=15.0,notorches"`
+- `/mv create adventure_world normal --properties gamemode=adventure,portal-form=none`
 
 ### Permission
 
 `multiverse.core.create`
 
 [↑ Back to Top ↑](#top)
-
 
 ## Debug Command
 

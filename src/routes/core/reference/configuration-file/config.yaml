@@ -4,13 +4,10 @@
 #                    █░▀░█ █▄█ █▄▄ ░█░ █ ▀▄▀ ██▄ █▀▄ ▄█ ██▄   █▄▄ █▄█ █▀▄ ██▄                      #
 #                                                                                                  #
 #                                                                                                  #
-#    WIKI:        https://github.com/Multiverse/Multiverse-Core/wiki                               #
+#    WIKI:        https://mvplugins.org/core/                                                      #
 #    DISCORD:     https://discord.gg/NZtfKky                                                       #
 #    BUG REPORTS: https://github.com/Multiverse/Multiverse-Core/issues                             #
-#                                                                                                  #
-#                                                                                                  #
-#    Each option in this file is documented and explained here:                                    #
-#     ==>  https://github.com/Multiverse/Multiverse-Core/wiki/config.yml                           #
+#    DONATE:      https://github.com/sponsors/Multiverse                                           #
 #                                                                                                  #
 #                                                                                                  #
 #    New options are added to this file automatically. If you manually made changes                #
@@ -45,6 +42,23 @@ world:
   # Disabling this will make the world property `allow-flight` have no effect.
   enforce-flight: true
   
+  # Sets the delay in ticks before Multiverse enforces gamemode and flight ability on world change.
+  # Increase this value if you are experiencing issues with other plugins overriding gamemode or flight ability.
+  # Or set to 0 to enforce immediately during world change event.
+  gamemode-and-flight-enforce-delay: 10
+  
+  # Sets whether Multiverse will apply the world's entity `tick-rate` config in worlds.yml.
+  # If disabled, the `tick-rate` config in worlds.yml will be ignored.
+  # Disable this if you want paper-world.yml or another plugin to handle entity spawn rate per world.
+  # !!!NOTE: This will only apply after a server restart!
+  apply-entity-spawn-rate: true
+  
+  # Sets whether Multiverse will apply the world's entity `spawn-limit` config when a world is loaded.
+  # If disabled, the `spawn-limit` config in worlds.yml will be ignored.
+  # Disable this if you want paper-world.yml or another plugin to handle entity limits per world.
+  # !!!NOTE: This will only apply after a server restart!
+  apply-entity-spawn-limit: true
+  
   # Sets whether Multiverse will purge entities on world load based world's entity spawn config.
   auto-purge-entities: false
   
@@ -69,7 +83,8 @@ teleport:
   use-finer-teleport-permissions: true
   
   # Configures how passengers and vehicles are handled when an entity is teleported.
-  #   default: Server will handle passengers and vehicles, this usually means entities will not be teleported to a different world if they have passengers.
+  #   default: Server will handle passengers and vehicles. On papermc 1.21.10+, all will be retained by default.
+  #                                                        On older versions, all will be dismounted if world changes.
   #   dismount_passengers: Passengers will be removed from the parent entity before the teleport.
   #   dismount_vehicle: Vehicle will be removed and from the parent entity before the teleport.
   #   dismount_all: All passengers and vehicles will be removed from the parent entity before the teleport.
@@ -168,6 +183,15 @@ messaging:
   # This only applies if PlaceholderAPI is installed.
   register-papi-hook: true
   
+  # This config option defines whether or not Multiverse should warn about invalid PlaceholderAPI formats.
+  # Only applies if PlaceholderAPI is installed, and only to multiverse placeholders.
+  warn-invalid-papi-format: true
+  
+  # By default, invalid formats will return the original placeholder string.
+  # This config option defines whether or not Multiverse should show invalid PlaceholderAPI formats as blank.
+  # Only applies if PlaceholderAPI is installed, and only to multiverse placeholders.
+  invalid-papi-format-returns-blank: true
+  
   # This config option defines the default language Multiverse should use.
   default-locale: en
   
@@ -181,6 +205,11 @@ command:
   # Normal world names will still be accepted.
   # In the event you have multiple worlds with the same alias name, the first world found will be used.
   resolve-alias-name: true
+  
+  # If this is set to true, Multiverse will only suggest simple destination formats in tab completion.
+  # This means only world names will be suggested without other destination type such as `e:worldname:x,y,z` or `p:playername`.
+  # Note: This DOES NOT prevent players from using the destinations, as that is controlled by permissions.
+  simplified-destination-tab-completion: false
   
   # This config option defines whether `/mv confirm` is needed before running a DANGEROUS action.
   #   enable: `/mv confirm` is required.
@@ -222,11 +251,23 @@ event-priority:
   # This config option defines the priority for the PlayerTeleportEvent.
   player-teleport: highest
   
+  # This config option defines the priority for the PlayerChangedWorldEvent.
+  player-changed-world: normal
+  
   
 misc:
   # Change this if you use a custom path for the bukkit.yml file with `--bukkit-settings` startup flag.
   # Note: this config option needs a server restart to take effect.
   bukkit-yml-path: bukkit.yml
+  
+  # Change this if you use a custom path for the server.properties file with `--config` startup flag.
+  # Note: this config option needs a server restart to take effect.
+  server-properties-path: server.properties
+  
+  # When enabled, Multiverse will attempt to automatically detect world generator plugins installed on your server.
+  # This option only affects tab-completion within `/mv create` command and output of `/mv generators` command.
+  # Disabling this will not have any affect on the usages of world generator plugins itself.
+  auto-detect-generator-plugins: true
   
   # This is our debug flag to help identify issues with Multiverse.
   # If you are having issues with Multiverse, please set this to 3 and then post your log to pastebin.com
@@ -235,7 +276,7 @@ misc:
   #   1 = fine
   #   2 = finer
   #   3 = finest
-  global-debug: 3
+  global-debug: 0
 
   # Sets whether console will log every permission check done by all multiverse plugins.
   # This will only work if the above 'global-debug' is set to 1 or more.
@@ -245,6 +286,7 @@ misc:
   silent-start: false
   
   # If you don't want to donate, you can set this to false and Multiverse will stop nagging you.
+  # But if you want to donate, here is our Github Sponsors page: https://github.com/sponsors/Multiverse
   show-donation-message: true
   
   
