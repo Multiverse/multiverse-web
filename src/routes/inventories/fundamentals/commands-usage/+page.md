@@ -11,30 +11,32 @@ If you're looking for the [Multiverse-Core](/core/fundamentals/commands-usage), 
 4. [Bulkedit Global Profile Clear Command](#Bulkedit-Global-Profile-Clear-Command)
 5. [Bulkedit Global Profile Modify Command](#Bulkedit-Global-Profile-Modify-Command)
 6. [Bulkedit Player Profile Clear Command](#Bulkedit-Player-Profile-Clear-Command)
-7. [Bulkedit Player Profile Delete Command](#Bulkedit-Player-Profile-Delete-Command)
-8. [Bulkedit Player Profile Migrate Player Name Command](#Bulkedit-Player-Profile-Migrate-Player-Name-Command)
-9. [Bulkedit Player Profile Migrate Inventory Serialisation Command](#Bulkedit-Player-Profile-Migrate-Inventory-Serialisation-Command)
-10. [Cache Invalidate All Command](#Cache-Invalidate-All-Command)
-11. [Cache Invalidate Player Command](#Cache-Invalidate-Player-Command)
-12. [Cache Stats Command](#Cache-Stats-Command)
-13. [Check Group Conflict Command](#Check-Group-Conflict-Command)
-14. [Config Command](#Config-Command)
-15. [Create Group Command](#Create-Group-Command)
-16. [Delete Group Command](#Delete-Group-Command)
-17. [Give Command](#Give-Command)
-18. [Group Command](#Group-Command)
-19. [Help Command](#Help-Command)
-20. [Info Command](#Info-Command)
-21. [Inventory Modify Command](#Inventory-Modify-Command)
-22. [Inventory View Command](#Inventory-View-Command)
-23. [List Command](#List-Command)
-24. [Migrate Command](#Migrate-Command)
-25. [Player Data Import Command](#Player-Data-Import-Command)
-26. [Reload Command](#Reload-Command)
-27. [Remove Disabled Shares Command](#Remove-Disabled-Shares-Command)
-28. [Remove Shares Command](#Remove-Shares-Command)
-29. [Remove Worlds Command](#Remove-Worlds-Command)
-30. [Toggle Command](#Toggle-Command)
+7. [Bulkedit Player Profile Clone Player Command](#Bulkedit-Player-Profile-Clone-Player-Command)
+8. [Bulkedit Player Profile Clone World Group Command](#Bulkedit-Player-Profile-Clone-World-Group-Command)
+9. [Bulkedit Player Profile Delete Command](#Bulkedit-Player-Profile-Delete-Command)
+10. [Bulkedit Player Profile Migrate Player Name Command](#Bulkedit-Player-Profile-Migrate-Player-Name-Command)
+11. [Bulkedit Player Profile Migrate Inventory Serialisation Command](#Bulkedit-Player-Profile-Migrate-Inventory-Serialisation-Command)
+12. [Cache Invalidate All Command](#Cache-Invalidate-All-Command)
+13. [Cache Invalidate Player Command](#Cache-Invalidate-Player-Command)
+14. [Cache Stats Command](#Cache-Stats-Command)
+15. [Check Group Conflict Command](#Check-Group-Conflict-Command)
+16. [Config Command](#Config-Command)
+17. [Create Group Command](#Create-Group-Command)
+18. [Delete Group Command](#Delete-Group-Command)
+19. [Give Command](#Give-Command)
+20. [Group Command](#Group-Command)
+21. [Help Command](#Help-Command)
+22. [Info Command](#Info-Command)
+23. [Inventory Modify Command](#Inventory-Modify-Command)
+24. [Inventory View Command](#Inventory-View-Command)
+25. [List Command](#List-Command)
+26. [Migrate Command](#Migrate-Command)
+27. [Player Data Import Command](#Player-Data-Import-Command)
+28. [Reload Command](#Reload-Command)
+29. [Remove Disabled Shares Command](#Remove-Disabled-Shares-Command)
+30. [Remove Shares Command](#Remove-Shares-Command)
+31. [Remove Worlds Command](#Remove-Worlds-Command)
+32. [Toggle Command](#Toggle-Command)
 
 ## Add Disabled Shares Command
 
@@ -95,7 +97,7 @@ Adds one or more worlds to a group. Worlds supports wildcards and regex. For mor
 ## Bulkedit Global Profile Clear Command
 
 :::note
-Please backup your data before running this command as deleted data **CANNOT** be undone!
+Please **BACKUP YOUR DATA** before running this command as modified/deleted/overridden data **CANNOT BE UNDONE**!
 :::
 
 #### Description:
@@ -117,7 +119,7 @@ Clears all global profile data for all players.
 ## Bulkedit Global Profile Modify Command
 
 :::note
-Please backup your data before running this command as deleted data **CANNOT** be undone!
+Please **BACKUP YOUR DATA** before running this command as modified/deleted/overridden data **CANNOT BE UNDONE**!
 :::
 
 #### Description:
@@ -139,7 +141,7 @@ Modifies global profile data for one or more players.
 ## Bulkedit Player Profile Clear Command
 
 :::note
-Please backup your data before running this command as deleted data **CANNOT** be undone!
+Please **BACKUP YOUR DATA** before running this command as modified/deleted/overridden data **CANNOT BE UNDONE**!
 :::
 
 #### Description:
@@ -158,10 +160,54 @@ Clears player profile data for one or more players.
 
 [↑ Back to Top ↑](#top)
 
+## Bulkedit Player Profile Clone Player Command
+
+:::note
+Please **BACKUP YOUR DATA** before running this command as modified/deleted/overridden data **CANNOT BE UNDONE**!
+:::
+
+#### Description:
+Clones data of all worlds and groups from one player to another. Some use cases include copying data from an old account to a new account. Note this is different from migrating player name, which keeps the same player but changes the name associated with it. For that, see [Bulkedit Player Profile Migrate Player Name Command](#Bulkedit-Player-Profile-Migrate-Player-Name-Command).
+
+#### Usage:
+```java
+/mvinv bulkedit playerprofile clone-player <from-player> <to-player> [profile-type]
+```
+    
+#### Examples:
+- `/mvinv bulkedit playerprofile clone-player benji_0224 benthecat10 @all`
+
+#### Permission:
+`multiverse.inventories.bulkedit`
+
+[↑ Back to Top ↑](#top)
+
+## Bulkedit Player Profile Clone World Group Command
+
+:::note
+Please **BACKUP YOUR DATA** before running this command as modified/deleted/overridden data **CANNOT BE UNDONE**!
+:::
+
+#### Description:
+Clones data of a specific world or group from one player to another. Some use cases is copying data from an individual world to a newly created group, or copying data from one group to another group.
+
+#### Usage:
+```java
+/mvinv bulkedit playerprofile clone-world-group <players> <from-group/world> <to-groups/worlds> [profile-type]
+```
+
+#### Examples:
+- `/mvinv bulkedit playerprofile clone-world-group @all world=creative1 group=creatives @all`
+
+#### Permission:
+`multiverse.inventories.bulkedit`
+
+[↑ Back to Top ↑](#top)
+
 ## Bulkedit Player Profile Delete Command
 
 :::note
-Please backup your data before running this command as deleted data **CANNOT** be undone!
+Please **BACKUP YOUR DATA** before running this command as modified/deleted/overridden data **CANNOT BE UNDONE**!
 :::
 
 #### Description:
@@ -184,7 +230,7 @@ Deletes specific sharable data for one or more players.
 ## Bulkedit Player Profile Migrate Player Name Command
 
 :::note
-Please backup your data before running this command as deleted data **CANNOT** be undone!
+Please **BACKUP YOUR DATA** before running this command as modified/deleted/overridden data **CANNOT BE UNDONE**!
 :::
 
 #### Description:
@@ -206,7 +252,7 @@ Migrates player data from one player to another. By default, player name changes
 ## Bulkedit Player Profile Migrate Inventory Serialisation Command
 
 :::note
-Please backup your data before running this command as deleted data **CANNOT** be undone!
+Please **BACKUP YOUR DATA** before running this command as modified/deleted/overridden data **CANNOT BE UNDONE**!
 :::
 
 #### Description:

@@ -3,7 +3,7 @@ title: Bulk Edit Inventory Data
 ---
 
 :::warning
-All bulkedit actions CANNOT be undone! Please make sure you have backed up your data before running these commands.
+All bulkedit actions **CANNOT BE UNDONE**! Please make sure you **BACKUP YOUR DATA** before running these commands.
 :::
 
 ## Bulk Edit Commands Overview
@@ -25,7 +25,7 @@ All bulkedit actions CANNOT be undone! Please make sure you have backed up your 
 ## Common Bulk Edit Use Cases
 
 :::warning
-Please double check the syntax of your commands to make sure you are deleting the correct data!!!
+Please **DOUBLE CHECK** the syntax of your commands to make sure you are deleting the correct data!!!
 :::
 
 ### Reset all data for a World/Group

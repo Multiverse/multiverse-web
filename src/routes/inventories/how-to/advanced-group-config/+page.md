@@ -4,6 +4,25 @@ title: Advanced Group Config
 
 This page is a deep dive into configure of groups in Multiverse-Inventories, including a deeper explaination of how multiple groups with different set of sharables works, as well as more complex group configurations and features. If you are new to Multiverse-Inventories, you may want to start with the [Basic Usage page](/inventories/fundamentals/basic-usage).
 
+:::warning
+Please read the usage instructions **CAREFULLY**, as incorrect configuration may lead to loss of player inventory data. It is highly recommended to **BACK UP YOUR SERVER** before making changes to Multiverse-Inventories configuration.
+
+You should also make changes before players have joined the worlds you are configuring, as existing player data may be overwritten if they have existing data in those worlds.
+:::
+
+## Creating a New Group from Existing Worlds
+
+When creating a new group, the inventories data for that group will be EMPTY. This means that if the individual ungrouped world you are adding to the group already have existing player data, that data will NOT be automatically migrated to the new group. You will need to manually migrate the data with the bulkedit commands if needed. To do this, you need to use the [Bulkedit Player Profile Clone World Group Command](/inventories/fundamentals/commands-usage/#Bulkedit-Player-Profile-Clone-World-Group-Command).
+
+For example, if you have an existing world called `resource1` that has existing player data, and you want to create a new group called `resourcegroup` with that world in it, you can do the following commands:
+
+```java
+/mvinv create-group resourcegroup resource1 all
+/mvinv bulkedit playerprofile clone-world-group @all world=resource1 group=resourcegroup @all
+```
+
+However, note that it is impossible to **MERGE** player data of multiple individual ungrouped world together, as there is no way to determine how to merge the data. This is because a player cannot have multiple bed spawn or health, hence merging does not make sense.
+
 ## Wildcard and Regex Worlds
 
 Sometimes, you may have too many worlds that you want to add to a group or have temporary worlds with different world names that keep changing on a regular basis. In these cases, you can use wildcard and regex expressions to match the world names that you want to add to a group. 
@@ -43,4 +62,4 @@ If you already have groups created, you can modify the shares with `/mvinv add-s
 
 In generally, every world can have each share in only one group. This is different from each world "can only be in 1 group". Looking at the example above, world1 and world2 are in both Group1 and Group3, but there is no conflict as all the shares are only in 1 world. That is because last_location is only in Group1 and not in Group3. If Group3 also had last_location share, then there would be a conflict.
 
-Group conflict checking is done automatically every time groups are updated. To check group conflicts manually, run `/mv check-group-conflict`.
+Group conflict checking is done automatically every time groups are updated with commands and an error message will be shown if there are any conflicts. To check group conflicts manually, run `/mv check-group-conflict`.

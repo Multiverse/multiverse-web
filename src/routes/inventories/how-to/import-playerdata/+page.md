@@ -2,13 +2,17 @@
 title: "Import/Migrate Player Data"
 ---
 
-This guide will walk you through the steps to import vanilla player data or migrate data from another plugin into Multiverse-Inventories using the [Multiverse-InventoriesImporter](https://modrinth.com/plugin/multiverse-inventoriesimporter) plugin. Please note that this plugin only works on PaperMC and its supported forks.
+This guide will walk you through the steps to import vanilla player data or migrate data from another plugin into Multiverse-Inventories using the [Multiverse-InventoriesImporter](https://modrinth.com/plugin/multiverse-inventoriesimporter) plugin.
 
 :::important
-Before proceeding, ensure that you have the [Multiverse-InventoriesImporter](https://modrinth.com/plugin/multiverse-inventoriesimporter) plugin installed on your server.
+Before proceeding, ensure that you have latest version of [Multiverse-InventoriesImporter](https://modrinth.com/plugin/multiverse-inventoriesimporter) plugin installed on your server.
 :::
 
 ## Importing Vanilla Player Data
+
+:::important
+Please ensure your server is running **PaperMC (or a fork such as purpur)**, as the vanilla import does not work on Spigot or Bukkit servers due to API limitations.
+:::
 
 Before getting started, here is a brief explanation of how Multiverse-Inventories interacts with vanilla player data. Bukkit based servers store the player's current inventory in the `playerdata` folder in the default world **ONLY**. There will **NOT** be a separate `playerdata` folder for each world. Multiverse-Inventories changes nothing about this behavior. Instead, the plugin swaps out the player's current inventory when they change worlds.
 
@@ -30,7 +34,7 @@ After running this command, your playerdata should be imported into Multiverse-I
 ### Currently Supported Sharables
 However, note that not all sharable data is supported yet. Currently, the following data types are **supported** for import: _Armor, Ender Chest, Exhaustion, Fall Distance, Fire Ticks, Food Level, Health, Inventory, Level, Off Hand, Remaining Air, Saturation, Total Experience_
 
-Currently **unsupported** data types include: _Advancements, Bed Spawn (i.e. respawn location), Game Statistics, Last Location, Maximum Air, Max Health, Potion Effects, Recipes_
+Currently **unsupported** data types: _Advancements, Bed Spawn (i.e. respawn location), Game Statistics, Last Location, Maximum Air, Max Health, Potion Effects, Recipes_
 
 ## Migrating from Another Plugin
 

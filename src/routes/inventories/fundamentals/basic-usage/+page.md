@@ -4,6 +4,12 @@ title: "Basic Usage"
 
 This section will guide you through the basic usage of Multiverse-Inventories, including how to create groups and shares to create separated or shared inventories between worlds.
 
+:::warning
+Please read the usage instructions **CAREFULLY**, as incorrect configuration may lead to loss of player inventory data. It is highly recommended to **BACK UP YOUR SERVER** before making changes to Multiverse-Inventories configuration.
+
+You should also make changes before players have joined the worlds you are configuring, as existing player data may be overwritten if they have existing data in those worlds.
+:::
+
 ## About Default Group
 When you first install Multiverse-Inventories, there will be one default group created for you called `default`, which has the server's default worlds (usually `world`, `world_nether`, and `world_the_end`) in it that shares everything. This is done to mimic the default Minecraft behavior of having the default overworld, nether, and end having common inventories. All other worlds you have created or imported will have their own separate inventories.
 
@@ -13,11 +19,13 @@ To check the current configuration of the default group, you can use the `/mvinv
 
 ![mvinv info default example](/inventories/basics/mvinv-info-default.png)
 
-If you do not want this default behavior, you delete the default group with `/mvinv delete-group default` command and create your own groups as needed.
+If you do not want this default behavior, you can delete the default group with `/mvinv delete-group default` command and create your own groups as needed.
 
-## Creating a new Group
+If you just want to another world to also share inventories with the default worlds, DO NOT create a new group. You can add that world to the default group with `/mvinv add-worlds default <worldname>` command.
 
-For this guide, we will create a group for a set of smp worlds so we can share everything between them, while keeping them separate from the default worlds. Adapt the world names and shares as needed for your use case.
+## Creating a New Group
+
+For this guide, we will create a group for a set of smp worlds so we can share everything between them, while keeping them separate from the default worlds. **Adapt the world names and shares as needed for your use case.**
 
 ### Step 1: Know your world names
 If you are unsure of your world names, you can type `/mv list --raw` to get a list of your worlds.
