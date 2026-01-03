@@ -14,9 +14,10 @@ Here is the default config that ships with MV-Portals.
 #         |_|  |_|\___/|____|_| |___| \_/ |___|_|_\|___/___| |_|  \___/|_|_\ |_/_/ \_\____|___/         #
 #                                                                                                       #
 #                                                                                                       #
-#               WIKI:        https://mvplugins.org/portals/fundamentals/basic-usage/                    #
+#               WIKI:        https://mvplugins.org/portals/                                             #
 #               DISCORD:     https://discord.gg/NZtfKky                                                 #
 #               BUG REPORTS: https://github.com/Multiverse/Multiverse-Portals/issues                    #
+#               DONATE:      https://github.com/sponsors/Multiverse                                     #
 #                                                                                                       #
 #                                                                                                       #
 #           New options are added to this file automatically. If you manually made changes              #
@@ -28,7 +29,7 @@ Here is the default config that ships with MV-Portals.
 portal-creation:
   # The item used to select a region to create a mvportal. Run `/mv wand` to start selection.
   # This will be ignore if worldedit is used for selection instead.
-  wand-material: wooden_pickaxe
+  wand-fillType: wooden_pickaxe
   
   # If enabled, water and lava bucket can be used to fill a mvportal.
   bucket-filling: true
@@ -59,12 +60,19 @@ portal-usage:
   nether-animation: true
   
   # If enabled, mvportals will teleport all vehicles along with its passengers when the vehicle enters the portal.
-  # Vehicles are usually boats, minecarts, pigs and horses.
+  # Vehicles are usually boats and minecarts.
+  # (NOTE: please turn off the server before changing this config option)
   teleport-vehicles: false
   
-  # If enabled, player movement will be tracked to determine if the player has entered a portal.
+  # If enabled, all living entities can use the portal if property `teleport-non-players` is true.
+  # There may be some performance overhead if your server has a large amount of entities moving around.
+  # (NOTE: please turn off the server before changing this config option)
+  teleport-entities: false
+  
+  # If enabled, player movement will be tracked to determine if the player/entity has entered a portal.
   # Disabling this will cause mvportals without nether or end fill to not work.
   # Only disable this if all your portals have nether or end fill and want to slight enhance performance.
+  # (NOTE: please turn off the server before changing this config option)
   use-on-move: true
   
   

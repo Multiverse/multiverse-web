@@ -3,18 +3,21 @@ title: "Permissions Setup"
 ---
 
 # Portal Permissions
-_**NOTE:** Are you looking for [[the list of all Multiverse-Portals permissions|Permissions-List-(Portals)]]?_
 
-## <a name="perm" href="#wiki-perm">•</a>Multiverse Portals Permissions
-Multiverse-Portals allows you to control who can use portals via permissions! When you create a portal, it automatically creates a permission: `multiverse.portal.access.PORTALNAME`. If a player _has_ `multiverse.portal.access.PORTALNAME`, then they can use that portal.
+Before setting up permissions for Multiverse-Portals, ensure that you have a permissions plugin installed on your server, we recommend using [LuckPerms](https://luckperms.net/).
 
-For this reason, Portals are case __insensitive__, meaning `MyPortal` is the __same__ as `myportal`.
+Follow the instructions provided by your chosen permissions plugin to set it up correctly. Do not ask for help on setting up permissions plugins on the Multiverse support channels, as this is outside the scope of Multiverse support.
 
-## <a name="exemptions" href="#wiki-exemptions">•</a>Exemptions
+## Multiverse Portals Permissions
+Multiverse-Portals allows you to control who can use portals via permissions! By default, Multiverse-Portals enforces portal access permissions. This means that players will need the permission `multiverse.portal.access.<portal-name>` to use a particular portal. **All non-ops cannot use any portals until given the appropriate permissions.**
+
+For example, if you have a portal named `vip_portal`, then players will need the permission `multiverse.portal.access.vip_portal` to use that portal. If you want to allow all players to use all portals, you can give them `multiverse.portal.access.*`.
+
+## Exemptions
 If you have certain groups that you want to exempt from payments, you can give those groups the specific exemption permission:
 `multiverse.portal.exempt.PORTALNAME`.
 
-## <a name="fill" href="#wiki-fill">•</a>Fill Portal
+## Fill Portal
 If you have certain groups that you want to allow to fill portals (with lava/water), you can give those groups the specific fill permission:
 `multiverse.portal.fill.PORTALNAME`.
 
@@ -34,6 +37,6 @@ He will be **denied access** to use *Portal C*.
 ## Note 2
 If you would like to **let all of your users use _all portals_ and go to _all worlds_**, use the following commands:
 
-`/mv conf enforceaccess false`
+`/mv config enforc-eaccess false`
 
-`/mvp conf enforceportalaccess false`
+`/mvp config enforce-portal-access false`

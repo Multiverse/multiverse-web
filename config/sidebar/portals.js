@@ -22,6 +22,16 @@ export default [
     ],
   },
   {
+    title: "How To",
+    collapsible: true,
+    items: [
+      {
+        title: "Configure Portal Actions",
+        to: "/portals/how-to/configure-portal-actions/",
+      }
+    ],
+  },
+  {
     title: "Reference",
     collapsible: true,
     items: [

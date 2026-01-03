@@ -5,7 +5,8 @@ title: "Commands Usage"
 If you're looking for the [Multiverse-Core](/core/fundamentals/commands-usage), [Multiverse-NetherPortals](/netherportals/fundamentals/commands-usage) or [Multiverse-Inventories](/inventories/fundamentals/commands-usage) Command References, click the links!
 
 ## Index
-1. [List Command](#List-Command)
+1. [Config Command](#Config-Command)
+1. [List Command](#List-Command) 
 2. [Select Command](#Select-Command)
 3. [Wand Command](#Wand-Command)
 4. [Info Command](#Info-Command)
@@ -15,9 +16,7 @@ If you're looking for the [Multiverse-Core](/core/fundamentals/commands-usage), 
 8. [Debug Command](#Debug-Command)
 
 ## Introduction
-In Multiverse 5, we have included a handy new help system. To access this help, simply type:
-
-[`/mv`](/core/fundamentals/commands-usage)
+In Multiverse 5, we have included a handy new help system. To access this help, simply type: [`/mv help`](/core/fundamentals/commands-usage)
 
 In order to properly read this command reference, we'll walk through reading the "usage" of a command. 
 
@@ -26,6 +25,24 @@ Whenever reading this wiki or the in-game `/mv` help, you should remember that i
 
 #### Optional vs. Required Parameters
 Items inside square braces (`[]`) are __OPTIONAL__ where items inside angular braces (`<>`) are __REQUIRED__ 
+
+## Config Command
+
+#### Description
+Allows you to view or modify the configuration of Multiverse-Portals.
+
+#### Usage
+```java
+/mvp config <property> [value]
+```
+
+#### Example
+- `/mvp config teleport-entities true`
+
+#### Permission
+`multiverse.portal.config`
+
+[↑ Back to Top ↑](#top)
 
 ## List Command
 

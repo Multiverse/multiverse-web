@@ -56,7 +56,9 @@ After you type one of these you should receive a message:
 **TADA!** You have made your first portal!
 
 ## Make it go somewhere
-_**NOTE:** This only applies if you did not set the destination when you created the portal. However, if you ever want to change where a portal goes, this is the same process._
+:::info
+This is only required if you did not set the destination when you created the portal. However, if you ever want to change where a portal goes, this is the same process.
+:::
 
 Let's say you create portals `portal_a` and `portal_b`. You want them to go to each other. When creating `portal_a` portal_b did not exist, so you had to type `/mvp create portal_a` with no destination. Then you created `portal_b` via `/mvp create portal_b p:portal_a`.
 
@@ -69,7 +71,38 @@ First, make sure `portal_a` is selected. (If you just type `/mvp select` Multive
 Then set the destination.
 `/mvp modify destination p:portal_b`
 
-Alternatively, you can use `w:worldname` to make it go to another world's spawn, or `here` to make the portal go to the position you were at when you ran the command, or other locations: see [The Multiverse Destination Guide](/core/reference/destinations) for more details on all available destinations.
+Alternatively, you can use `w:worldname` to make it go to another world's spawn, or `e:@here` to make the portal go to the exact position you were at when you ran the command, or other locations: see [The Multiverse Destination Guide](/core/reference/destinations) for more details on all available destinations.
+
+Portals can also be modified to do other actions, such as running commands or transferring to other servers via BungeeCord/Velocity. See the [Configure Portal Actions Guide](/portals/how-to/configure-portal-actions) for more details.
+
+## Who can use the portal?
+
+By default, ONLY players with permission `multiverse.portal.access.<portalname>` can use a portal. For example, to use a portal named `newportal`, the player need to have permission `multiverse.portal.access.newportal`. For more details on permissions, see the [Portal Permissions Guide](/portals/fundamentals/permissions-setup).
+
+If just just want everyone to be able to use all portals, you may consider disabling portal access enforcement with the command:
+
+```java
+/mvp config enforce-portal-access false
+```
+
+## Allow vehicles and entities through the portal
+
+By default, only players can use portals. If you want to allow vehicles (e.g., boats, minecarts) and other entities (e.g., mobs) to go through portals, you can enable this feature with the commands:
+
+```java
+/mvp config teleport-vehicles true
+/mvp config teleport-entities true
+```
+
+Then you will need also to allow each portal to teleport non-players:
+
+```java
+/mvp modify <portal-name> teleport-non-players true
+```
+
+:::note
+`teleport-vehicles` and `teleport-entities` config options require a full server restart to take effect.
+:::
 
 ## Removing the portal
 So you're sick of your portal and want it gone? Well, destroying the edge blocks won't work (this is intentional so you could make a frame, and then delete it to create an invisible portal), but you can do this:
