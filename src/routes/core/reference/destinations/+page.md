@@ -82,15 +82,16 @@ If finer permissions is enabled: `multiverse.teleport.self.pl.<playername>`
 
 ## Cannon Destinations
 
-:::caution[unfinished]
-Cannon destinations are not implemented in MV5 yet
+The thing you have to remember with Cannon Destinations is that **you will never see a cannon**. This effectively defines a destination with a velocity. It may resemble a push from a TNT explosion. It also kinda looks like you are catapulting in some way, hence the name **Cannon**!
+
+:::note
+Too-high speeds (>40~) for cannon destinations can cause failures. The `moved-wrongly-threshold` and `moved-too-quickly-multiplier` in `spigot.yml` can be increased, e.g. `.inf` sets them to infinity, effectively disabling them. However, even with these high thresholds, very high speeds can trigger other failures, such as slow chunk loading or network desyncing.
 :::
-The thing you have to remember with Cannon Destinations is that **you will never see a cannon**. This basically creates an exact destination with a velocity. The reason it's a different dest type entirely is due to the fact that we have provided a convince method: `cannon-X` where X is a velocity.
 
 ### Examples
 
-`/mvtp cannon-2`  
 `/mvtp ca:world:x,y,z:pitch:yaw:speed`
+`/mvtp ca:world:-22.48,63.00,-34.43:-7.15:44.40:10`
 
 ### Permissions
 
