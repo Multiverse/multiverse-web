@@ -36,3 +36,18 @@ Since Slime worlds uses a completely different format and API, the following is 
 ## Does Multiverse work on hybrid servers such as Mohist?
 
 It may work, but its not tested nor supported. Expect bugs and random issues depending on what mods you have installed on your server. Some mods may completely break Multiverse. We will not look into issues that is caused by these hybrid servers. If you think the issue you face is unrelated to the use of hybrid servers, please reproduce the issue with Paper or Spigot before reporting it to us.
+
+## Player respawning in the wrong world/location!
+
+If you want Multiverse to handle player respawning, make sure to set the respawn world to the correct world using `/mv modify <death-world> set respawn-world <world>`. Also check the three configuration options `default-respawn-in-overworld`, `default-respawn-within-same-world` and `enforce-respawn-at-world-spawn` in config.yml file which should have already been set to `true` by default.
+
+Note that respawn also **affects exiting the end**. Minecraft consider exiting the end as a respawn and not a normal portal teleport, so if you want to change the exit location of the end, you can set the respawn world to the overworld that is linked to your end world. 
+
+If you configured respawn world in Multiverse, but it's still not working, it is likely caused by **other plugins** that modify player respawn behavior. Multiverse does not have any control over how other plugins work, and there is no way for us to fix it. You can try to find the plugin that is causing the issue by removing plugins and testing the respawn behavior. Once you find the plugin, please report the issue to the plugin's author and not us.
+
+Most common plugins that interfere with Multiverse is **CMI** and **EssentialsX**. If you are using either of these plugins, please check their configuration and make sure to disable any respawn related features.
+
+### Disabling CMI respawn handling
+Disable the respawn module within CMI. To do this, go into your CMI main config and scroll down until you see the `ReSpawn` section. As of 3/2/2026 this is located at around line 612. Change the `Enabled` option to `false` and restart your server.
+
+![CMI respawn handling](/core/faq/cmi_respawn.png)
