@@ -14,10 +14,10 @@ If you are migrating from v4 (the ecloud version), there is changes to the place
 
 ## Big list o' placeholders
 
-These could also have a world added on to the end if desired as described previously
+These could also have a world added on to the end if desired, as described previously.
 
 - `%multiverse-core_alias%`
-- `%multiverse-core_animalspwn%`
+- `%multiverse-core_animalspawn%`
 - `%multiverse-core_autoheal%`
 - `%multiverse-core_blacklist%`
 - `%multiverse-core_currency%`
@@ -28,6 +28,7 @@ These could also have a world added on to the end if desired as described previo
 - `%multiverse-core_gamemode%`
 - `%multiverse-core_generators%`
 - `%multiverse-core_hunger%`
+- `%multiverse-core_isloaded%`
 - `%multiverse-core_monstersspawn%`
 - `%multiverse-core_name%`
 - `%multiverse-core_playercount%`
