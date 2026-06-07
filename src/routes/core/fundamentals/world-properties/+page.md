@@ -435,7 +435,7 @@ Allow portal forming must be `NONE`, `ALL`, `NETHER` or `END`.
 `/mv modify [world] set portal-form none`  
 `/mv modify [world] set portal-form nether`
 
-Results are fairly self explanatory.
+Results are fairly self explanatory. When a player attempts to create a portal that is disabled for the world, they will receive a message informing them it is not allowed.
 
 [↑ Back to Top ↑](#top)
 

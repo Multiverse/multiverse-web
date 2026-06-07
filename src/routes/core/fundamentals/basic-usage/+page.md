@@ -98,7 +98,12 @@ If you have a world from another server or downloaded from the internet, you can
 
 [`/mv import <worldname> <environment>`](/core/fundamentals/commands-usage#Import-Command)
 
-Now, you'll have to replace `<worldname>` with your **folder name** and `<environment>` with the **environment type**. There are 3 currently available: `normal`, `nether` and `the_end`.
+Replace `<worldname>` with the world name to import and `<environment>` with the **environment type**. There are 3 currently available: `normal`, `nether` and `the_end`.
+
+What counts as the "world name" depends on your server version:
+
+- **Spigot / older Paper** — use the **folder name** as it appears in the server root directory (e.g. `my_world`).
+- **Paper 26.1+** — worlds are stored under `<level-name>/dimensions/<namespace>/<key>/`. Pass the **namespaced key** (e.g. `minecraft:the_nether` or `myplugin:pvp_arena`) rather than a folder name. See [Creating worlds with a namespaced key](/core/how-to/customise-world-creation#Creating-worlds-with-a-namespaced-key) for the full folder layout.
 
 ![Importing a world](/core/basics/import-world.png)
 
@@ -106,7 +111,7 @@ You should then see the following result:
 
 ![Import Complete!](/core/basics/import-complete.png)
 
-Sweet! Now just repeat the process for all of your worlds! Don't like the folder name you have? **Don't rename the folder** simply set a [Multiverse World Alias](/core/fundamentals/world-properties/#Alias) instead!
+Sweet! Now just repeat the process for all of your worlds! Don't like the name you have? **Don't rename the folder** — set a [Multiverse World Alias](/core/fundamentals/world-properties/#Alias) instead!
 
 :::caution[Server version]
 You must ensure that the world you are importing is generated on the same minecraft version as your server.
