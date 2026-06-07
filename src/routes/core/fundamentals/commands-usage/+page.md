@@ -1155,8 +1155,27 @@ Even if you have the `multiverse.teleport.other.w` permission, you can only tele
 
 ### Permission
 
-`multiverse.teleport.self.<dest-id>.[finer-permissions]`  
-`multiverse.teleport.other.<dest-id>.[finer-permissions]`
+`multiverse.teleport.self.<dest-id>.[finer-permission]`  
+`multiverse.teleport.other.<dest-id>.[finer-permission]`
+
+The optional `[finer-permission]` suffix is the specific destination name (world name, anchor name, portal name, etc.). Whether it is **required** depends on the `use-finer-teleport-permissions` option in [`config.yml`](/core/reference/configuration-file/):
+
+- **`true` (default for new installs):** Both the base permission **and** the finer permission are needed. For example, to teleport to `world_nether` a player needs both `multiverse.teleport.self.w` **and** `multiverse.teleport.self.w.world_nether`.
+- **`false` (default when migrating from MV4):** Only the base permission is needed (e.g. `multiverse.teleport.self.w`), granting access to **all** destinations of that type.
+
+| Destination | Base permission | Finer permission |
+|---|---|---|
+| World (`w`) | `multiverse.teleport.self.w` | `multiverse.teleport.self.w.<worldname>` |
+| Anchor (`a`) | `multiverse.teleport.self.a` | `multiverse.teleport.self.a.<anchorname>` |
+| Exact (`e`) | `multiverse.teleport.self.e` | `multiverse.teleport.self.e.<worldname>` |
+| Player (`pl`) | `multiverse.teleport.self.pl` | `multiverse.teleport.self.pl.<playername>` |
+| Cannon (`ca`) | `multiverse.teleport.self.ca` | `multiverse.teleport.self.ca.<worldname>` |
+| Bed (`b`) | `multiverse.teleport.self.b` | `multiverse.teleport.self.b.<playername>` |
+| Portal (`p`) | `multiverse.teleport.self.p` | `multiverse.teleport.self.p.<portalname>` |
+
+Replace `self` with `other` in any of the above to allow teleporting other players.
+
+**See also:** [Destinations](/core/reference/destinations) for full per-destination format details.
 
 [↑ Back to Top ↑](#top)
 

@@ -13,7 +13,7 @@ title: "Destinations"
 
 ## Destination Permissions
 
-Destinations require permissions to be teleported to using [`/mvtp`](/core/fundamentals/commands-usage/#Teleport-Command). By default you require `multiverse.teleport.self.<destination>` and `multiverse.teleport.self.<destination>.<world>`. This can be changed with the `use-finer-teleport-permission` config option in [config.yml](/core/reference/configuration-file/) to only require the `multiverse.teleport.self.<destination>` permission. When migrating from MV4 to MV5 this option is set to `false` but for new installs of the plugin this is set to `true`.
+Destinations require permissions to be teleported to using [`/mvtp`](/core/fundamentals/commands-usage/#Teleport-Command). By default you require `multiverse.teleport.self.<destination>` and `multiverse.teleport.self.<destination>.<world>`. This can be changed with the `use-finer-teleport-permissions` config option in [config.yml](/core/reference/configuration-file/) to only require the `multiverse.teleport.self.<destination>` permission. When migrating from MV4 to MV5 this option is set to `false` but for new installs of the plugin this is set to `true`.
 
 ## World Destinations
 
