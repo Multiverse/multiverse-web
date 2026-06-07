@@ -19,6 +19,7 @@ There are a few things to verify before installing Multiverse-Inventories.
 
 - [Modrinth](https://modrinth.com/plugin/multiverse-inventories)
 - [Hangar](https://hangar.papermc.io/Multiverse/Multiverse-Inventories)
+- [BukkitDev](https://dev.bukkit.org/projects/multiverse-inventories)
 - [GitHub Releases](https://github.com/Multiverse/Multiverse-Inventories/releases/latest)
 
 ## Step 1

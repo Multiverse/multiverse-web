@@ -20,6 +20,7 @@ There are a few things to verify before installing Multiverse-Portals.
 
 - [Modrinth](https://modrinth.com/plugin/multiverse-portals)
 - [Hangar](https://hangar.papermc.io/Multiverse/Multiverse-Portals)
+- [BukkitDev](https://dev.bukkit.org/projects/multiverse-portals)
 - [GitHub Releases](https://github.com/Multiverse/Multiverse-Portals/releases/latest)
 
 ## Step 1

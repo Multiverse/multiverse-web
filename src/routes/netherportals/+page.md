@@ -20,6 +20,7 @@ There are a few things to verify before installing Multiverse-NetherPortals.
 
 - [Modrinth](https://modrinth.com/plugin/multiverse-netherportals)
 - [Hangar](https://hangar.papermc.io/Multiverse/Multiverse-NetherPortals)
+- [BukkitDev](https://dev.bukkit.org/projects/multiverse-netherportals)
 - [GitHub Releases](https://github.com/Multiverse/Multiverse-NetherPortals/releases/latest)
 
 ## Step 1: Download and install
