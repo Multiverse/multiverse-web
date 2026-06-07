@@ -33,11 +33,11 @@ The shares will be listed first with all the possible keywords you may use to in
 
 - **last_location** - the player's last location in the world group. This feature completely overrides any sort of teleport into a world that doesn't share this with the previous world.  This means it may end up teleporting them to a DIFFERENT world than intended on the first try. (**loc**, **location**, **pos**, **position**)
 
-- **recipe** - the player's recipes unlocked based on the items they have discover in the world/group. Note: We are unable to disable the client's notification on recipe unlocked
+- **recipes** - the player's recipes unlocked based on the items they have discovered in the world/group. Note: We are unable to disable the client's notification on recipe unlocked.
 
-- **advancement** - the player's advancement progress. Note: We are unable to disable the client's notification on advancement achieved
+- **advancements** - the player's advancement progress. Note: We are unable to disable the client's notification on advancement achieved.
 
-- **gamestats** - Data such as play time, number of deaths etc...
+- **game_statistics** - Data such as play time, number of deaths, etc.
 
 ### Grouped Shares - These are "shorthands" that include multiple of the above shares with one keyword.
 

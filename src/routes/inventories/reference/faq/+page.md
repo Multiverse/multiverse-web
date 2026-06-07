@@ -23,7 +23,7 @@ Multiverse-Inventories can share the following things among worlds in a world gr
 * Remaining and maximum air (`remaining_air`, `maximum_air`)
 * Fall distance and fire ticks (`fall_distance`, `fire_ticks`)
 
-There are also optional shares that must be explicitly enabled (they have no effect until toggled on with `/mvinv toggle <sharename>`): economy balance, last location, recipes, advancements, and game stats.
+There are also optional shares that must be explicitly enabled with `/mvinv toggle <sharename>` before they have any effect: `economy`, `last_location`, `recipes`, `advancements`, and `game_statistics`.
 
 Use `all` to share everything, or list individual share names. For the full reference including shorthand keywords, see the [Shares List](/inventories/reference/shares-list).
 
