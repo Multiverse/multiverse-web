@@ -40,6 +40,8 @@ mv.bypass.joinlocation - Allows users to bypass the configured `join-location` i
 
 ## Info Permissions
 
+[multiverse.core.check](/core/fundamentals/commands-usage/#Check-Command) - Allows checking whether a player can teleport to a destination
+
 [multiverse.core.confirm](/core/fundamentals/commands-usage/#Confirm-Command)
 
 [multiverse.core.coord](/core/fundamentals/commands-usage/#Coordinate-Command)
@@ -51,6 +53,8 @@ mv.bypass.joinlocation - Allows users to bypass the configured `join-location` i
 [multiverse.core.list.who.all](/core/fundamentals/commands-usage/#Who-All-Command)
 
 [multiverse.core.list.worlds](/core/fundamentals/commands-usage/#List-Command)
+
+[multiverse.core.version](/core/fundamentals/commands-usage/#Version-Command) - Allows viewing the installed Multiverse version
 
 ---
 
@@ -100,9 +104,15 @@ mv.bypass.joinlocation - Allows users to bypass the configured `join-location` i
 
 [multiverse.core.anchor.delete](/core/fundamentals/commands-usage/#Anchor-Delete-Command)
 
+## World Border Permissions
+
+[multiverse.core.worldborder](/core/fundamentals/commands-usage/#World-Border-Add-Command) - Allows using all `/mv worldborder` sub-commands
+
 ## Misc Permissions
 
 [multiverse.core.config](/core/fundamentals/commands-usage/#Config-Command)
+
+[multiverse.core.dumps](/core/fundamentals/commands-usage/#Dumps-Command) - Allows uploading debug info
 
 [multiverse.core.reload](/core/fundamentals/commands-usage/#Reload-Command) - Allows users to reload the config files
 

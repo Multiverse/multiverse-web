@@ -52,6 +52,7 @@ If you're looking for the [Multiverse-Portals](/portals/fundamentals/commands-us
 - [Unload Command](#Unload-Command)
 - [Who Command](#Who-Command)
 - [Who All Command](#Who-All-Command)
+- [Version Command](#Version-Command)
 - [World Border Add Command](#World-Border-Add-Command)
 - [World Border Center Command](#World-Border-Center-Command)
 - [World Border Damage Command](#World-Border-Damage-Command)
@@ -1422,6 +1423,24 @@ Sets the world border to a specific diameter. An optional transition duration ca
 ### Permission
 
 `multiverse.core.worldborder`
+
+[↑ Back to Top ↑](#top)
+
+## Version Command
+
+### Description
+
+Displays the currently installed version of Multiverse-Core and its authors. Useful for bug reports and support requests.
+
+### Usage
+
+```java
+/mv version
+```
+
+### Permission
+
+`multiverse.core.version`
 
 [↑ Back to Top ↑](#top)
 

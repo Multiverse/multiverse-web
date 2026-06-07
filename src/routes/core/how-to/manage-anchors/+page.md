@@ -4,16 +4,76 @@ title: "Anchors"
 
 ## Introduction
 
-In Multiverse you can create anchors that can be used with `/mvtp` (Or anything else that takes a [destination](/core/reference/destinations/)) to create warps.
+Anchors are named locations you can save and teleport to from anywhere on the server. They work as a [destination type](/core/reference/destinations) — prefix the anchor name with `a:` to use one anywhere a destination is accepted, including [`/mv tp`](/core/fundamentals/commands-usage#Teleport-Command) and [Multiverse-Portals](/portals/).
 
-## Creating Anchors
+Unlike world spawns or coordinates, anchors are **world-agnostic**: a single anchor can point to any location in any world.
 
-Anchors can be created using `/mv anchor set <name>`. For example, `/mv anchor set info`.
+## Creating an Anchor
 
-## Teleporting To Anchors
+Walk to the location you want to save, then run:
 
-Anchors can be teleported to using `/mvtp a:<Anchor Name>`. For example: `/mvtp a:info` for the one we just made.
+```
+/mv anchor set <name>
+```
 
-## Removing Anchors
+For example:
 
-Anchors can be removed in a similar way to how they where created using `/mv anchor delete <name>` for example `/mv anchor delete info`
+```
+/mv anchor set lobby
+```
+
+The anchor is saved at your current position, facing direction included.
+
+**Permission:** `multiverse.core.anchor.create`
+
+## Listing Anchors
+
+To see all saved anchors:
+
+```
+/mv anchor list
+```
+
+**Permission:** `multiverse.core.anchor.list`
+
+## Teleporting to an Anchor
+
+Use the `a:` destination prefix with any teleport command:
+
+```
+/mv tp a:<name>
+/mv tp a:lobby
+```
+
+You can also use anchors as portal destinations in [Multiverse-Portals](/portals/) or [Multiverse-SignPortals](/signportals/).
+
+**Permission:** `multiverse.teleport.self.a.*` (or the finer-grained `multiverse.teleport.self.a.<anchor-name>`)
+
+## Deleting an Anchor
+
+```
+/mv anchor delete <name>
+```
+
+For example:
+
+```
+/mv anchor delete lobby
+```
+
+**Permission:** `multiverse.core.anchor.delete`
+
+## Using Anchors as a Respawn Point
+
+If you want players to respawn at an anchor location, set the world's `anchor-respawn` property to `true` and make sure an anchor named after the world (or set via the world's spawn) is configured. See [World Properties — Anchor Respawn](/core/fundamentals/world-properties#Anchor-Respawn) for details.
+
+## Permission Summary
+
+| Permission | Description |
+|---|---|
+| `multiverse.core.anchor.create` | Create or overwrite an anchor |
+| `multiverse.core.anchor.list` | List all anchors |
+| `multiverse.core.anchor.delete` | Delete an anchor |
+| `multiverse.teleport.self.a.*` | Teleport yourself to any anchor |
+| `multiverse.teleport.self.a.<name>` | Teleport yourself to a specific anchor |
+| `multiverse.teleport.other.a.*` | Teleport others to any anchor |

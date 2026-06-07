@@ -8,7 +8,9 @@ The Multiverse API follows the [Semantic Versioning](https://semver.org/) conven
 
 ## Adding Multiverse to your project
 
-The multiverse's artifacts are published on our own maven repository: https://repo.onarandombox.com
+Multiverse artifacts are published on our Maven repository: https://repo.onarandombox.com
+
+Check the [GitHub releases page](https://github.com/Multiverse/Multiverse-Core/releases) for the latest version to use in place of `VERSION` below.
 
 ### Maven
 
@@ -24,21 +26,33 @@ The multiverse's artifacts are published on our own maven repository: https://re
     <dependency>
         <groupId>org.mvplugins.multiverse.core</groupId> <!-- Replace for other sub-modules -->
         <artifactId>multiverse-core</artifactId> <!-- Replace for other sub-modules -->
-        <version>5.0.0-SNAPSHOT</version> <!-- Replace with the version you need -->
+        <version>VERSION</version>
         <scope>provided</scope>
     </dependency>
 </dependencies>
 ```
 
-### Gradle
+### Gradle (Groovy DSL)
 
-```md
+```java
 repositories {
     maven { url = "https://repo.onarandombox.com/content/groups/public/" }
 }
 
 dependencies {
-    compileOnly 'org.mvplugins.multiverse.core:multiverse-core:5.0.0-SNAPSHOT'
+    compileOnly 'org.mvplugins.multiverse.core:multiverse-core:VERSION'
+}
+```
+
+### Gradle (Kotlin DSL)
+
+```java
+repositories {
+    maven("https://repo.onarandombox.com/content/groups/public/")
+}
+
+dependencies {
+    compileOnly("org.mvplugins.multiverse.core:multiverse-core:VERSION")
 }
 ```
 
