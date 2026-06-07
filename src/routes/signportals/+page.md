@@ -17,6 +17,7 @@ There are a few things to verify before installing Multiverse-SignPortals.
 
 ## Download links
 
+- [BukkitDev](https://dev.bukkit.org/projects/multiverse-signportals)
 - [GitHub Releases](https://github.com/Multiverse/Multiverse-SignPortals/releases/latest)
 
 ## Step 1
