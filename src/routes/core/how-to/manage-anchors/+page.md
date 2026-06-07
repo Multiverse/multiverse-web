@@ -63,10 +63,6 @@ For example:
 
 **Permission:** `multiverse.core.anchor.delete`
 
-## Using Anchors as a Respawn Point
-
-If you want players to respawn at an anchor location, set the world's `anchor-respawn` property to `true` and make sure an anchor named after the world (or set via the world's spawn) is configured. See [World Properties — Anchor Respawn](/core/fundamentals/world-properties#Anchor-Respawn) for details.
-
 ## Permission Summary
 
 | Permission | Description |
