@@ -45,7 +45,7 @@ const config = defineConfig({
 					]
 				},
 				highlighter: {
-					languages: ['svelte', 'sh', 'js', 'html', 'ts', 'md', 'css', 'scss', 'yaml', 'java', 'xml']
+					languages: ['svelte', 'sh', 'js', 'html', 'ts', 'md', 'css', 'scss', 'yaml', 'java', 'xml', 'ini']
 				},
 				navbar: [
 					{

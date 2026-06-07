@@ -44,6 +44,10 @@ export default [
       {
         title: "Manage Anchors",
         to: "/core/how-to/manage-anchors/",
+      },
+      {
+        title: "Customise Locale Messages",
+        to: "/core/how-to/customise-locales/",
       }
     ]
   },
