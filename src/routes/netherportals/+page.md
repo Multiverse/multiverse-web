@@ -11,16 +11,21 @@
 </div>
 
 ## Prerequisites
-There are a few things to verify before installing [Multiverse-NetherPortals](https://dev.bukkit.org/projects/multiverse-netherportals).
-* When running other Multiverse modules (such as Portals), get the latest version of all modules - the slight difference in version number does not matter as long as its all v5.
+There are a few things to verify before installing Multiverse-NetherPortals.
+* When running other Multiverse modules, get the latest version of all modules - the slight difference in version number does not matter as long as it's all v5.
 
-* You must have [Multiverse-Core](https://dev.bukkit.org/projects/multiverse-core) before having Multiverse-NetherPortals.
+* You must have [Multiverse-Core](/core/fundamentals/installation) before installing Multiverse-NetherPortals.
 
-## Step 1: Ensure you're using the same version as [Multiverse-Core](https://dev.bukkit.org/projects/multiverse-core/files/).
-Multiverse-Core is **required** for Multiverse-NetherPortals. If you're using an outdated server and you need Multiverse-Core 2.5, you will need Multiverse-NetherPortals 2.5, If you're using the most updated Minecraft version, get the latest versions of [Multiverse-Core](https://dev.bukkit.org/projects/multiverse-core/files/) and [Multiverse-NetherPortals](https://dev.bukkit.org/projects/multiverse-netherportals/files/).
+## Download links
 
-## Step 2: Download [Multiverse-NetherPortals](https://dev.bukkit.org/projects/multiverse-netherportals/files/)
-Grab the version you need (again, if you're using the latest MC version, get the latest Multiverse version) from [here](https://dev.bukkit.org/projects/multiverse-netherportals/files/). Put it in your plugins folder.
+- [Modrinth](https://modrinth.com/plugin/multiverse-netherportals)
+- [Hangar](https://hangar.papermc.io/Multiverse/Multiverse-NetherPortals)
+- [GitHub Releases](https://github.com/Multiverse/Multiverse-NetherPortals/releases/latest)
 
-## Step 3: Start your server.
-Go.
+## Step 1: Download and install
+Download the Multiverse-NetherPortals JAR from the [release site](https://github.com/Multiverse/Multiverse-NetherPortals/releases/latest) and place it in your plugins folder.
+
+Make sure the version of Multiverse-NetherPortals matches the major version of [Multiverse-Core](/core/fundamentals/installation) you have installed.
+
+## Step 2: Start your server.
+That's it!

@@ -13,7 +13,7 @@ title: "Basic Usage"
 
 Before you begin to use Nether portals, you'll need...
 
-* [[To install Multiverse-NetherPortals|Install-(NetherPortals)]].
+* [Multiverse-NetherPortals installed](/core/fundamentals/installation).
 
 ## Getting started
 
@@ -22,8 +22,8 @@ _Note: you may skip this section if you know how to create a standard, single-pl
 Once both the Core and NetherPortals plugins are installed on your server:
 
 1. Log in to your server.
-2. Gather up at least 10 [obsidian](http://www.minecraftwiki.net/wiki/Obsidian), as well as a [flint and steel](http://www.minecraftwiki.net/wiki/Flint_and_steel).
-3. Create a [portal](http://www.minecraftwiki.net/wiki/Portal) in the usual (single-player style) shape. It should have an internal size of **2 x 3** blocks and a total external size of **4 x 5** blocks.
+2. Gather up at least 10 [obsidian](https://minecraft.wiki/w/Obsidian), as well as a [flint and steel](https://minecraft.wiki/w/Flint_and_Steel).
+3. Create a [portal](https://minecraft.wiki/w/Nether_portal) in the usual (single-player style) shape. It should have an internal size of **2 x 3** blocks and a total external size of **4 x 5** blocks.
 4. Light one of the inside surfaces on fire with the flint and steel.
 
 You should see the inside of your obsidian frame light up with purple portal tiles. Congratulations - you made a nether portal!

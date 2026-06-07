@@ -22,8 +22,8 @@ The shares will be listed first with all the possible keywords you may use to in
 * **lvl** - the level of the player.
 * **total_xp** - the total amount of experience points of a player.
 * **food_level** - the food meter - "hunger bar" - of a player. (**food**)
-* **exhaustion** - part of the hunger mechanics, read more here http://www.minecraftwiki.net/wiki/Hunger#Mechanics (**exhaust**, **exh**)
-* **saturation** - part of the hunger mechanics, read more here http://www.minecraftwiki.net/wiki/Hunger#Mechanics (**sat**)
+* **exhaustion** - part of the hunger mechanics, read more [here](https://minecraft.wiki/w/Hunger#Mechanics) (**exhaust**, **exh**)
+* **saturation** - part of the hunger mechanics, read more [here](https://minecraft.wiki/w/Hunger#Mechanics) (**sat**)
 * **bed_spawn** - the player's bed spawn location.  This will cause messages to appear that say the bed spawn location is invalid occasionally. (**bedspawn**, **bed**, **beds**, **bedspawns**)
 * **potion_effects** - effects from potions on the player.  (**potion**, **potions**)
 

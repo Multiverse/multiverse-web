@@ -11,18 +11,24 @@
 </div>
 
 ## Prerequisites
-There are a few things to verify before installing [Multiverse-Portals](https://dev.bukkit.org/projects/multiverse-portals).
-* When running other Multiverse modules (such as Portals), get the latest version of all modules - the slight difference in version number does not matter as long as its all v5.
+There are a few things to verify before installing Multiverse-Portals.
+* When running other Multiverse modules (such as Portals), get the latest version of all modules - the slight difference in version number does not matter as long as it's all v5.
 
-* You must have [Multiverse-Core](https://dev.bukkit.org/projects/multiverse-core) before having Multiverse-Portals.
+* You must have [Multiverse-Core](/core/fundamentals/installation) before installing Multiverse-Portals.
+
+## Download links
+
+- [Modrinth](https://modrinth.com/plugin/multiverse-portals)
+- [Hangar](https://hangar.papermc.io/Multiverse/Multiverse-Portals)
+- [GitHub Releases](https://github.com/Multiverse/Multiverse-Portals/releases/latest)
 
 ## Step 1
 Grab the jar.
-Download the Multiverse-Portals JAR from the [release site](http://dev.bukkit.org/projects/multiverse-portals/files/).
+Download the Multiverse-Portals JAR from the [release site](https://github.com/Multiverse/Multiverse-Portals/releases/latest).
 
-There is NO Zip package available. Multiverse-Core (and MV Plugins) will create default configs for you __on the first run__.
+There is NO Zip package available. Multiverse-Core (and MV Plugins) will create default configs for you on the first run.
 
-__*Optional:__ Install the  [Multiverse-NetherPortals](http://dev.bukkit.org/projects/multiverse-netherportals/files/) plugin!
+**\*Optional:** Install the [Multiverse-NetherPortals](/netherportals/) plugin!
 
 ## Step 2
 Start your server and make some portals!

@@ -33,13 +33,14 @@ If you're looking for the [Multiverse-Portals](/portals/fundamentals/commands-us
 - [Import Command](#Import-Command)
 - [Info Command](#Info-Command)
 - [List Command](#List-Command)
+- [Load Command](#Load-Command)
 - [Meta Info Command](#Meta-Info-Command)
 - [Meta Modify Command](#Meta-Modify-Command)
 - [Modify Command](#Modify-Command)
   - [Set](#Modify-Command-(Set))
   - [Add](#Modify-Command-(Add-Remove))
   - [Remove](#Modify-Command-(Add-Remove))
-  - [Clear](#Modify-Command-(Clear))
+  - [Reset](#Modify-Command-(Reset))
 - [Purge Entities Command](#Purge-Entities-Command)
 - [Purge All Entities Command](#Purge-All-Entities-Command)
 - [Regen Command](#Regen-Command)
@@ -411,9 +412,9 @@ You should know that if you decide to use spaces in your world name that wheneve
 Provides detailed information on what the plugin is doing in console. Helpful for permission issues or destination issues.
 
 0 - Off  
-1 -  
-2 -  
-3 - All details
+1 - Fine  
+2 - Finer  
+3 - Finest (all details)
 
 ### Usage
 
@@ -562,7 +563,7 @@ Types of category:
 
 ### Description
 
-Lists the vanilla game rules values that is configured for a specific world. For more info on what each gamerule does, see [https://minecraft.fandom.com/wiki/Game_rule](https://minecraft.fandom.com/wiki/Game_rule).
+Lists the vanilla game rules values that is configured for a specific world. For more info on what each gamerule does, see [https://minecraft.wiki/w/Game_rule](https://minecraft.wiki/w/Game_rule).
 
 ### Usage
 
@@ -589,7 +590,7 @@ Lists the vanilla game rules values that is configured for a specific world. For
 
 ### Description
 
-Sets a world's vanilla game rules value. To get a full list of available gamerules for the world use [`/mv gamerule list`](#Gamerule-List-Command). For more info on what each gamerule does, see [https://minecraft.fandom.com/wiki/Game_rule](https://minecraft.fandom.com/wiki/Game_rule).
+Sets a world's vanilla game rules value. To get a full list of available gamerules for the world use [`/mv gamerule list`](#Gamerule-List-Command). For more info on what each gamerule does, see [https://minecraft.wiki/w/Game_rule](https://minecraft.wiki/w/Game_rule).
 
 ### Usage
 
@@ -611,7 +612,7 @@ Sets a world's vanilla game rules value. To get a full list of available gamerul
 
 ### Description
 
-Resets a world's vanilla game rules value to it's default value. For more info on what each gamerule does, see [https://minecraft.fandom.com/wiki/Game_rule](https://minecraft.fandom.com/wiki/Game_rule).
+Resets a world's vanilla game rules value to its default value. For more info on what each gamerule does, see [https://minecraft.wiki/w/Game_rule](https://minecraft.wiki/w/Game_rule).
 
 ### Usage
 
@@ -621,7 +622,7 @@ Resets a world's vanilla game rules value to it's default value. For more info o
 
 ### Examples
 
-- `/mv gamerule reset doDaylightCycle world1` - Resets the world1's doDaylightCycle gamerule to it's default value
+- `/mv gamerule reset doDaylightCycle world1` - Resets the world1's doDaylightCycle gamerule to its default value
 
 ### Permission
 
@@ -658,7 +659,7 @@ The help command now supports searching! This means if you type `/mv help del` y
 **NOTE:** When searching, if you try: `/mv delete` you will see the syntax for the **Delete Command**. This is because you have hit the nail on the head with your search: you typed the exact name of a command!
 
 ![Example use of the Help command when an OP](https://user-images.githubusercontent.com/8557785/63812440-069a6a00-c8f0-11e9-9264-29e4082ba8cd.png)
-Here is an example use of the Help command while given OP status. This example also has [Multiverse-Portals](/portals/fundamentals/commands-usage) and [Mutliverse-NetherPortals](/netherportals/fundamentals/commands-usage) installed, which is why there are 5 pages.
+Here is an example use of the Help command while given OP status. This example also has [Multiverse-Portals](/portals/fundamentals/commands-usage) and [Multiverse-NetherPortals](/netherportals/fundamentals/commands-usage) installed, which is why there are 5 pages.
 
 ### Usage
 
@@ -763,6 +764,34 @@ To get colored worlds, you will need to use the [world alias feature](/core/fund
 ### Permission
 
 `multiverse.core.list.worlds`
+
+[↑ Back to Top ↑](#top)
+
+## Load Command
+
+### Description
+
+Loads an unloaded world back into the server. This is the counterpart to [`/mv unload`](#Unload-Command). The world must already exist in Multiverse's `worlds.yml` — use [`/mv import`](#Import-Command) to add a new world.
+
+**See also:** [`/mv unload`](#Unload-Command) and [`/mv remove`](#Remove-Command)
+
+### Usage
+
+```java
+/mv load <world> [--skip-folder-check]
+```
+
+- `<world>` - The world to load.
+- `--skip-folder-check` / `-f` - Skip the check that verifies the world folder exists on disk.
+
+### Examples
+
+- `/mv load my_world`
+- `/mv load my_world --skip-folder-check`
+
+### Permission
+
+`multiverse.core.load`
 
 [↑ Back to Top ↑](#top)
 

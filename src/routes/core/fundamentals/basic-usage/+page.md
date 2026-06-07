@@ -22,7 +22,7 @@ This may take a few seconds and you can see progress in your server console.
 
 This creates a world named creative with a `normal` (overworld) type environment. If you are particularly clever, you could set the seed here or change the environment to `nether` or `the_end`, or if you're really clever, you can figure out how to set the [generator](/core/reference/custom-generator-plugins) to create all sorts of cool terrain (e.g., `-g BukkitFullOfMoon`). Let's not concern ourselves with that just yet.
 
-With that invocation, your world should now be created. Horray!
+With that invocation, your world should now be created. Hooray!
 
 ### Teleporting to your new world
 

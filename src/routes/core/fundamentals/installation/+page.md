@@ -7,7 +7,7 @@ Welcome. We're glad you're here at our humble little wiki. This is a _very_ brie
 ## Prerequisites
 
 - Ensure that all of the sub-modules are of the same major version.
-- Make sure that you have `multiverse-core` if you are using any sub-modules, it is a dependancy.
+- Make sure that you have `multiverse-core` if you are using any sub-modules, it is a dependency.
 
 ## Optional Prerequisites
 

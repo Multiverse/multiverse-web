@@ -24,7 +24,7 @@ mv.bypass.joinlocation - Allows users to bypass the configured `join-location` i
 
 [multiverse.teleport.other.[type].[finer-permission]](/core/fundamentals/commands-usage/#Teleport-Command) - Allows users to teleport themselves and others to another world.
 
-**Note**: If `enforceaccess` is on (set to `true`), they can only teleport to worlds of which they have the `multiverse.access.WORLD` permission to, by default this is `false` and they have access to **ALL** worlds.
+**Note**: If `enforce-access` is on (set to `true`), they can only teleport to worlds of which they have the `multiverse.access.WORLD` permission to. By default this is `false` and they have access to **ALL** worlds.
 
 ### Teleport types:
 
@@ -44,7 +44,7 @@ mv.bypass.joinlocation - Allows users to bypass the configured `join-location` i
 
 [multiverse.core.coord](/core/fundamentals/commands-usage/#Coordinate-Command)
 
-[multiverse.core.info](/core/fundamentals/commands-usage/#Information-Command)
+[multiverse.core.info](/core/fundamentals/commands-usage/#Info-Command)
 
 [multiverse.core.list.who](/core/fundamentals/commands-usage/#Who-Command)
 

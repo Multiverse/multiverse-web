@@ -11,21 +11,27 @@
 </div>
 
 ## Prerequisites
-There are a few things to verify before installing [Multiverse-Inventories](https://dev.bukkit.org/projects/multiverse-inventories).
-* When running other Multiverse modules (such as Inventories), get the latest version of all modules - the slight difference in version number does not matter as long as its all v5.
-* You must have [Multiverse-Core](https://dev.bukkit.org/projects/multiverse-core) before having Multiverse-Inventories.
+There are a few things to verify before installing Multiverse-Inventories.
+* When running other Multiverse modules (such as Inventories), get the latest version of all modules - the slight difference in version number does not matter as long as it's all v5.
+* You must have [Multiverse-Core](/core/fundamentals/installation) before installing Multiverse-Inventories.
+
+## Download links
+
+- [Modrinth](https://modrinth.com/plugin/multiverse-inventories)
+- [Hangar](https://hangar.papermc.io/Multiverse/Multiverse-Inventories)
+- [GitHub Releases](https://github.com/Multiverse/Multiverse-Inventories/releases/latest)
 
 ## Step 1
 Grab the jar.
-Download the Multiverse-Inventories JAR from the [release site](http://dev.bukkit.org/projects/multiverse-inventories/files/).
+Download the Multiverse-Inventories JAR from the [release site](https://github.com/Multiverse/Multiverse-Inventories/releases/latest).
 
-There is NO Zip package available. Multiverse-Core (and MV Plugins) will create default configs for you __on the first run__.
+There is NO Zip package available. Multiverse-Core (and MV Plugins) will create default configs for you on the first run.
 
 
 Place it in your plugins folder.
 
 ## Step 2
-Start your server and enjoy your seperated (and shared) inventories per world! Learn how to setup groups and shares [here](/inventories/fundamentals/basic-usage)!
+Start your server and enjoy your separated (and shared) inventories per world! Learn how to setup groups and shares [here](/inventories/fundamentals/basic-usage)!
 
 ## Video Tutorial
 

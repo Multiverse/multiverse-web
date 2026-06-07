@@ -19,7 +19,7 @@ The biggest difference with these commands is the __base__ command will be `/mvn
 #### Description:
 The link command allows you to basically set the destination of end or nether portals in a certain world.  Before specifying any worlds you must specify if this link is for End portals or Nether portals.  This will set ALL end or nether portals in the `from-world` to the `to-world`. If a `from-world` is not specified, the current world is used. The console requires both parameters.
 
-This will **override** the standard [[Multiverse-NetherPortals Config|config.yml-(NetherPortals)]].
+This will **override** the standard [Multiverse-NetherPortals Config](/netherportals/reference/configuration-file).
 
 Another thing to note is that linking a given portal type in a world to itself will disable any of those portals in that world.
 
@@ -56,10 +56,10 @@ Let's say you have the portals in `world` linked to `world_sky`, like this: `wor
 ```
 
 #### Example:
-- `/mv unlink nether`
-- `/mv unlink nether world`
-- `/mv unlink end`
-- `/mv unlink end world`
+- `/mvnp unlink nether`
+- `/mvnp unlink nether world`
+- `/mvnp unlink end`
+- `/mvnp unlink end world`
 
 #### Permission:
 `multiverse.netherportals.unlink`

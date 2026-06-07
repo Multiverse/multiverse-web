@@ -37,6 +37,6 @@ He will be **denied access** to use *Portal C*.
 ## Note 2
 If you would like to **let all of your users use _all portals_ and go to _all worlds_**, use the following commands:
 
-`/mv config enforc-eaccess false`
+`/mv config enforce-access false`
 
 `/mvp config enforce-portal-access false`

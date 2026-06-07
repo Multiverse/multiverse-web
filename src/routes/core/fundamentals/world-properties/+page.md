@@ -100,8 +100,6 @@ Sets whether player's actions will grant the relevant advancements in this world
 
 Multiverse has basic support for disabling flight per world. By default, this setting is true, which will allow flight. Set to false to disable flight. Note: This does not affect Creative mode.
 
-A player may bypass this setting with the following permissions:
-**NOT YET IMPLEMENTED!** (Waiting for permissions overhaul.)
 
 **Type**:
 `Boolean`

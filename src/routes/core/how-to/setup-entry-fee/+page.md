@@ -2,22 +2,74 @@
 title: "Currency"
 ---
 
-As with anything currency related, Multiverse uses [Vault](https://dev.bukkit.org/projects/vault) and hence it is a dependency to use this feature
+Multiverse allows you to charge players an entry fee to enter a world. You can charge either items or virtual currency (via [Vault](https://www.spigotmc.org/resources/vault.34315/) + an economy plugin).
 
-## Setting the Price to Enter a world
+## Setting an entry fee
 
-To set the price to enter a world, simply go to that world and type `/mv modify [world] set price X` where x is the amount to enter.
+Use `/mv modify` to configure the three entry-fee properties:
 
-## Want to use items?
+### Enable/disable the fee
 
-Simply type: `/mv modify [world] set currency <item>` where <item> is a Minecraft item name or id. You can find a list of them [here](https://minecraftitemids.com).
+```
+/mv modify [world] set entryfee-enabled true
+/mv modify [world] set entryfee-enabled false
+```
 
-Don't forget to set the price!
+### Set the amount
 
-## Example
+```
+/mv modify [world] set entryfee-amount <amount>
+```
 
-Let's set the entry to a world named FernWorld to 5 dirt
+### Set the currency
 
-- `/mv modify FernWorld set price 5`
-- `/mv modify FernWorld set currency 3`  
-  It's really that easy.
+For **items**, use the Minecraft material name:
+
+```
+/mv modify [world] set entryfee-currency DIRT
+```
+
+For **virtual currency** (requires [Vault](https://www.spigotmc.org/resources/vault.34315/) and a compatible economy plugin such as [EssentialsX](https://essentialsx.net/)):
+
+```
+/mv modify [world] set entryfee-currency @vault-economy
+```
+
+## Example: Charge 5 Dirt to enter FernWorld
+
+```
+/mv modify FernWorld set entryfee-enabled true
+/mv modify FernWorld set entryfee-amount 5
+/mv modify FernWorld set entryfee-currency DIRT
+```
+
+## Example: Charge $13.75 to enter VIPWorld
+
+```
+/mv modify VIPWorld set entryfee-enabled true
+/mv modify VIPWorld set entryfee-amount 13.75
+/mv modify VIPWorld set entryfee-currency @vault-economy
+```
+
+## Exempting players
+
+To exempt a player or group from paying the entry fee, grant the permission:
+
+```
+multiverse.exempt.[worldname]
+```
+
+For example, `multiverse.exempt.VIPWorld` lets a player enter VIPWorld for free.
+
+## YAML reference
+
+Entry-fee settings are stored in `worlds.yml` under each world:
+
+```yaml
+entry-fee:
+  enabled: true
+  amount: 5
+  currency: DIRT
+```
+
+See [World Properties](/core/fundamentals/world-properties#World-Fees) for the full reference.
