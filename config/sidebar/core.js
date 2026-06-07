@@ -48,6 +48,10 @@ export default [
       {
         title: "Customise Locale Messages",
         to: "/core/how-to/customise-locales/",
+      },
+      {
+        title: "World Meta",
+        to: "/core/how-to/world-meta/",
       }
     ]
   },

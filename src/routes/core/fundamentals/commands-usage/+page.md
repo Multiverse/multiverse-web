@@ -33,6 +33,8 @@ If you're looking for the [Multiverse-Portals](/portals/fundamentals/commands-us
 - [Import Command](#Import-Command)
 - [Info Command](#Info-Command)
 - [List Command](#List-Command)
+- [Meta Info Command](#Meta-Info-Command)
+- [Meta Modify Command](#Meta-Modify-Command)
 - [Modify Command](#Modify-Command)
   - [Set](#Modify-Command-(Set))
   - [Add](#Modify-Command-(Add-Remove))
@@ -49,6 +51,12 @@ If you're looking for the [Multiverse-Portals](/portals/fundamentals/commands-us
 - [Unload Command](#Unload-Command)
 - [Who Command](#Who-Command)
 - [Who All Command](#Who-All-Command)
+- [World Border Add Command](#World-Border-Add-Command)
+- [World Border Center Command](#World-Border-Center-Command)
+- [World Border Damage Command](#World-Border-Damage-Command)
+- [World Border Get Command](#World-Border-Get-Command)
+- [World Border Set Command](#World-Border-Set-Command)
+- [World Border Warning Command](#World-Border-Warning-Command)
 
 [↑ Back to Top ↑](#top)
 
@@ -308,10 +316,10 @@ The create command allows you to add new worlds to your server. Each world has m
 ### Usage
 
 ```java
-/mv create <name> <environment> [--seed <seed>] [--generator <generator[:id]>] [--world-type <worldtype>] [--adjust-spawn] [--no-structures] [--biome <biome>] [--generator-settings <json>] [--properties <prop1=value1,prop2=value2...>]
+/mv create <name> <environment> [--seed <seed>] [--generator <generator[:id]>] [--world-type <worldtype>] [--no-adjust-spawn] [--no-structures] [--generate-bonus-chest] [--force-spawn-position <x,y,z[:pitch:yaw]>] [--biome <biome>] [--generator-settings <json>] [--properties <prop1=value1,prop2=value2...>]
 ```
 
-- `<name>`: The name of the new world
+- `<name>`: The name of the new world. You can also pass a [namespaced key](/core/how-to/customise-world-creation#Creating-worlds-with-a-namespaced-key) (e.g. `myplugin:myworld`) to give the world a stable identifier.
 - `<environment>`: The environment of the new world. Must be one of `normal`, `nether` or `the_end`.
 - `--seed <seed>`: The world seed to give to the generator
 - `--generator <generator[:id]>`: The [custom generator](/core/reference/custom-generator-plugins) to use
@@ -322,6 +330,8 @@ The create command allows you to add new worlds to your server. Each world has m
   - normal
 - `--no-adjust-spawn`: Sets the [Adjust Spawn](/core/fundamentals/world-properties#Adjust-Spawn) world property
 - `--no-structures`: Set this flag to disable structures from spawning
+- `--generate-bonus-chest` / `-c`: Generate a bonus chest at the world spawn on creation. This setting is retained if the world is later regenerated. Requires PaperMC 1.21.5+; has no effect on Spigot or older Paper versions.
+- `--force-spawn-position <x,y,z[:pitch:yaw]>` / `-f`: Force the world spawn to a specific position rather than letting Minecraft pick one. Pitch and yaw are optional and default to `0`. Requires PaperMC 26.1+; has no effect on older servers.
 - `--biome <biomeprovider[:id]>`: Sets the biome provider for the world.
 - `--generator-settings <json>`: Sets the generator settings for the world. Only applies to superflat worlds. See [PaperMC docs](https://jd.papermc.io/paper/1.21.5/org/bukkit/WorldCreator.html#generatorSettings(java.lang.String)) for more information on the format.
 - `--properties <prop1=value1,prop2=value2...>`: Customize multiple [world properties](/core/fundamentals/world-properties) on world creation. Example: `--properties pvp=false,portal-form=none`
@@ -329,6 +339,8 @@ The create command allows you to add new worlds to your server. Each world has m
 ### World Name and Environment
 
 When you are going to create a new world you MUST specify a name and environment. Your world names **CANNOT** have spaces in world names, use the [Alias Feature](/core/fundamentals/world-properties#Alias) for that.
+
+You can also pass a **namespaced key** (e.g. `myplugin:myworld`) as the name. Any name containing a `:` is treated as a namespaced key and gives the world a persistent unique identifier separate from its folder name. Where the world folder is stored differs between Paper 26.1+ and Spigot/older Paper — see [Creating worlds with a namespaced key](/core/how-to/customise-world-creation#Creating-worlds-with-a-namespaced-key) for details.
 
 ### Seeds
 
@@ -382,6 +394,9 @@ You should know that if you decide to use spaces in your world name that wheneve
 - `/mv create custom-generator-world-with-seed normal --generator BukkitFullOfMoon:Dinnerbone -s gargamel`
 - `/mv create example normal --generator "BananaGen:hilly,tscale=35.0,terrainheight=15.0,notorches"`
 - `/mv create adventure_world normal --properties gamemode=adventure,portal-form=none`
+- `/mv create survival normal --generate-bonus-chest` — creates a world with a bonus chest at spawn
+- `/mv create my_world normal --force-spawn-position 0,64,0` — forces spawn to X=0 Y=64 Z=0
+- `/mv create myplugin:pvp_arena normal` — creates a world with namespaced key `myplugin:pvp_arena`
 
 ### Permission
 
@@ -431,14 +446,16 @@ You now have 30 seconds to type [`/mv confirm [otp]`](#Confirm-Command) with the
 ### Usage
 
 ```java
-/mv delete <world> [--remove-players]
+/mv delete <world> [--remove-players [destination]]
 ```
 
-- `--remove-players` - Remove players from the world first. If this flag is not specified and players are still in the world then the command will error.
+- `--remove-players [destination]` / `-r` - Remove players from the world before deleting. If this flag is not specified and players are still in the world then the command will error. You can optionally provide a [destination](/core/reference/destinations/) to send players to instead of the default world (e.g. `--remove-players lobby` or `--remove-players e:hub:0,64,0`).
 
 ### Examples
 
-`/mv delete myworld` - Deletes the world `myworld`
+- `/mv delete myworld` - Deletes the world `myworld`
+- `/mv delete myworld --remove-players` - Deletes `myworld` and sends players to the default world
+- `/mv delete myworld --remove-players lobby` - Deletes `myworld` and sends players to the world `lobby`
 
 ### Permission
 
@@ -749,6 +766,62 @@ To get colored worlds, you will need to use the [world alias feature](/core/fund
 
 [↑ Back to Top ↑](#top)
 
+## Meta Info Command
+
+### Description
+
+Lists all [world meta](/core/how-to/world-meta/) key-value pairs stored for a world. World meta is arbitrary string data you can attach to any world for use by other plugins or PlaceholderAPI.
+
+### Usage
+
+```java
+/mv meta info [world] [--page <page>] [--filter <filter>]
+```
+
+- `[world]`: The world to inspect. Defaults to your current world in-game. Required from the console.
+- `--page <page>`: The page of the list to show.
+- `--filter <filter>`: Filter the results.
+
+### Examples
+
+- `/mv meta info`
+- `/mv meta info survival --filter cat`
+
+### Permission
+
+`multiverse.core.meta.info`
+
+[↑ Back to Top ↑](#top)
+
+## Meta Modify Command
+
+### Description
+
+Sets or removes a [world meta](/core/how-to/world-meta/) key-value pair for a world. Meta values are arbitrary strings and are stored in `worlds.yml`.
+
+### Usage
+
+```java
+/mv meta modify [world] <set|remove> <key> [value]
+```
+
+- `[world]`: The world to modify. Defaults to your current world in-game. Required from the console.
+- `<set|remove>`: Whether to set or remove the meta entry.
+- `<key>`: The meta key (no spaces).
+- `[value]`: The value to store. Required when using `set`.
+
+### Examples
+
+- `/mv meta modify survival set category pvp`
+- `/mv meta modify lobby set display-name Hub`
+- `/mv meta modify survival remove category`
+
+### Permission
+
+`multiverse.core.meta.modify`
+
+[↑ Back to Top ↑](#top)
+
 ## Modify Command
 
 ### Description
@@ -901,14 +974,14 @@ Regenerate your world to where **EVERYTHING** built gets destroyed and regenerat
 ### Usage
 
 ```java
-/mv regen <world> [--seed [value]] [--reset-world-config] [--reset-gamerules] [--reset-world-border] [--remove-players]
+/mv regen <world> [--seed [value]] [--reset-world-config] [--reset-gamerules] [--reset-world-border] [--remove-players [destination]]
 ```
 
 - `--seed [value]` Set the new seed to use. If a seed value is not specified then a random seed will be used
 - `--reset-world-config` Everything in `worlds.yml` associated with the world will be wiped
 - `--reset-gamerules` Gamerules will go back to their vanilla defaults
 - `--reset-world-border` The world border will go back to the vanilla default
-- `--remove-players` Remove players from the world first. If this flag is not specified and players are still in the world then the command will error
+- `--remove-players [destination]` / `-r` Remove players from the world first. If this flag is not specified and players are still in the world then the command will error. You can optionally provide a [destination](/core/reference/destinations/) to send players to instead of the default world.
 
 ### Examples
 
@@ -951,17 +1024,18 @@ Unloads a world from the Bukkit server and removes it from the Multiverse `world
 ### Usage
 
 ```java
-/mv remove <world> [--remove-players] [--no-unload-bukkit-world] [--no-save]
+/mv remove <world> [--remove-players [destination]] [--no-unload-bukkit-world] [--no-save]
 ```
 
 - `<world>` - World name
-- `--remove-players` - Remove players from the world first. If this flag is not specified and players are still in the world then the command will error
+- `--remove-players [destination]` / `-r` - Remove players from the world first. If this flag is not specified and players are still in the world then the command will error. You can optionally provide a [destination](/core/reference/destinations/) to send players to instead of the default world.
 - `--no-unload-bukkit-world` - Do not unload the world from the Bukkit server. Usually only used of your world is handled by another plugin as well.
 - `--no-save` - Disable saving of world before unloading. World may rollback to previous state if auto-save is disabled
 
 ### Examples
 
 - `/mv remove world2 --remove-players`
+- `/mv remove world2 --remove-players lobby`
 
 ### Permission
 
@@ -1097,16 +1171,17 @@ This command will **ONLY** unload the world from the server. It does **NOT** rem
 ### Usage
 
 ```java
-/mv unload <world> [--remove-players] [--no-save]
+/mv unload <world> [--remove-players [destination]] [--no-save]
 ```
 - `<world>` - Target world to unload.
-- `--remove-players` - Remove players from the world first. If this flag is not specified and players are still in the world then the command will error
+- `--remove-players [destination]` / `-r` - Remove players from the world first. If this flag is not specified and players are still in the world then the command will error. You can optionally provide a [destination](/core/reference/destinations/) to send players to instead of the default world.
 - `--no-save` - Do not force the world to be saved before unloading - will rollback the world some time. **use with caution**
 
 ### Examples
 
 - `/mv unload world`
-- - `/mv unload lobby --no-save`
+- `/mv unload lobby --no-save`
+- `/mv unload lobby --remove-players hub`
 
 ### Permission
 
@@ -1155,5 +1230,178 @@ Here is an example of the `/mv who` command in use combined with both [world ali
 ### Permission
 
 `multiverse.core.list.who.all`
+
+[↑ Back to Top ↑](#top)
+
+## World Border Add Command
+
+### Description
+
+Increases (or decreases, with a negative value) the world border size by the given amount. An optional transition duration causes the border to move smoothly from its current size to the new size.
+
+### Time format
+
+All time parameters in world border commands accept three formats:
+
+| Format | Meaning | Example |
+|---|---|---|
+| plain number | game ticks (20 ticks = 1 second) | `200` = 10 seconds |
+| `<n>s` | real-time seconds | `10s` = 10 seconds |
+| `<n>d` | in-game days (24 000 ticks each) | `2d` = 2 game days |
+
+:::note[Note]
+On Minecraft 1.21.11+, the underlying world border API accepts ticks directly. On older versions, tick values that cannot be expressed exactly in whole seconds will produce a rounding warning.
+:::
+
+### Usage
+
+```java
+/mv worldborder add <size> [time] [world]
+```
+
+- `<size>`: The number of blocks to add to the border diameter. Use a negative value to shrink it.
+- `[time]`: How long the transition should take. Defaults to `0` (immediate). See the time format table above.
+- `[world]`: The world to modify. Defaults to your current world in-game.
+
+### Examples
+
+- `/mv worldborder add 100` — immediately expands the border by 100 blocks
+- `/mv worldborder add -200 60s` — shrinks by 200 blocks over 60 seconds
+- `/mv worldborder add 500 200` — expands by 500 blocks over 200 ticks (10 seconds)
+
+### Permission
+
+`multiverse.core.worldborder`
+
+[↑ Back to Top ↑](#top)
+
+## World Border Center Command
+
+### Description
+
+Sets the center of the world border.
+
+### Usage
+
+```java
+/mv worldborder center <x> <z> [world]
+```
+
+- `<x>` / `<z>`: The X and Z coordinates for the center.
+- `[world]`: The world to modify. Defaults to your current world in-game.
+
+### Examples
+
+- `/mv worldborder center 0 0`
+- `/mv worldborder center 128 -64 survival`
+
+### Permission
+
+`multiverse.core.worldborder`
+
+[↑ Back to Top ↑](#top)
+
+## World Border Damage Command
+
+### Description
+
+Configures how much damage players receive when outside the border, and the buffer distance before damage starts.
+
+### Usage
+
+```java
+/mv worldborder damage amount <damage> [world]
+/mv worldborder damage buffer <distance> [world]
+```
+
+- `damage amount <damage>`: Damage dealt per second per block outside the border.
+- `damage buffer <distance>`: How many blocks outside the border a player can be before taking damage.
+- `[world]`: The world to modify. Defaults to your current world in-game.
+
+### Examples
+
+- `/mv worldborder damage amount 0.5` — half a heart per second per block outside
+- `/mv worldborder damage buffer 5` — 5 block grace zone
+
+### Permission
+
+`multiverse.core.worldborder`
+
+[↑ Back to Top ↑](#top)
+
+## World Border Get Command
+
+### Description
+
+Displays the current size of the world border.
+
+### Usage
+
+```java
+/mv worldborder get [world]
+```
+
+- `[world]`: The world to query. Defaults to your current world in-game.
+
+### Permission
+
+`multiverse.core.worldborder`
+
+[↑ Back to Top ↑](#top)
+
+## World Border Set Command
+
+### Description
+
+Sets the world border to a specific diameter. An optional transition duration causes the border to move smoothly from its current size to the target size.
+
+### Usage
+
+```java
+/mv worldborder set <size> [time] [world]
+```
+
+- `<size>`: The new border diameter in blocks.
+- `[time]`: Transition duration. Defaults to `0` (immediate). See [time format](#World-Border-Add-Command) table.
+- `[world]`: The world to modify. Defaults to your current world in-game.
+
+### Examples
+
+- `/mv worldborder set 1000` — sets border to 1000 blocks immediately
+- `/mv worldborder set 500 120s survival` — shrinks/grows to 500 blocks over 2 minutes
+- `/mv worldborder set 2000 48000` — transitions to 2000 blocks over 48 000 ticks (2 in-game days)
+
+### Permission
+
+`multiverse.core.worldborder`
+
+[↑ Back to Top ↑](#top)
+
+## World Border Warning Command
+
+### Description
+
+Configures the warning distance (blocks) and warning time (time before the border reaches the player) shown to players as the border closes in.
+
+### Usage
+
+```java
+/mv worldborder warning distance <distance> [world]
+/mv worldborder warning time <time> [world]
+```
+
+- `warning distance <distance>`: How close to the border (in blocks) before the warning overlay appears.
+- `warning time <time>`: How far in advance (in [ticks/seconds/days](#World-Border-Add-Command)) the warning should appear as the border shrinks towards the player.
+- `[world]`: The world to modify. Defaults to your current world in-game.
+
+### Examples
+
+- `/mv worldborder warning distance 10` — warn when within 10 blocks
+- `/mv worldborder warning time 15s` — warn 15 seconds before the border reaches the player
+- `/mv worldborder warning time 300` — warn 300 ticks (15 seconds) in advance
+
+### Permission
+
+`multiverse.core.worldborder`
 
 [↑ Back to Top ↑](#top)

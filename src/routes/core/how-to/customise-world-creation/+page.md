@@ -2,6 +2,46 @@
 title: "Customise World Creation"
 ---
 
+## Creating worlds with a namespaced key
+
+By default, world names are plain strings such as `survival` or `my_world`. Starting in v5.7, you can also supply a **namespaced key** (in the format `namespace:key`) as the world name, which gives the world a stable identifier that is independent of its folder name. By default the namespace is `minecraft`, so the old plain names are still supported as keys under the `minecraft` namespace (e.g. `minecraft:survival`).
+
+```java
+/mv create myplugin:pvp_arena normal
+```
+
+Any string containing a `:` is treated as a namespaced key. The namespace and key both follow Minecraft's identifier rules (lowercase letters, digits, `_`, `-`, `.`).
+
+### Where the world folder is stored
+
+The folder location depends on your server software and version:
+
+**Paper 26.1+** — All worlds are stored under `<level-name>/dimensions/<namespace>/<key>/`.  
+For example, `myplugin:pvp_arena` on a server with `level-name=world` lives at:
+```
+world/dimensions/myplugin/pvp_arena/
+```
+The vanilla dimensions follow the same layout:
+| Namespaced key | Folder |
+|---|---|
+| `minecraft:overworld` | `world/dimensions/minecraft/overworld/` |
+| `minecraft:the_nether` | `world/dimensions/minecraft/the_nether/` |
+| `minecraft:the_end` | `world/dimensions/minecraft/the_end/` |
+
+**Spigot / older Paper** — Worlds are stored as folders in the server root directory. The namespace is ignored entirely; only the key portion (the part after the `:`) is used as the folder name:
+| Namespaced key | Folder |
+|---|---|
+| `myplugin:pvp_arena` | `pvp_arena/` |
+| `minecraft:overworld` | `world/` |
+| `minecraft:the_nether` | `world_nether/` |
+| `minecraft:the_end` | `world_the_end/` |
+
+:::note[Note]
+Existing worlds created with a plain name are automatically migrated to a namespaced key the first time they are loaded in v5.7+. You do not need to recreate them.
+:::
+
+You can look up a world's key with `/mv info` or via the `%multiverse-core_key%` placeholder.
+
 ## Creating a flat/superflat world
 The command to create a very basic flat world: `/mv create <world-name> normal --world-type flat`
 

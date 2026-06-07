@@ -29,6 +29,8 @@ These could also have a world added on to the end if desired, as described previ
 - `%multiverse-core_generators%`
 - `%multiverse-core_hunger%`
 - `%multiverse-core_isloaded%`
+- `%multiverse-core_key%` — the world's namespaced key (e.g. `minecraft:overworld`, `myplugin:myworld`)
+- `%multiverse-core_meta_<key>%` — a [world meta](/core/how-to/world-meta/) value by key (e.g. `%multiverse-core_meta_category%`)
 - `%multiverse-core_monstersspawn%`
 - `%multiverse-core_name%`
 - `%multiverse-core_playercount%`
