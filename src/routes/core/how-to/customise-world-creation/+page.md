@@ -4,7 +4,7 @@ title: "Customise World Creation"
 
 ## Creating worlds with a namespaced key
 
-By default, world names are plain strings such as `survival` or `my_world`. Starting in v5.7, you can also supply a **namespaced key** (in the format `namespace:key`) as the world name, which gives the world a stable identifier that is independent of its folder name. By default the namespace is `minecraft`, so the old plain names are still supported as keys under the `minecraft` namespace (e.g. `minecraft:survival`).
+By default, world names are plain strings such as `survival` or `my_world`. Starting in v5.7, you can also supply a **namespaced key** (in the format `namespace:key`) as the world name, which gives the world a stable identifier that is independent of its folder name. By default, the namespace is `minecraft`, so the old plain names are still supported as keys under the `minecraft` namespace (e.g. `minecraft:survival`).
 
 ```java
 /mv create myplugin:pvp_arena normal
@@ -12,7 +12,11 @@ By default, world names are plain strings such as `survival` or `my_world`. Star
 
 Any string containing a `:` is treated as a namespaced key. The namespace and key both follow Minecraft's identifier rules (lowercase letters, digits, `_`, `-`, `.`).
 
-### Where the world folder is stored
+:::note[Note]
+Only Paper allows creating/importing worlds as a custom namespace, i.e. it does not start with `minecraft:`
+:::
+
+### Where is the world folder, and what's the world name?
 
 The folder location depends on your server software and version:
 
@@ -28,19 +32,21 @@ The vanilla dimensions follow the same layout:
 | `minecraft:the_nether` | `world/dimensions/minecraft/the_nether/` |
 | `minecraft:the_end` | `world/dimensions/minecraft/the_end/` |
 
-**Spigot / older Paper** — Worlds are stored as folders in the server root directory. The namespace is ignored entirely; only the key portion (the part after the `:`) is used as the folder name:
-| Namespaced key | Folder |
+As for world names, those with default namespaces (i.e., starting with `minecraft:`) will retain only the second half of the key as the world name, just like before. The default worlds will also still be named `<world>`, `<world>_nether` and `<world>_the_end` as well (following your `level-name`). To ensure custom namespace key worlds will not produce duplicated world names, Paper has opted for those to be formatted by replacing `:` with `_` instead. For example, `myplugin:pvp_arena` will have `myplugin_pvp_arena` as the world name. This will allow you to have the `pvp_arena` key with 2 different namespaces.
+
+--------------------
+
+**Spigot / older Paper** — Worlds are stored as folders in the server root directory. The namespace is ignored entirely; only the key portion (the part after the `:`) is used as the **folder and world name**:
+| Namespaced key | Folder | World Name |
 |---|---|
-| `myplugin:pvp_arena` | `pvp_arena/` |
-| `minecraft:overworld` | `world/` |
-| `minecraft:the_nether` | `world_nether/` |
-| `minecraft:the_end` | `world_the_end/` |
+| `myplugin:pvp_arena` | `pvp_arena/` | `pvp_arena` |
+| `minecraft:overworld` | `world/` | `world` |
+| `minecraft:the_nether` | `world_nether/` | `world_nether` |
+| `minecraft:the_end` | `world_the_end/` | `world_the_end` |
 
-:::note[Note]
-Existing worlds created with a plain name are automatically migrated to a namespaced key the first time they are loaded in v5.7+. You do not need to recreate them.
-:::
+--------------------
 
-You can look up a world's key with `/mv info` or via the `%multiverse-core_key%` placeholder.
+You can look up a world's key and name with `/mv info` or via the `%multiverse-core_key%`/`%multiverse-core_name%` placeholder.
 
 ## Creating a flat/superflat world
 The command to create a very basic flat world: `/mv create <world-name> normal --world-type flat`
