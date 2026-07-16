@@ -42,20 +42,21 @@ This sends all nether portals in `survival` to `hub`, regardless of naming. See 
 
 ## How do I stop mobs from going through portals?
 
-Set `teleport_entities: false` in `plugins/Multiverse-NetherPortals/config.yml` and restart or reload the plugin. See [configuration reference](/netherportals/reference/configuration-file#teleport_entities).
+Set `teleport-entities: false` in `plugins/Multiverse-NetherPortals/config.yml` and restart or reload the plugin. See the [`teleport-entities` configuration reference](/netherportals/reference/configuration-file#teleport-entities).
 
 ## How do I suppress the "no destination" chat message?
 
-Set `send_no_destination_message: false` in `plugins/Multiverse-NetherPortals/config.yml`. See [configuration reference](/netherportals/reference/configuration-file#send_no_destination_message).
+Set `send-no-destination-message: false` in `plugins/Multiverse-NetherPortals/config.yml`. See the [`send-no-destination-message` configuration reference](/netherportals/reference/configuration-file#send-no-destination-message).
 
 ## Links are not two-way — how do I make portals go back?
 
-Links are one-directional. To make portals in `world_nether` go back to `world`, you need a second link command:
+Links are one-directional by default. Add `--bidirectional` (or `-b`) to create both directions at once:
 
 ```
-/mvnp link nether world world_nether
-/mvnp link nether world_nether world
+/mvnp link nether world world_nether --bidirectional
 ```
+
+You can also add the reverse link later with a second `/mvnp link` command. To remove both sides of a bidirectional pair, use `/mvnp unlink nether world --bidirectional`.
 
 ## World scaling — why does distance travelled differ between worlds?
 
