@@ -2,40 +2,50 @@
 title: "Commands Usage"
 ---
 
-If you're looking for the [Multiverse-Core](/core/fundamentals/commands-usage), [Multiverse-Portals](/portals/fundamentals/commands-usage) or [Multiverse-Inventories](/inventories/fundamentals/commands-usage) Command References, click the links!
+If you are looking for the [Multiverse-Core](/core/fundamentals/commands-usage), [Multiverse-Portals](/portals/fundamentals/commands-usage), or [Multiverse-Inventories](/inventories/fundamentals/commands-usage) command references, follow those links instead.
 
 ## Index
+
 1. [Link Command](#Link-Command)
 2. [Unlink Command](#Unlink-Command)
 3. [List Command](#List-Command)
 
 ## Introduction
-For a complete reference on how to read this page, please refer to the [Multiverse-Core Command Reference Intro](/core/fundamentals/commands-usage)
 
-The biggest difference with these commands is the __base__ command will be `/mvnp` rather than `/mv`. This is so you can determine which plugin a command belongs to. `/mvnp` comes from Multiverse-NetherPortals. If you want to see the in-game help for only the NetherPortals commands, you can type: [`/mvnp help`](/netherportals/fundamentals/commands-usage#Help-Command).
+See the [Multiverse-Core command reference introduction](/core/fundamentals/commands-usage) for the notation used on this page. NetherPortals commands use `/mvnp` as their base command. Run `/mvnp help` in-game to see the commands available to you.
+
+World links are directional. A link from `survival` to `survival_nether` changes portals in `survival`; it does not change portals in `survival_nether` unless you also create the reverse link. Both the link and unlink commands support `--bidirectional` (short form `-b`) when you want to update both directions at once.
 
 ## Link Command
 
 #### Description:
-The link command allows you to basically set the destination of end or nether portals in a certain world.  Before specifying any worlds you must specify if this link is for End portals or Nether portals.  This will set ALL end or nether portals in the `from-world` to the `to-world`. If a `from-world` is not specified, the current world is used. The console requires both parameters.
 
-This will **override** the standard [Multiverse-NetherPortals Config](/netherportals/reference/configuration-file).
+Sets the destination of every Nether or End portal in a source world. The explicit link takes precedence over the [automatic naming rules](/netherportals/fundamentals/basic-usage#Automatic-linking).
 
-Another thing to note is that linking a given portal type in a world to itself will disable any of those portals in that world.
+If `fromWorld` is omitted by a player, their current world is used. The console must provide both world names. Linking a portal type from a world to itself disables that type of portal in the world.
+
+Add `--bidirectional` or `-b` to create the matching reverse link in the same command. Existing links in either direction are replaced.
 
 #### Usage:
-```java
-/mvnp link <end|nether> [from-world] <to-world>
+
+```text
+/mvnp link <nether|end> [fromWorld] <toWorld> [--bidirectional]
 ```
 
-#### Example:
-- `/mvnp link nether world_nether`
-- `/mvnp link nether Hell Sky`
-- `/mvnp link nether "Spaced World" "Spaced Hell World"`
-- `/mvnp link end TheEnd`
-- `/mvnp link end Spawn BossWorld`
+#### Examples:
+
+```text
+/mvnp link nether world_nether
+/mvnp link nether survival survival_nether --bidirectional
+/mvnp link end survival survival_the_end -b
+/mvnp link nether "Spaced World" "Spaced Nether" --bidirectional
+/mvnp link nether minigames minigames
+```
+
+The first example uses the player's current world as the source. The final example disables Nether portals in `minigames`.
 
 #### Permission:
+
 `multiverse.netherportals.link`
 
 [↑ Back to Top ↑](#top)
@@ -43,25 +53,30 @@ Another thing to note is that linking a given portal type in a world to itself w
 ## Unlink Command
 
 #### Description:
-#### Details:
-The Unlink command is basically the opposite of the [Link Command](#Link-Command). It allows you to remove the links you created there without ever having to touch a config file. It obviously will not let you remove links that do not exist. It only takes the `from-world`.
 
-You must specify which type of portals to unlink, End or Nether.
+Removes an explicit portal link from a source world. Once removed, portals in that world use the [automatic naming rules](/netherportals/fundamentals/basic-usage#Automatic-linking) again.
 
-Let's say you have the portals in `world` linked to `world_sky`, like this: `world -> world_sky`. If you wanted to remove this link, you would simply type `/mvnp unlink world` or if **you** were standing in `world` you could just type `/mvnp unlink` and that will unlink the current world.
+If `fromWorld` is omitted by a player, their current world is used. The console must provide it. When Multiverse-Core's alias resolution is enabled, `fromWorld` may be a world alias. A raw world name is also accepted so links can still be removed after their source world has been deleted.
+
+Add `--bidirectional` or `-b` to remove the reverse link too. The reverse link is removed only when it points back to the original source world. If it is missing or points somewhere else, NetherPortals reports the mismatch and leaves it unchanged.
 
 #### Usage:
-```java
-/mvnp unlink <end|nether> [from-world]
+
+```text
+/mvnp unlink <nether|end> [fromWorld] [--bidirectional]
 ```
 
-#### Example:
-- `/mvnp unlink nether`
-- `/mvnp unlink nether world`
-- `/mvnp unlink end`
-- `/mvnp unlink end world`
+#### Examples:
+
+```text
+/mvnp unlink nether
+/mvnp unlink nether survival
+/mvnp unlink nether survival --bidirectional
+/mvnp unlink end survival -b
+```
 
 #### Permission:
+
 `multiverse.netherportals.unlink`
 
 [↑ Back to Top ↑](#top)
@@ -69,28 +84,38 @@ Let's say you have the portals in `world` linked to `world_sky`, like this: `wor
 ## List Command
 
 #### Description:
-This command simply displays your portal links. This is an easy way of verifying that you have the correct flow set. The output will simply show you where each world will take a user when they build a portal there:
 
-    world -> world_nether
-    world_nether -> world_sky
-    world_sky -> world
+Displays portal links for all known worlds. You can optionally show only Nether or End links.
 
-If this value is NOT set, for a given world, NetherPortals will first try spawning a user with it's predefined rules (if the world is WORLD\_nether it'll try to spawn in WORLD and vice versa). If those fail, it will follow notch's portal rules, which can cause unexpected things. If you want the most control, make sure EACH of your worlds show s up on the left side. You CAN link multiple worlds to the same world like this:
+The list includes explicit links and valid automatic links. Its arrows describe the configured flow:
 
-    world -> world_nether
-    world_nether -> world
-    world_sky -> world
+```text
+[nether] survival --> resource_nether
+[nether] world <---> world_nether (auto)
+[end] minigames -- DISABLED
+```
 
-This setup will make all portals in `world` go to `world_nether` and all portals in `world_nether` AND `world_sky` will go to world.
+- `-->` is a one-way link.
+- `<--->` means both worlds link to each other.
+- `(auto)` identifies a link selected by the configured naming convention rather than `/mvnp link`.
+- `DISABLED` means the world has been explicitly linked to itself for that portal type.
 
 #### Usage:
-`/mvnp list [PAGE #]`
 
-#### Example:
-`/mvnp list`
-`/mvnp list 2`
+```text
+/mvnp list [nether|end]
+```
+
+#### Examples:
+
+```text
+/mvnp list
+/mvnp list nether
+/mvnp list end
+```
 
 #### Permission:
+
 `multiverse.netherportals.show`
 
 [↑ Back to Top ↑](#top)

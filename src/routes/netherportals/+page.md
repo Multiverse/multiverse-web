@@ -7,14 +7,29 @@
 [![Donate on Open Collective](https://img.shields.io/badge/Open%20Collective-Donate-blue?style=flat&logo=opencollective)](https://opencollective.com/multiverse-plugins)
 
 <div class="bg-blue-700 rounded-3xl text-white text-lg">
-    <p class="px-5 py-5">Multiverse is developed by volunteers in our free time. If you liked our our work, please consider supporting us on <a href="https://github.com/sponsors/Multiverse" target="_blank" class="text-white font-bold underline">Github Sponsors</a> or <a href="https://opencollective.com/multiverse-plugins" target="_blank" class="text-white font-bold underline">Open Collective</a>.</p>
+    <p class="px-5 py-5">Multiverse is developed by volunteers in our free time. If you like our work, please consider supporting us on <a href="https://github.com/sponsors/Multiverse" target="_blank" class="text-white font-bold underline">GitHub Sponsors</a> or <a href="https://opencollective.com/multiverse-plugins" target="_blank" class="text-white font-bold underline">Open Collective</a>.</p>
 </div>
 
-## Prerequisites
-There are a few things to verify before installing Multiverse-NetherPortals.
-* When running other Multiverse modules, get the latest version of all modules - the slight difference in version number does not matter as long as it's all v5.
+## About Multiverse-NetherPortals
 
-* You must have [Multiverse-Core](/core/fundamentals/installation) before installing Multiverse-NetherPortals.
+Multiverse-NetherPortals makes vanilla Nether and End portals work across your Multiverse worlds. Give each world its own dimensions with automatic naming, explicitly link portals to different worlds, or disable a portal type in selected worlds.
+
+Key features include:
+
+- Automatic links such as `world` ↔ `world_nether` and `world` ↔ `world_the_end`.
+- Custom one-way or bidirectional links for Nether and End portals.
+- Vanilla-style portal creation and configurable coordinate scaling between worlds.
+- Support for players and non-player entities.
+- An API for managing links and allowing custom portal plugins to take control.
+
+Ready to configure your first world set? Follow the [basic usage guide](/netherportals/fundamentals/basic-usage).
+
+## Prerequisites
+
+Before installing Multiverse-NetherPortals:
+
+- Install [Multiverse-Core](/core/fundamentals/installation).
+- Use the latest compatible v5 releases of all Multiverse modules on your server. Their minor or patch version numbers do not need to match exactly.
 
 ## Download links
 
@@ -23,10 +38,17 @@ There are a few things to verify before installing Multiverse-NetherPortals.
 - [BukkitDev](https://dev.bukkit.org/projects/multiverse-netherportals)
 - [GitHub Releases](https://github.com/Multiverse/Multiverse-NetherPortals/releases/latest)
 
-## Step 1: Download and install
-Download the Multiverse-NetherPortals JAR from the [release site](https://github.com/Multiverse/Multiverse-NetherPortals/releases/latest) and place it in your plugins folder.
+## Installation
 
-Make sure the version of Multiverse-NetherPortals matches the major version of [Multiverse-Core](/core/fundamentals/installation) you have installed.
+1. Download the Multiverse-NetherPortals JAR from one of the links above.
+2. Place the JAR in your server's `plugins` folder alongside Multiverse-Core.
+3. Start or restart the server. The default configuration files are created automatically.
+4. Continue with [basic usage](/netherportals/fundamentals/basic-usage) to create and connect your dimension worlds.
 
-## Step 2: Start your server.
-That's it!
+## Next steps
+
+- [Basic usage](/netherportals/fundamentals/basic-usage) — create a standard world, Nether, and End setup.
+- [Commands](/netherportals/fundamentals/commands-usage) — create, remove, and inspect explicit portal links.
+- [Configuration](/netherportals/reference/configuration-file) — customize automatic naming, messages, entity teleportation, and other behavior.
+- [FAQ](/netherportals/reference/faq) — troubleshoot common portal-linking problems.
+- [API usage](/netherportals/developers/api-usage) — integrate another plugin with Multiverse-NetherPortals.

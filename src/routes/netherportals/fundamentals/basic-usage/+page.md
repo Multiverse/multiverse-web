@@ -2,93 +2,115 @@
 title: "Basic Usage"
 ---
 
-## Summary
+Multiverse-NetherPortals gives each Multiverse world its own vanilla-style Nether and End portal destinations. It can select those destinations automatically from world names, or you can explicitly link portals to any Multiverse world.
 
-* Create Nether portals like you would in single-player.
-* Nether portals in world `X` look for a world called `X_nether`, and take you there if it exists.
-* Nether portals in world `X_nether` look for a world called `X`, and take you there if it exists.
-* Redirect Nether portals by "linking" two worlds: [`/mvnp link {end|nether} X Y`](/netherportals/fundamentals/commands-usage#Link-Command).
+## Quick start
 
-## What you need
+1. Install [Multiverse-Core and Multiverse-NetherPortals](/netherportals/).
+2. Create the dimension worlds for your main world. For a world named `survival`, run:
 
-Before you begin to use Nether portals, you'll need...
+   ```text
+   /mv create survival_nether nether
+   /mv create survival_the_end the_end
+   ```
 
-* [Multiverse-NetherPortals installed](/core/fundamentals/installation).
+3. Build and light a normal [Nether portal](https://minecraft.wiki/w/Nether_portal) in `survival`. It will automatically lead to `survival_nether`.
+4. Build portals normally in the linked worlds. Automatic links also work in reverse, so a Nether portal in `survival_nether` leads back to `survival`.
+5. Run `/mvnp list` to check the links NetherPortals will use.
 
-## Getting started
+:::note
+Multiverse-NetherPortals does not create destination worlds when a portal is used. Create or import the worlds with Multiverse-Core first. If no explicit or automatic destination exists, the portal does nothing; with `bounceback` enabled, players are pushed out of an unusable Nether portal.
+:::
 
-_Note: you may skip this section if you know how to create a standard, single-player-style nether portal._
+## Automatic linking
 
-Once both the Core and NetherPortals plugins are installed on your server:
+When a portal has no explicit link, NetherPortals derives its destination from the world's name. With the default configuration:
 
-1. Log in to your server.
-2. Gather up at least 10 [obsidian](https://minecraft.wiki/w/Obsidian), as well as a [flint and steel](https://minecraft.wiki/w/Flint_and_Steel).
-3. Create a [portal](https://minecraft.wiki/w/Nether_portal) in the usual (single-player style) shape. It should have an internal size of **2 x 3** blocks and a total external size of **4 x 5** blocks.
-4. Light one of the inside surfaces on fire with the flint and steel.
+| Portal used in | Portal type | Automatic destination |
+|---|---|---|
+| `X` | Nether | `X_nether` |
+| `X_nether` | Nether | `X` |
+| `X` | End | `X_the_end` |
+| `X_the_end` | End | `X` |
 
-You should see the inside of your obsidian frame light up with purple portal tiles. Congratulations - you made a nether portal!
+The destination must exist and be known to Multiverse. You can change the default `_nether` and `_the_end` naming rules with [`portal-auto-link-when`](/netherportals/reference/configuration-file#portal-auto-link-when).
 
-## Behavior
+## Customizing links
 
-By default, Nether portals behave similarly to how they do in single-player: they take you to a Nether world. However, with Multiverse 2.0, there are some added features you can use to make your Nether portals even better; moreover, Multiverse 2.0 makes one Nether per world a reality, instead of having one Nether overall.
+Use `/mvnp link` when a destination does not follow the automatic naming convention, or when you want a portal type to lead somewhere else entirely.
 
-### Standard
+For example, this sends Nether portals in `survival` to `resource_nether`:
 
-When you have multiple worlds, what does it mean to go "to the nether"? With Multiverse, the nether gets interpreted following a few simple rules:
+```text
+/mvnp link nether survival resource_nether
+```
 
-* Each world gets **its own nether** by default.
-* For a world named `X`, the Nether world is named `X_nether`.
-* If a Nether exists for a world (e.g. `X_nether` is already a world), the portal takes you there. Otherwise, **nether portals do nothing in that world** - the plugin will not create a nether world for you. (The converse is also true, for players already in the Nether.)
+Explicit links are directional. The command above changes portals in `survival`, but does not change portals in `resource_nether`. Add `--bidirectional` (or `-b`) to create both directions at once:
 
-Without any customization, that's it. Each world gets a separate Nether, and those worlds behave **just like any other Multiverse world** - the only difference is that they have `_nether` at the end of their names. (Bold users can even change the suffix in the Multiverse-NetherPortals configuration file.)
+```text
+/mvnp link nether survival resource_nether --bidirectional
+```
 
-### <a name="linking"></a>Customizing ("linking")
+The same commands work for End portals:
 
-Inevitably, there are users who want to use Nether-style portals to teleport to other regular worlds. With Multiverse-NetherPortals, this is easy! Just link the two worlds together.
+```text
+/mvnp link end survival events_end --bidirectional
+```
 
-"Linking" worlds involves setting the destination of nether portals in one world (call it `X`) to another specific, usually non-nether, world (call it `Y`). To link all the Nether portals in `X` to world `Y`, run:
+Links may connect worlds of any environment. Portal creation, coordinate scaling, and other NetherPortals behavior still apply based on the portal type and the source and destination worlds.
 
-    /mvnp link {end|nether} X Y
+To remove an explicit link and return to automatic linking, run:
 
-Now, when your players step into a Nether or End portal (depending on what was specified in command) in world `X`, they'll be taken to world `Y` instead of world `X_nether` or `X_the_end`. What's more: all the normal Nether options still apply, including portal auto-creation (if specified) and distance scaling.
+```text
+/mvnp unlink nether survival
+```
 
-Keep in mind that **links are not two-way**. You can link `X` to `Y`, but if `Y` isn't linked back to `X`, nether portals in `Y` will take you to `Y_nether`, not `X`.
+If the pair was linked in both directions, remove both links together:
 
-Of course, what good would world linking be without world **un**linking? You can remove the link between `X` and `Y` by running:
+```text
+/mvnp unlink nether survival --bidirectional
+```
 
-    /mvnp unlink {end|nether} X
+See the [command reference](/netherportals/fundamentals/commands-usage) for all syntax and flag behavior.
 
-After that command, Nether or End portals in world `X` will once again lead to world `X_nether` or `X_the_end`.
+### Disabling portals in one world
 
-Linking and unlinking works in both normal and nether worlds - you can leave world `X` pointing to `X_nether`, then link `X_nether` to world `Y`. More complicated configurations like this can literally let your users walk "through hell and into another world."
+Link a world to itself to disable one portal type in that world:
 
-Another thing to note is that linking a given portal type in a world to itself will disable any of those portals in that world.
+```text
+/mvnp link nether minigames minigames
+```
+
+Re-enable the portals by removing that self-link:
+
+```text
+/mvnp unlink nether minigames
+```
 
 ## World scaling
 
-By default, the standard single-player Minecraft Nether uses something called "distance scaling" - for every chunk you walk in the Nether, it's equivalent to eight chunks in your regular world. A similar effect is - naturally - possible using Multiverse. But first, we need to take a brief diversion into how the scaling works.
+World scaling controls how coordinates are converted when an entity travels between linked worlds. Each Multiverse world has a positive `scale` value. The destination coordinates are calculated as:
 
-### A little math
+```text
+destination coordinate = source coordinate × (source scale / destination scale)
+```
 
-To begin, every world has a "scaling" associated with it. This scaling can be any positive number: 1, 2, 100, and 0.42 are all valid scaling values. Using these values, we then say that the "scaling factor" from world `X` to world `Y` is:
+For the standard Overworld-to-Nether relationship, the Overworld has a scale of `1` and the Nether has a scale of `8`. Entering a Nether portal at X/Z `800` in the Overworld therefore targets X/Z `100` in the Nether:
 
-    SF(X,Y) = scaling(X) / scaling(Y)
+```text
+800 × (1 / 8) = 100
+```
 
-So if world `X` has scaling 6 and world `Y` has scaling 2, then the scaling factor from `X` to `Y` is 3.
+Travelling back reverses the calculation:
 
-### What does it all mean?
+```text
+100 × (8 / 1) = 800
+```
 
-We've tossed around a bunch of numbers here, but what exactly is a scaling factor? This definition is very important in world scaling, so remember it well:
+Multiverse-Core assigns environment-appropriate defaults to newly managed worlds. To inspect or change a world's scale, use its [`scale` world property](/core/fundamentals/world-properties#Scale):
 
-**The scaling factor from `X` to `Y` is how far in `Y` you can go by walking in `X`.**
+```text
+/mv modify <world> set scale <value>
+```
 
-For the more mathematically inclined, this can also be expressed as:
-
-    dist(Y) = SF(X,Y) * dist(X) = (scaling(X) / scaling(Y)) * dist(X)
-
-Let's consider an example. Once again, we have our two worlds `X` and `Y`. Say that `X` has scaling 2 and `Y` has scaling 1; then the scaling factor from `X` to `Y` is 2. Now our friendly player Alice walks 100 blocks in world `X`; that's the same as walking **200** blocks in world `Y`. Player Bob, on the other hand, isn't so smart: he walks 100 blocks in world `Y`, then moves to world `X` and finds out he's only gone **50** blocks.
-
-How does this work? Look at the math:
-
-* For Alice: `dist(Y) = (2 / 1) * 100 = 200`
-* For Bob: `dist(X) = (1 / 2) * 100 = 50`
+Changing scale affects where portals search for or create their counterparts; it does not move existing portals or chunks.
