@@ -75,7 +75,7 @@ The alias attribute can also include a color and a style. Worlds will show up co
 alias: "&aFern World"
 ```
 
-:::warning
+:::caution
 Although it is not enforced, it is highly recommended to **NOT** use the same alias for multiple worlds. This can cause confusion for players and admins alike.
 
 If you want to tag multiple worlds with the same name/category, consider using a meta key instead. See [World Meta](/core/how-to/world-meta) for more information.
