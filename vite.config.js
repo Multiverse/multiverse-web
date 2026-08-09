@@ -2,12 +2,12 @@ import { defaultTheme } from '@sveltepress/theme-default'
 import { sveltepress } from '@sveltepress/vite'
 import { defineConfig } from 'vite'
 
-import mv5Sidebar from "./config/sidebar/mv5"
-import coreSidebar from "./config/sidebar/core"
-import netherportalsSidebar from './config/sidebar/netherportals'
-import inventoriesSidebar from './config/sidebar/inventories'
-import portalsSidebar from './config/sidebar/portals'
-import signportalsSidebar from './config/sidebar/signportals'
+import mv5Sidebar from './config/sidebar/mv5.js'
+import coreSidebar from './config/sidebar/core.js'
+import netherportalsSidebar from './config/sidebar/netherportals.js'
+import inventoriesSidebar from './config/sidebar/inventories.js'
+import portalsSidebar from './config/sidebar/portals.js'
+import signportalsSidebar from './config/sidebar/signportals.js'
 
 const githubSponsorSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="0.9em" height="0.9em" viewBox="0 0 24 24">
     <path fill="pink"
