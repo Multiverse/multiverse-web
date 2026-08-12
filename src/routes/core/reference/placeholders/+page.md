@@ -44,3 +44,7 @@ These could also have a world added on to the end if desired, as described previ
 - `%multiverse-core_time_<format>` (e.g. [formats](https://www.digitalocean.com/community/tutorials/java-simpledateformat-java-date-format#patterns) are `HH:mm:ss`, `hh:mm:ss a`)
 - `%multiverse-core_type%`
 - `%multiverse-core_weather%`
+
+:::info
+If any parameter, such as a world name, contains an underscore, wrap it in double quotes. For example: `%multiverse-core_playercount_"world_nether"%`.
+:::
