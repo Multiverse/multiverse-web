@@ -2,7 +2,7 @@
 title: "Customise Locale Messages"
 ---
 
-Multiverse-Core supports customising the messages players see in-game via locale files. You can use this to override existing messages, rebrand command output, tweak wording to suit your server, or add a brand new language translation that doesn't exist yet.
+Multiverse modules support customising the messages players see in-game via locale files. You can use this to override existing messages, rebrand command output, tweak wording to suit your server, or add a brand new language translation that doesn't exist yet.
 
 ## Creating the locales folder
 
@@ -65,13 +65,16 @@ After restarting (see below), the `/mv list` output will show your custom header
 
 ![Example of a custom locale overriding the world list header](/core/how-to/customise-locales/locale-example.png)
 
-## Multiverse-Inventories
+## Other Multiverse modules
 
-The same process applies to Multiverse-Inventories. Create a `locales` folder inside `plugins/Multiverse-Inventories/` and place your locale file there, following the same naming convention (e.g. `multiverse-inventories_en.properties`). The original locale files can be found in the [Multiverse-Inventories GitHub repository](https://github.com/Multiverse/Multiverse-Inventories/tree/main/src/main/resources).
+The same process applies to these modules. Create the `locales` folder inside that module's plugin folder and use its matching file name.
 
-:::note[Note]
-Other Multiverse modules do not currently support locales. Support may be added in the future if time permits.
-:::
+| Module | Example path | Original locale file |
+|---|---|---|
+| Multiverse-Inventories | `plugins/Multiverse-Inventories/locales/multiverse-inventories_en.properties` | [View source](https://github.com/Multiverse/Multiverse-Inventories/blob/main/src/main/resources/multiverse-inventories_en.properties) |
+| Multiverse-Portals | `plugins/Multiverse-Portals/locales/multiverse-portals_en.properties` | [View source](https://github.com/Multiverse/Multiverse-Portals/blob/main/src/main/resources/multiverse-portals_en.properties) |
+
+Multiverse-Portals also lets you select a locale key for an individual portal's success or permission-denied message. See [Configure Portal Messages](/portals/how-to/configure-portal-messages/#Using-a-locale-key) for examples.
 
 ## ACF command messages
 

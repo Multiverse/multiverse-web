@@ -28,6 +28,10 @@ export default [
       {
         title: "Configure Portal Actions",
         to: "/portals/how-to/configure-portal-actions/",
+      },
+      {
+        title: "Configure Portal Messages",
+        to: "/portals/how-to/configure-portal-messages/",
       }
     ],
   },
