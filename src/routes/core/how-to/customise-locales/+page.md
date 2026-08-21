@@ -72,6 +72,7 @@ The same process applies to these modules. Create the `locales` folder inside th
 | Module | Example path | Original locale file |
 |---|---|---|
 | Multiverse-Inventories | `plugins/Multiverse-Inventories/locales/multiverse-inventories_en.properties` | [View source](https://github.com/Multiverse/Multiverse-Inventories/blob/main/src/main/resources/multiverse-inventories_en.properties) |
+| Multiverse-NetherPortals | `plugins/Multiverse-NetherPortals/locales/multiverse-netherportals_en.properties` | [View source](https://github.com/Multiverse/Multiverse-NetherPortals/blob/main/src/main/resources/multiverse-netherportals_en.properties) |
 | Multiverse-Portals | `plugins/Multiverse-Portals/locales/multiverse-portals_en.properties` | [View source](https://github.com/Multiverse/Multiverse-Portals/blob/main/src/main/resources/multiverse-portals_en.properties) |
 
 Multiverse-Portals also lets you select a locale key for an individual portal's success or permission-denied message. See [Configure Portal Messages](/portals/how-to/configure-portal-messages/#Using-a-locale-key) for examples.
