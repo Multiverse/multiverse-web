@@ -47,18 +47,19 @@ Allows you to view or modify the configuration of Multiverse-Portals.
 ## List Command
 
 #### Description
-Displays a listing of all portals.
+Displays a paginated listing of all portals you can enter. The optional first argument can be a portal-name filter or a world name.
 
 ![portals list](https://github.com/Multiverse/Multiverse-Portals/wiki/images/portallist.png)
 
 #### Usage
 ```java
-/mvp list [world]
+/mvp list [filter/world] [page]
 ```
 
 #### Example
 - `/mvp list`
 - `/mvp list space`
+- `/mvp list space 2`
 
 #### Permission
 `multiverse.portal.list`
@@ -156,7 +157,7 @@ Remove the portal whose name is given.
 ## Modify Portal Command
 
 #### Description
-Allows you to modify all values that can be set on the selected portal. The target portal must be [selected](#Select-Portal-Command) first if `[portal]` is omitted. Values that can be set include owner, dest, and loc (owner, destination, and location, respectively)
+Allows you to modify any configurable property of a portal. The target portal must be [selected](#Select-Command) first if `[portal]` is omitted.
 
 #### Usage
 ```java
@@ -165,17 +166,23 @@ Allows you to modify all values that can be set on the selected portal. The targ
 
 #### Example
 - `/mvp modify spaceportal owner Elizacat`
+- `/mvp modify spaceportal action-success-message "&aWelcome, {player}!"`
 
 #### Permission:
 `multiverse.portal.modify`
 
 #### PROPERTIES that can be changed:
-*   `owner`
-*   `destination` - Use multiverse [destination format](/core/reference/destinations)
-*   `location` - Use `@selected-region` for player with wand, or the format `WORLD:X,Y,Z:X,Y,Z`
-*   `price`
-*   `currency`
-*   `safe-teleport`
+* `action-type` - The portal action type. See [Configure Portal Actions](/portals/how-to/configure-portal-actions/).
+* `action` (aliases: `destination`, `dest`) - The parameters for the selected action type. A `multiverse-destination` action uses the Multiverse [destination format](/core/reference/destinations/).
+* `action-success-message` - The message sent after a successful action. See [Configure Portal Messages](/portals/how-to/configure-portal-messages/).
+* `no-permission-message` - The message sent when access is denied. See [Configure Portal Messages](/portals/how-to/configure-portal-messages/).
+* `owner`
+* `location` (alias: `loc`) - Use `@selected-region` for a player's current wand selection, or the format `WORLD:X,Y,Z:X,Y,Z`.
+* `price` - The portal entry fee.
+* `currency` (alias: `curr`) - The material used for the entry fee.
+* `check-destination-safety`
+* `safe-teleport` (alias: `safe`)
+* `teleport-non-players` (alias: `telenonplayers`)
 
 [↑ Back to Top ↑](#top)
 

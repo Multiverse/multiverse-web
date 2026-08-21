@@ -4,7 +4,7 @@ title: "Configuration File"
 
 Here is the default config that ships with MV-Portals. 
 
-## Multiverse 2 Portals Sample Config
+## Multiverse-Portals Sample Config
 ```yml
 #-------------------------------------------------------------------------------------------------------#
 #                                                                                                       #
@@ -29,7 +29,7 @@ Here is the default config that ships with MV-Portals.
 portal-creation:
   # The item used to select a region to create a mvportal. Run `/mv wand` to start selection.
   # This will be ignore if worldedit is used for selection instead.
-  wand-fillType: wooden_pickaxe
+  wand-material: wooden_pickaxe
   
   # If enabled, water and lava bucket can be used to fill a mvportal.
   bucket-filling: true
@@ -47,6 +47,11 @@ portal-usage:
   # If enabled, players will not be able to teleport to mvportals they do not have access to.
   # The permission node is: `multiverse.portal.access.<portal-name>`
   enforce-portal-access: true
+
+  # This is a global toggle to disable the sending of no permission messages for all portals.
+  # This is only applicable if `enforce-portal-access` is enabled above, else permission checks will not happen anyways.
+  # If you are looking to customize/disable specific portal's message, use each portal's `no-permission-message` property.
+  send-no-permission-messages: true
   
   # The time (in milliseconds) a player must wait between using a mvportal.
   portal-cooldown: 1000
@@ -78,5 +83,5 @@ portal-usage:
   
 # This just signifies the version number so we can see what version of config you have.
 # NEVER TOUCH THIS VALUE
-version: 5.0
+version: 5.1
 ```

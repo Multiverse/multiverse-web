@@ -2,9 +2,11 @@
 title: API Usage
 ---
 
-This page provides examples and explanation for the common API usages of Multiverse-Portals introduced [here](/core/developers/developer-api-starter). It's impossible to cover all API methods in this guide, but rest assured we have [javadocs](https://multiverse.github.io/Multiverse-Portals/javadoc/latest/) provided.
+This page provides examples and explanations for common Multiverse-Portals API usages. See the [developer API starter](/core/developers/developer-api-starter) for general Multiverse API conventions and the [Javadocs](https://multiverse.github.io/Multiverse-Portals/javadoc/latest/) for the complete API.
 
 ## Adding Multiverse-Portals to your project
+
+Replace `VERSION` with the Multiverse-Portals version used by your server.
 
 ### Gradle
 
@@ -14,7 +16,7 @@ repositories {
 }
 
 dependencies {
-    compileOnly 'org.mvplugins.multiverse.portals:multiverse-portals:5.1.0-SNAPSHOT'
+    compileOnly 'org.mvplugins.multiverse.portals:multiverse-portals:VERSION'
 }
 ```
 
@@ -32,7 +34,7 @@ dependencies {
     <dependency>
         <groupId>org.mvplugins.multiverse.portals</groupId>
         <artifactId>multiverse-portals</artifactId>
-        <version>5.1.0-SNAPSHOT</version>
+        <version>VERSION</version>
         <scope>provided</scope>
     </dependency>
 </dependencies>
@@ -42,12 +44,29 @@ Also add `Multiverse-Portals` to `softdepend` or `depend` in your `plugin.yml` t
 
 ## Obtaining the API instance
 
-### Using the Singleton (Recommended)
+### Using the singleton (recommended)
 
 Note: this method will throw an `IllegalStateException` if the API is not loaded.
 
 ```java
 MultiversePortalsApi portalsApi = MultiversePortalsApi.get();
+```
+
+For an optional integration that might initialize before Multiverse-Portals, register a callback instead. The callback runs immediately if the API is already ready, or once initialization finishes otherwise:
+
+```java
+MultiversePortalsApi.whenLoaded(portalsApi -> {
+    PortalManager portalManager = portalsApi.getPortalManager();
+    // initialize the integration
+});
+```
+
+You can check the current state without throwing an exception:
+
+```java
+if (MultiversePortalsApi.isLoaded()) {
+    MultiversePortalsApi portalsApi = MultiversePortalsApi.get();
+}
 ```
 
 ### Using the Bukkit ServicesManager
@@ -98,7 +117,7 @@ List<MVPortal> accessiblePortals = portalsApi.getPortalManager().getPortals(play
 
 ## Creating a portal
 
-A `PortalLocation` defines the axis-aligned bounding box of the portal region as two corner vectors inside a loaded Multiverse world. The string format is `WORLD:X,Y,Z:X,Y,Z`.
+A `PortalLocation` defines the axis-aligned bounding box of the portal region as two corner vectors inside a Multiverse world. The string format is `WORLD:X,Y,Z:X,Y,Z`. The API can register and inspect portals whose Multiverse world is currently unloaded.
 
 ```java
 PortalManager portalManager = portalsApi.getPortalManager();
@@ -106,7 +125,7 @@ PortalManager portalManager = portalsApi.getPortalManager();
 // Parse a location from a world-prefixed string
 PortalLocation location = PortalLocation.parseLocation("world:10,64,10:12,68,10");
 
-MultiverseWorld mvWorld = MultiverseCoreApi.get().getWorldManager().getLoadedWorld("world").getOrNull();
+MultiverseWorld mvWorld = MultiverseCoreApi.get().getWorldManager().getWorld("world").getOrNull();
 if (mvWorld != null && location.isValidLocation()) {
     boolean added = portalManager.addPortal(mvWorld, "my-portal", "ServerOwner", location);
     if (added) {
@@ -114,6 +133,20 @@ if (mvWorld != null && location.isValidLocation()) {
     }
 }
 ```
+
+## Getting a portal's world
+
+Use `getMultiverseWorld()` when the configured Multiverse world may be unloaded. Use `getBukkitWorld()` only when you need a live Bukkit `World`; it returns an empty `Option` while the world is unloaded.
+
+```java
+portal.getMultiverseWorld().peek(mvWorld ->
+        getLogger().info("Portal world: " + mvWorld.getName()));
+
+portal.getBukkitWorld().peek(bukkitWorld ->
+        getLogger().info("Loaded Bukkit world: " + bukkitWorld.getName()));
+```
+
+`getWorld()` and the `LoadedMultiverseWorld` portal constructor are deprecated and scheduled for removal in Multiverse 6. Use the optional world getters and the `MultiverseWorld` constructor instead.
 
 ## Removing a portal
 
@@ -155,7 +188,7 @@ portal.setAction("lobby");
 You can also set both at once using an `ActionHandler` obtained from the `ActionHandlerProvider`:
 
 ```java
-ActionHandlerProvider handlerProvider = portalsApi.getServiceLocator().getService(ActionHandlerProvider.class);
+ActionHandlerProvider handlerProvider = portalsApi.getActionHandlerProvider();
 
 handlerProvider.parseHandler("multiverse-destination", "e:world:0,64,0:0:0")
         .peek(handler -> portal.setActionHandler(handler))
@@ -183,6 +216,22 @@ boolean teleportsEntities = portal.getTeleportNonPlayers();
 ```java
 portal.setCheckDestinationSafety(false); // skip safe-spawn check at destination
 boolean checksSafety = portal.getCheckDestinationSafety();
+```
+
+### Configuring portal messages
+
+Each portal can send a message after a successful action or when a player lacks access. The values accept literal text, `@disabled`, `@default`, or `@@<locale-key>`. Literal and localized messages support `{player}` and `{portal}` replacements.
+
+```java
+portal.setActionSuccessMessage("&aWelcome, {player}!");
+portal.setNoPermissionMessage("@@myplugin.portal.denied");
+```
+
+Both setters return `Try<Void>`. See [Configure Portal Messages](/portals/how-to/configure-portal-messages/) for the complete value format. The global permission-message switch is also available through `PortalsConfig`:
+
+```java
+PortalsConfig config = portalsApi.getPortalsConfig();
+config.setSendNoPermissionMessages(false);
 ```
 
 ### Using StringPropertyHandle
@@ -281,8 +330,7 @@ public class RewardActionHandlerType extends ActionHandlerType<RewardActionHandl
 @Override
 public void onEnable() {
     ActionHandlerProvider handlerProvider = MultiversePortalsApi.get()
-            .getServiceLocator()
-            .getService(ActionHandlerProvider.class);
+            .getActionHandlerProvider();
 
     handlerProvider.registerHandlerType(new RewardActionHandlerType());
 }
