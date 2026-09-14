@@ -1011,7 +1011,7 @@ Regenerate your world to where **EVERYTHING** built gets destroyed and regenerat
 - `--reset-world-config` Everything in `worlds.yml` associated with the world will be wiped
 - `--reset-gamerules` Gamerules will go back to their vanilla defaults
 - `--reset-world-border` The world border will go back to the vanilla default
-- `--remove-players [destination]` / `-r` Remove players from the world first. If this flag is not specified and players are still in the world then the command will error. You can optionally provide a [destination](/core/reference/destinations/) to send players to instead of the default world.
+- `--remove-players [destination]` / `-r` Temporarily teleport players out of the world before regeneration, then teleport them back to the regenerated world after regeneration completes successfully. If this flag is not specified and players are still in the world then the command will error. You can optionally provide a [destination](/core/reference/destinations/) to send players to temporarily instead of the default world.
 
 ### Examples
 
