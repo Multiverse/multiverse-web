@@ -101,15 +101,15 @@ Please **BACKUP YOUR DATA** before running this command as modified/deleted/over
 :::
 
 #### Description:
-Clears all global profile data for all players.
+Clears global profile data for the selected players. A global profile tracks the player's last known name, last world, and whether to load saved data on login. See [Global Profiles and Player Profiles](/inventories/how-to/bulkedit-inventory-data/#Global-Profiles-and-Player-Profiles) for details. Add `--clear-all-player-profiles` (or `-a`) to also clear their player profiles in every world and group.
 
 #### Usage:
 ```java
-/mvinv bulkedit globalprofile clear <players> [--clear-all-playerprofiles]
+/mvinv bulkedit globalprofile clear <players> [--clear-all-player-profiles]
 ```
 
 ##### Examples:
-- `/mvinv bulkedit globalprofile clear benthecat10 --clear-all-playerprofiles`
+- `/mvinv bulkedit globalprofile clear benthecat10 --clear-all-player-profiles`
 
 #### Permission:
 `multiverse.inventories.bulkedit`
@@ -123,7 +123,7 @@ Please **BACKUP YOUR DATA** before running this command as modified/deleted/over
 :::
 
 #### Description:
-Modifies global profile data for one or more players.
+Modifies a global profile property for one or more players. The properties are `last-known-name`, `last-world`, and `load-on-login`. See [Global Profiles and Player Profiles](/inventories/how-to/bulkedit-inventory-data/#Global-Profiles-and-Player-Profiles) for what each property controls.
 
 #### Usage:
 ```java
@@ -149,7 +149,7 @@ Clears player profile data for one or more players.
 
 #### Usage:
 ```java
-/mvinv bulkedit playerprofile clear <players> <groups|worlds> [profile-type] [--include-groups-worlds]
+/mvinv bulkedit playerprofile clear <players> <groups/worlds> [profile-type] [--include-groups-worlds]
 ```
 
 #### Examples:
@@ -167,15 +167,18 @@ Please **BACKUP YOUR DATA** before running this command as modified/deleted/over
 :::
 
 #### Description:
-Clones data of all worlds and groups from one player to another. Some use cases include copying data from an old account to a new account. Note this is different from migrating player name, which keeps the same player but changes the name associated with it. For that, see [Bulkedit Player Profile Migrate Player Name Command](#Bulkedit-Player-Profile-Migrate-Player-Name-Command).
+Clones data for the selected worlds and groups from one player to one or more destination players, overwriting their selected profiles. Some use cases include copying data from an old account to a new account. Note this is different from migrating player name, which keeps the same player but changes the name associated with it. For that, see [Bulkedit Player Profile Migrate Player Name Command](#Bulkedit-Player-Profile-Migrate-Player-Name-Command).
+
+When all profile types are selected, a missing source file leaves the destination unchanged. When only specific profile types are selected, a missing or empty source profile clears that profile type at the destination.
 
 #### Usage:
 ```java
-/mvinv bulkedit playerprofile clone-player <from-player> <to-player> [profile-type]
+/mvinv bulkedit playerprofile clone-player <from-player> <to-player> <groups/worlds> [profile-types] [--include-groups-worlds]
 ```
     
 #### Examples:
-- `/mvinv bulkedit playerprofile clone-player benji_0224 benthecat10 @all`
+- `/mvinv bulkedit playerprofile clone-player benji_0224 benthecat10 @all @all`
+- `/mvinv bulkedit playerprofile clone-player benji_0224 benthecat10 group=survival @all`
 
 #### Permission:
 `multiverse.inventories.bulkedit`
@@ -189,11 +192,13 @@ Please **BACKUP YOUR DATA** before running this command as modified/deleted/over
 :::
 
 #### Description:
-Clones data of a specific world or group from one player to another. Some use cases is copying data from an individual world to a newly created group, or copying data from one group to another group.
+Clones each selected player's data from one world or group to other worlds or groups, overwriting their selected destination profiles. Some use cases include copying data from an individual world to a newly created group, or copying data from one group to another group. The source must not also be a destination. Add `--include-groups-worlds` to also copy to the individual worlds in the destination groups.
+
+The source and explicitly selected destinations must have data folders under Multiverse-Inventories. Individual destination player files do not need to exist. When all profile types are selected, a missing source file leaves the destination unchanged. When only specific profile types are selected, a missing or empty source profile clears that profile type at the destination.
 
 #### Usage:
 ```java
-/mvinv bulkedit playerprofile clone-world-group <players> <from-group/world> <to-groups/worlds> [profile-type]
+/mvinv bulkedit playerprofile clone-world-group <players> <from-group/world> <to-groups/worlds> [profile-types] [--include-groups-worlds]
 ```
 
 #### Examples:
@@ -211,11 +216,11 @@ Please **BACKUP YOUR DATA** before running this command as modified/deleted/over
 :::
 
 #### Description:
-Deletes specific sharable data for one or more players.
+Deletes specific sharable data for one or more players. Use the primary sharable name, such as `hit_points` for health. Sharable aliases and share groups are not accepted.
 
 #### Usage:
 ```java
-/mvinv bulkedit playerprofile delete <sharable> <players> <groups|worlds> [profile-type] [--include-groups-worlds]
+/mvinv bulkedit playerprofile delete <sharable> <players> <groups/worlds> [profile-type] [--include-groups-worlds]
 ```
 
 #### Examples:
@@ -234,15 +239,21 @@ Please **BACKUP YOUR DATA** before running this command as modified/deleted/over
 :::
 
 #### Description:
-Migrates player data from one player to another. By default, player name changes are detected automatically and no action is needed. This command is only needed in the rare case where automatic detection fails.
+Renames stored world and group profile files after a player name change. By default, player name changes are detected automatically on login and no action is needed. This command is only needed in the rare case where automatic migration fails.
+
+For each world or group, if files exist under both the old and new names, migration leaves both files unchanged and logs a warning. It continues with the other worlds and groups. This check applies even if the destination file is empty. Existing files are not merged or overwritten.
+
+:::note
+Check that `migrate player-name` is listed in `/mvinv help` before using it. Some builds do not register this manual command. Automatic name migration is handled separately.
+:::
 
 #### Usage:
 ```java
-/mvinv bulkedit playerprofile migrate player-name <from-name|uuid> <to-name>
+/mvinv bulkedit migrate player-name <current-name> <new-name>
 ```
 
 #### Examples:
-- `/mvinv bulkedit playerprofile migrate player-name benji_0224 benthecat10`
+- `/mvinv bulkedit migrate player-name benji_0224 benthecat10`
 
 #### Permission:
 `multiverse.inventories.bulkedit`
@@ -256,15 +267,16 @@ Please **BACKUP YOUR DATA** before running this command as modified/deleted/over
 :::
 
 #### Description:
-Migrates player inventory data from one serialisation format to another. Note that nbt format is only supported on PaperMC servers.
+Migrates all stored player inventory data to the selected serialisation format and saves the corresponding `use-byte-serialization-for-inventory-data` configuration setting. NBT format is only supported on PaperMC servers. To return to Spigot, migrate to `bukkit` while still running PaperMC.
 
 #### Usage:
 ```java
-/mvinv bulkedit playerprofile migrate inventory-serialisation <nbt|bukkit>
+/mvinv bulkedit migrate inventory-serialization <nbt|bukkit>
 ```
 
 #### Examples:
-- `/mvinv bulkedit playerprofile migrate inventory-serialisation nbt`
+- `/mvinv bulkedit migrate inventory-serialization nbt`
+- `/mvinv bulkedit migrate inventory-serialization bukkit`
 
 #### Permission:
 `multiverse.inventories.bulkedit`
